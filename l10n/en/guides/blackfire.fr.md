@@ -1,91 +1,91 @@
 +++
-url = "/fr/guides/blackfire/"
-title = "Comment installer Blackfire"
+url = "/guides/blackfire/"
+title = "How to install Blackfire"
 layout = "howto"
 hidden = true
-tags = [ "http", "optimisation applicative", "profiling", "site" ]
+tags = [ "http", "application optimization", "profile", "site" ]
 +++
 
-[Blackfire](https://blackfire.io) permet de tester, débugger, optimiser les applications. Il offre des agents dans plusieurs langages et nous présenterons ici les étapes pour installer les _agents PHP et Python_.
+[Blackfire](https://blackfire.io) allows you to test, debug, optimize applications. It offers agents in several languages and we will present here the steps to install the _PHP agents and Python_.
 
-Dans notre exemple, nous utilisons un [accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use a [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom du compte : `foo`
-- Répertoire de Blackfire : `$HOME/blackfire/`
+- Account name: `foo`
+- Blackfire directory: `$HOME/blackfire/`
 
 {{% notice note %}}
-`[foo]`, `<version>`, `[version]`, `<YOUR_SERVER_ID>` et `<YOUR_SERVER_TOKEN>` doivent être remplacées par les informations correctes.
-{{% /notice %}}
+`[foo]`, `<version>`, `[version]`, `<YOUR_SERVER_ID>` and `<YOUR_SERVER_TOKEN>` must be replaced with the correct information.
+{{%/notice %}}
 
-## Étape 1 : Téléchargement de l'agent
+## Step 1: Agent's Download
 
 ```sh
 foo@ssh:~/blackfire$ wget https://packages.blackfire.io/debian/pool/any/main/b/blackfire-php/blackfire-agent_<version>_amd64.deb
 foo@ssh:~/blackfire$ dpkg -x blackfire-agent_<version>_amd64.deb .
 ```
 
-[Page de téléchargement](https://blackfire.io/docs/up-and-running/installation?action=install&mode=full&location=local&os=manual&language=php) : prendre le paquet DEB 64 bits.
+[Download page](https://blackfire.io/docs/up-and-running/installation?action=install&mode=full&location=local&os=manual&language=php): Take the 64-bit DEB package.
 
-## Étape 2 : Configuration de l'agent
+## Step 2: Agent Configuration
 
 ```sh
-foo@ssh:~/blackfire$ cat << EOF > etc/blackfire/agent-prod
+foo@ssh:~/blackfire$ cat << EOF > <unk> blackfire/agent-prod
 [blackfire]
 ; setting: server-id
-; You can find your personal server-id at https://blackfire.io/my/settings/credentials
+; You can find your personal server-id at https://blackfire. o/my/settings/credentials
 server-id=<YOUR_SERVER_ID>
 
 ; setting: server-token
-; You can find your personal server-token at https://blackfire.io/my/settings/credentials
+; You can find your personal server-token at https://blackfire. o/my/settings/credentials
 server-token=<YOUR_SERVER_TOKEN>
 
 ; setting: log-file
-log-file=/home/[foo]/blackfire/agent.log
+log-file=/home/[foo]/blackfire/agent. og
 
 ; setting: log-level
-; desc   : log verbosity level (4: debug, 3: info, 2: warning, 1: error)
+; desc: log verbosity level (4: debug, 3: info, 2: warning, 1: error)
 ; default: 1
 log-level=1
 
 ; setting: memory-limit
-; desc   : Sets the maximum allowed RAM usage (megabytes) when ingesting traces. Use 0 to disable
+; desc: Sets the maximum allowed RAM usage (megabytes) when ingesting traces. Use 0 to disable
 ; default: 500
 memory-limit=500
 
 EOF
 ```
 
-Plus d'options sont disponibles sur [leur documentation](https://blackfire.io/docs/up-and-running/configuration/agent).
+More options are available on [their documentation](https://blackfire.io/docs/up-and-running/configuration/agent).
 
-## Étape 3 : Lancement du démon
+## Step 3: Launching daemon
 
-Créez un [service](services) avec les détails suivants :
+Create an [service](services) with the following details:
 
-- _Commande_ : `/home/[foo]/blackfire/usr/bin/blackfire --config=/home/[foo]/blackfire/etc/blackfire/agent-prod`
-- _Répertoire de travail_ : `/home/[foo]/blackfire`
+- _Command_: `/home/[foo]/blackfire/usr/bin/blackfire --config=/home/[foo]/blackfire/etc/blackfire/agent-prod`
+- _Work directory_: `/home/[foo]/blackfire`
 
-## Étape 4 : Installation des sondes
+## Step 4: Installing Probe
 
 ### PHP
 
-Voir [Blackfire for PHP](https://blackfire.io/docs/php)
+See [Blackfire for PHP](https://blackfire.io/docs/php)
 
-**Téléchargement**
+**Download**
 
 ```sh
 foo@ssh:~/blackfire$ wget https://packages.blackfire.io/debian/pool/any/main/b/blackfire-php/blackfire-php_<version>_amd64.deb
 foo@ssh:~/blackfire$ dpkg -x blackfire-php_<version>_amd64.deb .
 ```
 
-[Page de téléchargement](https://blackfire.io/docs/up-and-running/installation?action=install&mode=full&location=local&os=manual&language=php) - point D : prendre le paquet DEB 64 bits.
+[Download page](https://blackfire.io/docs/up-and-running/installation?action=install&mode=full&location=local&os=manual&language=php) - point D: take the DEB 64-bit package.
 
-**Ajout de l'extension dans le php.ini (Environnement > PHP)**
+**Add extension to php.ini (Environment > PHP)**
 
 ```ini
 extension = /home/[foo]/blackfire/usr/lib/blackfire-php/amd64/blackfire-[version].so
 ```
 
-Plus d'options sont données sur leur [documentation](https://blackfire.io/docs/php/configuration). Notamment pour mettre en place un log :
+More options are given on their [documentation](https://blackfire.io/docs/php/configuration). Particularly for setting up a log:
 
 ```ini
 blackfire.log_level = 1
@@ -95,7 +95,7 @@ blackfire.log_file = /home/[foo]/blackfire/blackfire-php.log
 
 ### Python
 
-Voir [Blackfire for Python](https://blackfire.io/docs/python)
+See [Blackfire for Python](https://blackfire.io/docs/python)
 
 ```sh
 foo@ssh:~$ python -m pip install blackfire
@@ -103,6 +103,6 @@ foo@ssh:~$ python -m pip install blackfire
 
 ---
 
-## Liens
+## Links
 
 - [Documentation](https://blackfire.io/docs)
