@@ -1,57 +1,57 @@
 +++
-url = "/fr/emails/clients/gmail/"
-title = "Comment configurer Gmail"
+url = "/emails/clients/gmail/"
+title = "How to configure Gmail"
 layout = "howto"
 hidden = true
 tags = [ "email", "gmail" ]
 +++
 
-Dans nos exemples nous considérons les informations suivantes :
+In our examples we will have the following information:
 
-- Nom du compte : `test`
-- Adresse email : `test@alwaysdata.net`
+- Account name: `test`
+- Email address: `test@alwaysdata.net`
 
-Elles sont à remplacer par vos informations de connexion personnelles :
+They are to be replaced with your personal login information:
 
-| Serveur | Service | Information       |                                                                                                                    |
-| ------- | ------- | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Entrant | IMAP    | Serveur IMAP      | imap-_[compte]_.alwaysdata.net |
-|         |         | Nom d'utilisateur | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe      | Le mot de passe de votre adresse email                                                                             |
-|         |         | Port              | 993                                                                                                                |
-| Sortant | SMTP    | Serveur SMTP      | smtp-_[compte]_.alwaysdata.net |
-|         |         | Nom d'utilisateur | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe      | Le mot de passe de votre adresse email                                                                             |
-|         |         | Port              | 465                                                                                                                |
+| Server   | Service | Information |                                                                                                                    |
+| -------- | ------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| Incoming | IMAP    | IMAP Server | imap-_[compte]_.alwaysdata.net |
+|          |         | Username    | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password    | Your email address password                                                                                        |
+|          |         | Port        | 993                                                                                                                |
+| Outgoing | SMTP    | SMTP Server | smtp-_[compte]_.alwaysdata.net |
+|          |         | Username    | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password    | Your email address password                                                                                        |
+|          |         | Port        | 465                                                                                                                |
 
 {{% notice tip %}}
-_[compte]_ doit être remplacé par le nom de votre compte et _contact\@example.org_ par votre adresse email. Ils sont définis dans le menu **Emails > Adresses** de notre interface d'administration.
-{{% /notice %}}
+_[compte]_ must be replaced with your account name and _contact\@example.org_ with your email address. They are defined in the **Emails > Addresses** menu of our admin interface.
+{{%/notice %}}
 
 ## Mobile
 
-Rendez-vous dans **Paramètres > Ajouter un compte > Autre**.
+Go to **Settings > Add Account > Other**.
 
-{{< fig "images/gmail_mobile_fr.png" "Gmail sur mobile" >}}
+{{< fig "images/gmail_mobile_en.png" "Gmail on mobile" >}}
 
-- Pour le courrier _sortant_, cochez la case **Exigez une connexion**.
+- For _outgoing mail_, check the **Require connection** box.
 
-## Navigateur web
+## Web Browser
 
-### Courrier entrant
+### Incoming mail
 
-Les [connexions POP](https://support.google.com/mail/answer/16604719) n'étant plus supportées par Gmail, son webmail ne peut donc servir que pour l'envoi des mails. Il faut sinon passer par leur Google Workspace ou une [redirection](/e-mails/create-an-e-mail-address#redirection) vers votre adresse Gmail.
+Since [POP connections](https://support.google.com/mail/answer/16604719) have not been supported by Gmail, its webmail can only be used for sending mails. Otherwise you need to go through their Google Workspace or an [redirection](/e-mails/create-an-e-mail-address#redirection) to your Gmail address.
 
-### Courrier sortant (SMTP)
+### Outgoing mail (SMTP)
 
-Rendez-vous dans **Paramètres > Comptes et importation**.
+Go to **Settings > Accounts and import**.
 
-{{< fig "images/gmail_interface_fr.png" "Gmail : interface" >}}
-{{< fig "images/gmail_interface2_fr.png" "Gmail : paramètres des comptes" >}}
+{{< fig "images/gmail_interface_en.png" "Gmail: Interface" >}}
+{{< fig "images/gmail_interface2_en.png" "Gmail: Account Settings" >}}
 
-Rendez-vous dans **Ajouter une autre adresse e-mail**.
+Go to **Add another email address**.
 
-- Décochez la case **Traiter comme un alias**.
+- Uncheck the box **Treat as an alias**.
 
-{{< fig "images/gmail_add-smtp_fr.png" "Gmail : créer un compte SMTP" >}}
-{{< fig "images/gmail_add-smtp-final_fr.png" "Gmail : créer un compte SMTP - résultat" >}}
+{{< fig "images/gmail_add-smtp_en.png" "Gmail: create SMTP account" >}}
+{{< fig "images/gmail_add-smtp-final_en.png" "Gmail: create SMTP account - result" >}}
