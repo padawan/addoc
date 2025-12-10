@@ -1,24 +1,24 @@
 +++
-url = "/fr/comptes/creer-un-compte/"
-title = "Comment créer un compte"
-linkTitle = "Créer un compte"
+url = "/accounts/creer-un-account/"
+title = "How to create an account"
+linkTitle = "Create Account"
 layout = "howto"
 weight = 10
-tags = [ "compte" ]
+tags = [ "account" ]
 +++
 
-Allez dans le menu **Abonnements** de votre interface client.
+Go to the **Subscriptions** menu of your client interface.
 
-{{< fig "images/list-accounts.fr.png" "" >}}
+{{< fig "images/list-accounts.png" "" >}}
 
-Après avoir cliqué sur **Ouvrir un nouveau compte** vous trouverez un formulaire pour choisir :
+After you clicked **Open a new account** you will find a form to choose:
 
-- son nom ;
-- sa localisation : Cloud Public, Private Cloud ;
+- its name;
+- its location: Cloud Public, Private Cloud;
 
-si Cloud Public :
+if Public Cloud:
 
-- le produit (le pack) ;
-- la fréquence de paiement (mensuel ou annuel).
+- the product (pack);
+- payment frequency (monthly or yearly).
 
-{{< fig "images/create-account.fr.png" "Interface d'administration : créer un compte" >}}
+{{< fig "images/create-account.en.png" "Admin interface: create an account" >}}
