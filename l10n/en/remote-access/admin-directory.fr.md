@@ -1,46 +1,46 @@
 +++
-url = "/fr/acces-distant/repertoire-admin/"
-title = "Répertoire admin : présentation"
+url = "/remote-access/admin-directory/"
+title = "Admin Directory: Presentation"
 layout = "man"
 hidden = true
-tags = [ "compte", "environnement technique" ]
+tags = [ "account", "technical environment" ]
 +++
 
-Tout compte contient un répertoire `$HOME/admin` placé à sa racine et accessible en [FTP](remote-access/ftp), [SSH](remote-access/ssh), [SFTP](remote-access/sftp) ou encore [WebDAV](remote-access/webdav).
+Every account contains a `$HOME/admin` directory located at its root and accessible with [FTP](remote-access/ftp), [SSH](remote-access/ssh), [SFTP](remote-access/sftp) or [WebDAV](remote-access/webdav).
 
-Vous retrouverez dedans :
+You will find in:
 
-- _mail_ : montage [NFS](https://fr.wikipedia.org/wiki/Network_File_System) (Cloud Public) ou un lien symbolique (Cloud Privé) des [emails](e-mails) ;
-- _config_ ;
-- _logs_ ;
-- _tmp_ : stocke les fichiers temporaires de vos applications (remplaçant /tmp) ;
-- _backup_ : montage NFS des [sauvegardes](backups) qui ne sont donc PAS stockées localement.
+- _mail_ : mount [NFS](https://fr.wikipedia.org/wiki/Network_File_System) (Cloud Public) or a symlink (Private Cloud) of [emails](e-mails);
+- _config_;
+- _logs_;
+- _tmp_ : stores temporary files from your applications (replacing /tmp);
+- _backup_ : NFS mount of [sauvegardes](backups) which are therefore NOT stored locally.
 
 {{% notice note %}}
-Ce répertoire n'est PAS amené à recevoir vos fichiers.
-{{% /notice %}}
+This directory is NOT sent to your files.
+{{%/notice %}}
 
 ## config
 
-Ce répertoire héberge les fichiers de configuration Apache, uWSGI ou des langages. Vous y accédez en **lecture seule**, les changements s'effectuant directement dans votre interface d'administration alwaysdata, onglets **Environnement**, **Web > Configuration** ou **Web > Sites**.
+This directory hosts the Apache configuration files, uWSGI or languages. You can access it in **read-only**, with changes made directly to your alwaysdata admin interface, **Environment**, **Web > Configuration** or **Web > Sites**.
 
 ## logs
 
-Il recueille différents types de logs :
+It collects different log types:
 
-- _http_ : accès à vos [sites web](sites) ;
-- _sites_ : lancements, arrêts et dysfonctionnements des serveurs web “upstream” ;
-- _jobs_ : exécution de vos [tâches planifiées](tasks) ;
-- _services_ : exécution de vos [services](services) ;
-- _apache_ : un log pour toutes les applications utilisant ce serveur web (PHP et Apache personnalisé) ;
-- _php_ : un log pour toutes les applications utilisant le langage de programmation PHP ;
-- _uwsgi_ : un log pour chaque application (Python WSGI, Ruby Rack et Ruby on Rails <= 2.x).
+- _http_ : Access to your [sites web](sites);
+- _sites_: launches, stops, and malfunctions of “upstream” web servers;
+- _jobs_ : execution of your [scheduled tasks](tasks);
+- _services_ : executing your [services](services);
+- _apache_ : a log for all applications using this web server (custom PHP and Apache);
+- _php_: A log for all applications using the PHP programming language;
+- _uwsgi_ : a log for each application (Python WSGI, Ruby Rack and Ruby on Rails <= 2.x).
 
-Un extrait de ces logs est présenté dans l'interface d'administration alwaysdata (**Logs** - 📄).
+An excerpt of these logs is present in the alwaysdata admin interface (**Logs** - 📄).
 
 {{% notice info %}}
-Une **période de rétention** des logs peut être mise en place pour chaque compte via le menu **Avancé > Logs**. Pour le Cloud Privé, il est aussi possible de le faire au niveau du serveur dans son menu **HTTP**.
-_Tous les logs (http, sites, jobs...) seront supprimés une fois la période souhaitée passée._
+A **delay period** of the logs can be set up for each account via the **Advanced> Logs** menu. For the Private Cloud, it is also possible to do this at the server level in its **HTTP** menu.
+\*All logs (http, sites, jobs...) will be deleted once the desired period is passed. \*
 {{% /notice %}}
 
-Seuls les logs _apache_, _php_ et _uwsgi_ du mois en cours rentrent en compte dans le quota d'espace disque d'un compte.
+Only the _apache_, _php_ and _uwsgi_ logs of the current month are included in an account's disk space quota.
