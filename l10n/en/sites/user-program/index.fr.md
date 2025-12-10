@@ -1,34 +1,34 @@
 +++
-url = "/fr/sites/programme-utilisateur/"
-title = "Comment utiliser le type Programme utilisateur"
-linkTitle = "Programme utilisateur"
+url = "/en/sites/user-program/"
+title = "How to use the User Program type"
+linkTitle = "User Program"
 layout = "howto"
 weight = 20
-tags = [ "http", "programme utilisateur", "site" ]
+tags = [ "http", "user program", "site" ]
 +++
 
-Pour lancer un programme web n'utilisant pas un des autres types de site vous pouvez avoir recours au _Programme utilisateur_.
+To launch a web program that does not use one of the other types of site you can use the _User Program_.
 
-Il pourra être utilisé pour les langages [Erlang](https://www.erlang.org/), [Go](languages/go), [Java](languages/java), [Lua](languages/lua), [Rust](https://www.rust-lang.org/), [Scala](https://www.scala-lang.org/), ou encore bien d'autres...[^1]
+It can be used for languages [Erlang](https://www.erlang.org/), [Go](languages/go), [Java](languages/java), [Lua](languages/lua), [Rust](https://www.rust-lang.org/), [Scala](https://www.scala-lang.org/), or many others. .[^1]
 
-{{< fig "images/admin-panel_sites-list.fr.png" "Interface d'administration : liste des sites" >}}
+{{< fig "images/admin-panel_sites-list.png" "Admin interface: list of sites" >}}
 
-- Nom : utilisé pour l'affichage dans l'interface d'administration alwaysdata, purement informatif ;
-- Adresses : les adresses pour joindre votre site (`*.example.org` pour les _catch-all_) ;
+- Name: Used for display in the alwaysdata admin interface purely informative;
+- Addresses: the addresses to join your site (`*.example.org` for _catch-all_);
 
-{{< fig "images/admin-panel_add-site-general.fr.png" "Ajouter un site : général" >}}
+{{< fig "images/admin-panel_add-site-general.png" "Add site: manager" >}}
 
-- Type : Programme utilisateur ;
-- Commande : commande à effectuer pour lancer le programme. Le serveur HTTP de votre programme doit pointer sur l'IP et le port donnés dans le texte explicatif ;
-- Répertoire de travail ;
-- Environnement : variables d'environnement permettant le fonctionnement du programme.
+- Type: User Program;
+- Command: command to be executed to launch the program. The HTTP server of your program must point to the IP and port given in the explanatory text;
+- Work directory;
+- Environment: environment variables that allow the program to work.
 
-{{< fig "images/admin-panel_user-program.fr.png" "Ajouter un site : Programme utilisateur" >}}
+{{< fig "images/admin-panel_user-program.png" "Add Site: User Program" >}}
 
 {{% notice tip %}}
-Avant de mettre en place le site, vous pouvez tester le lancement du programme en [SSH](remote-access/ssh).
-{{% /notice %}}
+Before setting up the site, you can test the launch of the program in [SSH](remote-access/ssh).
+{{%/notice %}}
 
-Si le programme ne se lance pas, les logs _sites_ disponibles dans le répertoire `$HOME/admin/logs/sites/` pourront vous aider.
+If the program does not run, the _sites_ logs available in the `$HOME/admin/logs/sites/` directory will help you.
 
-[^1]: Par exemple, [Nginx](https://www.nginx.com/), [LiteSpeed](https://www.litespeedtech.com/) ou [Varnish](https://varnish-cache.org/) sont utilisables sur les serveurs _alwaysdata_. L'installation et la configuration sont à votre charge.
+[^1]: For example, [Nginx](https://www.nginx.com/), [LiteSpeed](https://www.litespeedtech.com/) or [Varnish](https://varnish-cache.org/) are usable on _alwaysdata_ servers. Installation and configuration are at your load.
