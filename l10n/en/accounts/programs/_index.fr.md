@@ -1,11 +1,11 @@
 +++
-url = "/fr/comptes/programmes/"
-title = "Programmes"
+url = "/accounts/programs/"
+title = "Programs"
 weight = 30
 archetype = "chapter"
-tags = [ "facturation" ]
+tags = [ "invoicing" ]
 +++
 
-- [Programme étudiants/sans emploi](students-and-job-seekers-program) : 50 % de réduction sur les packs du Cloud Public ;
-- [Alwaysdata Academic Cloud](academic-cloud) : un programme pour les formateurs permettant de profiter de certains avantages.
-- [Open Source](./open-source) : un pack Small gratuit pour les projets libres actifs.
+- [Student/Unused Program](students-and-job-seekers-program): 50% discount on Public Cloud Packs;
+- [Alwaysdata Academic Cloud](academic-cloud): a program for trainers to take advantage of certain benefits.
+- [Open Source](./open-source) : a free Small pack for active free projects.
