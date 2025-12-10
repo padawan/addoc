@@ -1,21 +1,21 @@
 +++
-url = "/fr/bases-de-donnees/rabbitmq/"
+url = "/en/donor-bases/rabbitmq/"
 title = "RabbitMQ"
 layout = "man"
 hidden = true
-tags = [ "base de données", "rabbitmq" ]
+tags = [ "database", "rabbitmq" ]
 +++
 
-## Connexion
+## Login
 
-|             |                                                                                                                      |
-| ----------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Serveur** | rabbitmq-[compte].alwaysdata.net |
-| **Port**    | 5672 (Port RabbitMQ par défaut)                                                                   |
+|            |                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Server** | rabbitmq-[compte].alwaysdata.net |
+| **Port**   | 5672 (default RabbitMQ port)                                                                      |
 
-Ces informations de connexion dépendent du compte concerné. Vous pouvez retrouver les valeurs précises dans la section **Bases de données > RabbitMQ** de l'interface d'administration.
+These login details depend on the account concerned. You can find the specific values in the **Databases > RabbitMQ** section of the administration interface.
 
 ---
 
-- [Documentation RabbitMQ](https://www.rabbitmq.com/documentation.html)
-- [Plugin de management](databases/rabbitmq/management-plugin) (option de [Cloud Privé](accounts/billing/private-cloud-prices))
+- [RabbitMQ documentation](https://www.rabbitmq.com/documentation.html)
+- [Management Plugin](databases/rabbitmq/management-plugin) ([Private Cloud](accounts/billing/private-cloud-prices))
