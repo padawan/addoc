@@ -1,42 +1,42 @@
 +++
-url = "/fr/architecture/"
-title = "Architecture alwaysdata"
+url = "/architecture/"
+title = "Alwaysdata architecture"
 pre = "<i class='fas fa-fw fa-atom'></i> "
 weight = 40
 archetype = "chapter"
-tags = [ "environnement technique", "infrastructure" ]
+tags = [ "technical environment", "infrastructure" ]
 +++
 
-## Architecture matérielle
+## Master Architecture
 
-Nos serveurs sont hébergés en France, en région parisienne. Nous nous appuyons sur l'expertise d'[Equinix](https://www.equinix.com/) pour nos datacenters principaux. Ils nous certifient un niveau de disponibilité de plus de 99.99999% ([Certifications Equinix](https://www.equinix.co.uk/data-centers/design/standards-compliance)).
+Our servers are hosted in France, in Paris region. We rely on the expertise of[Equinix](https://www.equinix.com/) for our main datacenters. They certify us a level of availability of more than 99.99999% ([Equinix Certifications](https://www.equinix.co.uk/data-centers/design/standards-compliance)).
 
-alwaysdata est propriétaire de son infrastructure - serveurs, baies de stockage, équipement réseau et tout ce qui permet de soutenir notre plateforme.
+alwaysdata is the owner of its infrastructure - servers, storage bays, network equipment and anything to support our platform.
 
-Nous opérons notre propre _réseau indépendant_ : [AS60362](http://as60362.net/).
+We will host our own _independent network_: [AS60362](http://as60362.net/).
 
-Tous nos équipements réseau, switches, routeurs opèrent par paire (deux fabriquants différents) et quatre opérateurs réseaux indépendants assurent la redondance et la neutralité de notre réseau.
+All our network equipment, switches, Pair routers (two different manufacturers) and four independent network utilities ensure redundancy and neutrality of our network.
 
-Toutes nos machines sont dotées de SSD configurés en _RAID1_ (dupliqués en temps réel) et _échangeables à chaud_. Leurs alimentations sont _redondées_ via deux chaînes électriques indépendantes et du matériel de rechange est disponible sur nos sites de production pour remplacer tout élément défectueux.
+All our machines are equipped with SSD configured in RAID1\* (duplicated in real time) and _hot-exchangeable_. Their feedings are _redundant_ via two independent electricity chains and spare equipment is available at our production sites to replace any defective components.
 
-Nous supportons nativement le protocole _IPv6_ pour l'ensemble de nos services.
+We natively support _IPv6_ for all of our services.
 
-Pour aller plus loin :
+To go further:
 
 - [Réseau](security/network)
-- [Plages d'IP](security/ip-ranges)
-- [Plan de continuité d'activité](security/drp)
+- [IP ranges](security/ip-ranges)
+- [Business Continuity Plan](security/drp)
 
-## Architecture logicielle
+## Software Architecture
 
-Nous utilisons autant que possible des solutions open source et nos serveurs tournent sous [Linux Debian x64](https://www.debian.org/). Tous nos services sont accessibles à distance et une [API REST](api) est disponible pour les opérations de configuration sur notre interface d'administration.
+We use as many open source solutions as possible and our servers run on [Linux Debian x64](https://www.debian.org/). All our services are remotely accessible and a [REST API](api) is available for configuration operations on our admin interface.
 
-Chaque compte est isolé des autres via une conteneurisation basée sur [Cgroups](https://fr.wikipedia.org/wiki/Cgroups). Il exécute ainsi ses propres programmes, ses propres serveurs HTTP pour offrir une sécurisation et une personnalisation poussée.
+Each account is segregated from others via an [Cgroups](https://fr.wikipedia.org/wiki/Cgroups). It executes its own programs, its own HTTP servers to provide enhanced security and customization.
 
-Notre système distribue automatiquement les ressources disponibles, équitablement entre tous les comptes d’un serveur. Lorsque un compte rencontre un pic de consommation, la plateforme redistribue ses ressources, en prélevant les comptes peu ou pas actifs, pour les réaffecter temporairement.
+Our system automatically distributes available resources, evenly between all accounts of a server. When an account encounters peak consumption, the platform redistributes its resources by raising small or non-active accounts to temporarily reassign them.
 
-- [Stack HTTP](sites/http-stack)
-- [Mises à jour de sécurité](security/security-upgrades)
+- [HTTP Stack](sites/http-stack)
+- [Security Updates](security/security-upgrades)
 
 ---
 
