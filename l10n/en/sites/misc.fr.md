@@ -1,29 +1,29 @@
 +++
-url = "/fr/sites/divers/"
-title = "Diverses questions"
+url = "/sites/diverse/"
+title = "Various questions"
 layout = "faq"
 hidden = true
 tags = [ "http", "site" ]
 +++
 
-## Site HTTP par défaut
+## Default HTTP Site
 
-Cette option, des [Clouds Privé](accounts/billing/private-cloud-prices) et paramétrée dans le menu **HTTP** du serveur, permet de renseigner un site sur lequel sera rediriger les requêtes arrivant sur le serveur, dont l'adresse ne serait pas définie dans l'interface d'administration alwaysdata. Cela remplacera le "_Site not found_" renvoyé par défaut.
+This option, [Private Clouds](accounts/billing/private-cloud-prices) and settings in the **HTTP** menu on the server, directive provides a site to redirect incoming requests to the server whose address is not defined in the alwaysdata administration interface. This will override the "_Site not found_" returned by default.
 
-Elle est utile lorsque des adresses pointent au niveau DNS sur le serveur mais qu'elles ne sont pas renseignés dans **Web > Sites**. Cela peut, par exemple, être dans le cas d'un site avec un nombre très élevé d'adresses - qu'on ne veut pas toutes déclarées dans **Sites** - ou encore d'un oubli.
+This is useful when addresses point to the DNS level on the server but are not filled in **Web > Sites**. This may, for example, in the case of a site with a number of addresses - which you do not want all listed in **Sites** - or a forgotten.
 
-## Temps d'inactivité
+## Inactivity time
 
-À paramétrer dans le menu **Web > Sites > Modifier le [site] - ⚙️ > Avancé**. Cela permet de choisir la durée après laquelle le système arrête l'application ; en cas d'absence d'activité prolongée. Dès qu'une requête HTTP sera exécutée, l'application sera relancée.
+Settings in the **Web > Sites > Edit [site] - ⚙️ > Advance**. This allows you to choose the hardness after which the system stops the application; if there is no longer any activity. Once an HTTP request is executed, the application will be restarted.
 
-Pour qu'une application ne soit jamais arrêtée, indiquez comme valeur `0`.
+For an application to never be stopped, set it as `0`.
 
-Il n'y a, cependant, _aucune garantie_ qu'une application ne sera jamais arrêtée et celle-ci peut être arrêtée à tout moment. S'il est _nécessaire_ qu'une application web tourne 24h/24, créez un [service](services) ainsi qu'un site de type [Redirection "reverse-proxy"](sites/redirect) pour son accès web.
+There is, however, _no guarantee_ that an application will never be stopped and it can be stopped at any time. If _necessary_ a web app is running 24/7 create an [service](services) and a [Redirect proxy"](sites/redirect) for its web access.
 
-## Commandes utiles
+## Useful commands
 
-- Connaître les IP ayant fait le plus de requêtes à une date :
+- Know which IPs made the most requests at a date:
 
 ```
-cut -d' ' -f2 $HOME/admin/logs/http/[année]/[fichier].log | sort | uniq -c | sort -rn | head
+cut -d' -f2 $HOME/admin/logs/http/[année]/[fichier].log | sort | uniq -c | sort -rn | head
 ```
