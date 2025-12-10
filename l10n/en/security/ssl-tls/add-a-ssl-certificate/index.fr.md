@@ -1,17 +1,17 @@
 +++
-url = "/fr/securite/ssl-tls/ajouter-certificat-ssl"
-title = "Comment ajouter un certificat SSL à son site"
-linkTitle = "Ajouter un certificat SSL"
+url = "/security/ssl-tls/ajouter-certificat-ssl"
+title = "How to add an SSL certificate to its site"
+linkTitle = "Add SSL Certificate"
 layout = "howto"
 weight = 10
-tags = [ "https", "sécurité", "ssl" ]
+tags = [ "https", "security", "ssl" ]
 +++
 
-{{< fig "images/admin-panel_ssl-list.fr.png" "Interface d'administration : menu Certificats SSL" >}}
-{{< fig "images/admin-panel_ssl-add.fr.png" "Interface d'administration : ajouter un certificat" >}}
+{{< fig "images/admin-panel_ssl-list.png" "Admin interface: SSL Certificates menu" >}}
+{{< fig "images/admin-panel_ssl-add.en.png" "Admin interface: add certificate" >}}
 
-Clé privée, certificat et certificats intermédiaires doivent être au format PEM.
+Private key, certificate and certificates must be in PEM format.
 
-Vous pouvez ajouter des certificats pour une adresse précise, des certificats [SAN](https://en.wikipedia.org/wiki/Subject_Alternative_Name) (multi-domaines) ou encore des certificats [wildcard](https://en.wikipedia.org/wiki/Wildcard_certificate).
+You can add certificates for a specific address, [SAN]certificates (https://en.wikipedia.org/wiki/Subject_Alternative_Name) (multi-domain) or [wildcard]certificates (https://en.wikipedia.org/wiki/Wildcard_certificate).
 
-Si vous n'avez pas de certificat SSL, vous pouvez utiliser nos [certificats Let's Encrypt](security/ssl-tls/lets-encrypt) ou en acheter un chez un fournisseur de certificats SSL en lui donnant la [CSR précédemment créée](security/ssl-tls/csr).
+If you do not have an SSL certificate, you can use our [Let's Encrypt certificates](security/ssl-tls/lets-encrypt) or buy one from an SSL certificate provider by giving it the [previously created CSR](security/ssl-tls/csr).
