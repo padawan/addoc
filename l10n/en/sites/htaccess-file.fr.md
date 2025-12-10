@@ -1,39 +1,39 @@
 +++
-url = "/fr/sites/fichier-htaccess/"
-title = "Fichier .htaccess"
+url = "/sites/fileer-htaccess/"
+title = ".htaccess file"
 layout = "man"
 hidden = true
 tags = [ "apache", "http", "site" ]
 +++
 
-Les fichiers `.htaccess` sont des fichiers de configuration d'Apache. Voici quelques exemples d'utilisation les plus courantes.
+`.htaccess` files are Apache configuration files. Here are some examples of the most common usage.
 
-## Protéger un répertoire par un mot de passe
+## Protect a directory with a password
 
-Protégez à l'aide d'un identifiant et d'un mot de passe l'accès à des fichiers pour certains utilisateurs.
+Protect certain users with an identifier and a password to access files.
 
 ```
-AuthName "Accès protégé"
+AuthName "Protected access"
 AuthType Basic
-AuthUserFile /chemin/absolu/au/.htpasswd
+AuthUserFile /path/absolute/to/.htpasswd
 Require valid-user
 ```
 
-La variable `$HOME` peut être utilisée pour indiquer la racine du compte.
+The variable `$HOME` can be used to indicate the root of the account.
 
-Le fichier `.htpasswd` contient la liste des couples d'identifiants/mot de passe autorisés. Il peut être placé n'importe où, mais ne doit pas être lisible de l'extérieur.
+The `.htpasswd` file contains a list of authorized username/password pairs. It can be placed anywhere but must not be readable from the outside.
 
-Pour créer ce fichier `.htpasswd` :
+To create this `.htpasswd` file:
 
 ```sh
 $ htpasswd -c .htpasswd <utilisateur>
 ```
 
-En remplaçant `<utilisateur>` par le nom d'utilisateur souhaité. L'outil demande d'entrer à deux reprises le mot de passe correspondant.
+By replacing `<utilisateur>` with the desired username. The tool requires you to enter the corresponding password twice.
 
-## Limiter l'accès à un répertoire
+## Limit access to a directory
 
-Bloquez l'accès à un répertoire pour un domaine ou une adresse IP. Et inversement, vous pouvez n'autorisez l'accès au répertoire que pour les IPs et/ou domaines souhaités.
+Block access to a directory for a domain or IP. And vice versa, you can only allow access to the directory for the desired IPs and/or domains.
 
 ```
 order deny,allow 
@@ -42,34 +42,34 @@ allow from <adresse IP / domaine>
 require user <Login de l'utilisateur>
 ```
 
-## Personnaliser les messages d'erreur (403, 404 ...)
+## Customize error messages (403, 404 ...)
 
-La syntaxe suivante va définir des pages d'erreurs personnalisées :
+The following syntax will define custom error pages:
 
 ```
-ErrorDocument 403 /erreurs/403.php 
-ErrorDocument 404 /erreurs/404.php
+ErrorDocument 403 /errorss/403.php 
+ErrorDocument 404 /errorss/404.php
 ```
 
-Cette syntaxe est valable quelque soit le [code de la réponse HTTP](http://fr.wikipedia.org/wiki/Liste_des_codes_HTTP).
+This syntax is valid regardless of [HTTP response code](http://fr.wikipedia.org/wiki/Liste_des_codes_HTTP).
 
-## Redirection
+## Redirect
 
-Cette fonctionnalité est disponible directement en déclarant un site de type [Redirection](sites/redirect), mais vous pouvez le faire grâce au fichier `.htaccess` :
+This feature is available directly by declaring a site of type [Redirection](sites/redirect), but you can do it gracefully at the `.htaccess` file:
 
 ```
 Redirect 301 <Fichier source> <Fichier destination>
 ```
 
-Vous pouvez aussi rediriger un répertoire entier de cette manière :
+You can also redirect an entire directory in this way:
 
 ```
 RedirectMatch 301 <Répertoire source>(.*) <Répertoire destination>/$1
 ```
 
-## Réécriture d'URL
+## URL Rewrite
 
-La _réécriture d'URL_ (ou URL Rewriting) consiste à modifier la structure des liens. Cette pratique est souvent utilisée pour améliorer l'indexation de vos pages (et donc le référencement de votre site) en insérant des mots clés dans les adresses.
+The _URL rewrite_ (or URL Rewriting) is to modify the link structure. This practice is often used to improve indexing of your pages (and therefore referencing your site) by missing keywords in the addresses.
 
 ```
 RewriteEngine On
@@ -77,12 +77,12 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ {Fichier source}/$1 
 ```
 
-## Erreurs possibles
+## Possible errors
 
-Toute erreur liée au `.htaccess` sera visible dans le fichier **`$HOME/admin/logs/apache/apache.log`**.
+Any errors linked to `.htaccess` will be visible in the **$HOME/admin/logs/apache/apache.log\`**.
 
 ```
-Invalid command '\xef\xbb\xbf', perhaps misspelled or defined by a module not included in the server configuration
+Invalid command '\xef\xbb\xbf', maybe misspelled or defined by a module not included in the server configuration
 ```
 
-Le fichier `.htaccess` n'a pas été enregistré dans le bon format. Veillez à faire attention à sauvegarder votre fichier sans [BOM](http://fr.wikipedia.org/wiki/Indicateur_d%27ordre_des_octets). C'est généralement une option de votre éditeur.
+The `.htaccess` file was not saved in the correct format. Please be careful to save your file without [BOM](http://fr.wikipedia.org/wiki/Indicateur_d%27ordre_des_octets). This is usually an option from your editor.
