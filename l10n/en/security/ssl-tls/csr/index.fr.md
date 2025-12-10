@@ -1,12 +1,12 @@
 +++
-url = "/fr/securite/ssl-tls/generation-csr"
-title = "Comment générer une CSR"
+url = "/security/ssl-tls/generation-csr"
+title = "How to manage a CSR"
 layout = "howto"
 hidden = true
-tags = [ "https", "sécurité", "ssl" ]
+tags = [ "https", "security", "ssl" ]
 +++
 
-Une CSR (Certificate Signing Request ou [Demande de signature de certificat](https://fr.wikipedia.org/wiki/Demande_de_signature_de_certificat)) vous sera demandée lors de l'achat d'un certificat.
+A Certificate Signing Request (CSR or [Certificate Signing Request](https://fr.wikipedia.org/wiki/Demande_de_signature_de_certificat)) will be required when purchasing a certificate.
 
-{{< fig "images/admin-panel_ssl-list.fr.png" "Interface d'administration : menu Certificats SSL" >}}
-{{< fig "images/admin-panel_ssl-csr.fr.png" "Interface d'administration : générer une CSR" >}}
+{{< fig "images/admin-panel_ssl-list.png" "Admin interface: SSL Certificates menu" >}}
+{{< fig "images/admin-panel_ssl-csr.en.png" "Admin interface: manage CSR" >}}
