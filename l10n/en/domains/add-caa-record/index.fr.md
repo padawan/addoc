@@ -1,44 +1,44 @@
 +++
-url = "/fr/domaines/ajouter-un-enregistrement-caa/"
-title = "Comment ajouter un enregistrement CAA"
+url = "/domains/add-a-registrment-caa/"
+title = "How to add a CAA record"
 layout = "howto"
 hidden = true
-tags = [ "dns", "domaine" ]
+tags = [ "dns", "domain" ]
 +++
 
-Un [enregistrement CAA](https://fr.wikipedia.org/wiki/DNS_Certification_Authority_Authorization) liste les autorités de certifications homologuées à émettre des certificats pour un domaine. Toute autorité de certification ne faisant pas partie des émetteurs autorisés par l'enregitrement CAA d'un domaine, ne sera pas autorisée à émettre de certificat pour ce domaine ou tout sous-domaine.
+A [CAA registration](https://fr.wikipedia.org/wiki/DNS_Certification_Authority_Authorization) lists the certified certifications authority for a domain. Any certification authority not part of the issuers authorized by the CAA registration of a domain will not be authorized to issue certificates for this domain or any subdomain.
 
-1. Rendez-vous sur **Domaines > Details de [example.org] - 🔎 > Enregistrements DNS** ;
-   {{< fig "images/admin-panel_dns-record-list.fr.png" "Interface d'administration : liste des enregistrements DNS" >}}
+1. Go to **Domains > [example.org] Details - 🔎 > DNS Records**;
+   {{< fig "images/admin-panel_dns-record-list.png" "Admin interface: DNS records list" >}}
 
-2. Choisissez **Ajouter un enregistrement DNS** ;
+2. Choose **Add DNS record**;
 
-3. Renseignez le formulaire.  
-   {{< fig "images/admin-panel_add-caa.fr.png" "Interface d'administration : ajouter un enregistrement CAA" >}}
+3. Fill in the form.  
+   {{< fig "images/admin-panel_add-caa.en.png" "Administration interface: add CAA record" >}}
 
 {{% notice warning %}}
-Ne mettez pas la racine dans **Nom d'hôte**.
-Par exemple, en indiquant `www.example.org` dans cette case, vous créerez un enregistrement pour `www.example.org.example.org`.
-{{% /notice %}}
+Do not put the root in **Host Name**.
+For example, by entering `www.example.org` in this box, you will create a record for `www.example.org.example.org`.
+{{%/notice %}}
 
-Trois étiquettes sont définies :
+Three labels are defined:
 
-- `issue` qui autorise une autorité ;
-- `issuewild` qui autorise une autorité pour les certificats wildcard ;
-- `iodef` qui signale une URL que peut contacter les autorités de certifications en cas de problèmes.
+- `issue` that allows an authority;
+- `issuewild` that allows an authority for wildcard certificates;
+- `iodef` that reports a URL that can be contacted by certification authorities in case of problems.
 
 {{% notice info %}}
-Des [certificats Let's Encrypt](security/ssl-tls/lets-encrypt) sont générés pour toute adresse HTTP hébergée sur nos serveurs. Ils doivent donc faire partie des autorités validées.
-{{% /notice %}}
+[Let's Encrypt certificates](security/ssl-tls/lets-encrypt) is managed for any HTTP address hosted on our servers. They must therefore be part of the valid authority.
+{{%/notice %}}
 
-## Quelques exemples
+## Some examples
 
-- Autorisation de Let's Encrypt :
+- Let's Encrypt Authorization:
 
     ```
-    » Nom d'hôte : [laisser vide]
-    » Valeur : 0 issue "letsencrypt.org"
-    » TTL : 300
+    » Host name: [leave empty]
+    » Value: 0 issue "letsencrypt.org"
+    » TTL: 300
     ```
 
 ----
