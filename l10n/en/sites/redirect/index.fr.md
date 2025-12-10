@@ -1,34 +1,34 @@
 +++
-url = "/fr/sites/redirection/"
-title = "Comment rediriger des adresses HTTP"
-linkTitle = "Redirection d'adresses"
+url = "/sites/redirection/"
+title = "How to redirect HTTP addresses"
+linkTitle = "Address Redirect"
 layout = "howto"
 weight = 5
-tags = [ "http", "redirection", "site" ]
+tags = [ "http", "redirect", "site" ]
 +++
 
-Rendez-vous dans le menu **Web > Sites > Ajouter un site**.
+Go to the **Web > Sites > Add Site** menu.
 
-{{< fig "images/admin-panel_sites-list.fr.png" "Interface d'administration : liste des sites" >}}
+{{< fig "images/admin-panel_sites-list.png" "Admin interface: list of sites" >}}
 
-- Nom : utilisé pour l'affichage dans l'interface d'administration alwaysdata, purement informatif ;
-- Adresses : les adresses pour joindre votre site (`*.example.org` pour les _catch-all_) ;
+- Name: Used for display in the alwaysdata admin interface purely informative;
+- Addresses: the addresses to join your site (`*.example.org` for _catch-all_);
 
-{{< fig "images/admin-panel_add-site-general.fr.png" "Ajouter un site : général" >}}
+{{< fig "images/admin-panel_add-site-general.png" "Add site: manager" >}}
 
-- Type : Redirection ;
-- URL de destination : adresse vers laquelle la redirection sera faite ;
-- Type de redirection :
-  - permanente (code HTTP `301`) : pour un usage classique, rediriger un visiteur d'une adresse A vers une adresse B. Les moteurs de recherche qui mettent à jour leur index avec la nouvelle page de destination ;
-  - temporaire (code HTTP `302`) : généralement utilisé lors de maintenance d'un site. Les moteurs de recherche conservent la page de départ dans leur index ;
-- Ajouter le chemin de la requête à l'URL de destination.
+- Type: Redirect;
+- Destination URL: address to which the redirect will be made;
+- Redirect type:
+  - Permanent (HTTP code `301`) : for normal use, redirect a visitor from an address A to an address B. Search engines that update their index with the new landing page;
+  - temporary (HTTP code `302`): Generally used when maintaining a site. Search engines keep the start page in their index;
+- Add the request path to the destination URL.
 
-{{< fig "images/admin-panel_redirect.fr.png" "Ajouter un site : redirection" >}}
+{{< fig "images/admin-panel_redirect.en.png" "Add Site: Redirect" >}}
 
-## Rediriger via Apache
+## Redirect via Apache
 
-Pour les sites de type PHP, Fichiers statiques et Apache personnalisé, vous pouvez aussi utiliser un fichier `.htaccess` et la directive [Redirect](https://httpd.apache.org/docs/2.4/fr/mod/mod_alias.html#redirect).
+For PHP sites, static files, and custom Apache sites, you can also use a `.htaccess` file and the [Redirect]directive (https://httpd.apache.org/docs/2.4/fr/mod/mod_alias.html#redirect).
 
-## Rediriger via uWSGI
+## Redirect via uWSGI
 
-Pour les sites de type Python WSGI, Ruby Rack et Ruby on Rails <= 2.x, vous pouvez également utiliser la méthode [InternalRouting](https://uwsgi-docs.readthedocs.io/en/latest/InternalRouting.html) et son plugin `router-redirect` dans la configuration avancée du site.
+For sites like Python WSGI, Ruby Rack and Ruby on Rails <= 2. , you can also use the [InternalRouting]method (https://uwsgi-docs.readthedocs.io/en/latest/InternalRouting.html) and its `router-redirect` plugin in the advanced site configuration.
