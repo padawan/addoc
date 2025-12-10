@@ -1,82 +1,82 @@
 +++
-url = "/fr/sites/ajouter-un-site/"
-title = "Comment ajouter un site"
-linkTitle = "Déclarer un site"
+url = "/sites/add-a-site/"
+title = "How to add a site"
+linkTitle = "Create a site"
 layout = "howto"
 weight = 1
 tags = [ "http", "site" ]
 +++
 
-{{< fig "images/admin-panel_sites-list.fr.png" "Interface d'administration : liste des sites" >}}
+{{< fig "images/admin-panel_sites-list.png" "Admin interface: list of sites" >}}
 
 {{% notice tip %}}
-Si vous partez de zéro vous pouvez profiter de notre [marketplace](marketplace) en allant dans **Web > Sites > Installer une application**.
-{{% /notice %}}
+If you leave from zeÉro you can enjoy our [marketplace](marketplace) by going to **Web > Sites > Install an App**.
+{{%/notice %}}
 
-## Adresses
+## Addresses
 
-L'ajout de toutes les adresses dans ce menu est un **impératif** pour qu'elles soient accessibles comme sites :
+Adding all addresses to this menu is an **impediment** for them to be accessible as sites:
 
-- par exemple, pour accéder à un site sur _www\.example.org_ et _example.org_ les deux adresses doivent être ajoutées ;
-- renseigner son domaine dans le menu **Domaines** n'est pas non plus suffisant. Même pour un domaine utilisant nos [serveurs DNS](domains#gestion-dns).
+- for example, to access a site on _www\.example.org_ and _example.org_ both addresses must be added;
+- setting its domain in the **Domains** menu is not enough either. Meme for a domain using our [DNS servers](domains#gestion-dns).
 
-Par ailleurs, si le domaine n'utilise pas nos serveurs DNS, il faudra [créer des enregistrements DNS](sites/use-external-addresses) chez le prestataire DNS.
+Moreover, if the domain does not use our DNS servers, you will need to [create DNS records](sites/use-external-addresses) at the DNS provider.
 
-{{< fig "images/admin-panel_add-site-general.fr.png" "Général" >}}
+{{< fig "images/admin-panel_add-site-general.png" "General" >}}
 
 {{% notice note %}}
-L'ajout du site ne va pas créer le _répertoire racine_, il doit être créé par [accès distant](remote-access).
-{{% /notice %}}
+Adding the site will not create the _root directory_, it must be created by [remote access](remote-access).
+{{%/notice %}}
 
-Pour créer un catch-all indiquez `*.example.org`.
+To create a catch-all type `*.example.org`.
 
-## Configuration
+## Setup
 
-Spécifique à chaque type de site :
+Specific to each site type:
 
-- [PHP](languages/php) ;
-- [Python WSGI](languages/python) ;
-- [Ruby Rack](languages/ruby) ;
-- Ruby on Rails <= 2.x ;
-- [Node.js](languages/nodejs) ;
-- [Elixir](languages/elixir) ;
-- [Deno](languages/deno) ;
-- [.NET](languages/dotnet) ;
-- [Java](languages/java) ;
-- [Redirection](sites/redirect) ;
-- Reverse proxy : met en place un reverse proxy vers une URL ;
-- [Fichiers statiques](sites/static-files) : pour gérer des sites ou fichiers statiques ;
-- [Apache personnalisé](sites/apache-custom) : pour totalement configurer son serveur Apache ;
-- [Programme utilisateur](sites/user-program) : pour faire tourner n'importe quel serveur web.
+- [PHP](languages/php);
+- [Python WSGI](languages/python);
+- [Ruby Rack](languages/ruby);
+- Ruby on Rails <= 2.x;
+- [Node.js](languages/nodejs);
+- [Elixir](languages/elixir);
+- [Deno](languages/deno);
+- [.NET](languages/dotnet);
+- [Java](languages/java);
+- [Redirection](sites/redirect);
+- Reverse proxy: Set up a reverse proxy to a URL;
+- [Static Files](sites/static-files): to manage static sites or files;
+- [Custom Apache](sites/apache-custom): to fully configure its Apache server;
+- [User program](sites/user-program) : to run any web server.
 
-Les sites de type PHP, Fichiers statiques et Apache personnalisé sont servis par [Apache](https://httpd.apache.org/). Python WSGI, Ruby Rack et Ruby on Rails <= 2.x utilisent [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
+PHP sites, static files, and custom Apache sites are served by [Apache](https://httpd.apache.org/). Python WSGI, Ruby Rack and Ruby on Rails <= 2.x use [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
 
 ## SSL
 
-{{< fig "images/admin-panel_add-site-ssl.fr.png" "Rediriger les requêtes HTTP vers HTTPS" >}}
-Voir [SSL](security/ssl-tls/redirect-http-to-https).
+{{< fig "images/admin-panel_add-site-ssl.png" "Redirect HTTP requests to HTTPS" >}}
+See [SSL](security/ssl-tls/redirect-http-to-https).
 
 ## WAF
 
-{{< fig "images/admin-panel_add-site-waf.fr.png" "Configurer le pare-feu applicatif web" >}}
-Voir [WAF](sites/waf).
+{{< fig "images/admin-panel_add-site-waf.en.png" "Configure web application firewall" >}}
+See [WAF](sites/waf).
 
 ## Cache
 
-{{< fig "images/admin-panel_add-site-cache.fr.png" "Mettre en place le cache HTTP" >}}
-Voir [Cache](sites/http-cache).
+{{< fig "images/admin-panel_add-site-cache.png" "Set up HTTP Cache" >}}
+See [Cache](sites/http-cache).
 
 ## Logs
 
-{{< fig "images/admin-panel_add-site-logs.fr.png" "Personnaliser les logs HTTP" >}}
-Voir [Logs](sites/formatting-http-logs).
+{{< fig "images/admin-panel_add-site-logs.en.png" "Customize HTTP logs" >}}
+See [Logs](sites/formatting-http-logs).
 
-## Avancé
+## Advanced
 
-{{< fig "images/admin-panel_add-site-advanced.fr.png" "" >}}
+{{< fig "images/admin-panel_add-site-advanced.en.png" "" >}}
 
-> [Temps d'inactivité](sites/misc#temps-dinactivité)
+> [idle time](sites/misc#temps-dinactivité)
 
 ---
 
-Les logs HTTP sont disponibles dans le répertoire `$HOME/admin/logs/http/`. Les logs _sites_ reprenant les lancements, arrêts et dysfonctionnements des serveurs web "upstream" sont disponibles dans `$HOME/admin/logs/sites/`. Un extrait de ces logs (ainsi que les logs Apache et uWSGI) est présenté dans l'interface d'administration alwaysdata  (**Logs** - 📄).
+HTTP logs are available in the `$HOME/admin/logs/http/` directory. The _sites_ logs containing launches, stops, and malfunctions of upstream web servers are available in `$HOME/admin/logs/sites/`. An excerpt of these logs (as well as the Apache and uWSGI logs) is presented in the alwaysdata administration interface (**Logs** - 📄).
