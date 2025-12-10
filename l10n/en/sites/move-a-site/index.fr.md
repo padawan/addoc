@@ -1,39 +1,39 @@
 +++
-url = "/fr/sites/deplacer-un-site/"
-title = "Comment déplacer un site web"
+url = "/sites/moplacer-un-site/"
+title = "How to move a website"
 layout = "howto"
 hidden = true
 tags = [ "site" ]
 +++
 
-Cet article explique comment procéder au déplacement d'un site vers un autre compte alwaysdata.
+This article explains how to move a site to another alwaysdata account.
 
-Pour ce faire, nous utiliserons l'[accès SSH](remote-access/ssh) plutôt que FTP qui nécessite de rapatrier les fichiers localement pour ensuite les transférer sur le compte de destination.
+To do so, we will use [SSH access](remote-access/ssh) rather than FTP which requires to fetch files locally and then transfer them to the destination account.
 
-Dans notre exemple, considérons les informations suivantes :
+In our example, we will be able to use the following information:
 
-- Nom du compte d'origine : `foo`
-- Nom du compte de destination : `bar`
-- Nom de la base de données d'origine : `foo_base`
-- Nom de la base de données de destination : `bar_base`
-- Le site est situé dans le répertoire `$HOME/www/`
-- Nous utiliserons les utilisateurs SSH et de base de données par défaut, c'est à dire ceux créés à l'ouverture des comptes (par exemple, `foo` pour le compte _foo_ et `bar` pour le compte _bar_).
+- Original account name: `foo`
+- Destination account name: `bar`
+- Original Database Name: `foo_base`
+- Destination database name: `bar_base`
+- The site is located in the `$HOME/www/` directory
+- We will use SSH and default database users i.e. those created at the opening of accounts (e.g. `foo` for the _foo_ account and `bar` for the _bar_ account).
 
-## 1. Copie des fichiers
+## 1. Copying files
 
-Nous utilisons la commande [scp](https://linux.die.net/man/1/scp) après s'être connecté en SSH sur le compte de **destination**.
+We use the command [scp](https://linux.die.net/man/1/scp) after connecting in SSH to the account of **destination**.
 
 ```sh
 bar@ssh:~$ scp -r foo@ssh-foo.alwaysdata.net:/home/foo/www/* ~/www/
 ```
 
-## 2. Import de la base de données
+## 2. Database import
 
-Cette étape est nécessaire que si votre site est connecté à une base de données.
+This step is only necessary if your site is connected to a database.
 
-Si les deux comptes utilisent la même version de SGBD et appartiennent au même profil, vous pouvez utiliser notre fonctionnalité de [duplication de base de données](databases/duplicate-database).
+If both accounts use the same RDBMS version and belong to the same profile, you can use our function of [database duplication](databases/duplicate-database).
 
-Vous pouvez sinon le faire manuellement en créant la base de données sur le compte de _destination_ puis en lançant les commandes suivantes :
+Alternatively, you can do this manually by creating the database on the _destination_ account and then running the following commands:
 
 - MySQL :
 
@@ -43,38 +43,38 @@ bar@ssh:~$ mysql -h mysql-bar.alwaysdata.net -u bar -p bar_base < foo_base.sql
 bar@ssh:~$ rm foo_base.sql
 ```
 
-- PostgreSQL :
+- PostgreSQL:
 
 ```sh
 bar@ssh:~$ pg_dump -U foo -W -h postgresql-foo.alwaysdata.net foo_base > foo_base.sql
-bar@ssh:~$ psql -h postgresql-bar.alwaysdata.net -U bar -W -d bar_base < foo_base.sql
+bar@ssh:~$ psql -h postgresql-bar. lwaysdata.net -U bar -W -d bar_base < foo_base.sql
 bar@ssh:~$ rm foo_base.sql
 ```
 
 {{% notice info %}}
-Dans les deux cas, il faudra modifier le fichier de configuration du site copié précédemment pour qu'il pointe sur la base nouvellement importée.
-{{% /notice %}}
+In both cases, you will need to modify the previously copied site configuration file to point to the newly imported base.
+{{%/notice %}}
 
-## 3. Déplacement des adresses
-
-{{% notice info %}}
-Seul le _propriétaire du compte_ peut initier la cession.
-{{% /notice %}}
-
-Reste à déplacer les adresses joignant le site et leur certificat SSL auto-généré.
-
-1. Rendez-vous dans la section **Web > Sites** du compte d'origine ;
-2. {{< fig "images/admin-panel_move-website-1.fr.png" "Interface d'administration : déplacement de site - étape 1" >}}
-3. {{< fig "images/admin-panel_move-website-2.fr.png" "Interface d'administration : déplacement de site - étape 2" >}}
-
-ATTENTION : Pour les sites utilisant une commande[^1], le site cédé PEUT voir son port changé.
+## 3. Moving addresses
 
 {{% notice info %}}
-Une adresse en `.alwaysdata.net` ne peut être cédée étant liée au nom du compte.
-{{% /notice %}}
+Only the _account owner_ can initiate the assignment.
+{{%/notice %}}
+
+You have to move the addresses attached to the site and their self-managed SSL certificate.
+
+1. Go to the **Web > Sites** section of the original account;
+2. {{< fig "images/admin-panel_move-website-1.en.png" "Admin interface: site move - step 1" >}}
+3. {{< fig "images/admin-panel_move-website-2.en.png" "Admin interface: site move - step 2" >}}
+
+WARNING: For sites using a command[^1], the site can see its port changed.
+
+{{% notice info %}}
+An address in `.alwaysdata.net` cannot be linked to the account name.
+{{%/notice %}}
 
 {{% notice tip %}}
-Pour le déplacer dans un autre de _ses_ comptes il n'y a qu'à indiquer sa propre adresse email.
-{{% /notice %}}
+To move it to another of _ses_ accounts there is only to specify its own email address.
+{{%/notice %}}
 
-[^1]: De types Node.js, Programme utilisateur, Elixir et Deno.
+[^1]: Node.js, User Program, Elixir and Deno types.
