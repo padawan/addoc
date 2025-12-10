@@ -1,53 +1,53 @@
 +++
-url = "/fr/domaines/dnssec/"
+url = "/domaines/dnssec/"
 title = "DNSSEC"
 layout = "man"
 hidden = true
-tags = [ "dns", "domaine", "sécurité" ]
+tags = [ "dns", "domain", "security" ]
 +++
 
-[DNSSEC](https://fr.wikipedia.org/wiki/Domain_Name_System_Security_Extensions) ajoute des signatures cryptographiques aux enregistrements DNS existants. Cela permet d'authentifier l'origine des données et de s'assurer qu'elles n'ont pas été modifiées en transit.
+[DNSSEC](https://fr.wikipedia.org/wiki/Domain_Name_System_Security_Extensions) adds cryptographic signatures to existing DNS records. This authenticates the origin of the data and ensures that it has not been modified in transit.
 
-La mise en place de DNSSEC se fait à la fois sur les serveurs DNS autoritaires et sur le registrar d'un domaine :
+Setting up DNSSEC is done both on authoritarian DNS servers and on the registrar of a domain:
 
-- une clé privée doit être configurée sur les serveurs DNS autoritaires ;
-- et sa clé publique, chez le registrar.
+- a private key must be configured on authoritarian DNS servers;
+- and its public key, at the registrar.
 
-## Mise en place chez alwaysdata
+## Set up at alwaysdata
 
-Rendez-vous sur **Domaines > Details de [example.org] -  ⚙️ > DNSSEC**
+Go to **Domains > [example.org] Details - ⚙️ > DNSSEC**
 
-### Le domaine est enregistré via alwaysdata et utilise les serveurs DNS d'alwaysdata
+### Domain is registered via alwaysdata and uses alwaysdata DNS servers
 
-{{< fig "images/allad-step1.fr.png" "" >}}
+{{< fig "images/allad-step1.en.png" "" >}}
 
-Cliquez sur **Activer**.
+Click **Enable**.
 
-{{< fig "images/allad-step2.fr.png" "" >}}
+{{< fig "images/allad-step2.en.png" "" >}}
 
-Cela créera la paire de clés qui sera configurée sur nos serveurs DNS et chez le registrar.
+This will create the keypair that will be configured on our DNS servers and at the registrar.
 
-### Le domaine est enregistré via alwaysdata mais utilise des serveurs DNS externes
+### Domain is registered via alwaysdata but uses external DNS servers
 
-{{< fig "images/registerad-step1.fr.png" "" >}}
+{{< fig "images/registerad-step1.en.png" "" >}}
 
-Créez la paire de clés chez votre prestataire DNS puis cliquez sur **Ajouter une clé publique** reprenant les éléments que vous donnera votre prestataire DNS.
+Create the key pair at your DNS provider, and then click **Add a public key** containing the elements that your DNS provider will give you.
 
-{{< fig "images/registerad-step2.fr.png" "" >}}
+{{< fig "images/registerad-step2.en.png" "" >}}
 
-Nous configurerons alors cette clé publique chez le registrar.
+We will then configure this public key at the registrar.
 
-### Le domaine n'est pas enregistré via alwaysdata mais utilise les serveurs DNS d'alwaysdata
+### Domain is not registered via alwaysdata but uses alwaysdata DNS servers
 
-{{< fig "images/dnsad-step1.fr.png" "" >}}
+{{< fig "images/dnsad-step1.png" "" >}}
 
-Cliquez sur **Activer**. Cela créera la paire de clés.
+Click **Enable**. This will create the key pair.
 
-{{< fig "images/dnsad-step2.fr.png" "" >}}
+{{< fig "images/dnsad-step2.en.png" "" >}}
 
-Copiez ensuite la clé et renseignez-la chez votre registrar.
+Then copy the key and enter it at your registrar.
 
-## Liens
+## Links
 
 - [RFC 4033](https://datatracker.ietf.org/doc/html/rfc4033)
 - [RFC 4034](https://datatracker.ietf.org/doc/html/rfc4034)
