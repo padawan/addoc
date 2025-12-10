@@ -1,13 +1,13 @@
 +++
-url = "/fr/langages/rust/"
+url = "/languages/rust/"
 title = "Rust"
 archetype = "chapter"
-tags = [ "rust" ]
+tags = [ "rustle" ]
 +++
 
-Le fonctionnement de [Rust](https://www.rust-lang.org/fr) chez alwaysdata est très standard. Si vous avez l'habitude d'utiliser Rust sous un système Unix (par exemple, Linux), vous savez déjà presque tout ce qu'il faut.
+The operation of [Rust](https://www.rust-lang.org/fr) at alwaysdata is standard. If you are used to using Rust on a Unix system (e.g. Linux), you already know almost everything you need.
 
-- Rust est un langage compilé ne nécessitant pas d'interpréteur pour faire tourner les programmes mais la [version](languages/rust/configuration#version) 1.86 est disponible ;
-- le [déploiement HTTP](languages/rust/configuration#déploiement-http) se fait simplement.
+- Rust is a compile language that does not require interpreters to run programs, but the [version](languages/rust/configuration#version) 1.86 is available;
+- [HTTP Deployment](languages/rust/configuration#déploiement-http) is simply done.
 
-Notre marketplace propose l'installation du framework [Rocket](https://rocket.rs/) et bien d'autres applications sont compatibles avec nos serveurs.
+Our marketplace offers the installation of the [Rocket]framework (https://rocket.rs/) and many other applications are compatible with our servers.
