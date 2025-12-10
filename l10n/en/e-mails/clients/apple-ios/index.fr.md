@@ -1,49 +1,49 @@
 +++
-url = "/fr/emails/clients/apple-ios/"
-title = "Comment configurer Mail (Apple/iOS)"
+url = "/emails/clients/apple-ios/"
+title = "How to configure Mail (Apple/iOS)"
 layout = "howto"
 tags = [ "email", "ios", "macos", "apple" ]
 hidden = true
 +++
 
-Dans nos exemples nous considérons les informations suivantes :
+In our examples we will have the following information:
 
-- Nom du compte : `test`
-- Adresse email : `test@alwaysdata.net`
+- Account name: `test`
+- Email address: `test@alwaysdata.net`
 
-Elles sont à remplacer par vos informations de connexion personnelles :
+They are to be replaced with your personal login information:
 
-| Serveur | Service | Information                |                                                                                                                    |
-| ------- | ------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Entrant | IMAP    | Nom d'hôte                 | imap-_[compte]_.alwaysdata.net |
-|         |         | Port                       | 993                                                                                                                |
-|         |         | Nom d'utilisateur          | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe               | Le mot de passe de votre adresse email                                                                             |
-|         |         | Méthode d'authentification | Mot de passe normal                                                                                                |
-|         | POP3    | Nom d'hôte                 | pop-_[compte]_.alwaysdata.net  |
-|         |         | Port                       | 995                                                                                                                |
-|         |         | Nom d'utilisateur          | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe               | Le mot de passe de votre adresse email                                                                             |
-|         |         | Méthode d'authentification | Mot de passe normal                                                                                                |
-| Sortant | SMTP    | Nom d'hôte                 | smtp-_[compte]_.alwaysdata.net |
-|         |         | Port                       | 465                                                                                                                |
-|         |         | Nom d'utilisateur          | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe               | Le mot de passe de votre adresse email                                                                             |
-|         |         | Méthode d'authentification | Mot de passe normal                                                                                                |
+| Server   | Service | Information           |                                                                                                                    |
+| -------- | ------- | --------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Incoming | IMAP    | Host Name             | imap-_[compte]_.alwaysdata.net |
+|          |         | Port                  | 993                                                                                                                |
+|          |         | Username              | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password              | Your email address password                                                                                        |
+|          |         | Authentication Method | Normal Password                                                                                                    |
+|          | POP3    | Host Name             | pop-_[compte]_.alwaysdata.net  |
+|          |         | Port                  | 995                                                                                                                |
+|          |         | Username              | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password              | Your email address password                                                                                        |
+|          |         | Authentication Method | Normal Password                                                                                                    |
+| Outgoing | SMTP    | Host Name             | smtp-_[compte]_.alwaysdata.net |
+|          |         | Port                  | 465                                                                                                                |
+|          |         | Username              | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password              | Your email address password                                                                                        |
+|          |         | Authentication Method | Normal Password                                                                                                    |
 
 {{% notice tip %}}
-_[compte]_ doit être remplacé par le nom de votre compte et _contact\@example.org_ par votre adresse email. Ils sont définis dans le menu **Emails > Adresses** de notre interface d'administration.
-{{% /notice %}}
+_[compte]_ must be replaced with your account name and _contact\@example.org_ with your email address. They are defined in the **Emails > Addresses** menu of our admin interface.
+{{%/notice %}}
 
-## MacOS : application Mail
+## MacOS: Mail app
 
-Rendez-vous dans **Fichier > Ajouter un compte > Autre compte Mail...**
+Go to **File > Add Account > Other Mail Account...**
 
-- Indiquez les informations de connexion et choisissez entre IMAP ou POP pour le courrier _entrant_ ;
-- Si vous recevez un message d'erreur SSL, cliquez quand même sur **Connecter**, vous pourrez ensuite renseigner de nouveau les informations de connexion.
+- Specify the login details and choose between IMAP or POP for _Incoming_ mail;
+- If you receive an SSL error message, click **Connect** anyway, you can then re-enter the login information.
 
-Laissez l'authentification par mot de passe.
+Leave password authentication.
 
-## iOS (iPhone, iPad) : application Mail
+## iOS (iPhone, iPad): Mail app
 
-{{< fig "images/mail_ipad.fr.png" "Mail sur mobile" >}}
+{{< fig "images/mail_ipad.en.png" "Mail on mobile" >}}
