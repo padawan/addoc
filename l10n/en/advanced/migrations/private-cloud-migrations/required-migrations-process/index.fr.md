@@ -1,105 +1,105 @@
 +++
-url = "/fr/avance/migrations/migration-cloud-prive/deroulement-migrations-obligatoires"
-title = "Cloud Privé : Déroulement des migrations obligatoires"
+url = "/avance/migrations/migration-cloud-prive/deroulement-migrations-compulsory"
+title = "Cloud Privacy: Mandatory migration overflow"
 layout = "man"
 hidden = true
 tags = [ "migration" ]
 +++
 
-Ces migrations sont effectuées à quatre mains avec le [support](https://admin.alwaysdata.com/support/).
+These migrations are performed in four hands with the [support](https://admin.alwaysdata.com/support/).
 
-## Recommandé
+## Recommended
 
-### Étape 1 - Faire les changements nécessaires
+### Step 1 - Making the necessary changes
 
-L'utilisateur prépare l'ensemble des comptes du serveur en suivant les recommandations de la page de documentation (comme sur le Cloud Public). Il est possible de revenir en arrière pour corriger des comportements problématiques.
+The user preparses all the accounts of the server following the recommendations of the documentation page (as in the Public Cloud). It is possible to go back and correct problematic behaviors.
 
-Cette étape sert à tester le déplacement des bases de données, vérifier les paramètres de connexion de ses logiciels...
+This step is used to test the move of the databases, check the connection parameters of its software...
 
-> Des serveurs de tests sont disponibles pour les bases de données.
+> Test servers are available for databases.
 
-Une fois la migration d'un compte vers le serveur de transit effectuée il sera aussi possible de faire un retour en arrière et de le repasser sur l'ancienne infrastructure _temporairement_ en cas de souci.
+Once an account is migrated to the transit server it will also be possible to backtrack and override the old infrastructure _temporarily_ in case of trouble.
 
-{{< fig "images/migration-1.fr.png" "" >}}
+{{< fig "images/migration-1.png" "" >}}
 
-## Obligatoire
+## Required
 
-### Étape 2 - Demande du serveur de transit
+### Step 2 - Requesting the transit server
 
-**Tous les comptes sont prêts.** L'utilisateur doit contacter le support pour qu'il prépare un serveur de transit.
+**All accounts are available.** The user must contact support to arrange a transit server.
 
-{{< fig "images/migration-2.fr.png" "" >}}
+{{< fig "images/migration-2.en.png" "" >}}
 
-### Étape 3 - Installation du serveur de transit
+### Step 3 - Installing the transit server
 
-Le support prépare le serveur de transit d'une configuration équivalente au serveur client. L'installation peut durer plusieurs heures et précopie les fichiers et mails sur le serveur de transit.
+Support provides the transit server of a configuration to the client server. The installation can take several hours and precopy files and mails to the transit server.
 
-> Cette étape dépend de la disponibilité de serveurs de transit correspondant à la configuration du serveur client le jour de la demande. **Il peut y avoir de l'attente.**
+> This step depends on the availability of transit servers corresponding to the configuration of the client server on the day of the request. **There may be some waiting.**
 
-{{< fig "images/migration-3.fr.png" "" >}}
+{{< fig "images/migration-3.en.png" "" >}}
 
-### Étape 4 - Migration des comptes sur la nouvelle infrastructure
+### Step 4 - Migrating accounts to new infrastructure
 
-Le serveur de transit est prêt. L'utilisateur peut migrer ses comptes - un par un - sur le serveur de transit, via le menu **Migrations** de l'interface serveur ou le menu **Avancé > Migrations** de l'interface compte.
+The transit server is ready. User can migrate accounts - one by one - to the transit server, via the **Migrations** menu of the server interface or the **Advanced> Migrations** menu of the account interface.
 
-> L'utilisateur est **autonome** lors de cette étape. Il peut effectuer ses migrations quand il le souhaite.
+> The user is **autonomous** in this step. It can migrate whenever it wishes.
 
-La migration des comptes entraîne une coupure par compte de quelques secondes à quelques heures ; selon la taille de chaque compte (particulièrement des bases de données). On compte en général une minute d'indisponibilité par giga de bases de données.
+Migrating accounts is a split per account of a few seconds in a few hours; depending on the size of each account (particle of the databases). There is one minute of unavailability per giga of data bases.
 
-{{< fig "images/migration-4.fr.png" "" >}}
+{{< fig "images/migration-4.en.png" "" >}}
 
 {{% notice tip %}}
-Pour les domaines n'utilisant pas les DNS d'alwaysdata, pas besoin de faire le changement d'IP - _enregistrements A et AAAA_. Le serveur client fera la redirection de manière transparente.
-{{% /notice %}}
+For domains not using alwaysdata DNS, no need to do IP change - _A and AAAA_ records. The client server will redirect transparently.
+{{%/notice %}}
 
-### Étape 5 - Vérification après migration
+### Step 5 - Check after migration
 
-L'utilisateur peut faire des modifications applicatives une fois un compte migré si besoin.
+The user can make application changes once an account migrates if needed.
 
-> Il lui est aussi possible de faire un retour en arrière et repasser _temporairement_ sur l'ancienne infrastructure en cas de souci.
+> It is also possible to go back and _temporarily_ over the old infrastructure in case of trouble.
 
-Une fois l'ensemble des comptes migrés il contacte le support pour que celui procède à la réinstallation de son serveur.
+Once all accounts are migrated, it will contact support so that the one proceeds to reinstall its server.
 
-{{< fig "images/migration-5.fr.png" "" >}}
+{{< fig "images/migration-5.en.png" "" >}}
 
-### Étape 6 - Réinstallation du serveur client
+### Step 6 - Reinstalling the client server
 
-**Tous les comptes sont migrés sur la nouvelle infrastructure logicielle et sont sur le serveur de transit.**
+**All accounts are migrated to the new software infrastructure and are on the transit server.**
 
-Le support réinstalle le serveur client pour qu'il tourne sur la nouvelle infrastructure. Cela peut durer plusieures heures et précopie à les fichiers et mails.
+Support reinstalls the client server to run on the new infrastructure. This can take several hours and precopy files and mails.
 
-> Le retour en arrière temporaire n'est alors plus possible.
+> Temporary backtracking is no longer possible.
 
-{{< fig "images/migration-6.fr.png" "" >}}
+{{< fig "images/migration-6.en.png" "" >}}
 
 {{% notice note %}}
-Durant cette opération, les adresses IP du serveur client sont reroutées vers le serveur de transit pour que les services restent accessibles normalement. Une courte période d'indisponibilité de ces IP (autour d'une minute) est toutefois à prévoir. _Dans le cas où l'utilisateur utilise les serveurs DNS d'alwaysdata, le trafic aura été redirigé vers les IP du serveur de transit dès la migration des comptes - il n'y a alors aucune période d'indisponibilité à prévoir._
+During this operation, client server IP addresses are rerouted to the transit server so that services remain accessible normally. However, a short period of unavailability of these IPs (around one minute) is to be expected. \*In case user uses alwaysdata DNS servers traffic will have been redirected to the transit server IP addresses of the account migration - there is no unavailability period to expect.
 {{% /notice %}}
 
-### Étape 7 - Finalisation : redéplacement des comptes sur le serveur client
+### Step 7 - Finalization: Removing accounts to the client server
 
-**Le serveur client est réinstallé.** Le support contacte l'utilisateur pour procéder au redéplacement des comptes. _Cette étape de finalisation peut être effectuée par le support en heure et jours ouvrés ou par l'utilisateur._
+**The client server is reinstalled.** Support contacts the user to move the accounts. _This finalization step can be performed by the support in time and working days or by the user._
 
-Ce redéplacement final des comptes entraîne une coupure par compte équivalente à l'indisponibilité lors de la première migration.
+This final relocation of accounts will result in a breakdown per account equal to the unavailability on the first migration.
 
-{{< fig "images/migration-7.fr.png" "" >}}
+{{< fig "images/migration-7.en.png" "" >}}
 
-### Étape 8 - Migration officiellement finie
+### Step 8 - Officially finished migration
 
-Tous les comptes ont été redéplacés sur le serveur client réinstallé.
+All accounts have been relocated to the reinstalled client server.
 
-{{< fig "images/migration-8.fr.png" "" >}}
+{{< fig "images/migration-8.png" "" >}}
 
 ## Notes
 
-- Le serveur de transit est mis à disposition pour la migration sans surcoût pour une période de **deux semaines maximum**. Si l'utilisateur n'a pas terminé la migration de l'ensemble de ses comptes au terme de cette période, le serveur de transit sera facturé au même coût que le serveur client (au prorata, jour par jour) — en plus du serveur d'origine qui reste facturé normalement.
+- The transit server is available for uninterrupted migration for a period of **up to two weeks**. If the user did not complete the migration of all his accounts at the end of this period, the transit server will be invoiced at the same time as the client server (in prorata, day per day) — in addition to the original server that is invoiced normally.
 
-- Si l'utilisateur souhaite tester la migration sur certains comptes avant de lancer la migration réelle ou s'il souhaite avoir accès à un serveur de transit plus longtemps (_sans payer_), il peut profiter de notre serveur de transit partagé à tous les clients dédiés et VPS. Néanmoins :
-  - ce serveur peut ne pas correspondre à la configuration du serveur client ;
-  - aucune précopie des fichiers et mails n'est effectuée : le temps de migration peut donc être allongé ;
-  - les utilisateurs n'ont pas accès aux personnalisations serveurs et au parefeu qu'ils ont paramétré ;
-  - la mise à disposition de ce serveur de transit partagé est validée au cas par cas par le support en fonction des caractéristiques du serveur client et de ses comptes.
+- If the user wants to test the migration on some accounts before launching the actual migration or if they want to have access to a longer transit server (_without paying_), it can take advantage of our shared transit server to all dedicated clients and VPS. Neanmin:
+  - this server may not match the client server configuration;
+  - no precopy of files and emails is performed: the migration time can therefore be extended;
+  - users do not have access to the server customizations and firewall they have set;
+  - the availability of this shared transit server is validated on a case-by-case basis by the support based on the characteristics of the client server and its accounts.
 
-- Si l'utilisateur est en charge de l'étape de finalisation, il a **une semaine** pour faire le déplacement de tous les comptes sans surcoût.
+- If the user is in charge of the finalization step, he has **one week** to move all accounts without overcrowding.
 
-> Icônes : The Noun Project
+> The Noun Project
