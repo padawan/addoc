@@ -1,24 +1,24 @@
 +++
-url = "/fr/bases-de-donnees/elasticsearch/"
+url = "/bases-de-donnees/elasticsearch/"
 title = "Elasticsearch"
 layout = "man"
 hidden = true
-tags = [ "base de données", "elasticsearch" ]
+tags = [ "database", "elasticsearch" ]
 +++
 
-## Connexion
+## Login
 
-|             |                                                                                     |
-| ----------- | ----------------------------------------------------------------------------------- |
-| **Serveur** | localhost ou 127.0.0.1              |
-| **Ports**   | 9200 & 9300 (Ports Elasticsearch par défaut) |
+|            |                                                                                  |
+| ---------- | -------------------------------------------------------------------------------- |
+| **Server** | localhost or 127.0.0.1           |
+| **Ports**  | 9200 & 9300 (default Elasticsearch Ports) |
 
-Elasticsearch ne tourne qu'en local avec des droits isolés (utilisateur distinct).
+Elasticsearch only runs locally with isolated rights (separate user).
 
 {{% notice info %}}
-Elasticsearch n'est disponible qu'en environnements [Cloud Privé]({{< ref "accounts/billing/private-cloud-prices" >}}). Il est par ailleurs consommateur en RAM, alwaysdata ne le suggère donc qu'à partir des plans VPS B.
-{{% /notice %}}
+Elasticsearch is only available in environments [Cloud Privacy]({{< ref "accounts/billing/private-cloud-prices" >}}). He is also a consumer in RAM, alwaysdata only suggests it from the VPS B plans.
+{{%/notice %}}
 
 ---
 
-- [Documentation Elasticsearch](https://www.elastic.co/guide/index.html)
+- [Elasticsearch](https://www.elastic.co/guide/index.html)
