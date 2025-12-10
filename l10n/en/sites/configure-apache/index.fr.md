@@ -1,27 +1,27 @@
 +++
-url = "/fr/sites/configurer-apache/"
-title = "Comment modifier la configuration de son serveur Apache"
-linkTitle = "Configuration Apache"
+url = "/sites/configurer-apache/"
+title = "How to change its Apache server configuration"
+linkTitle = "Apache Configuration"
 layout = "howto"
 weight = 10
 tags = [ "apache", "http", "site" ]
 +++
 
-{{< fig "images/admin-panel_apache.fr.png" "Interface d'administration : configurer Apache" >}}
+{{< fig "images/admin-panel_apache.png" "Admin interface: configuring Apache" >}}
 
-L'ensemble des modifications effectuées dans le champ _Directives globales d'Apache_ se répercutera dans le fichier `$HOME/admin/config/apache/sites.conf`. Les logs d'erreurs Apaches sont disponibles dans le fichier `$HOME/admin/logs/apache/apache.log`. Un extrait de ces logs est présenté dans l'interface d'administration alwaysdata (Logs - 📄).
+All changes made in the _Global Apache Guidelines_ field will run in the `$HOME/admin/config/apache/sites.conf` file. Apache error logs are available in the `$HOME/admin/logs/apache/apache.log` file. An excerpt of these logs is present in the alwaysdata administration interface (Logs - 📄).
 
-Apache sert les sites de type PHP, Fichiers statiques et Apache personnalisé.
+Apache serves PHP sites, static files, and custom Apache sites.
 
-- [Documentation Apache 2.4](http://httpd.apache.org/docs/2.4/fr/)
-- [Fichier .htaccess](sites/htaccess-file)
+- [Apache documentation 2.4](http://httpd.apache.org/docs/2.4/fr/)
+- [.htaccess file](sites/htaccess-file)
 
-## Installer un module
+## Install a module
 
-Une fois le fichier `.so` compilé et ajouté à votre [espace de fichiers](remote-access), insérez cette ligne dans les directives globales :
+Once the `.so` file compiles and adds to your [file space](remote-access), set this line to the global directives:
 
 ```
-LoadModule <MODULE> $HOME/chemin/vers/le/module.so
+LoadModule <MODULE> $HOME/path/to/module.so
 ```
 
 - [GeoIP](guides/geoip)
