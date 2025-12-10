@@ -1,19 +1,19 @@
 +++
-url = "/fr/sites/utiliser-des-adresses-externes/"
-title = "Comment utiliser des adresses externes"
+url = "/sites/user-external-addresses/"
+title = "How to use external addresses"
 layout = "howto"
 hidden = true
 tags = [ "dns", "http", "site" ]
 +++
 
-Pour utiliser ses propres adresses sans [gérer son domaine](domains/add-an-external-domain) chez alwaysdata, il faut :
+To use your own addresses without [managing your domain](domains/add-an-external-domain) at alwaysdata, you must:
 
-1. chez le prestataire DNS du domaine, créer des [enregistrements DNS](https://fr.wikipedia.org/wiki/Liste_des_enregistrements_DNS) pointant vers votre compte alwaysdata ;
+1. at the domain DNS provider, create [DNS records](https://fr.wikipedia.org/wiki/Liste_des_enregistrements_DNS) pointing to your alwaysdata account;
 
-   - Le serveur sur lequel est un compte peut changer. Il est donc préconisé d'utiliser des enregistrements de type _CNAME_ ayant comme valeur `<compte>.alwaysdata.net` (`<compte>` étant le nom du compte) plutôt que des enregistrements de type _A_/_AAAA_.
+   - The server an account is on can change. It is therefore preferred to use records of type _CNAME_ with value `<compte>. lwaysdata.net` (`<compte>` with account name) rather than _A_/_AAAA_records.
 
 {{% notice tip %}}
-Le _CNAME_ n'est pas disponible pour le sous-domaine vide, on utilisera alors les types _A_/_AAAA_ ou _ALIAS_ avec comme valeur l'adresse IP du serveur HTTP (à retrouver dans la section **Avancé > Statut des serveurs** de l'interface d'administration alwaysdata).
-{{% /notice %}}
+The _CNAME_ is not available for the empty subdomain, will then be used the types _A_/_AAAA_ or _ALIAS_ with the IP address of the HTTP server (found in the **Forward** section of the alwaysdata administration interface).
+{{%/notice %}}
 
-2. sur l'interface d'administration alwaysdata, [déclarer les adresses](sites/add-a-site) dans **Web > Sites**.
+2. on the alwaysdata admin interface, [declare addresses](sites/add-a-site) in **Web > Sites**.
