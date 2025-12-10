@@ -1,43 +1,43 @@
 +++
-url = "/fr/emails/reagir-envoi-spam/"
-title = "Comment réagir à un envoi de spam"
+url = "/emails/reagir-envoi-spam/"
+title = "How to react to spam sending"
 layout = "howto"
 hidden = true
-tags = [ "email", "infection", "spam" ]
+tags = [ "email", "Infection", "spam" ]
 +++
 
-On observe 3 principales raisons à un envoi de spam :
+There are 3 main reasons for sending spam:
 
-- [une infection de site internet](sites/clean-up-a-site) ;
-- une attaque sur un formulaire de site internet ;
-- un vol de mot de passe.
+- [website infection](sites/clean-up-a-site);
+- an attack on a website form;
+- a password theft.
 
-C'est ces deux dernières que nous allons présenter ici.
+It is these last two that we are going to present here.
 
-## Attaque sur formulaire
+## Attack on form
 
-Lorsque l'équipe alwaysdata rencontre un envoi de spam par attaque sur formulaire elle va :
+When the alwaysdata team encounters an attack spamming on the form it will:
 
-- arrêter l'envoi en désactivant les requêtes `POST` sur le site concerné ;
-- supprimer tous les emails en cause étant en attente d'envoi ;
-- prévenir l'utilisateur.
+- stop sending by deactivating `POST` requests on the relevant site;
+- delete all emails that are pending sending;
+- Prevent user.
 
-L'utilisateur devra mettre en place une protection plus importante sur son formulaire ; via l'utilisation d'un [CAPTCHA](https://fr.wikipedia.org/wiki/CAPTCHA) par exemple.
+The user will have to set up more important protection on their form; for example, by using an [CAPTCHA](https://fr.wikipedia.org/wiki/CAPTCHA) for example.
 
-Le [WAF](sites/waf) peut être utile pour bloquer certaines attaques.
+The [WAF](sites/waf) may be useful for blocking certain attacks.
 
-## Vol de mot de passe
+## Password Steal
 
-Dans ce cas, elle va :
+In this case, it will:
 
-- arrêter l'envoi en changeant le mot de passe de l'adresse email concernée ;
-- supprimer tous les emails en cause étant en attente d'envoi ;
-- prévenir l'utilisateur.
+- stop sending by changing the password of the concerned email address;
+- delete all emails that are pending sending;
+- Prevent user.
 
-L'utilisateur pourra ensuite renseigner un nouveau mot de passe, **plus sécurisé**, pour accéder de nouveau à son adresse.
+The user will then be able to enter a new password, **more secure**, to access their address again.
 
 {{% notice info %}}
-Dans le cas d'une récidive, l'équipe alwaysdata peut _suspendre_ le compte en attente du retour de l'utilisateur.
-{{% /notice %}}
+In the case of a refund, the alwaysdata team can _suspend_ the account waiting for the user to return.
+{{%/notice %}}
 
-> Testez si votre adresse email [a été compromise](https://haveibeenpwned.com/).
+> Test if your email address [has been compromised](https://haveibeenpwned.com/).
