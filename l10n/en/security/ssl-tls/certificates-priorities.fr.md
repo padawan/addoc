@@ -1,24 +1,24 @@
 +++
-url = "/fr/securite/ssl-tls/priorite-de-renvoi-des-certificats-ssl"
-title = "Quel certificat SSL est renvoyé par défaut ?"
+url = "/security/ssl-tls/priorite-de-renvoi-des-certificats-ssl"
+title = "What SSL certificate is returned by default?"
 layout = "faq"
 hidden = true
 tags = [ "https", "ssl" ]
 +++
 
-Grâce au [SNI](https://datatracker.ietf.org/doc/html/rfc6066#section-3), le serveur renverra dans l'ordre de priorité, s'il est renseigné dans **Avancé > Certificats SSL** et qu'il n'est pas expiré :
+Grade to [SNI](https://datatracker.ietf.org/doc/html/rfc6066#section-3), the server will return in order of priority, if specified in **Advanced> SSL Certificates** and is not expired:
 
-- Votre certificat ajouté manuellement correspondant au nom d'hôte.
-- Votre certificat wildcard ajouté manuellement correspondant au nom de domaine.
-- Le [certificat auto-généré Let's Encrypt](security/ssl-tls/lets-encrypt#automatically-generated-certificates) correspondant au nom d'hôte.
-- Le certificat par défaut du serveur.
+- Your certificate was manually added matching the host name.
+- Your wildcard certificate manually added corresponding to the domain name.
+- The [Let's Encrypt self-managed certificate](security/ssl-tls/lets-encrypt#automatically-generated-certificates) corresponding to the host name.
+- The default certificate of the server.
 
-Si vous souhaitez renvoyer un certificat dont la priorité est plus basse, vous pouvez rattacher ce dernier directement au sous-domaine, **il sera alors prioritaire sur les autres**.
+If you want to return a certificate with lower priority, you can attach the latter directly to the subdomain, **it will take precedence over the others**.
 
-La configuration de la priorité d'un certificat n'est possible _que_ pour les certificats que vous avez ajouté. Ce n'est pas une option disponible pour les certificats autogénérés Let's Encrypt.
+Configuring the priority of a certificate is _only_ possible for the certificates you have added. This is not an option available for Let's Encrypt certificates.
 
-Pour forcer un certificat rendez-vous au niveau de la configuration du certificat SSL - menu **Avancé > Certificats SSL** ou au niveau de la configuration du sous-domaine - menu **Domaines > Détails du [domaine] - ⚙️ > Sous-domaines**.
+To force a certificate go to the SSL certificate configuration - menu **Advanced > SSL Certificates** or to the subdomain configuration - menu **Domains > [domaine] details - ⚙️ > Subdomains**.
 
 {{% notice warning %}}
-Un certificat expiré, s'il est rattaché à un sous-domaine, sera quand même renvoyé par le serveur.
-{{% /notice %}}
+A certificate expired, if it is attached to a subdomain, will still be returned by the server.
+{{%/notice %}}
