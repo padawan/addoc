@@ -1,11 +1,11 @@
 +++
-url = "/fr/langages/dotnet/configuration/"
-title = "Configurer .NET"
+url = "/languages/dotnet/configuration/"
+title = "Set up .NET"
 hidden = true
 layout = "man"
 +++
 
-## Versions supportées
+## Supported Versions
 
 |                      |
 | -------------------- |
@@ -14,30 +14,30 @@ layout = "man"
 | 6.0  |
 | 5.0  |
 
-La version par défaut est modifiable dans l'administration alwaysdata, **Environnement > .NET**. C'est cette version qui est notamment utilisée lorsque vous démarrez `dotnet`.
+The default version can be changed in the alwaysdata administration, **Environment > .NET**. This version is especially used when you start `dotnet`.
 
-Les versions ne sont pas forcément [déjà installées](languages#versions).
+Versions are not forcefully [already installed](languages#versions).
 
 {{% notice note %}}
-Les versions majeures de .NET alternent entre le support à long terme (LTS) et le support à terme standard (STS) suivant [le cycle de vie de leurs versions](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core#lifecycle). Seules les **versions LTS** sont rendues disponibles, et elles le sont une fois la prise en charge la version General Availability (GA) par Microsoft.
-{{% /notice %}}
+Major versions of . AND alternate between LTS and Standard Term Support (STS) following [the lifecycle of their versions](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core#lifecycle). Only **LTS versions** are made available, and they are available once Microsoft supports General Availability (GA).
+{{%/notice %}}
 
-## Environnement
+## Environments|Environment
 
-Votre environnement .NET est initialement vide, sans aucune bibliothèque préinstallée.
+Your .NET environment is initially empty, without any preinstalled libraries.
 
-## Déploiement HTTP
+## HTTP Deployment
 
-Pour déployer une application HTTP avec .NET, créez un site de type _.NET_ dans la section **Web > Sites**.
+To deploy an HTTP application with .NET, create a _.NET_ site in the **Web > Sites** section.
 
 {{< fig "images/net.png" ".NET Site Type">}}
 
-Vous devrez spécifier la commande qui démarre votre application .NET, par exemple :
+You will need to specify the command that starts your .NET application, for example:
 
 ```
 dotnet run --urls "http://$IP:$PORT"
 ```
 
 {{% notice warning %}}
-Votre application doit impérativement écouter sur l'ip et le port indiqués dans la vue de configuration du site sous le champ _Commande_. Vous pouvez utiliser les variables d'environnement `IP` / `HOST` et `PORT`.
-{{% /notice %}}
+Your app must not listen on the ip and port specified in the site configuration view under the _Command_ field. You can use the `IP` / `HOST` and `PORT` environment variables.
+{{%/notice %}}
