@@ -1,28 +1,28 @@
 +++
-url = "/fr/sites/apache-personnalise/"
-title = "Comment utiliser le type Apache personnalisé"
+url = "/sites/apache-customize/"
+title = "How to use custom Apache type"
 layout = "howto"
 hidden = true
 tags = [ "apache", "http", "site" ]
 +++
 
-Le type Apache personnalisé permet de faire tourner des sites servis par le serveur Apache mais n'utilisant pas PHP ou HTML.
+The custom Apache type allows to run sites served by the Apache server but not using PHP or HTML.
 
 {{% notice warning %}}
-Si vous voulez seulement ajouter des directives globales à Apache modifiez sa [configuration](sites/configure-apache) dans **Web > Configuration > Apache**.
-{{% /notice %}}
+If you just want to add global directives to Apache change its [configuration](sites/configure-apache) in **Web > Configuration > Apache**.
+{{%/notice %}}
 
-{{< fig "images/admin-panel_sites-list.fr.png" "Interface d'administration : liste des sites" >}}
+{{< fig "images/admin-panel_sites-list.png" "Admin interface: list of sites" >}}
 
-- Nom : utilisé pour l'affichage dans l'interface d'administration alwaysdata, purement informatif ;
-- Adresses : les adresses pour joindre votre site (`*.example.org` pour les _catch-all_) ;
+- Name: Used for display in the alwaysdata admin interface purely informative;
+- Addresses: the addresses to join your site (`*.example.org` for _catch-all_);
 
-{{< fig "images/admin-panel_add-site-general.fr.png" "Ajouter un site : général" >}}
+{{< fig "images/admin-panel_add-site-general.png" "Add site: manager" >}}
 
-- Type : Apache personnalisé ;
-- Directives globales : directives globales à tous les sites servis par Apache ;
-- Directives du virtual host : directives Apache pour le site concerné.
+- Type: Custom Apache
+- Global Guidelines: Global guidelines for all sites served by Apache;
+- Virtual host guidelines: Apache directives for the relevant site.
 
-{{< fig "images/admin-panel_apache-custom.fr.png" "Ajouter un site : Apache personnalisé" >}}
+{{< fig "images/admin-panel_apache-custom.png" "Add a site: custom Apache" >}}
 
-L'ensemble des modifications se répercutera dans le fichier `$HOME/admin/config/apache/sites.conf`. Les logs d'erreurs Apache sont disponibles dans `$HOME/admin/logs/apache/apache.log`.
+All changes will occur in the `$HOME/admin/config/apache/sites.conf` file. Apache error logs are available in `$HOME/admin/logs/apache/apache.log`.
