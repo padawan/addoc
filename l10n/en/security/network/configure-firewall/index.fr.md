@@ -1,80 +1,80 @@
 +++
-url = "/fr/securite/reseau/configurer-le-firewall"
-title = "Cloud Privé : configurer le firewall"
+url = "/security/reseau/configurer-le-firewall"
+title = "Private Cloud: configure firewall"
 layout = "faq"
 hidden = true
-tags = [ "sécurité" ]
+tags = [ "security" ]
 +++
 
-Le firewall (pare-feu) se gère dans le menu **Firewall** du serveur.
+The firewall is located in the **Firewall** menu of the server.
 
-## Règles
+## GEOM_REGISTERS
 
-{{< fig "images/admin-panel_list-rules.fr.png" "Interface d'administration : liste des règles de firewall actives" >}}
+{{< fig "images/admin-panel_list-rules.en.png" "Admin interface: list of active firewall files" >}}
 
-Si vous avez plusieurs règles, la règle placée la plus en haut aura autorité sur les autres.
+If you have more than one account, the top one will have authority over the others.
 
-- [Ressource API](https://api.alwaysdata.com/v1/firewall/doc/)
+- [Resource API](https://api.alwaysdata.com/v1/firewall/doc/)
 
-### Ajouter une règle
+### Add a new theme
 
-Pour ajouter une règle, choisissez :
+To add a new item, choose:
 
-- le protocole : [UDP](https://fr.wikipedia.org/wiki/User_Datagram_Protocol) ou [TCP](https://fr.wikipedia.org/wiki/Transmission_Control_Protocol) ;
-- le type de règle : ACCEPT, DROP (rejeter sans avertir l'émetteur) ou REJECT ;
-- la direction : entrée ou sortie ;
-- les IP/hôtes concernés : cela peut être des IP ou des URLs ;
-- les ports ;
-- la version des IP.
+- the protocol: [UDP](https://fr.wikipedia.org/wiki/User_Datagram_Protocol) or [TCP](https://fr.wikipedia.org/wiki/Transmission_Control_Protocol);
+- the type of type: ACCEPT, DROP (dismiss without notifying the sender) or REJECT;
+- the direction: input or exit;
+- IP/Hosts: This can be IPs or URLs;
+- the ports;
+- the IP version.
 
-Ne rien mettre dans _Hôtes_ et _Ports_ va activer la règle pour tous sauf si une règle supérieure indique le contraire.
+Setting nothing to _Hoests_ and _Ports_ will enable the reset for all unless a higher pattern indicates otherwise.
 
-{{< fig "images/admin-panel_add-rule.fr.png" "Interface d'administration : ajouter une règle" >}}
+{{< fig "images/admin-panel_add-rule.png" "Admin interface: add a new theme" >}}
 
-Il est possible de donner un label par règles (**Annotations**) et directement dans les règles en utilisant le caractère `#`.
+It is possible to give a label in terms of **Annotations**, and directly in the ones using the `#` character.
 
 {{% notice note %}}
-Pour indiquer tous les ports vous pouvez laisser vide ou indiquer la plage `0:65535`.
-{{% /notice %}}
+To indicate all ports you can leave blank or specify the range `0:65535`.
+{{%/notice %}}
 
-## Banissements firewall
+## Firewall Banners
 
-{{< fig "images/admin-panel_list-bans.fr.png" "Interface d'administration : liste des bannissements en cours" >}}
+{{< fig "images/admin-panel_list-bans.en.png" "Admin interface: list of current bans" >}}
 
-Si vous vous retrouvez bloqués sur un service, vérifiez ce menu et supprimez votre IP si elle est bannie et ajoutez la règle nécessaire.
+If you are blocked on a service, please check this menu and remove your IP if it is banned and add the necessary feature.
 
 {{% notice tip %}}
-Le banissement dure 10 minutes par défaut et a lieu après une cinquantaine d'échecs de connexion.
-{{% /notice %}}
+Banner lasts 10 minutes per default and takes place after about 50 login failures.
+{{%/notice %}}
 
 ## Services
 
-Ce menu permet d'ouvrir ou fermer automatiquement les ports des fonctionnalités connues (FTP, mails, SSH, bases de données...). Il n'est alors plus nécessaire de créer la règle par soi-même.
+This menu allows you to automatically open or close the ports of known functions (FTP, mails, SSH, databases...). Then it is no longer necessary to create the redemption by yourself.
 
-## Exemples
+## Examples
 
-### Autoriser sa propre IP à n'être bloquée sur aucun port entrant
+### Allow own IP not blocked on any incoming port
 
-| Intitulé   | Valeur                                                              |
-| ---------- | ------------------------------------------------------------------- |
-| Protocole  | UDP/TCP                                                             |
-| Type       | ACCEPT                                                              |
-| Direction  | Entrée                                                              |
-| Hôtes      | \<votre IP>                                                        |
-| Ports      | \<ne rien indiquer>                                                |
-| Version IP | IPv4, IPv6 ou IPv4/IPv6 (selon les IP indiquées) |
+| Featured                        | Value                                                                       |
+| ------------------------------- | --------------------------------------------------------------------------- |
+| Order set                       | UDP/TCP                                                                     |
+| SMESH_TYPE | ACCEPT                                                                      |
+| Direction                       | Company                                                                     |
+| Hosts                           | \<votre IP>                                                                |
+| Ports                           | \<ne rien indiquer>                                                        |
+| IP Version                      | IPv4, IPv6 or IPv4/IPv6 (depending on the specified IPs) |
 
-{{< fig "images/rule-example-accept.fr.png" "" >}}
+{{< fig "images/rule-example-accept.en.png" "" >}}
 
-### Bloquer le port MySQL sur l'extérieur
+### Block MySQL port on external
 
-| Intitulé   | Valeur               |
-| ---------- | -------------------- |
-| Protocole  | UDP/TCP              |
-| Type       | REJECT               |
-| Direction  | Entrée               |
-| Hôtes      | \<ne rien indiquer> |
-| Ports      | 3306                 |
-| Version IP | IPv4/IPv6            |
+| Featured                        | Value                |
+| ------------------------------- | -------------------- |
+| Order set                       | UDP/TCP              |
+| SMESH_TYPE | REJECT               |
+| Direction                       | Company              |
+| Hosts                           | \<ne rien indiquer> |
+| Ports                           | 3306                 |
+| IP Version                      | IPv4/IPv6            |
 
-{{< fig "images/rule-example-reject.fr.png" "" >}}
+{{< fig "images/rule-example-reject.en.png" "" >}}
