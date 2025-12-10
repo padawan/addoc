@@ -1,12 +1,12 @@
 +++
-url = "/fr/langages/"
-title = "Langages"
+url = "/en/languages/"
+title = "Languages"
 pre = "<i class='fas fa-fw fa-code'></i> "
 weight = 11
 archetype = "chapter"
 +++
 
-Retrouvez toutes les informations sur les technologies propulsées par nos serveurs :
+Find all information about technologies powered by our servers:
 
 - [.NET](languages/dotnet)
 - [Deno](languages/deno)
@@ -20,26 +20,26 @@ Retrouvez toutes les informations sur les technologies propulsées par nos serve
 - [Ruby](languages/ruby)
 - [Rust](languages/rust)
 
-D'autres interpréteurs et langages peuvent aussi être exécutés grâce au [programme utilisateur](sites/user-program).
+Other interpreters and languages can also be executed thanks to the [user program](sites/user-program).
 
 ## Versions
 
-Il est possible de choisir une version majeure d'un langage ou une version mineure précise.
+It is possible to choose a major version of a specific language or a minor version.
 
-Lorsqu'on choisit les versions majeures, le système gère automatiquement la mise à jour lors de la mise à disposition d'une nouvelle version mineure. Cela permet de bénéficier automatiquement des correctifs de sécurité et de bugs, tout en conservant une compatibilité complète.
+When the major versions are selected, the system automatically generates updates when a new minor version is released. This automatically checks for security and bug fixes, while maintaining full compatibility.
 
-Les versions utilisées par défaut sont celles renseignées dans le menu **Environnement** de l'interface d'administration. Il est possible de choisir une autre version en utilisant les _Variables d'environnement_ (ou pour les sites en choisissant la version dans **Web > Sites**).
+The versions used by default are those specified in the **Environment** menu of the admin interface. It is possible to choose another version using _Environment Variables_ (or for sites by choosing the version from **Web > Sites**).
 
-### Cloud privé
+### Private Cloud
 
-Les versions de langages sont, pour limiter la consommation d'espace disque, **automatiquement installées à la demande**.[^1]
+Language versions are **automatically installed**, to limit disk space usage.[^1]
 
-Pour exécuter le binaire d'un langage (par exemple, `python`), il faut tout simplement exécuter `python`. Cela va en interne appeler `/usr/bin/python`, qui est un _wrapper_ vers la "bonne" version de python (celle définie dans son environnement).
+To execute the binary of a language (e.g. `python`), simply run `python`. This will internally call `/usr/bin/python`, which is a _wrapper_ to the "good" version of python (the one defined in its environment).
 
-Les binaires sont stockés dans `/usr/alwaysdata/[langage]/[version]`. Le répertoire de chaque version n'existe pas forcément avant d'avoir appelé le binaire de la version en question : il ne faut donc pas se baser sur `/usr/alwaysdata` pour savoir si une version est disponible mais vous pouvez utiliser :
+Binaries are stored in `/usr/alwaysdata/[langage]/[version]`. The directory of each version does not exist forcefully before calling the binary of the version in question, so you should not rely on `/usr/alwaysdata` to determine if a version is available but you can use:
 
 ```
 $ alwrapper get_versions [langage]
 ```
 
-[^1]: `[langage]` et `[version]` doivent être remplacés par le nom du langage / la version.
+[^1]: `[langage]` and `[version]` must be replaced by the language name / version.
