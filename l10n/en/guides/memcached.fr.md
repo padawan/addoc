@@ -1,49 +1,49 @@
 +++
-url = "/fr/guides/memcached/"
-title = "Comment installer Memcached"
+url = "/guides/memcached/"
+title = "How to install Memcached"
 layout = "howto"
 hidden = true
 tags = [ "cache", "http", "memcached", "site" ]
 +++
 
-[Memcached](https://www.memcached.org/) est un moteur de cache orienté objet.
+[Memcached](https://www.memcached.org/) is an object oriented cache engine.
 
-Voici un guide d'installation sur le Cloud Public.
+Here's an installation guide on the Public Cloud.
 
 {{% notice info %}}
-_Memcached_ peut être [installé au niveau serveur](databases/memcached) pour les utilisateurs du Cloud Privé.
-{{% /notice %}}
+_Memcached_ can be [installed at server level](databases/memcached) for Private Cloud users.
+{{%/notice %}}
 
-Dans notre exemple, nous utilisons un [accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use a [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom du compte : `foo`
-- Répertoire de Memcached : `$HOME/memcached/`
-- Port : 8300 (les ports entre 8300 et 8499 peuvent être utilisés)
+- Account name: `foo`
+- Memcached directory: `$HOME/memcached/`
+- Port: 8300 (ports between 8300 and 8499 can be used)
 
 {{% notice note %}}
-`[foo]` doit être remplacé par le nom de compte correct.
-{{% /notice %}}
+`[foo]` must be replaced with the correct account name.
+{{%/notice %}}
 
-## Étape 1 : Installation
+## Step 1: Installation
 
 ```sh
 foo@ssh:~/memcached$ wget -O- http://memcached.org/latest| tar -xz --strip-components=1
 foo@ssh:~/memcached$ ./configure && make
 ```
 
-## Étape 2 : Lancement du service
+## Step 2: Launching the service
 
-Créez le [service](services) suivant :
+Create the following [service](services) :
 
-- _Commande_ : `./memcached -p 8300`
-- _Répertoire de travail_ : `/home/[foo]/memcached`
+- _Command_: `./memcached -p 8300`
+- _Work directory_: `/home/[foo]/memcached`
 
-Plus d'options via `$HOME/memcached/memcached -h`.
+More options via `$HOME/memcached/memcached -h`.
 
 {{% notice warning %}}
-Par défaut n'importe qui peut se connecter au Memcached ; il n'y a aucune sécurité. Une [authentification](https://github.com/memcached/memcached/wiki/SASLHowto) peut être mise en place.
-{{% /notice %}}
+By default, anyone can connect to Memcached ; there is no security at all. An [authentification](https://github.com/memcached/memcached/wiki/SASLHowto) can be set up.
+{{%/notice %}}
 
-Il restera ensuite la configuration de l'application qui pour se connecter au Memcached devra utiliser `services-[foo].alwaysdata.net` et le port `8300`.
+Then it will remain the configuration of the application that to connect to the Memcached will have to use `services-[foo].alwaysdata.net` and port `8300`.
 
-- [Installer l'extension PHP](databases/memcached/php)
+- [Install PHP extension](databases/memcached/php)
