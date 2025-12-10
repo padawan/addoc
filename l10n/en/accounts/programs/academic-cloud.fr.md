@@ -1,20 +1,20 @@
 +++
-url = "/fr/comptes/programmes/academic-cloud"
+url = "/accounts/programs/academic-cloud"
 title = "Alwaysdata Academic Cloud"
 layout = "man"
-tags = [ "enseignement", "facturation", "parrainage" ]
+tags = [ "teaching", "invoicing", "referral" ]
 +++
 
-Ce programme donne aux formateurs la possibilité d'inviter - via le menu **Profil > Academic Cloud** - leurs étudiants à héberger leurs projets en profitant des avantages suivants :
+This program gives trainers the opportunity to invite - via the **Profile > Academic Cloud** menu - their students to host their projects with the following benefits:
 
-- chaque étudiant aura son _propre_ compte gratuit ;
-- le formateur aura des _permissions techniques_ sur tous les comptes de ses étudiants ;
-- notre dispositif de sécurité ne bloquera pas votre IP s'il détecte de nombreuses requêtes venant de la même origine (du même établissement par exemple dans le cadre d'un cours donné depuis l'enceinte d'une école).
+- each student will have their _own_ free account;
+- instructor will have _technical permissions_ on all accounts of their students;
+- Our security device will not block your IP if it detects many requests coming from the same origin (for example in a course given from the premises of a school).
 
-Pour en bénéficier remplissez votre profil avec les informations de votre établissement et [ouvrez un ticket](https://admin.alwaysdata.com/support/add/). Le programme est gratuit pour les éta­blis­se­ments publics et via des partenariats pour les structures privées.
+To get more information, fill in your profile with your facility information and [open a ticket](https://admin.alwaysdata.com/support/add/). The program is free for public projects and through partnerships for private structures.
 
 {{% notice info %}}
-Lors de la procédure d'inscription, les étudiants peuvent choisir entre plusieurs packs. Pour bénéficier du Academic Cloud gratuit, ils doivent choisir le produit _Free_.
-{{% /notice %}}
+During the registration process, students can choose between multiple packs. To get free Academic Cloud, they must choose _Free_.
+{{%/notice %}}
 
-Une fois la formation finie, les étudiants pourront conserver leurs comptes, supprimer les [permissions](accounts/permissions) accordées au formateur, et éventuellement [changer d'offre](accounts/billing/upgrade-your-plan).
+Once the training is complete, students can keep their accounts, remove [permissions](accounts/permissions) granted to the trainer, and possibly [change offer](accounts/billing/upgrade-your-plan).
