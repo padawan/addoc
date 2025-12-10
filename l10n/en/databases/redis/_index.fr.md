@@ -1,28 +1,28 @@
 +++
-url = "/fr/bases-de-donnees/redis/"
+url = "/en/data-bases/redis/"
 title = "Redis"
 layout = "man"
 hidden = true
-tags = [ "base de données", "redis" ]
+tags = [ "database", "Redis" ]
 +++
 
-## Connexion
+## Login
 
-|             |                                                                        |
-| ----------- | ---------------------------------------------------------------------- |
-| **Serveur** | localhost ou 127.0.0.1 |
-| **Port**    | 6379 (Port Redis par défaut)                        |
+|            |                                                                        |
+| ---------- | ---------------------------------------------------------------------- |
+| **Server** | localhost or 127.0.0.1 |
+| **Port**   | 6379 (default Redis port)                           |
 
-Redis ne tourne qu'en local avec des droits isolés (utilisateur distinct).
+Redis only runs locally with isolated rights (separate user).
 
 {{% notice info %}}
-Cette configuration est disponible sur le [Cloud Privé](accounts/billing/private-cloud-prices). Sur le [Cloud Public](accounts/billing/public-cloud-prices) vous pouvez le faire tourner en suivant ce [guide](guides/redis).
-{{% /notice %}}
+This configuration is available on [Private Cloud](accounts/billing/private-cloud-prices). On [Public Cloud](accounts/billing/public-cloud-prices) you can spin it by following this [guide](guides/redis).
+{{%/notice %}}
 
 ---
 
-- [Documentation Redis](https://redis.io/documentation)
+- [Redis documentation](https://redis.io/documentation)
 
-Retrouvez nos guides :
+Find our guides:
 
-- [Configurer une application PHP avec Redis](databases/redis/php)
+- [Configure a PHP application with Redis](databases/redis/php)
