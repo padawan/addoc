@@ -1,34 +1,34 @@
 +++
-url = "/fr/langages/php/installer-un-paquet/"
-title = "Comment installer un paquet PHP"
+url = "/en/languages/php/installer-un-package/"
+title = "How to install a PHP package"
 hidden = true
 layout = "howto"
 tags = [ "php" ]
 +++
 
-## Gestion des paquets
+## Package Management
 
-Plusieurs outils existent en PHP pour installer des paquets.
+Several tools exist in PHP to install packages.
 
-### Composer
+### Dial
 
-[Composer](https://getcomposer.org/) permet d'installer localement un ensemble de dépendances. Il est préinstallé chez alwaysdata.
+[Composer](https://getcomposer.org/) allows local installation of a set of dependencies. It is preinstalled at alwaysdata.
 
-Pour installer les dépendances listées dans le fichier `composer.json` :
+To install listed dependencies in the `composer.json` file:
 
-1. Pour utiliser _Composer 2_ (dernières versions) :
+1. To use _Compose 2_ (latest versions):
 
 ```sh
-$ composer install
+$ compose install
 ```
 
-ou
+or
 
 ```sh
 $ composer2 install
 ```
 
-2. Pour utiliser _Composer 1_ :
+2. To use _Dial 1_:
 
 ```sh
 $ composer1 install
@@ -36,7 +36,7 @@ $ composer1 install
 
 ### PEAR
 
-[PEAR](https://pear.php.net/) est l'un des plus anciens outils de gestion de paquets pour PHP. Il n'est pas préinstallé, mais vous pouvez le télécharger puis l'exécuter :
+[PEAR](https://pear.php.net/) is one of the oldest package management tools for PHP. It is not preinstalled, but you can download it and execute:
 
 ```sh
 $ wget http://pear.php.net/go-pear.phar
@@ -44,5 +44,5 @@ $ php go-pear.phar
 ```
 
 {{% notice info %}}
-L'exécutable PHP indiqué au niveau des binaires PEAR ne prend pas en compte les extensions nécessaires préchargées (XML par exemple). Il faut modifier ces chemins et indiquer `/usr/bin/php` à la place de `/usr/alwaysdata/php/[VERSION]/bin/php`.
-{{% /notice %}}
+The PHP executable specified at the PEAR binary level does not take into account the necessary extensions (XML for example). These paths should be changed and `/usr/bin/php` instead of `/usr/alwaysdata/php/[VERSION]/bin/php`.
+{{%/notice %}}
