@@ -1,12 +1,12 @@
 +++
-url = "/fr/langages/java/configuration/"
-title = "Configurer Java"
+url = "/en/languages/java/configuration/"
+title = "Configure Java"
 hidden = true
 layout = "man"
 tags = [ "java" ]
 +++
 
-## Versions supportées
+## Supported Versions
 
 |    |
 | -- |
@@ -16,50 +16,50 @@ tags = [ "java" ]
 | 11 |
 | 8  |
 
-La version par défaut est modifiable dans l'administration alwaysdata, **Environnement > Java**. C'est cette version qui est notamment utilisée lorsque vous démarrez `java`.
+The default version is editable in the alwaysdata administration, **Java Environment > Administration**. This version is especially used when you start `java`.
 
-Les versions ne sont pas forcément [déjà installées](languages#-versions).
+Versions are not forcefully [already installed](languages#-versions).
 
 {{% notice note %}}
-Seules les **[versions LTS](https://www.java.com/releases/)** sont rendues disponibles.
-{{% /notice %}}
+Only **[LTS](https://www.java.com/releases/)** are made available.
+{{%/notice %}}
 
-## Binaire à utiliser
+## Binary to use
 
-Pour se servir d'une version de Java différente que celle par défaut :
+To use a different version of Java than the default:
 
-- rendez-vous dans **Environnement > Java** ;
-- ou utilisez `JAVA_VERSION=[VERSION] java` (en remplaçant `[VERSION]` par la version de Java voulue).
+- go to **Environment > Java**;
+- or use `JAVA_VERSION=[VERSION] java` (replacing `[VERSION]` with the desired Java version).
 
-## Environnement
+## Environments|Environment
 
-Votre environnement Java est initialement vide, sans aucune bibliothèque préinstallée.
+Your Java environment is initially empty, without any preinstalled libraries.
 
-## Déploiement HTTP
+## HTTP Deployment
 
-Pour déployer une application HTTP avec Java, vous devez créer un site dans la section **Web > Sites** et pouvez utiliser deux types de sites :
+To deploy an HTTP application with Java, you need to create a site in the **Web > Sites** section and can use two types of sites:
 
 ### Java
 
-Il utilise le serveur HTTP [Apache Tomcat](https://tomcat.apache.org/).
+It uses the HTTP server [Apache Tomcat](https://tomcat.apache.org/).
 
-{{< fig "images/java-tomcat.fr.png" "">}}
+{{< fig "images/java-tomcat.png" "">}}
 
-- type : choisissez _Java_ ;
-- chemin de l'application : le chemin du fichier de votre application Java.
+- type: choose _Java_;
+- application path: The file path of your Java application.
 
-Vous pouvez également renseigner plusieurs champs optionnels :
+You can also fill in several optional fields:
 
-- des variables d'environnement à définir ;
-- une version de Python spécifique à utiliser.
+- environment variables to be defined;
+- a specific Python version to use.
 
-### Programme utilisateur
+### User Program
 
 [Présentation](sites/user-program)
 
-{{< fig "images/user-program.fr.png" "">}}
+{{< fig "images/user-program.en.png" "">}}
 
-Vous devrez spécifier la commande qui démarre votre application Java, par exemple[^1] :
+You will need to specify the command that starts your Java application, for example[^1] :
 
 - [Jenkins](https://www.jenkins.io/doc/book/installing/initial-settings/)
 
@@ -74,7 +74,7 @@ $ java -jar app.jar --server.address=:: --server.port=$PORT
 ```
 
 {{% notice warning %}}
-Votre application doit impérativement écouter sur l'IP `::` et le port indiqués dans la vue de configuration du site sous le champ _Commande_ ; ou utiliser les variables d'environnement IP et PORT.
-{{% /notice %}}
+Your application must not listen on the `::` IP and port specified in the site configuration view under the _Command_ field; or use the IP and PORT environment variables.
+{{%/notice %}}
 
-[^1]: Les options dépendent de l'application, vous devez **impérativement** vous référer à la documentation de celle-ci pour trouver quelles options utiliser s'il est nécessaire de préciser l'IP et le port dans la commande. Cela peut aussi être des options de fichier de configuration.
+[^1]: Options depend on the app you have to **imped** to check its documentation to find out what options to use if it is necessary to specify the IP and port in the command. This can also be configuration file options.
