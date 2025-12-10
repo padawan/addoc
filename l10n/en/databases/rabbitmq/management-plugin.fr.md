@@ -1,20 +1,20 @@
 +++
-url = "/fr/bases-de-donnees/rabbitmq/plugin-de-management"
-title = "Plugin de management de RabbitMQ"
+url = "/en/donor-bases/rabbitmq/plugin-de-management"
+title = "RabbitMQ Management Plugin"
 layout = "man"
 hidden = true
-tags = [ "base de données", "rabbitmq" ]
+tags = [ "database", "rabbitmq" ]
 +++
 
-Le [plugin de management](https://www.rabbitmq.com/management.html) de RabbitMQ peut être utilisé sur le [Cloud Privé](accounts/billing/private-cloud-prices). Seuls les [accès management](https://www.rabbitmq.com/management.html#permissions) seront disponibles.
+RabbitMQ's [management plugin](https://www.rabbitmq.com/management.html) can be used on [Cloud Privacy](accounts/billing/private-cloud-prices). Only [access management](https://www.rabbitmq.com/management.html#permissions) will be available.
 
-## Mise en place
+## Setting up
 
-Créez un site de type [Reverse proxy](sites/add-a-site#configuration) pointant sur `https://localhost:15672`. Ajoutez dans ses directives du vhost :
+Create a [Reverse proxy](sites/add-a-site#configuration) site pointing to `https://localhost:15672`. Add to its vhost directives:
 
 ```txt
 SSLProxyCheckPeerCN off
 SSLProxyCheckPeerName off
 ```
 
-Vous pouvez vous y connecter avec n'importe lequel de vos utilisateurs RabbitMQ.
+You can log in with any of your RabbitMQ users.
