@@ -1,56 +1,56 @@
 +++
-url = "/fr/acces-distant/ftp/problemes-frequents/"
-title = "FTP - Problèmes fréquents"
+url = "/remote-access/ftp/frequent-issues/"
+title = "FTP - Problems"
 layout = "faq"
 weight = 50
 hidden = true
-tags = [ "accès distant", "dépannage", "ftp" ]
+tags = [ "remote access", "troubleshooting", "[currency symbol] ftp" ]
 +++
 
-## Connexion
+## Login
 
-Un [blocage d'IP](security/network) a lieu après une dizaine de tentatives échouées de connexion au serveur.
+A [IP block] (security/network) occurs after about ten failed attempts to connect to the server.
 
 {{% notice info %}}
-alwaysdata a des logs de connexion dont vous pouvez exceptionnellement demander une copie.
-{{% /notice %}}
+alwaysdata has login logs from which you can exceptionally request a copy.
+{{%/notice %}}
 
 ### 530 Home Directory does not exist
 
-Vérifiez que le répertoire racine indiqué dans **Accès distant > FTP** existe bien. Si vous n'êtes pas sûr, indiquez la racine du compte : `/`.
+Please make sure the root directory specified in **Remote Access > FTP** exists. If you are not superior, enter the root of the account: `/`.
 
-Cette erreur peut avoir d'autres raisons et notamment apparaître de façon sporadique. Réessayez de vous connecter ultérieurement ou contactez le [support](https://admin.alwaysdata.com/support/add).
+This error may have other reasons and, in particular, appear sporadically. Try logging in again or contact [support](https://admin.alwaysdata.com/support/add).
 
-### Réponse : 530 Login or password incorrect
+### Answer: 530 Login or password incorrect
 
-Le couple login/mot de passe n'est pas bon vérifiez-le ou modifiez votre mot de passe dans **Accès distant > FTP**.
+The login/password pair is not good check it or change your password in **Remote Access > FTP**.
 
-### ECONNREFUSED - Connexion refusée par le serveur /  ECONNRESET - Connexion réinitialisée par un pair
+### ECONNREFUSED - Connection denied by server / ECONNRESET - Connection reset by peer
 
-La connexion se bloque avant d'arriver aux serveurs alwaysdata, vérifiez :
+The connection is blocking before reaching alwaysdata servers, please:
 
-- si vous êtes en mode **actif** ou **passif** : en mode actif le serveur FTP va déterminer le port à utiliser et initialiser la connexion, alors qu'en mode passif c'est le client FTP qui initialise la connexion. Ce dernier est donc préconisé ;
-  - Pour **FileZilla** rendez-vous dans _Édition > Paramètres > Connexion > FTP_.
-- que vous n'avez pas de logiciel qui ferait pare-feu ;
-- en changeant d'appareil ;
-- en changeant de connexion internet.
+- if you are in **active** or **passive**: in active mode the FTP server will set the port to use and initialize the connection, while in passive mode it is the FTP client that initializes the connection. The latter is therefore preferred;
+  - For **FileZilla** go to _Edit > Settings > Login > FTP_.
+- that you do not have any firewall software;
+- by switching device;
+- changing internet connection.
 
-Si aucune de ces solutions ne fonctionne, essayez la connexion [SFTP](remote-access/sftp).
+If none of these solutions works, try the [SFTP]connection (remote-access/sftp).
 
 {{% notice info %}}
-Les connexions Wi-Fi des établissements scolaires et hôtels bloquent fréquemment de tels services.
-{{% /notice %}}
+Schools and Hotel’s Wi-Fi connections often block such services.
+{{%/notice %}}
 
-### ECONNABORTED - Connexion annulée
+### ECONNABORTED - Connection canceled
 
-La connexion FTP est effectuée avec une IP mais une autre IP se connecte ensuite en mode passif. Assurez-vous de n'utiliser qu'une seule IP durant toute la durée de la connexion FTP.
-Si vous ne pouvez corriger ce comportement, vous pouvez essayez la connexion [SFTP](remote-access/sftp).
+FTP connection is performed with an IP but another IP then connects in passive mode. Be sure to use only one IP during the entire FTP connection.
+If you can't fix this behavior, you can try the [SFTP]connection (remote-access/sftp).
 
-## Accès aux fichiers
+## Access files
 
-### Certains fichiers ne sont pas visibles
+### Some files are not visible
 
-Les répertoires et fichiers "cachés", par exemple les `.htaccess`, ne sont pas forcément visibles par défaut ; c'est une **option de votre client FTP**.
+Cache directories and files, such as `.htaccess`, are not forcefully visible by default; this is a **option for your FTP client**.
 
-Pour **FileZilla** rendez-vous dans _Serveur > Forcer l'affichage des fichiers cachés_.
+For **FileZilla** go to _Server > Force cached files.
 
