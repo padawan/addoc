@@ -1,13 +1,13 @@
 +++
-url = "/fr/avance/migrations/mariadb-11_4/"
-title = "Migration MariaDB 11.4"
+url = "/avance/migrations/mariadb-11_4/"
+title = "MariaDB Migration 11.4"
 layout = "man"
 hidden = true
-tags = [ "infrastructure", "mariadb", "migration", "mysql" ]
+tags = [ "infrastructure", "Mariadb", "migration", "mysql" ]
 +++
 
-Cette migration met à jour vos bases de données vers la version 11.4 de MariaDB.
+This migration updates your database to MariaDB version 11.4.
 
-Pour plus d'informations, rendez-vous sur la ou les notes de mises à jour concernées par votre version actuelle (visible dans la section _Bases de données > MySQL_ de votre compte).
+For more information go to the release notes related to your current release (visible in the _Databases > MySQL_ section of your account).
 
-- [Mise à jour vers MariaDB 11.4](https://mariadb.com/kb/en/upgrading-from-mariadb-10-11-to-mariadb-11-4/).
+- [Updated to MariaDB 11.4](https://mariadb.com/kb/en/upgrading-from-mariadb-10-11-to-mariadb-11-4/).
