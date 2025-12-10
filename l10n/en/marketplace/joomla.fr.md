@@ -1,13 +1,13 @@
 +++
-url = "/fr/marketplace/joomla/"
+url = "/marketplace/joomla/"
 title = "Joomla"
 layout = "man"
 hidden = true
 tags = [ "cms" ]
 +++
 
-## Problèmes courants
+## Common Issues
 
-### Erreur ERR_CONTENT_DECODING_FAILED sur les fichiers statiques
+### Error ERR_CONTENT_DECODING_FAILED on static files
 
-L'option _Gzip Page Compression_ est incompatible avec notre configuration Apache par défaut, qui se charge **déjà** de la compression à la volée. Pour corriger, il suffit de supprimer la dernière section du fichier `.htaccess` à la racine du site.
+The _Gzip Page Compression_ option is incompatible with our default Apache configuration, which loads **already** compression on the fly. To correct, simply remove the last section of the `.htaccess` file from the root of the site.
