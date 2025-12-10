@@ -1,12 +1,12 @@
 +++
-url = "/fr/securite/plages-dip"
-title = "Plages d'IP adresses alwaysdata"
+url = "/security/plages-dip"
+title = "Alwaysdata IP Ranges"
 layout = "man"
 hidden = true
 tags = [ "security" ]
 +++
 
-Voici les plages d'adresses IP que les applications peuvent autoriser pour fonctionner :
+Here are the ranges of IP addresses that apps can allow to work:
 
 ```
 185.31.40.0/22
