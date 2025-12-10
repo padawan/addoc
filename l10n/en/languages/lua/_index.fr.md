@@ -1,13 +1,13 @@
 +++
-url = "/fr/langages/lua/"
+url = "/languages/lua/"
 title = "Lua"
 archetype = "chapter"
-tags = [ "lua" ]
+tags = [ "Lua" ]
 +++
 
-Le fonctionnement de [Lua](https://www.lua.org/) chez alwaysdata est très standard. Si vous avez l'habitude d'utiliser Lua sous un système Unix (par exemple, Linux), vous savez déjà presque tout ce qu'il faut.
+The operation of [Lua](https://www.lua.org/) at alwaysdata is standard. If you are used to using Lua under a Unix system (for example, Linux), you already know almost everything you need.
 
-- les [versions proposées](languages/lua/configuration#versions-supportées) vont de la 5.1 à la 5.4 ;
-- la [configuration d'environnement](languages/lua/configuration#environnement) se fait simplement.
+- [proposed versions](languages/lua/configuration#versions-supportées) range from 5.1 to 5.4;
+- the [environment configuration](languages/lua/configuration#environnement) is simply done.
 
-Les frameworks [Sailor](https://github.com/sailorproject/sailor) et [Lapis](https://leafo.net/lapis/) sont par exemple compatibles avec notre architecture.
+For example, the [Sailor]frameworks (https://github.com/sailorproject/sailor) and [Lapis](https://leafo.net/lapis/) are compatible with our architecture.
