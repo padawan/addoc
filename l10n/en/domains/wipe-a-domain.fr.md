@@ -1,13 +1,13 @@
 +++
-url = "/fr/domaines/detruire-un-domaine/"
-title = "Comment détruire un domaine"
+url = "/domaines/detruire-un-domain/"
+title = "How to destroy a domain"
 layout = "howto"
 hidden = true
-tags = [ "domaine" ]
+tags = [ "domain" ]
 +++
 
-Supprimer un domaine dans l'onglet **Domaines**, ne le détruit pas. Il bloque simplement son fonctionnement s'il utilise nos serveurs DNS.
+Deleting a domain from the **Domains** tab, does not destroy it. It simply blocks its operation if it uses our DNS servers.
 
-Pour se séparer de son nom de domaine sans difficulté, **il suffit de ne pas le renouveler**. Lorsqu’un domaine n’est pas renouvelé, il est automatiquement détruit au registre après [différentes phases](domains/deadlines) (différentes selon l’extension concernée).
+To seperate its domain name without difficulty, **just do not renew it**. When a domain is not renewed, it is automatically destroyed in the registry after [different phases](domains/deadlines) (different depending on the extension concerned).
 
-S'il est cependant nécessaire de le détruire avant sa date d'expiration, contactez notre [support](https://admin.alwaysdata.com/support/add/). Il faudra nous faire parvenir le [formulaire de destruction anticipée](https://docs.gandi.net/fr/_downloads/dca2f6eba070d55485434fceee4127f8/delete-fr-v5.pdf) avec les pièces d'identifications obligatoires.
+However, if it is necessary to destroy it before its expiry date, contact our [support](https://admin.alwaysdata.com/support/add/). We will have to send us the [early destruction form](https://docs.gandi.net/fr/_downloads/dca2f6eba070d55485434fceee4127f8/delete-fr-v5.pdf) with the mandatory identification pieces.
