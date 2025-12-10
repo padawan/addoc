@@ -1,57 +1,57 @@
 +++
-url = "/fr/marketplace/wordpress/"
+url = "/marketplace/wordpress/"
 title = "WordPress"
 layout = "man"
 hidden = true
 tags = [ "cms", "wordpress" ]
 +++
 
-- [Activer le cache HTTP sur WordPress](sites/activate-http-cache-on-wordpress)
+- [Enable HTTP Cache on WordPress](sites/activate-http-cache-on-wordpress)
 
-## Migration depuis un autre prestataire d'hébergement
+## Migration from another hosting provider
 
-Vous aurez besoin de modifier :
+You will need to edit:
 
-- les paramètres _siteurl_, _home_ présents dans la table `_options` de la base de données ;
-- le fichier `$HOME/chemin/vers/l'application/wp-config.php` (situé à la racine de l'application).
+- _siteurl_, _home_ settings in the `_options` table of the database;
+- file `$HOME/path/to/application/wp-config.php` (located at the root of the application).
 
-## Recommandations
+## Recommendations
 
-Sa notoriété en fait une cible prioritaire pour les pirates informatiques, il est donc important de suivre ces quelques recommandations d'usage :
+Its notoriety made it a priority target for hackers, so it is important to follow these few usage recommendations:
 
-- mettez à jour régulièrement _WordPress_ et ses plugins ;
+- update updated _WordPress_ and its plugins;
 
-- informez-vous sur les rapports de bugs et failles de sécurité des plugins avant de les installer ;
+- investigate bug reports and security vulnerabilities of plugins before installing them;
 
-- mettez en place le [profil spécifique](sites/waf#profils-disponibles) de notre WAF ;
+- set up the [specific profile](sites/waf#profils-disponibles) of our WAF;
 
-- choisissez un autre préfixe que _wp__ pour le nom de vos tables. Pour changer cette valeur sur un WordPress déjà déployé, modifiez la table `_options` et le fichier `$HOME/chemin/vers/l'application/wp_config.php`.
+- choose a prefix other than _wp__ for the names of your tables. To change this value on a WordPress already deployed, edit the `_options` table and the `$HOME/path/to/application/wp_config.php` file.
 
-- supprimez les thèmes et plugins inactifs ;
+- remove inactive themes and plugins;
 
-- supprimez le fichier readme.txt à la racine de votre application (contient la version actuelle de votre WordPress, utile pour connaitre les failles de sécurité exploitables) ;
+- delete the readme file. xt at the root of your application (contains the current version of your WordPress, useful for knowing exploitable security vulnerabilities);
 
-- éditez le fichier `$HOME/chemin/vers/l'application/wp-content/themes/nom_du_theme/functions.php` de votre thème et ajoutez :
+- edit the `$HOME/path/to/application/wp-content/themes/theme/functions.php` file and add:
 
     ```php
     remove_action("wp_head", "wp_generator");
     ```
 
-  Cela masquera le numéro de version dans le meta name generator. Ajoutez :
+  This will hide the version number in the meta name generator. Add:
 
     ```php
     add_filter('login_errors',create_function('$a', "return null;"));
     ```
 
-  Pour masquer les erreurs de connexion.
+  To hide login errors.
 
-- supprimez le compte "admin" créé par défaut ;
+- delete default created "admin" account;
 
-- d'[autres règles](sites/clean-up-a-site#3-supprimer-les-vecteurs-dinfection).
+- of [other things](sites/clean-up-a-site#3-supprimer-les-vecteurs-dinfection).
 
 ---
 
-## Liens utiles
+## Useful links
 
-- [iThemes Security](http://wordpress.org/plugins/better-wp-security/) : améliore la sécurité de votre site WordPress
-- [WordFence](https://wordpress.org/plugins/wordfence/): scanne votre site à la recherche de faille, WAF et autres outils de sécurisation de votre interface WordPress
+- [iThemes Security](http://wordpress.org/plugins/better-wp-security/): Improve the security of your WordPress site
+- [WordFence](https://wordpress.org/plugins/wordfence/): scans your site for vulnerability, WAF and other security tools for your WordPress interface
