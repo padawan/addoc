@@ -1,33 +1,33 @@
 +++
-url = "/fr/acces-distant/ssh/utiliser-des-cles-ssh/"
-title = "Comment utiliser des clés SSH"
+url = "/remote-access/ssh/use keys-ssh/"
+title = "How to use SSH keys"
 layout = "howto"
 weight = 20
 hidden = true
-tags = [ "accès distant", "ssh" ]
+tags = [ "remote access", "ssh" ]
 +++
 
-Se connecter en SSH avec sa clé publique (avec ou en désactivant la connexion par mot de passe) présente quelques avantages : sécurité renforcée, possibilité de définir un mot de passe "vide", etc. Voici les étapes à suivre pour configurer son compte SSH avec clé publique.
+Connecting in SSH with its public key (with or disabling password login) provides some benefits: enhanced security, Possibility of defining an "empty" password, etc. Here are the steps to configure your SSH account with public key.
 
 {{% notice note %}}
-L'accès SSH est **désactivé par défaut**. Il faudra activer la connexion par mot de passe au moins temporairement pour y ajouter ses clés SSH.
-{{% /notice %}}
+SSH access is **disabled by default**. You will need to enable password login at least temporarily to add SSH keys.
+{{%/notice %}}
 
-## Sous Windows
+## On Windows
 
-Les manipulations sont réalisées grâce à _PuTTY_, un client SSH [disponible gratuitement](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+The manipulations are performed thanks to _PuTTY_, an SSH client [available for free](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
-1. Générer la clé privée :
-   - Lancez **PuTTYGen** (fourni par PuTTy) ;
-   - Générez une paire de clés **SSH-2 ED25519** ;
-   - Sauvegardez la clé privée sur votre poste ;
-2. Déclarez la clé sur le serveur en copiant cette clé dans le fichier `$HOME/.ssh/authorized_keys` de votre compte alwaysdata ;
-3. Configurez votre session **PuTTY** pour se connecter en SSH :
-   - Rendez-vous dans le menu **SSH > Auth**, pour renseigner le chemin vers votre clé privé dans _Private Key file for authentication_.
+1. Manage private key:
+   - Launch **PuTTYGen** (provided by PuTTy);
+   - Geek a **SSH-2 ED25519** keypair;
+   - Save the private key on your position;
+2. Report the key on the server by copying this key to the `$HOME/.ssh/authorized_keys` file of your alwaysdata account;
+3. Set up your **PuTTY** session to connect to SSH:
+   - Go to the **SSH > Auth** menu, to enter the path to your private key in _Private Key file for authentication_.
 
-## Sous Unix / OS X
+## Under Unix / OS X
 
-1. Générer les clés :
+1. Generate Keys:
 
 ```sh
 $ mkdir -p $HOME/.ssh
@@ -36,25 +36,25 @@ $ ssh-keygen -t ed25519 -f $HOME/.ssh/id_ed25519
 ```
 
 {{% notice tip %}}
-Si vous voulez ne jamais avoir à rentrer votre mot de passe lorsque vous vous connecterez en SSH, indiquez une « passphrase » vide.
-{{% /notice %}}
+If you want to never have to enter your password when you login in SSH, specify an empty passphrase.
+{{%/notice %}}
 
-2. Déclarer la clé publique (.pub) sur le serveur :
+2. Declare public key (.pub) on server:
 
 ```sh
 $ ssh-copy-id -i $HOME/.ssh/id_ed25519.pub [utilisateur]@ssh-[compte].alwaysdata.net
 ```
 
-Ou en copiant le contenu de ce fichier dans le fichier `$HOME/.ssh/authorized_keys` de votre compte alwaysdata.
+Or by copying the contents of this file to the `$HOME/.ssh/authorized_keys` file in your alwaysdata account.
 
 {{% notice note %}}
-Remplacez `[utilisateur]` par le nom de votre utilisateur SSH et `ssh-[compte].alwaysdata.net` par votre nom d'hôte SSH.
-{{% /notice %}}
+Replace `[utilisateur]` with your SSH username and `ssh-[compte].alwaysdata.net` with your SSH host-name.
+{{%/notice %}}
 
-Les utilisateurs du [Cloud Privé](accounts/billing/choose-its-paas) peuvent les déclarer [directement dans l'interface d'administration](remote-access/ssh/install-globally-ssh-keys), elles seront alors globales au serveur et donc utilisables par tous les comptes.
+[Private Cloud] (accounts/billing/choose-its-paas) users can declare them [directly in the admin interface](remote-access/ssh/install-globally-ssh-keys), they will then be global to the server and therefore usable to all accounts.
 
-3. Se connecter en SSH : à la prochaine connexion SSH, votre passphrase vous sera demandée (ou rien du tout si votre passphrase est vide).
+3. Connect in SSH: At the next SSH connection, your passphrase will be asked (or nothing if your passphrase is empty).
 
 {{% notice info %}}
-Les clés DSA ne sont [pas acceptées](https://www.openssh.com/legacy.html).
-{{% /notice %}}
+DSA keys are [not accepted](https://www.openssh.com/legacy.html).
+{{%/notice %}}
