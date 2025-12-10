@@ -1,27 +1,27 @@
 +++
-url = "/fr/emails/ajouter-regle-filtrage/"
-title = "Comment ajouter une règle de filtrage"
-linkTitle = "Ajouter une règle de filtrage"
+url = "/emails/add-policy-filtering/"
+title = "How to add a filter pattern"
+linkTitle = "Add filter pattern"
 layout = "howto"
 weight = 25
 tags = [ "email" ]
 +++
 
-Pour mieux gérer ses emails et les trier automatiquement, on peut utiliser les règles de filtrage. Ces règles peuvent être créées au niveau du client email ou du serveur email.
+To better manage emails and sort them automatically, you can use filtering methods. These can be created at the email client or email server level.
 
-{{< fig "images/filter-rule1.fr.png" "Interface d'administration : aller dans les règles de filtrage" >}}
+{{< fig "images/filter-rule1.png" "Admin interface: go to filtering files" >}}
 
-Vous y retrouverez la liste de vos règles et pourrez en ajouter.
+You will find the list of your entries and will be able to add them.
 
-{{< fig "images/filter-rule2.fr.png" "Liste de ses règles de filtrage" >}}
-{{< fig "images/filter-rule3.fr.png" "Ajouter une règle de filtrage" >}}
+{{< fig "images/filter-rule2.en.png" "Filter list" >}}
+{{< fig "images/filter-rule3.en.png" "Add filter pattern" >}}
 
-Les règles de filtrages sont traduites au format [Sieve](http://sieve.info/) que vous pourrez retrouver dans le fichier `$HOME/admin/mail/[domaine]/[partie-locale]/filter.sieve` sur votre espace de fichiers.
+Filtering files are translated to the format [Sieve](http://sieve.info/) that you can find in the file `$HOME/admin/mail/[domaine]/[partie-locale]/filter. ieve` on your file space.
 
 {{% notice tip %}}
-Pour créer des règles plus compliquées, ce sera des [règles Sieve](e-mails/use-sieve-scripts).
-{{% /notice %}}
+To create more complicated issues, it will be [Sieve](e-mails/use-sieve-scripts).
+{{%/notice %}}
 
 ---
 
-- [Ressource API](https://api.alwaysdata.com/v1/mailbox/rule/doc/)
+- [Resource API](https://api.alwaysdata.com/v1/mailbox/rule/doc/)
