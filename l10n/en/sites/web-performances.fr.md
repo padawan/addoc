@@ -1,22 +1,22 @@
 +++
-url = "/fr/sites/performances-web/"
-title = "Comment améliorer ses performances web"
+url = "/sites/performances-web/"
+title = "How to improve web performance"
 layout = "howto"
 hidden = true
 tags = [ "http", "site" ]
 +++
 
-Pour optimiser ses applications et améliorer l'accès à celles-ci, vous pouvez suivre les recommandations d'[OPquast](https://checklists.opquast.com/fr/webperf/), auxquelles nous ajouterons :
+To optimize its applications and improve access to them, you can follow the recommendations of[OPquast](https://checklists.opquast.com/fr/webperf/), to which we will add:
 
-- mettre en place des index dans les tables des bases de données ;
-- protéger ses formulaires et nettoyer les contenus "poubelles" ;
-- utiliser un [cache HTTP](sites/http-cache).
+- set up indexes in database tables;
+- protect its forms and clean "trash" content;
+- use [HTTP cache](sites/http-cache).
 
-Services externes d'analyse de site web :
+External website analysis services:
 
 - [Pingdom](https://tools.pingdom.com/)
 
-Services externes d'aide à la performance :
+External Performance Help Services:
 
-- [Blackfire](https://blackfire.io/) - [guide d'installation sur nos serveurs](guides/blackfire)
-- [Tideways](https://tideways.com/) (PHP) - [guide d'installation sur nos serveurs](guides/tideways)
+- [Blackfire](https://blackfire.io/) - [installation guide on our servers](guides/blackfire)
+- [Tideways](https://tideways.com/) (PHP) - [installation guide on our servers](guides/tideways)
