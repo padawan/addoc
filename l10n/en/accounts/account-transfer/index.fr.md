@@ -1,42 +1,42 @@
 +++
-url = "/fr/comptes/cession-de-compte/"
-title = "Cession de compte"
+url = "/accounts/transfer-account/"
+title = "Account cancellation"
 layout = "man"
 hidden = true
-tags = [ "compte", "profil" ]
+tags = [ "account", "profile" ]
 +++
 
-Pour certains cas, il n'est pas nécessaire de passer par le processus de cession et un changement des informations de profil suffit. En revanche, si l'historique client ne doit pas suivre, préférez la cession.
+In some cases, it is not necessary to go through the transfer process and a change of profile information is sufficient. However, if the customer history should not follow, prefer the transfer.
 
-## Changement de profil
+## Profile Change
 
-> Par exemple, pour faire suite à la vente de sa société ou au changement d'interlocuteur. C'est aussi ce qu'il faudra suivre pour un changement d'adresse.
+> For example, to follow up the sale of its company or the change of interlocutor. This is also what will have to be followed for a change of address.
 
-Rendez-vous dans le menu **Profil** pour modifier les informations de profil.
+Go to the **Profile** menu to edit profile information.
 
-{{< fig "images/profile.fr.png" "" >}}
+{{< fig "images/profile.en.png" "" >}}
 
-Toute information de profil peut être modifiée que ce soit au niveau de l'authentification à l'interface d'administration alwaysdata (adresse email, mot de passe) ou de la propriété (raison sociale, nom, adresse). Les prochaines factures seront émises avec les nouvelles informations de profil.
+Any profile information can be changed at the authentication level at the alwaysdata admin interface (email address) password) or property (name, address, surname). Future invoices will be issued with new profile information.
 
-## Cession
+## MEN_CESSSES
 
-> Pour notamment ne céder que certains comptes, les céder à plusieurs personnes ou encore que le destinataire ne récupère pas son historique client.
+> For example, only certain accounts are created, they are assigned to several people or the recipient is not receiving their customer history.
 
 {{% notice warning %}}
-Les [permissions](accounts/permissions) données à d'autres profils, les tickets de support, la facturation, les actions effectuées sur l'interface d'administration alwaysdata et son API seront tous _perdus_.
-{{% /notice %}}
+[permissions](accounts/permissions) given to other profiles, support tickets, billing, actions performed on the alwaysdata admin interface and its API will all be _lost_.
+{{%/notice %}}
 
-Rendez-vous sur **Abonnements > Céder à un autre utilisateur**. Vous devrez indiquer l'adresse email du profil destinataire qui pourra alors l'accepter dans l'onglet **Cessions** de son interface client.
+Go to **Subscriptions > Treat to another user**. You will need to specify the email address of the recipient profile that will be able to accept it in the **Cessions** tab of their client interface.
 
-{{< fig "images/accounts.fr.png" "" >}}
+{{< fig "images/accounts.en.png" "" >}}
 
 {{% notice info %}}
-Seul le _propriétaire du compte_ peut initier la cession.
-{{% /notice %}}
+Only the _account owner_ can initiate the assignment.
+{{%/notice %}}
 
-**Cela ferme l'abonnement actuel et en ouvre un sur le profil destinataire**. Il est possible de céder un compte de deux manières :
+**This closes the current subscription and opens one on the recipient profile**. It is possible to assign an account in two ways:
 
-- le profil destinataire est facturé _dès acceptation de la cession_. Un remboursement au prorata est automatiquement exécuté sur le profil émetteur ;
-- La date d'échéance de l'ancien abonnement est gardée et le profil destinataire n'est facturé qu'_à échéance_. Aucun remboursement au prorata ne sera effectué sur le profil émetteur.
+- the recipient profile is invoiced _after acceptance of the assignment_. A pro rata refund is automatically executed on the issuer profile;
+- The expiration date of the old subscription is kept and the recipient profile is only invoiced _in response_. No pro rata refunds will be made on the issuer profile.
 
-Tant que le nouveau propriétaire n'a pas validé la cession le profil émetteur reste propriétaire du compte et peut l'annuler dans l'onglet **Cessions**.
+As long as the new owner does not validate the assignment the issuer profile remains the owner of the account and can cancel it in the **Assignments** tab.
