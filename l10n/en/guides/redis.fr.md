@@ -1,76 +1,76 @@
 +++
-url = "/fr/guides/redis/"
+url = "/guides/redis/"
 title = "Redis"
 layout = "howto"
 hidden = true
-tags = [ "http", "redis", "site" ]
+tags = [ "http", "Redis", "site" ]
 +++
 
-[Redis](https://redis.io/) est système de gestion de base de données clé-valeur extensible.
+[Redis](https://redis.io/) is an expandable key value data base management system.
 
-Voici un guide d'installation sur le [Cloud Public](accounts/billing/public-cloud-prices). Les utilisateurs du [Cloud privé](accounts/billing/private-cloud-prices) peuvent demander l'installation de _Redis_ [au niveau serveur](databases/redis).
+Here is an installation guide on [Cloud Public](accounts/billing/public-cloud-prices). [Private Cloud] (accounts/billing/private-cloud-prices) users can request the installation of _Redis_ [at server level](databases/redis).
 
-Dans notre exemple, nous utilisons un [accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use a [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom du compte : `foo`
-- Répertoire de Redis : `$HOME/redis/`
-- Port : 8300 (les ports entre 8300 et 8499 peuvent être utilisés)
+- Account name: `foo`
+- Redis directory: `$HOME/redis/`
+- Port: 8300 (ports between 8300 and 8499 can be used)
 
 {{% notice note %}}
-`[foo]` doit être remplacé par le nom de compte correct.
-{{% /notice %}}
+`[foo]` must be replaced with the correct account name.
+{{%/notice %}}
 
-## Installation
+## Setup
 
-### Téléchargement et compilation
+### Download and compile
 
 ```sh
 foo@ssh:~/redis$ wget -O- https://download.redis.io/redis-stable.tar.gz | tar -xz --strip-components=1
 foo@ssh:~/redis$ make
 ```
 
-### Lancement du service
+### Launching service
 
-Créez le [service](services) suivant :
+Create the following [service](services) :
 
-- _Commande_ : `./src/redis-server --bind :: --port 8300 --protected-mode no`
-- _Commande de monitoring_ : `./src/redis-cli  redis.conf -h services-[foo].alwaysdata.net -p 8300 ping`
-- _Répertoire de travail_ : `/home/[foo]/redis`
+- _Command_: `./src/redis-server --bind :: --port 8300 --protected-mode no`
+- _Control monitoring_: `./src/redis-cli redis.conf -h services-[foo].alwaysdata.net -p 8300 ping`
+- _Work directory_ : `/home/[foo]/redis`
 
-Plus d'options via `$HOME/redis/src/redis-cli -h`.
+More options via `$HOME/redis/src/redis-cli -h`.
 
-Il restera ensuite la configuration de l'application qui pour se connecter à Redis devra utiliser `services-[foo].alwaysdata.net` et le port `8300`.
+Then it will remain the configuration of the application that to connect to Redis will have to use `services-[foo].alwaysdata.net` and port `8300`.
 
-- [Installer l'extension PHP](databases/redis/php)
+- [Install PHP extension](databases/redis/php)
 
-## Authentification
+## Authentication
 
-Par défaut n'importe qui peut se connecter au Redis ; il n'y a aucune sécurité. Une [authentification](https://redis.io/docs/management/security/acl/) peut donc être mise en place.
+By default anyone can connect to Redis; there is no security. Une [authentification](https://redis.io/docs/management/security/acl/) peut donc être mise en place.
 
-Il faudra créer le fichier `users.acl` et modifier la ligne `aclfile` dans le fichier de configuration Redis `redis.conf`.
+You will need to create the `users.acl` file and change the `aclfile` line in the Redis `redis.conf` configuration file.
 
-Dans l'exemple suivant, nous allons indiquer un mot de passe (`[mot de passe]`) à l'utilisateur par défaut.
+In the following example, we will specify a password (`[password]`) to the user by default.
 
 ```sh
 foo@ssh:~/redis$ ./src/redis-cli -h services-[foo].alwaysdata.net -p 8300
-services-[foo].alwaysdata.net:8300> ACL LIST
+services-[foo].alwaysdata. and:8300> ACL LIST
 1) "user default on nopass sanitize-payload ~* &* +@all"
 
-services-[foo].alwaysdata.net:8300> ACL SETUSER default on >[mot de passe]
+services -[foo]. lwaysdata.net:8300> ACL SETUSER default on >[password]
 
-services-[foo].alwaysdata.net:8300> ACL LIST
+services -[foo].alwaysdata. and:8300> ACL LIST
 1) "user default on sanitize-payload #1ccc91f99d0c4c7a24e77941b18c0339ecb3eaf5ad7ae9ad816a7e69d83b69db ~* &* +@all"
 
-services-[foo].alwaysdata.net:8300> ACL SAVE
+services-[foo].alwaysdata. and:8300> ACL SAVE
 OK
 
 services-[foo].alwaysdata.net:8300> CONFIG REWRITE
 OK
 
-services-[foo].alwaysdata.net:8300> AUTH default [mot de passe]
+services-[foo].alwaysdata.net:8300> AUTH default [password]
 OK
 ```
 
-- [`ACL LIST`](https://redis.io/commands/acl-list/) liste les utilisateurs et donne des informations sur les droits des utilisateurs.
-- [`ACL SETUSER`](https://redis.io/commands/acl-setuser/) créé ou modifie les utilisateurs.
-- [`ACL SAVE`](https://redis.io/commands/acl-save/) enregistre les utilisateurs.
+- [`ACL LIST`](https://redis.io/commands/acl-list/) lists users and gives information about user rights.
+- [`ACL SETUSER`](https://redis.io/commands/acl-setuser/) creates or modifies users.
+- [`ACL SAVE`](https://redis.io/commands/acl-save/) saves users.
