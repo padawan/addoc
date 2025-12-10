@@ -1,95 +1,95 @@
 +++
-url = "/fr/emails/utiliser-les-scripts-sieve/"
-title = "Comment utiliser les scripts Sieve"
+url = "/emails/user-les-scripts-sieve/"
+title = "How to use Sieve scripts"
 layout = "howto"
 hidden = true
 tags = [ "email" ]
 +++
 
-[Sieve](http://sieve.info/) est un langage permettant de filtrer les emails. Il sert à ajouter des règles complexes, qu'on ne pourrait ajouter via les [règles de filtrage](e-mails/add-a-filter-rule).
+[Sieve](http://sieve.info/) is a language for filtering emails. It is used to add complex tricks, which could not be added via the [filtering filters](e-mails/add-a-filter-rule).
 
-{{< fig "images/admin-panel_mailbox_sieve.fr.png" "Interface d'administration : Emails - Script Sieve" >}}
+{{< fig "images/admin-panel_mailbox_sieve.png" "Admin interface: Emails - Sieve Script" >}}
 
-Le script final est stocké dans le fichier `$HOME/admin/mail/[domaine]/[boite]/filter_user.sieve` de votre compte. Vous pouvez le lire pour aider à déboguer votre script, mais pas l'éditer.
+The final script is stored in your account's `$HOME/admin/mail/[domaine]/[boite]/filter_user.sieve` file. You can read it to help debug your script, but not edit it.
 
-## Extensions supportées
+## Supported extensions
 
-| Extension                  | Description                                                                                             |
-| -------------------------- | ------------------------------------------------------------------------------------------------------- |
-| body                       | Vérifie la présence d'une ou de plusieurs chaînes de caractères dans le corps d'un email                |
-| comparator-i;ascii-numeric | Extrait des nombres du texte et les compare pour voir si cela correspond                                |
-| copy                       | Spécifie qu'une copie doit être utilisée pour effectuer l'action                                        |
-| date                       | Effectue des actions en fonction de la date/l'heure de l'envoi/la réception d'un email                  |
-| duplicate                  | Détecte si c'est un duplicata                                                                           |
-| editheader                 | Ajoute ou supprime du texte aux en-têtes                                                                |
-| encoded-character          | Permet l'encodage numérique de caractères spéciaux                                                      |
-| enotify                    | Envoie des notifications                                                                                |
-| envelope                   | Évalue l'enveloppe ("from", "to"...) |
-| environment                | Teste différentes valeurs étiquetées de l'environnement d'exécution                                     |
-| fileinto                   | Délivre l'email dans le dossier spécifié                                                                |
-| foreverypart               | Permet aux commandes d'être exécutées dans toutes les parties MIME de l'email                           |
-| ihave                      | Teste si une extension Sieve est disponible et, si c'est le cas, exécute son action                     |
-| imap4flags                 | Ajoute des indicateurs IMAP et mots clés aux messages                                                   |
-| include                    | Permet d'inclure un script Sieve dans un autre                                                          |
-| index                      | Permet de faire correspondre des champs d'en-tête spécifiques par index                                 |
-| mailbox                    | Vérifie si un répertoire spécifique existe                                                              |
-| mime                       | Teste des parties MIME spécifiques du message                                                           |
-| extracttext                | Extrait du texte depuis des parties MIME                                                                |
-| regex                      | Utilise des expressions régulières                                                                      |
-| reject                     | Refuse la délivrance du message                                                                         |
-| relational                 | Permet des comparaisons relationnelles                                                                  |
-| subaddress                 | Teste des éléments délimités de la partie locale des adresses                                           |
-| vacation                   | Réponses automatiques                                                                                   |
-| variables                  | Permet d'ajouter des variables                                                                          |
+| Extension                                                                   | Description                                                                                                 |
+| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| body                                                                        | Check the presence of one or more chains of characters in the body of an email                              |
+| comparator-i;ascii-numeric                                                  | Extract numbers from the text and compare them to see if this matches                                       |
+| copy                                                                        | Specifies that a copy must be used to perform the action                                                    |
+| date                                                                        | Perform actions based on sending/receiving an email date/time                                               |
+| duplicate                                                                   | Detect if duplicated                                                                                        |
+| editer                                                                      | Adds or removes text to headers                                                                             |
+| character encoding                                                          | Enables the numeric encoding of special characters                                                          |
+| enotify                                                                     | Send notifications                                                                                          |
+| envelope                                                                    | Evaluates the envelope ("from", "to"...) |
+| environment                                                                 | Test different execution environment values                                                                 |
+| fileinto                                                                    | Delivers the email in the specific folder                                                                   |
+| drilling part                                                               | Allows orders executed in all MIME parts of the email                                                       |
+| [currency symbol] ihave | Test if a Sieve extension is available and, if so, perform its action                                       |
+| imap4flags                                                                  | Adds IMAP indicators and keywords to messages                                                               |
+| include                                                                     | Allows to include a Sieve script in another                                                                 |
+| index                                                                       | Allows to match specific header fields by index                                                             |
+| mailbox                                                                     | Check if a specific directory exists                                                                        |
+| mime                                                                        | Test specific MIME parts of the message                                                                     |
+| extracttext                                                                 | Extract text from MIME parts                                                                                |
+| regex                                                                       | Use regular expressions                                                                                     |
+| discard                                                                     | Decline message delivery                                                                                    |
+| Relational                                                                  | Allows relational comparisons                                                                               |
+| subaddress                                                                  | Test boundary elements of the local part of addresses                                                       |
+| vacation                                                                    | Automatic Responses                                                                                         |
+| variables                                                                   | Allows to add variables                                                                                     |
 
-## Exemples
+## Examples
 
-### Ajouter un préfixe `<SPAM>` au sujet d'un mail contenant un mot clé à définir (que ce soit dans son sujet ou son corps de texte)
+### Add a `<SPAM>` prefix to a mail containing a keyword to be defined (either in its subject or body of text)
 
 ```
-require ["editheader", "variables", "body"] ;
+require ["editheader", "variables", "body"];
 if allof (
-header :contains "subject" "mot",
+header :contains "subject" "word",
 header :matches "Subject" "*"
 )
 {
 deleteheader "Subject";
-addheader "Subject" "<SPAM> ${1}";
+addheader "Subject"<SPAM> ${1}";
 }
 elsif allof (
-body :content "text" :contains "mot",
+body :content "text" :contains "word",
 header :matches "Subject" "*"
 )
 {
 deleteheader "Subject";
-addheader "Subject" "<SPAM> ${1}";
+addheader "Subject"<SPAM> ${1}";
 }
 ```
 
-### Extraire des en-têtes de message dans les réponses automatiques
+### Extract message headings into automatic replies
 
 ```
 require ["variables", "vacation"];
 
-# Stockage du sujet en variable
+# Storing the subject in variable
 if header :matches "Subject" "*" {
         set "subj" "**${1}**";
 }
 
-# Répondeur automatique
+# Auto Responder
 vacation
   :days 1
   :subject "Absence [Was: ${subj}]"
-"Bonjour,
-nous avons bien reçu votre message :
+"Hello,
+we have received your message correctly:
 
 ${subj}
 
-Nous sommes actuellement absent et y répondrons à notre retour.";
+We are currently away and will respond to it upon our return.";
 ```
 
 ---
 
-## Liens
+## Links
 
 - [RFC 5228](https://tools.ietf.org/html/rfc5228)
