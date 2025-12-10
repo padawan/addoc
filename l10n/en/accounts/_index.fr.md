@@ -1,46 +1,46 @@
 +++
-url = "/fr/comptes/"
-title = "Comptes & Facturation"
+url = "/accounts/"
+title = "Accounts & Billing"
 weight = 60
 archetype = "chapter"
 pre = "<i class='fas fa-fw fa-user-circle'></i> "
-tags = [ "facturation", "interface d'administration" ]
+tags = [ "invoicing", "admin interface" ]
 +++
 
 {{% notice info %}}
-Notre interface de [ticket](https://admin.alwaysdata.com/support/) est le moyen que nous privilégions pour contacter ou alerter à tout propos les utilisateurs d'alwaysdata. L'email renseigné dans le **Profil** doit donc régulièrement être vérifié.
-{{% /notice %}}
+Our interface of [ticket](https://admin.alwaysdata.com/support/) is the way we use to contact or alert alwaysdata users. The email provided in **Profile** must be checked correctly.
+{{%/notice %}}
 
 ## Support
 
-- [Créer un compte](create-an-account)
-- [Supprimer un compte](delete-an-account)
-- [Gestion des permissions](permissions)
-- [Céder un compte](account-transfer)
-- [Renommer un compte](rename-an-account)
-- [Compte restreint](security/restricted-mode)
-- [Utiliser les tokens](tokens)
-- [Serveur dédié : ticket urgent](urgent-ticket)
-- [Système d'alertes](alerts-notifications)
-- [Perte d'accès à l'interface d'administration](admin-access-loss)
-- [Suspension de profil](./suspension)
-- [Cloud Public : restrictions](public-cloud-restrictions)
-- [Diverses questions](./misc)
+- [Create account](create-an-account)
+- [Delete account](delete-an-account)
+- [ permissionsManagement](permissions)
+- [Set an account](account-transfer)
+- [Rename an account](rename-an-account)
+- [Account Restricted](security/restricted-mode)
+- [Use tokens](tokens)
+- [Server set: urgent ticket](urgent-ticket)
+- [Alert system](alerts-notifications)
+- [Lost access to the admin interface](admin-access-loss)
+- [Profile suspension](./suspension)
+- [Public Cloud: restrictions](public-cloud-restrictions)
+- [Various questions](./misc)
 
-## Facturation
+## Billing
 
-- [Payer ses factures](./billing)
-- [Choisir son plan d'hébergement](billing/choose-its-paas)
-- [Moyens de paiement](billing/payment-methods)
+- [Pay invoices](./billing)
+- [Choose hosting plan](billing/choose-its-paas)
+- [Payment Methods](billing/payment-methods)
 
-* [Tarifs Cloud Privé](billing/private-cloud-prices)
-* [Tarifs Cloud Public](billing/public-cloud-prices)
+* [Private Cloud Plans](billing/private-cloud-prices)
+* [Public Cloud Prices](billing/public-cloud-prices)
 
 - [Chorus Pro](accounts/billing/payment-methods#chorus-pro)
 - [Parrainage](billing/sponsorship)
-- [Programmes de réduction](programs)
+- [Deduction Programs](programs)
 
-* [Changer d'offre](billing/upgrade-your-plan)
-* [Tarifs des interventions](accounts/billing/servers-interventions)
-* [Prix options - anciennes configurations](accounts/billing/prices-options-old-configurations)
-* [Diverses questions](./billing/misc)
+* [Change Offer](billing/upgrade-your-plan)
+* [Intervention Rates](accounts/billing/servers-interventions)
+* [Price options - old configurations](accounts/billing/prices-options-old-configurations)
+* [Various questions](./billing/misc)
