@@ -1,66 +1,66 @@
 +++
-url = "/fr/acces-distant/informations-de-connexion/"
-title = "Informations de connexion"
-linkTitle = "Informations de connexions"
+url = "/remote-access/connection-information/"
+title = "Login information"
+linkTitle = "Login information"
 layout = "faq"
 weight = 1
-tags = [ "compte", "environnement technique" ]
+tags = [ "account", "technical environment" ]
 +++
 
-Le sous-domaine qui vous est attribué à la création de votre compte se termine par l'extension **.net** et non _.com_ comme les autres domaines d'alwaysdata.
+The subdomain assigned to you when creating your account ends with the **.net** extension and not _.com_ like other alwaysdata domains.
 
-Chaque fois que vous rencontrez la forme `*-[compte].alwaysdata.net`, vous devez remplacer `[compte]` par le nom de votre compte, choisi lors de sa création.
+Whenever you encounter the shape `*-[compte].alwaysdata. and`, you must replace `[compte]` with the name of your account, chosen when creating it.
 
-| Fonctionnalité       | Informations                                                                                                                                                                                                                        |
-| :------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Administration**   |                                                                                                                                                                                                                                     |
-| URL                  | https://admin.alwaysdata.com                                                                                                                                                        |
-|                      | Email/mot de passe, [Double authentification possible](security/two-factor-authentication)                                                                                                                                          |
-| API                  | [api.alwaysdata.com/v1](api) (soumis à un _[rate limit](api/usage#rate-limit)_)                                                                                                  |
-|                      | [Tokens](accounts/tokens) disponibles via _Profil_                                                                                                                                                                                  |
-| **Générique**        |                                                                                                                                                                                                                                     |
-| DNS                  | Primaire : dns1.alwaysdata.com                                                                                                                                                      |
-|                      | Secondaire : dns2.alwaysdata.com                                                                                                                                                    |
-| MX                   | Primaire : mx1.alwaysdata.com (TTL : 10)                                                                                                         |
-|                      | Secondaire : mx2.alwaysdata.com (TTL : 20)                                                                                                       |
-|                      | si [Cloud Privé](accounts/billing/private-cloud-prices) : [serveur].alwaysdata.net (TTL : 5) |
-| **Bases de données** |                                                                                                                                                                                                                                     |
-| MySQL                | Hôte : mysql-[compte].alwaysdata.net                                                                                            |
-|                      | Port : 3306                                                                                                                                                                                                         |
-|                      | Interface d'administration : [phpMyAdmin](https://phpmyadmin.alwaysdata.com)                                                                                                                                        |
-| PostgreSQL           | Hôte : postgresql-[compte].alwaysdata.net                                                                                       |
-|                      | Port : 5432                                                                                                                                                                                                         |
-|                      | Interface d'administration : [phpPgAdmin](https://phppgadmin.alwaysdata.com)                                                                                                                                        |
-| RabbitMQ             | Hôte : rabbitmq-[compte].alwaysdata.net                                                                                         |
-|                      | Port : 5672                                                                                                                                                                                                         |
-| Redis                | Hôte : localhost ou 127.0.0.1                                                                                                                                       |
-|                      | Port : 6380                                                                                                                                                                                                         |
-| Memcached            | Hôte : localhost ou 127.0.0.1                                                                                                                                       |
-|                      | Port : 11211                                                                                                                                                                                                        |
-| **Emails**           |                                                                                                                                                                                                                                     |
-| Webmail              | [RoundCube](https://webmail.alwaysdata.com)                                                                                                                                                                                         |
-| Listes de diffusion  | [Mailman](https://mailman.alwaysdata.com)                                                                                                                                                                                           |
-| IMAP                 | Hôte : imap-[compte].alwaysdata.net                                                                                             |
-|                      | Ports : 993 (SSL/TLS)                                                                                                                                                                            |
-| POP3                 | Hôte : pop-[compte].alwaysdata.net                                                                                              |
-|                      | Ports :  995 (SSL/TLS)                                                                                                                                                                           |
-| SMTP                 | Hôte : smtp-[compte].alwaysdata.net                                                                                             |
-|                      | Ports : 465 (SSL/TLS)                                                                                                                                                                            |
-|                      | Identification : nécessaire (adresse email et mot de passe associé)                                                                                                                              |
-| **Accès distant**    |                                                                                                                                                                                                                                     |
-| FTP                  | Hôte : ftp-[compte].alwaysdata.net                                                                                              |
-|                      | Port : 990 (SSL/TLS)                                                                                                                                                                             |
-| SFTP                 | Hôte : ssh-[compte].alwaysdata.net                                                                                              |
-|                      | Port : 22                                                                                                                                                                                                           |
-| SSH                  | Hôte : ssh-[compte].alwaysdata.net                                                                                              |
-|                      | Port : 22                                                                                                                                                                                                           |
-|                      | Accès web (via Shell in a box) : https://ssh-[compte].alwaysdata.net                         |
-| WebDAV               | Hôte : webdav-[compte].alwaysdata.net                                                                                           |
-|                      | Port : 80                                                                                                                                                                                                           |
-| **Services**         |                                                                                                                                                                                                                                     |
-|                      | Hôte : services-[compte].alwaysdata.net                                                                                         |
-|                      | Ports : entre 8300 et 8499                                                                                                                                                                                          |
+| Functionality      | Information                                                                                                                                                                                                                         |
+| :----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Administration** |                                                                                                                                                                                                                                     |
+| URL                | https://admin.alwaysdata.com                                                                                                                                                        |
+|                    | Email/password, [Possible Double Authentication](security/two-factor-authentication)                                                                                                                                                |
+| API                | [api.alwaysdata.com/v1](api) (submitted to a _[rate limit](api/usage#rate-limit)_)                                                                                               |
+|                    | [Tokens](accounts/tokens) available via _Profile_                                                                                                                                                                                   |
+| **Geometrics**     |                                                                                                                                                                                                                                     |
+| DNS                | Primary: dns1.alwaysdata.com                                                                                                                                                        |
+|                    | Secondary: dns2.alwaysdata.com                                                                                                                                                      |
+| MX                 | Primary: mx1.alwaysdata.com (TTL: 10)                                                                                                            |
+|                    | Secondary: mx2.alwaysdata.com (TTL: 20)                                                                                                          |
+|                    | if [Private Cloud](accounts/billing/private-cloud-prices): [serveur].alwaysdata.net (TTL: 5) |
+| **Databases**      |                                                                                                                                                                                                                                     |
+| MySQL              | host: mysql-[compte].alwaysdata.net                                                                                             |
+|                    | Port: 3306                                                                                                                                                                                                          |
+|                    | Admin interface: [phpMyAdmin](https://phpmyadmin.alwaysdata.com)                                                                                                                                                    |
+| PostgreSQL         | Hoest: postgresql-[compte].alwaysdata.net                                                                                       |
+|                    | Port: 5432                                                                                                                                                                                                          |
+|                    | Admin interface: [phpPgAdmin](https://phppgadmin.alwaysdata.com)                                                                                                                                                    |
+| RabbitMQ           | Hoest: rabbitmq-[compte].alwaysdata.net                                                                                         |
+|                    | Port: 5672                                                                                                                                                                                                          |
+| Redis              | Hosted: localhost or 127.0.0.1                                                                                                                                      |
+|                    | Port: 6380                                                                                                                                                                                                          |
+| Memcached          | Hosted: localhost or 127.0.0.1                                                                                                                                      |
+|                    | Port: 11211                                                                                                                                                                                                         |
+| **Emails**         |                                                                                                                                                                                                                                     |
+| Webmail            | [RoundCube](https://webmail.alwaysdata.com)                                                                                                                                                                                         |
+| Mailing lists      | [Mailman](https://mailman.alwaysdata.com)                                                                                                                                                                                           |
+| IMAP               | host: imap-[compte].alwaysdata.net                                                                                              |
+|                    | Ports: 993 (SSL/TLS)                                                                                                                                                                             |
+| POP3               | Hostep: pop-[compte].alwaysdata.net                                                                                             |
+|                    | Ports: 995 (SSL/TLS)                                                                                                                                                                             |
+| SMTP               | Hostep: smtp-[compte].alwaysdata.net                                                                                            |
+|                    | Ports: 465 (SSL/TLS)                                                                                                                                                                             |
+|                    | Login: Required (email address and associated password)                                                                                                                                          |
+| **Remote access**  |                                                                                                                                                                                                                                     |
+| FTP                | host: ftp-[compte].alwaysdata.net                                                                                               |
+|                    | Port: 990 (SSL/TLS)                                                                                                                                                                              |
+| SFTP               | Hoest: ssh-[compte].alwaysdata.net                                                                                              |
+|                    | Port: 22                                                                                                                                                                                                            |
+| SSH                | Hoest: ssh-[compte].alwaysdata.net                                                                                              |
+|                    | Port: 22                                                                                                                                                                                                            |
+|                    | Web access (via Shell in a box): https://ssh-[compte].alwaysdata.net                         |
+| WebDAV             | host: webdav-[compte].alwaysdata.net                                                                                            |
+|                    | Port: 80                                                                                                                                                                                                            |
+| **Services**       |                                                                                                                                                                                                                                     |
+|                    | host: services-[compte].alwaysdata.net                                                                                          |
+|                    | Ports: between 8300 and 8499                                                                                                                                                                                        |
 
 {{% notice note %}}
-Le login par défaut correspond - à l'exception des mails pour lequel l'identifiant est l'adresse email - au **nom du compte** et son mot de passe est celui indiqué à la création du compte. Tous les mots des passes sont chiffrés - et donc non récupérables - mais modifiables dans les menus dédiés.
-{{% /notice %}}
+The default login matches - with the exception of the emails for which the login is the email address - to the **account name** and its password is the one indicated at the account creation. All passwords are encrypted - and therefore not recoverable - but can be changed in the generated menus.
+{{%/notice %}}
