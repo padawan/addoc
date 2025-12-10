@@ -1,17 +1,17 @@
 +++
-url = "/fr/langages/python/"
+url = "/en/languages/python/"
 title = "Python"
 archetype = "chapter"
 tags = [ "python" ]
 +++
 
-Le fonctionnement de [Python](https://www.python.org) chez alwaysdata est très standard. Si vous avez l'habitude d'utiliser Python sous un système Unix (par exemple, Linux), vous savez déjà presque tout ce qu'il faut.
+The operation of [Python](https://www.python.org) at alwaysdata is standard. If you are used to using Python under a Unix system (e.g. Linux), you already know almost everything you need.
 
-- les [versions proposées](languages/python/configuration#versions-supportées) vont de la 2.4 à la 3.14 ;
-- la [configuration d'environnement](languages/python/configuration#environnement) se fait très simplement.
+- [proposed versions](languages/python/configuration#versions-supportées) range from 2.4 to 3.14;
+- the [environment configuration](languages/python/configuration#environnement) is very straightforward.
 
-Les frameworks [Django](https://www.djangoproject.com/), [Flask](https://flask.palletsprojects.com/en/2.0.x/) et [Sanic](https://sanic.dev/en/) font partie de nos applications autoinstallables et de nombreuses autres applications sont aussi compatibles. Par exemple, [Celery](https://docs.celeryproject.org/en/stable/), [Falcon](https://falconframework.org/), [Pyramid](https://trypyramid.com/), [Tornado](http://www.tornadoweb.org/) ou encore [Uvicorn](https://www.uvicorn.org/).
+The [Django]frameworks (https://www.djangoproject.com/), [Flask](https://flask.palletsprojects.com/en/2.0.x/) and [Sanic](https://sanic.dev/en/) are part of our autoinstallable applications and many other applications are also compatible. For example, [Celery](https://docs.celeryproject.org/en/stable/), [Falcon](https://falconframework.org/), [Pyramid](https://trypyramid.com/), [Tornado](http://www.tornadoweb.org/) or [Uvicorn](https://www.uvicorn.org/).
 
 ---
 
-- [Ressource API](https://api.alwaysdata.com/v1/environment/python/doc/)
+- [Resource API](https://api.alwaysdata.com/v1/environment/python/doc/)
