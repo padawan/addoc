@@ -1,43 +1,43 @@
 +++
-url = "/fr/marketplace/prestashop/"
+url = "/marketplace/prestashop/"
 title = "PrestaShop"
 layout = "man"
 hidden = true
 tags = [ "e-commerce" ]
 +++
 
-## Migration depuis un autre prestataire d'hébergement
+## Migration from another hosting provider
 
-Vous aurez besoin de modifier :
+You will need to edit:
 
-- les paramètres `ps_shop_domain`, `ps_shop_domain_ssl` présents dans les tables `ps_shop_url` et `ps_configuration` de la base de données ;
-- la valeur **localhost** du paramètre `physical_URI` de la table `ps_shop_url` par **/** ;
-- le fichier `$HOME/chemin/vers/l'application/app/config/parameters.php`.
+- the `ps_shop_domain`, `ps_shop_domain_ssl` settings set in the `ps_shop_url` and `ps_configuration` tables of the database;
+- the **localhost** value of the `physical_URI` parameter of the `ps_shop_url` table by **/**;
+- the `$HOME/path/to/application/app/config/parameters.php` file.
 
-## Envoi de mails
+## Sending emails
 
-L'utilisation de `/usr/sbin/sendmail` est non-fonctionnelle. Choisissez d'utiliser vos "propres paramètres SMTP" et indiquez juste le nom d'hôte SMTP de votre compte (donné dans le menu **Emails > Adresses** de votre interface d'administration alwaysdata).
+Using `/usr/sbin/sendmail` is not working. Choose to use your own SMTP settings and just specify your SMTP hostname (given in the **Emails > Addresses** menu of your alwaysdata admin interface).
 
-{{< fig "images/prestashop-emails.fr.png" "" >}}
+{{< fig "images/prestashop-emails.png" "" >}}
 
-## Activer le cache PrestaShop
+## Enable PrestaShop Cache
 
-Si vous observez des problèmes de performances, une première étape peut être d'activer le système de cache **CacheApc**. Pour cela :
+If you are experiencing performance issues, a first step may be to enable the **CacheApc** caching system. For this purpose:
 
-- installez [l'extension PECL](languages/php/extensions#depuis-peclhttpspeclphpnet) `apcu` sur votre compte via [SSH](remote-access/ssh).
+- install [PECL extension](languages/php/extensions#depuis-peclhttpspeclphpnet) `apcu` on your account via [SSH](remote-access/ssh).
 
 ```
-ad_install_pecl apcu
+peel_install_apcu
 ```
 
-- ajoutez ensuite [l'extension dans votre `php.ini`](languages/php/configuration#paramètres-phpini).
+- then add [the extension in your `php.ini`](languages/php/configuration#paramètres-phpini).
 
 ```
 extension=/home/[compte]/path/to/apcu-[VERSION].so
 ```
 
-- puis activez le système **Cache APC** dans l'interface d'administration du PrestaShop (menu Paramètres avancés > Performance).
+- then activate the **API cache** system in the PrestaShop administration interface (Advanced Settings > Performance).
 
 {{% notice warning %}}
-`[VERSION]` correspond à la version majeure de PHP avec laquelle l'extension a été installée. Par défaut, cela prendra la version du menu **Environnement** (utilisée en SSH). Vous pouvez l'installer avec [une autre version de PHP](languages/php/troubleshooting#utiliser-différentes-versions-en-ssh) si votre site web en utilise une autre.
-{{% /notice %}}
+`[VERSION]` matches the major version of PHP with which the extension was installed. By default, this will take the version of the **Environment** menu (used in SSH). You can install it with [another version of PHP](languages/php/troubleshooting#utiliser-différentes-versions-en-ssh) if your website uses another one.
+{{%/notice %}}
