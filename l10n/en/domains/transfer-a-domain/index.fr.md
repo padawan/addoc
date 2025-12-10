@@ -1,88 +1,88 @@
 +++
-url = "/fr/domaines/transferer-un-domaine/"
-title = "Comment transférer un domaine"
-linkTitle = "Transférer un domaine"
+url = "/domains/transferer-un-domain/"
+title = "How to transmit a domain"
+linkTitle = "Transfers a domain"
 layout = "howto"
 weight = 2
-tags = [ "domaine" ]
+tags = [ "domain" ]
 +++
 
-Opération [payante](https://www.alwaysdata.com/fr/domaines/#main), elle permet de transférer la gestion _administrative_ de son domaine chez alwaysdata.
+OPERation [payante](https://www.alwaysdata.com/fr/domaines/#main), it allows to transmit the _administrative_ management of its domain to alwaysdata.
 
 {{% notice warning %}}
-Si vous souhaitez transférer le domaine à un autre client alwaysdata, passez par un [déplacement de domaine](domains/move-a-domain).
-{{% /notice %}}
+If you want to transfer the domain to another alwaysdata client, go through a [domain move](domains/move-a-domain).
+{{%/notice %}}
 
-## Préparation en amont
+## Preparation upstream
 
-Avant de lancer l'opération le propriétaire doit :
+Before starting the project the owner must:
 
-- enlever la protection contre les transferts ;
-- vérifier que les informations du propriétaire sont correctes et visibles dans le `whois` [^1] ;
-- obtenir le code d'autorisation ;
-- récupérer une sauvegarde de ses données (notamment les emails).
+- remove transfer protection;
+- make sure the property information is correct and visible in the `whois` [^1] ;
+- get authorization code;
+- Retrieve a backup of its data (including emails).
 
-Un transfert ne peut avoir lieu dans les 60 jours suivant sa création ou un précédent transfert.
+A transfer cannot take place within 60 days of its creation, or a previous transfer.
 
 {{% notice tip %}}
-Le transfert de la [gestion technique](domains/add-an-external-domain) peut être effectué avant pour éviter d'être embêté par le temps pris par le transfert administratif.
-{{% /notice %}}
+The transfer of [technical management](domains/add-an-external-domain) can be done before to avoid being affected by the time taken by the administrative transfer.
+{{%/notice %}}
 
-## Lancement du transfert
+## Launching transfer
 
-1. Dans votre interface d'administration, allez dans **Domaines > Ajouter un domaine** ;
+1. In your admin interface, go to **Domains > Add Domain**;
 
-       {{< fig "images/admin-panel_domain-list.fr.png" "Interface d'administration : liste des domaines" >}}
+       {{< fig "images/admin-panel_domain-list.en.png" "Admin interface: list of domains" >}}
 
-   Si le domaine a déjà été [ajouté](domains/add-an-external-domain) à votre interface alwaysdata, vous pouvez le transférer via **Domaines > Détails** du domaine concerné **> Transférer**.
+   If the domain has already been [ajouté](domains/add-an-external-domain) to your alwaysdata interface you can transmit it via **Domains > Details** of the relevant domain **> Transaction**.
 
-       {{< fig "images/admin-panel_transfer-domain.fr.png" "Interface d'administration : Transfert d'un domaine déjà en gestion" >}}
+       {{< fig "images/admin-panel_transfer-domain.png" "Administration interface: Transfer of a domain to management" >}}
 
-2. Renseignez les noms de domaines que vous souhaitez acheter ;
+2. Enter the domain names you wish to purchase;
 
-       {{< fig "images/admin-panel_add-domain-1.fr.png" "Interface d'administration : étape 1" >}}
+       {{< fig "images/admin-panel_add-domain-1.en.png" "Admin interface: Step 1" >}}
 
 {{% notice info %}}
-Saisissez uniquement le domaine, sans le sous-domaine.
-Par exemple : `example.org` et non `www.example.org`.
-{{% /notice %}}
+Enter only the domain, without the subdomain.
+For example: `example.org` and not `www.example.org`.
+{{%/notice %}}
 
-3. Choisissez de le **transférer** ;
-   {{< fig "images/admin-panel_add-domain-2.fr.png" "Interface d'administration : étape 2" >}}
+3. Choose to **transmitter**;
+   {{< fig "images/admin-panel_add-domain-2.en.png" "Administration interface: Step 2" >}}
 
-4. - Indiquez le _code d'authorisation_ si l'extension le demande ;
-   - Choisissez d'utiliser ou non nos serveurs DNS : cela entraîne le transfert de la gestion technique du domaine chez alwaysdata ;
-   - Et entrez les informations du contact propriétaire. Ces informations dépendent de l'extension prise.
-       {{< fig "images/admin-panel_add-domain-3.fr.png" "Interface d'administration : étape 3" >}}
+4. - Specify the _authorization code_ if the extension requests it;
+   - Choose whether or not to use our DNS servers: this involves transferring the technical domain management to alwaysdata;
+   - And enter proprietary contact information. This information depends on the extension taken.
+       {{< fig "images/admin-panel_add-domain-3.en.png" "Admin interface: Step 3" >}}
 
 {{% notice warning %}}
-Un email de validation est envoyé pour un certain nombre d'extensions. Sans validation, le transfert est abandonné.
-{{% /notice %}}
+A validation email is sent for a number of extensions. Without validation, the transfer is aborted.
+{{%/notice %}}
 
 {{% notice note %}}
-Un transfert prend en moyenne 6 à 8 jours, cela peut être accéléré en contactant votre prestataire actuel.
-{{% /notice %}}
+A transfer takes an average of 6 to 8 days, this can be accessed by contacting your current provider.
+{{%/notice %}}
 
-### Cas particuliers
+### Special Cases
 
-l'IPS Tag demandé par [Nominet](https://registrars.nominet.uk/) - le registre des `.uk` - est **GANDI**.
+the IPS Tag requested by [Nominet](https://registrars.nominet.uk/) - the register of `.uk` - is **GANDI**.
 
-## Préparation du domaine
+## Realm Preparation
 
-Durant ce temps, le domaine sera ajouté à votre interface d'administration en temps que _Domaine externe_ avec une opération en cours. Vous pourrez préparer nos serveurs en :
+During this time, the domain will be added to your administration interface as _External Domain_ with an ongoing operation. You can prepare our servers by:
 
-- mettant à jour vos [enregistrements DNS](domains/add-dns) si vous utilisez d'autres serveurs pour certains services ;
-- créant les [adresses email](e-mails/create-an-e-mail-address).
+- updating your [DNS records](domains/add-dns) if you use other servers for certain services;
+- creating [email addresses](e-mails/create-an-e-mail-address).
 
-Concernant le site internet, plusieurs choix sont possibles :
+Regarding the website, several choices are possible:
 
-- ajouter les adresses avant qu'elles pointent sur nos serveurs. Dans ce cas, il peut y avoir un délai concernant la génération des [certificats SSL Let's Encrypt](security/ssl-tls/lets-encrypt) ;
-- préparer le site sur une autre adresse et attendre le dernier moment pour ajouter les adresses au site. Il peut alors se passer un temps où le site n'est plus accessible.
+- add addresses before they point to our servers. In this case, there may be a timeframe for managing [SSL Let's Encrypt Certificates](security/ssl-tls/lets-encrypt);
+- prepare the site on another address and wait for the last moment to add the addresses to the site. It can then pass a time or the site is no longer accessible.
 
 ---
 
-## Liens
+## Links
 
-- [Transferts : code d'erreurs](/domains/troubleshooting#transfert)
+- [Transfers: error code](/domains/troubleshooting#transfert)
 
-[^1]: Plus d'informations sur [whois](https://fr.wikipedia.org/wiki/Whois)
+[^1]: More information about [whois](https://fr.wikipedia.org/wiki/Whois)
