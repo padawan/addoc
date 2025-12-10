@@ -1,23 +1,23 @@
 +++
-url = "/fr/emails/lire-la-source-dun-email/"
-title = "Comment lire la source d'un email"
+url = "/emails/read-la-source-dun-email/"
+title = "How to read an email source"
 layout = "howto"
 hidden = true
 tags = [ "email" ]
 +++
 
-La source d'un email va afficher son contenu réel, le code brut du message avant interprétation. Son inspection peut servir à :
+The source of an email will display its actual content, the raw code of the message before interpretation. Its inspection can be used:
 
-- analyser la délivrabilité de l'email,
-- avoir un certain nombre d'informations sur l'expéditeur et le chemin effectué par le message.
+- scan email deliverability
+- have a certain amount of information about the sender and the path that the message has performed.
 
-Vous pouvez la récupérer via n'importe quel client mail. Par exemple, via le [webmail](https://webmail.alwaysdata.com), vous la retrouverez dans **... Plus > Afficher la source**
+You can get it via any email client. For example, via the [webmail](https://webmail.alwaysdata.com), you will find it in **... More > Show Source**
 
-{{< fig "images/roundcube-source-menu.fr.png" "Roundcube : afficher la source" >}}
+{{< fig "images/roundcube-source-menu.png" "Roundcube: show source" >}}
 
-La source du mail est composée :
+The source of the mail is dialled:
 
-- du chemin effectué par le message :
+- of the message path:
   ```
   Return-Path: <test@alwaysdata.net>
   Delivered-To: test@alwaysdata.net
@@ -53,17 +53,17 @@ La source du mail est composée :
   Received: from overlord-core.paris1.alwaysdata.com (2a00:b6e0:1:84:1::1)
    by ad-roundcube.alwaysdata.net
   ```
-  Le mail est passé par plusieurs de nos serveurs pour arriver dans le serveur de destination _imap1.paris1.alwaysdata.com_. La clé publique DKIM est indiquée.
+  The mail is passed through many of our servers to arrive in the destination server _imap1.paris1.alwaysdata.com_. The DKIM public key is specified.
 
-- de différentes informations concernant le message en lui-même et l'agent utilisateur.
+- different information about the message itself and the user agent.
   ```
   with HTTP (HTTP/1.1 POST); Wed, 06 Nov 2019 12:43:48 +0100
-  MIME-Version: 1.0
+  MIME-Version: 1.
   Content-Type: text/plain; charset=US-ASCII;
    format=flowed
   Content-Transfer-Encoding: 7bit
   Date: Wed, 06 Nov 2019 12:43:48 +0100
-  From: test@alwaysdata.net
+  From: test@alwaysdata. and
   To: test@alwaysdata.net
   Subject: Test sources
   Message-ID: <8a6782ecf30c333f037193c7bdfc546c@alwaysdata.net>
@@ -71,27 +71,27 @@ La source du mail est composée :
   User-Agent: Roundcube Webmail/1.3.10
   ```
 
-- d'éléments liés aux antivirus, antispams :
+- of elements linked to antivirus, antispams:
 
   ```
   X-alwaysdata-Spam-Report:
   0.00 TO_EQ_FROM - To address matches the From address
-  0.00 TO_DN_NONE - None of the recipients have display names
-  0.00 RCVD_VIA_SMTP_AUTH - Authenticated hand-off was seen in Received headers
-  0.00 RCVD_TLS_LAST - Last hop used encrypted transports
+  .00 TO_DN_NONE - None of the recipients have display names
+  0. 0 RCVD_VIA_SMTP_AUTH - Authenticated hand-off was seen in Received headers
+  0. 0 RCVD_TLS_LAST - Last hop used encrypted transport
   0.00 RCVD_COUNT_THREE [3] - Message has 3-5 Received headers
-  0.00 RCPT_COUNT_ONE [1] - One recipient
+  0. 0 RCPT_COUNT_ONE [1] - One recipient
   0.00 MIME_TRACE [0:+]
-  0.00 MID_RHS_MATCH_FROM - Message-ID RHS matches From domain
-  0.00 FROM_NO_DN - From header does not have a display name
-  0.00 ARC_NA - ARC signature absent
+  0. 0 MID_RHS_MATCH_FROM - Message-ID RHS matches From domain 
+   0.00 FROM_NO_DN - From header does not have a display name
+  0. 0 ARC_NA - ARC signature missing
   -0.10 MIME_GOOD [text/plain] - Known content-type
-  -1.00 NEURAL_HAM [-0.998] - Neural network ham
+  -1. 0 NEURAL_HAM [-0.998] - Neural network ham
   X-alwaysdata-Spam-Score: -1.10
   ```
 
-  Le mail ne contient pas de virus détecté par [ClamAV](https://www.clamav.net/) et [Rspamd](https://rspamd.com/) donne une note basse permettant l'envoi du message.
+  The mail does not contain any viruses detected by [ClamAV](https://www.clamav.net/) and [Rspamd](https://rspamd.com/) gives a low score for sending the message.
 
 ----
 
-- [Delivrabilité des emails : bonnes pratiques](e-mails/delivery)
+- [Deliverability of emails: best practices](e-mails/delivery)
