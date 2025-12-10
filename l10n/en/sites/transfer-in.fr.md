@@ -1,30 +1,30 @@
 +++
-url = "/fr/sites/migrer-un-site-chez-alwaysdata/"
-title = "Migrer un site chez alwaysdata"
+url = "/sites/migrer-un-site-chez-alwaysdata/"
+title = "Migrate a site to alwaysdata"
 layout = "howto"
 hidden = true
 tags = [ "site" ]
 +++
 
-Cet article explique comment procéder à la migration d'un site chez alwaysdata.
+This article explains how to migrate a site to alwaysdata.
 
 {{% notice tip %}}
-Pour faciliter votre migration, vous pouvez aussi faire appel à un prestataire spécialisé : la société [Déménageur de Site](https://www.demenageur-site.com) par exemple connaît bien notre plateforme et propose même un code promo pour une migration vers alwaysdata ([contactez notre support](https://admin.alwaysdata.com/support/add)).
-{{% /notice %}}
+To facilitate your migration, you can also call on a specific provider: the company (https://www.demenageur-site.com) for example knows our platform and even offers a promo code for a migration to alwaysdata ([contact our support](https://admin.alwaysdata.com/support/add)).
+{{%/notice %}}
 
-## Transfert manuel
+## Manual transfer
 
-1. Récupérez les fichiers et la base de données chez le prestataire actuel ;
-   - copiez les fichiers dans votre compte alwaysdata en utilisant [FTP](remote-access/ftp) ou [SSH](remote-access/ssh) ;
-   - créez la base de données dans **Bases de données** et importez-y la base de données en passant par un client SGBD ou en utilisant les commandes `mysql`, `psql` (ou encore d'autres...) selon le SGBD utilisé.
+1. Retrieve files and database from the current provider;
+   - copy files to your alwaysdata account using [FTP](remote-access/ftp) or [SSH](remote-access/ssh);
+   - create the database in **Databases** and import the database into it via a RDBMS client or using `mysql`, `psql` (or more...) depending on the RDBMS used.
 
-2. [Mettez en place le site](sites/add-a-site) dans **Web > Sites** avec une adresse de préproduction - par exemple l'adresse du compte ;
-   - modifiez les fichiers de configuration pour que tout pointe bien chez alwaysdata et vérifiez la base de données.
+2. [Set up the site](sites/add-a-site) in **Web > Sites** with a preproduction address - e.g. account address;
+   - modify the configuration files so that everything points to alwaysdata and check the database.
 
-3. Migrez les adresses du site en modifiant les enregistrements DNS de ces sous-domaines et en ajoutant les adresses dans **Web > Sites**.
-   - il faudra peut-être remodifier des fichiers de configuration pour éviter des redirections vers l'adresse de préproduction ;
-   - vous pouvez le coupler avec un [transfert de domaine](domains/transfer-a-domain).
+3. Migrate site addresses by editing DNS records for these subdomains and adding addresses to **Web > Sites**.
+   - may need to remodify configuration files to avoid redirects to the preproduction address;
+   - you can pair it with a [domain transfer] (domains/transfer-a-domain).
 
 {{% notice tip %}}
-Pour les commandes vous pouvez suivre la documentation [Déplacer un site](sites/move-a-site).
-{{% /notice %}}
+For commands you can follow the documentation [Move a site](sites/move-a-site).
+{{%/notice %}}
