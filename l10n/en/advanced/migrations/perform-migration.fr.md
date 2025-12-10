@@ -1,33 +1,33 @@
 +++
-url = "/fr/avance/migrations/effectuer-une-migration/"
-title = "Comment effectuer une migration"
+url = "/avance/migrations/effectuer-une-migration/"
+title = "How to migrate"
 layout = "howto"
 hidden = true
 tags = [ "infrastructure", "migration" ]
 +++
 
-Chaque migration amène des changements qui peuvent provoquer des incompatibilités avec vos applications. C'est pourquoi nous vous conseillons la plus grande vigilance lorsque vous effectuez une migration, d'autant qu'il n'est pas possible de revenir en arrière.
+Each migration enhances changes that may cause incompatibilities with your applications. This is why we advise you to be very vigilant when performing a migration, especially since it is not possible to go back.
 
-## 1. Lire la documentation
+## 1. Read the documentation
 
-Chaque migration est décrite dans une page de notre documentation. Lisez-la attentivement : les incompatibilités les plus importantes seront notamment indiquées.
+Each migration is written in a page of our documentation. Read it carefully: the most important incompatibilities will be indicated.
 
-## 2. Vérifier la compatibilité de vos applications
+## 2. Check the compatibility of your applications
 
-Vous aurez peut-être besoin d'intervenir sur vos applications pour qu'elles continuent à fonctionner après la migration. Par exemple, pour une migration vers une version plus récente de MySQL, vous devrez peut-être modifier certaines requêtes SQL.
+You may need to intervene on your applications to keep them running after migration. For example, for a migration to a newer version of MySQL, you may need to change some SQL requests.
 
-## 3. Préparer la migration
+## 3. Prepare Migration
 
-Avant d'effectuer réellement la migration, vous aurez la possibilité d'effectuer un certain nombres d'actions. Cela vous permet de vous assurer que vos applications continueront à fonctionner, et de les corriger dans le cas contraire.
+Before performing the migration you will be able to perform a certain number of actions. This allows you to ensure that your applications will continue to work, and fix them otherwise.
 
-### Test des bases de données
+### Test databases
 
-**Certaines** migrations sont testables via l'utilisation d'un bouton **Tester**. Cela va tenter d'importer les bases de données de votre compte sur un serveur temporaire utilisant les nouvelles versions.
+**Some** migrations can be tested by using a **Tester** button. This will attempt to import your account databases into a temporary server using new versions.
 
-## 4. Effectuer la migration
+## 4. Migrate
 
-Une fois que vous avez testé la migration et que vous vous êtes assuré que tout fonctionne correctement, vous pourrez réellement exécuter la migration. Durant la migration, votre compte pourra être indisponible pendant une très courte durée (quelques secondes voire minutes, selon le volume de données de votre compte). _Vous n'avez pas besoin d'arrêter vos sites ou vos bases de données : nous nous occupons de tout_.
+Once you test the migration and make sure everything works properly, you can run the migration again. During migration, your account may be unavailable for a short duration (seconds or minutes, depending on your account data). _You don't need to stop your sites or databases: we take care of everything.
 
-Il est possible d'effectuer un retour en arrière _temporaire_ en cas de souci. Ce retour en arrière est possible pendant 7 jours après le lancement de la migration.
+It is possible to perform a _temporary_ backlog if you have any problems. This backlog is possible for 7 days after the migration starts.
 
-- [Spécificités concernant la migration de Cloud Privés](advanced/migrations/private-cloud-migrations)
+- [Private Cloud Migration Specification](advanced/migrations/private-cloud-migrations)
