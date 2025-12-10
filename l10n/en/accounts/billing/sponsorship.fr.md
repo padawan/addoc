@@ -1,21 +1,21 @@
 +++
-url = "/fr/comptes/facturation/parrainage/"
-title = "Comment offrir un parrainage"
-linkTitle = "Parrainer"
+url = "/accounts/billing/referral/"
+title = "How to Offer Referral"
+linkTitle = "Sponsor"
 layout = "howto"
 weight = 10
-tags = [ "facturation", "parrainage" ]
+tags = [ "invoicing", "referral" ]
 +++
 
-Le système de parrainage vous permet de toucher des commissions sur les paiements effectués par vos filleuls.
+The referral system allows you to earn commissions on payments made by your referrals.
 
-## Recruter un filleul
+## Recruit referral
 
-- communiquez votre lien de parrainage (section **Facturation > Parrainage**) ;
-- toute personne qui s'inscrit à notre service grâce à votre lien de parrainage obtient une **remise de 10%** durant _6 mois_ et devient votre filleul.
+- provide your referral link (section **Billing > Referral**);
+- anyone who registers for our service thanks to your referral link gets a **10% discount** for _6 months_ and becomes your referral.
 
-## Toucher une commission
+## Tap commission
 
-- une commission vous est versée pour tout règlement effectué par votre filleul dans les _6 mois_ suivant son inscription ;
-- la commission correspond à **10%** du montant HT ;
-- la commission est disponible _30 jours après le règlement_.
+- a commission is paid to you for any referral made by your referral within _6 months_ of its registration;
+- commission is equal to **10%** of the amount (tax excl.)
+- commission is available _30 days after the refund.
