@@ -1,91 +1,91 @@
 +++
-url = "/fr/securite/pca/"
-title = "Plan de continuité d'activité"
+url = "/security/pca/"
+title = "Activity Continuity Plan"
 layout = "faq"
 weight = 50
-tags = [ "sécurité", "récupération", "sauvegarde" ]
+tags = [ "security", "start", "backup" ]
 +++
 
-Notre architecture est conçue de manière à vous apporter le maximum de garanties sur la préservation de vos données, notamment en cas d'incident majeur sur nos unités de production.
+Our architecture is concise in a way that gives you the maximum guarantee on the reservation of your data, in the event of a major incident on our production units.
 
-Ces garanties _ne sont pas_ optionnelles : elles sont embarquées par défaut dans la plate-forme et toutes nos offres en bénéficient.
+These guarantees are _not_ optional: they are shipped by default on the platform and all our offerings in bonus.
 
-## Données & Sauvegardes
+## Data & Backups
 
-Les données de votre compte utilisateur sont sauvegardées automatiquement chaque jour, sans action de votre part. [Selon l'offre choisie](backups), elles sont conservées jusqu'à 30 jours glissants.
+Your user account data is automatically backed up every day, without action from you. [According to the chosen offer](backups), they are kept for up to 30 slippery days.
 
-### Mes données sont-elles sauvegardées ?
+### Are my data backed up?
 
-Les données de votre compte utilisateur sont sauvegardées automatiquement chaque jour, sans action de votre part. Elles sont conservées pendant 30 jours glissants.
+Your user account data is automatically backed up every day, without action from you. They are kept for 30 slippery days.
 
-### Quelles données sont concernées ?
+### What data is involved?
 
-L'ensemble des données de votre compte utilisateur est concerné par la sauvegarde :
+All of your user account data is related to the backup:
 
-- fichiers
-- bases de données
-- emails
+- files
+- databases
+- Emails
 
-### Où sont situées ces sauvegardes ?
+### Or are these backups located?
 
-Ces sauvegardes sont hébergées dans un datacenter situé à plusieurs kilomètres des unités de production. Cette notion est [contractuelle](https://www.alwaysdata.com/fr/mentions-legales/) (point 4.6 des conditions particulières d'hébergement).
+These backups are hosted in a datacenter located at several kilometres from the production units. This concept is [contractuelle](https://www.alwaysdata.com/fr/mentions-legales/) (point 4.6 of the hosting conditions).
 
-Ce datacenter est opéré par [Interxion](https://www.digitalrealty.fr/data-centers), tandis que les datacenters de productions sont gérés par [Equinix](https://www.equinix.com/).
+This datacenter is operated by [Interxion](https://www.digitalrealty.fr/data-centers), while production datacenters are managed by [Equinix](https://www.equinix.com/).
 
-### Comment pouvez-vous garantir l'accès aux sauvegardes depuis le système de fichier des comptes utilisateur ?
+### How can you guarantee access to backups from the user account file system?
 
-Les sauvegardes sont accessibles depuis votre système de fichier du compte utilisateur (via [SSH](remote-access/ssh), [SFTP](remote-access/sftp)…) grâce au protocole NFS, qui nous permet de monter en lecture-seule, au travers du réseau, votre accès à vos sauvegardes.
+Backups can be accessed from your user account file system (via [SSH](remote-access/ssh), [SFTP](remote-access/sftp)…) thanks to the NFS protocol, which allows us to mount read-only, through the network, your access to your backups.
 
-### Comment puis-je récupérer ces sauvegardes ?
+### How can I recover these backups?
 
-Vous pouvez effectuer une copie de vos sauvegardes depuis le système de fichiers de votre compte utilisateur (via [SSH](remote-access/ssh), [SFTP](remote-access/sftp)…) en copiant les répertoires situés dans `$HOME/admin/backup/`.
+You can make a copy of your backups from your user account file system (via [SSH](remote-access/ssh), [SFTP](remote-access/sftp)… by copying the directories located in `$HOME/admin/backup/`.
 
-Le répertoire `latest` est un raccourci vers la dernière sauvegarde disponible.
+The `latest` directory is a shortcut to the last available backup.
 
-### Comment puis-je restaurer ces sauvegardes ?
+### How do I restore these backups?
 
-Pour restaurer vos sauvegardes, [consultez la documentation disponible](backups).
+To restore your backups, [check the available documentation](backups).
 
-## Réseau
+## Network
 
-### Comment est garanti l'accès au réseau ?
+### How is access to the network guaranteed?
 
-Chaque serveur dispose de deux arrivées réseau. En cas de rupture du lien principal, le lien secondaire est automatiquement activé pour maintenir la connexion active.
+Each server has two network arrivals. If the main link is broken, the secondary link is automatically activated to keep the connection active.
 
-Nous opérons nous-même notre réseau au sein des datacenters.
+We set up our network within the datacenters.
 
-### Comment est garanti l'accès à Internet ?
+### How is Internet access guaranteed?
 
-Notre accès Internet est garanti par quatre fournisseurs d'accès indépendants.
+Our Internet access is guaranteed by four independent access providers.
 
-Nous sommes également membres du RIPE, disposons de [notre propre numéro d'AS (AS60362)](https://bgpview.io/asn/60362), et de nos propres plages d'IP.
+We are also members of RIPE, have [our own AS60362 number](https://bgpview.io/asn/60362), and our own IP beaches.
 
-## Infrastructure matérielle
+## Management Infrastructure
 
-### Comment sont réparties les baies serveurs ?
+### How are server berries distributed?
 
-Nos serveurs de production sont répartis dans plusieurs datacenters, plusieurs baies, et plusieurs salles.
+Our production servers are divided into several datacenters, several berries, and several rooms.
 
-### Que se passe-t-il en cas de coupure / panne électrique ?
+### What happens in the event of a power cut/failure?
 
-Chaque serveur dispose de deux alimentations chacune sur des circuits entièrement autonomes (2N), lui permettant de rester alimenté en cas de rupture matérielle.
+Each server has two power supplies each on fully autonomous circuits (2N), allowing it to remain supplied in the event of a breakdown.
 
-Nos datacenters sont également équipés de générateurs de secours capables de fournir plusieurs jours de courant aux infrastructures en cas de panne du réseau principal.
+Our datacenters are also equipped with emergency handlers capable of providing several days of power to the infrastructure in the event of a failure of the main network.
 
-### Comment le service est-il restauré en cas de dommage matériel ?
+### How is the service restored in the event of damage to the boat?
 
-D'autres serveurs sont disponibles en sécurité, nous permettant de basculer rapidement vos services. En cas de nécessité impérieuse, nous pouvons également basculer sur un hébergeur partenaire en redéployant une infrastructure de secours avec vos dernières données.
+Other servers are available in security, allowing us to quickly switch your services. If necessary, we can also switch to a partner host by redeploying a backup infrastructure with your latest data.
 
-### Les serveurs sont-ils redondés ?
+### Are servers redundant?
 
-Les données sur chaque serveur sont dupliquées sur deux disques en RAID1, pour palier une défaillance matérielle des stockages.
+The data on each server is duplicated on two RAID1 disks, to overcome a failure.
 
-Nous disposons d'une [offre Gold](accounts/billing/private-cloud-prices#serveurs-gold-infogérés) offrant une redondance synchronisée des serveurs dans des datacenters séparés pour garantir la continuité de service.
+We have a [Gold offer(accounts/billing/private-cloud-prices#serveurs-gold-infogérés) offering synchronized redundancy of servers in sealed data centers to ensure continuity of service.
 
-### L'accès aux serveurs est-il sécurisé ?
+### Is access to servers secured?
 
-Nos datacenters sont gérés par des partenaires appliquant des normes très strictes en matière d'accès au matériel, basées sur des permissions d'accès et de l'authentification biométrique.
+Our datacenters are managed by partners applying strict standards regarding access to the sailor, based on access and biometric authentication permissions.
 
-### Quelles sont les garanties des data centers ?
+### What are the guarantees of data centers?
 
-Nos unités de production sont hébergées par [Equinix](https://www.equinix.com/data-centers/colocation/), leader mondial de la colocation en infrastructures International Business Exchange™ (IBX®). Ces datacenters sont [certifiés par de nombreux standards](https://www.equinix.com/data-centers/design/standards-compliance/) en matière de qualité et de sécurité.
+Our production units are hosted by [Equinix](https://www.equinix.com/data-centers/colocation/), the world leader in the International Business Exchange (IBX®️). These datacenters are [certified by many standards](https://www.equinix.com/data-centers/design/standards-compliance/) in quality and security.
