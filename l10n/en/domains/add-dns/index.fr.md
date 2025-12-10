@@ -1,41 +1,41 @@
 +++
-url = "/fr/domaines/ajouter-un-enregistrement-dns/"
-title = "Comment ajouter un enregistrement DNS"
-linkTitle = "Ajouter un enregistrement DNS"
+url = "/domains/add-un-registrment-dns/"
+title = "How to add a DNS record"
+linkTitle = "Add DNS record"
 layout = "howto"
 weight = 6
-tags = [ "dns", "domaine" ]
+tags = [ "dns", "domain" ]
 +++
 
-1. Allez dans **Domaines > Details de [example.org] -  ⚙️ > Enregistrements DNS** ;
-   {{< fig "images/admin-panel_dns-record-list.fr.png" "" >}}
+1. Go to **Domains > [example.org] Details - ⚙️ > DNS Records**;
+   {{< fig "images/admin-panel_dns-record-list.png" "" >}}
 
-2. Choisissez **Ajouter un enregistrement DNS** ;
+2. Choose **Add DNS record**;
 
-3. Renseignez le formulaire.  
-   {{< fig "images/admin_panel_add-record.fr.png" "" >}}
+3. Fill in the form.  
+   {{< fig "images/admin_panel_add-record.en.png" "" >}}
 
 {{% notice warning %}}
-Ne mettez pas la racine dans **Nom d'hôte**. Par exemple, en indiquant `www.example.org` dans cette case, vous créerez un enregistrement pour `www.example.org.example.org`.
-{{% /notice %}}
+Do not put the root in **Host Name**. For example, by entering `www.example.org` in this box, you will create a record for `www.example.org.example.org`.
+{{%/notice %}}
 
 {{% notice note %}}
-Un enregistrement ayant `@` comme nom d'hôte pour certains prestataires correspond au sous-domaine vide. Dans notre cas, la case **Nom d'hôte** devra être vide.
-{{% /notice %}}
+A record with `@` as host name for some providers matches the empty subdomain. In our case, the **Host Name** box should be empty.
+{{%/notice %}}
 
-- [Ajouter un enregistrement SRV](domains/add-srv-record)
-- [Ajouter un enregistrement CAA](add-caa-record)
-- [Utiliser des MX externes](domains/use-external-mx)
+- [Add SRV record](domains/add-srv-record)
+- [Add CAA record](add-caa-record)
+- [Use external MX](domains/use-external-mx)
 
-## Importer un fichier de zone
+## Import zone file
 
-Un fichier de zone DNS est un fichier texte qui contient les détails de tous les enregistrements DNS contenus. Il suit un format standard, ce qui permet le transfert simple des enregistrements DNS d'un prestataire à un autre.
+A DNS zone file is a text file that contains details of all contained DNS records. It follows a standard format, which allows the simple transfer of DNS records from one provider to another.
 
-{{< fig "images/menu.fr.png" "" >}}
+{{< fig "images/menu.png" "" >}}
 
-Cela supprimera les enregistrements DNS précédemment ajoutés.
+This will remove previously added DNS records.
 
-## Ressources
+## Resources
 
-- [Liste des types d'enregistrements DNS](https://fr.wikipedia.org/wiki/Liste_des_enregistrements_DNS)
-- [Ajouter des enregistrements DNS avec CSV](create-dns-records-using-csv)
+- [List of DNS record types](https://fr.wikipedia.org/wiki/Liste_des_enregistrements_DNS)
+- [Add DNS records with CSV](create-dns-records-using-csv)
