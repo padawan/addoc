@@ -1,31 +1,31 @@
 +++
-url = "/fr/marketplace/odoo/"
+url = "/marketplace/odoo/"
 title = "Odoo"
 layout = "man"
 hidden = true
-tags = [ "productivité" ]
+tags = [ "Productivity" ]
 +++
 
-Dans notre exemple, nous considérons les informations suivantes :
+In our example, we will get the following information:
 
-- Nom du compte : `foo`
-- Répertoire de Odoo : `$HOME/odoo/`
-- Adresse HTTP de Odoo : `foo.alwaysdata.net`
-- Port pour le Live Chat : 8300 (les ports entre 8300 et 8499 peuvent être utilisés)
+- Account name: `foo`
+- Odoo directory: `$HOME/odoo/`
+- Odoo HTTP Address: `foo.alwaysdata.net`
+- Live Chat port: 8300 (ports between 8300 and 8499 can be used)
 
-Elles seront à modifier selon vos besoins.
+They will be modified according to your needs.
 
 ## Live Chat
 
-Après avoir installé Odoo via notre [marketplace](marketplace) :
+After installing Odoo via our [marketplace](marketplace):
 
-- Dans **Avancé > Services**, créez le [service](services) suivant :
+- In **Advanced > Services**, create the following [service](services) :
 
-  - _Commande_ : `.venv/bin/python odoo-bin --config=.odoorc --http-port=8300 --proxy-mode`
-  - _Répertoire de travail_ : `/home/foo/odoo/`
-  - _Environnement_ : `PYTHON_VERSION=3.10`
+  - _Command_: `.venv/bin/python odoo-bin --config=.odoorc --http-port=8300 --proxy-mode`
+  - _Work directory_: `/home/foo/odoo/`
+  - _Environment_: `PYTHON_VERSION=3.10`
 
-- Dans **Web > Sites**, déclarez un [site](sites/add-a-site) de type **Reverse proxy** avec :
+- In **Web > Sites**, declare an [site](sites/add-a-site) of type **Reverse proxy** with:
 
-  - _Adresse_ : `foo.alwaysdata.net/websocket/`
-  - _URL distante_ : `services-foo.alwaysdata.net:8300`
+  - _Address_: `foo.alwaysdata.net/websocket/`
+  - _Remote URL_: `services-foo.alwaysdata.net:8300`
