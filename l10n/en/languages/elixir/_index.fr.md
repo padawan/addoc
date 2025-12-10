@@ -1,17 +1,17 @@
 +++
-url = "/fr/langages/elixir/"
+url = "/en/languages/elixir/"
 title = "Elixir"
 archetype = "chapter"
 tags = [ "elixir" ]
 +++
 
-Le fonctionnement d'[Elixir](https://elixir-lang.org/) chez alwaysdata est très standard. Si vous avez l'habitude d'utiliser Elixir sous un système Unix (par exemple, Linux), vous savez déjà presque tout ce qu'il faut.
+The operation of[Elixir](https://elixir-lang.org/) at alwaysdata is standard. If you are used to using Elixir on a Unix system (for example, Linux), you already know almost everything you need.
 
-- les [versions proposées](languages/elixir/configuration#versions-supportées) vont de la 1.13 à la 1.18 ;
-- la [configuration d'environnement](languages/elixir/configuration#environnement) se fait simplement.
+- [proposed versions](languages/elixir/configuration#versions-supportées) range from 1.13 to 1.18;
+- the [environment configuration](languages/elixir/configuration#environnement) is simply done.
 
-Notre marketplace propose l'installation du framework [Phoenix](https://www.phoenixframework.org/)[^1].
+Our marketplace offers the installation of the \[Phoenix]framework (https\://www\.phoenixframework.org/)\[^1].
 
-- [Ressource API](https://api.alwaysdata.com/v1/environment/elixir/doc/)
+- [Resource API](https://api.alwaysdata.com/v1/environment/elixir/doc/)
 
-[^1]: Phoenix 1.6 n'est pas compatible avec notre infrastructure car il nécessite Elixir 1.12 qui dépend d'Erlang 22. Ce sera mis à jour lors de la prochaine [migration](advanced/migrations) de notre infrastructure logicielle.
+[^1]: Phoenix 1.6 is not compatible with our infrastructure because it requires Elixir 1.12 depending on Erlang 22. This will be updated at the next [migration](advanced/migrations) of our software infrastructure.
