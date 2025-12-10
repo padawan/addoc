@@ -1,27 +1,27 @@
 +++
-url = "/fr/acces-distant/ssh/creer-un-utilisateur-ssh/"
-title = "Comment créer un utilisateur SSH"
+url = "/remote-access/ssh/creer-un-user-ssh/"
+title = "How to create an SSH user"
 layout = "howto"
 weight = 30
 hidden = true
-tags = [ "accès distant", "ssh" ]
+tags = [ "remote access", "ssh" ]
 +++
 
-Afin de vous connecter à votre compte en _SSH_, il est nécessaire de disposer d'un utilisateur. Par défaut, un utilisateur du nom de votre _compte_ est crée à sa création. Vous pouvez administrer vos utilisateurs SSH depuis votre interface d'administration, onglet **Accès distant > SSH**.
+In order to log in to your _SSH_ account, it is necessary to have a user. By default, a user with the name of your _account_ is created at its creation. You can administer your SSH users from your admin interface, the **Remote Access > SSH** tab.
 
-{{< fig "images/admin-panel_ssh-users-list.fr.png" "Interface d'administration : liste des utilisateurs SSH">}}
+{{< fig "images/admin-panel_ssh-users-list.png" "Admin interface: list of SSH users">}}
 
-- Nom : nom de l'utilisateur SSH, préfixé du nom de votre compte ;
-- Mot de passe : mot de passe associé à l'utilisateur. Il est nécessaire pour la première connexion SSH ; la [connexion par clés](remote-access/ssh/use-keys) peut ensuite être utilisée ;
-- Répertoire "HOME" : répertoire dans lequel l'utilisateur arrive à sa connexion ;
-- [Shell](https://fr.wikipedia.org/wiki/Shell_Unix) : interpréteur de commande de votre utilisateur.
+- Name: name of SSH user, prefix of your account name;
+- Password: password associated with the user. It is necessary for the first SSH connection; the [key connection](remote-access/ssh/use-keys) can then be used;
+- "HOME" directory: directory in which the user arrives at his/her login;
+- [Shell](https://fr.wikipedia.org/wiki/Shell_Unix): Your user's command interpreter.
 
-{{< fig "images/admin-panel_ssh-users-add.fr.png" "Interface d'administration : ajout d'utilisateur SSH">}}
+{{< fig "images/admin-panel_ssh-users-add.png" "Admin interface: add SSH user">}}
 
 {{% notice note %}}
-Contrairement à FTP, SSH ne propose aucune isolation. Ainsi, l'utilisateur pourra circuler librement dans l'ensemble des répertoires du compte.
-{{% /notice %}}
+Unlike FTP, SSH does not offer any isolation. This will allow the user to circulate freely throughout all the accounts directories.
+{{%/notice %}}
 
 {{% notice info %}}
-Même si ce n'est pas préconisé pour des problématiques de droits sur les dossiers et fichiers, vous pouvez créer autant d'utilisateurs SSH que vous le souhaitez.
-{{% /notice %}}
+Meme if not recommended for permissions issues on folders and files, you can create as many SSH users as you want.
+{{%/notice %}}
