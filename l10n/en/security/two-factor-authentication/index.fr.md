@@ -1,30 +1,30 @@
 +++
-url = "/fr/securite/authentification-2-facteurs/"
-title = "Admin : Authentification 2 facteurs"
-linkTitle = "Authentification 2 facteurs"
+url = "/security/authentication-2-factors/"
+title = "Admin: 2-factor authentication"
+linkTitle = "2-factor authentication"
 layout = "man"
 weight = 10
-tags = [ "2fa", "profil", "sécurité" ]
+tags = [ "2F", "profile", "security" ]
 +++
 
-L'[authentification à deux facteurs](https://fr.wikipedia.org/wiki/Authentification_forte) permet de _sécuriser l'accès à un portail_ en vérifiant l'identité de la personne se connectant par l'enchaînement de _deux méthodes_.
+[Two Factor Authentication](https://fr.wikipedia.org/wiki/Authentification_forte) allows _securing access to a portal_ by checking the identity of the person logging in through _two metrics_.
 
-La technologie choisie par alwaysdata est l'algorithme [Time-based One Time Password](https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm) (TOTP) : **partage d'un code secret individuel et à usage unique** entre notre base de données et les applications d'authentification forte clientes.
+The technology chosen by alwaysdata is the [Time-based One Time Password](https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm) (TOTP) algorithm: **sharing individual secret code and one-time use** between our database and strong client authentication applications.
 
-{{< fig "images/profile-security.fr.png" >}}
-Cela vous donnera accès à vos codes personnels (code secret et QR code).
+{{< fig "images/profile-security.png" >}}
+This will give you access to your personal codes (secret code and QR code).
 
-Vous pourrez alors _paramétrer votre application TOTP_ qui vous renverra un code de sécurité à usage unique à indiquer lors des prochaines connexions à l'interface d'administration. Ce code de sécurité est renouvelé toutes les _30 secondes_ (calcul basé sur l'heure ou un compteur).
+You can then _configure your TOTP application_ which will return you a security code for single use to indicate when logging in to the administration interface. This security code was renewed every _30 seconds_ (computation based on time or counter).
 
 {{% notice note %}}
-En cas de perte de l'authentification à deux facteurs, envoyez un email à _contact[at]alwaysdata.com_ pour la désactiver. [Une vérification sera effectuée](accounts/admin-access-loss#blocage-lié-à-lauthentification-2-facteurshahahugoshortcode-s0-hbhb).
-{{% /notice %}}
+In case of loss of two factor authentication, send an email to _contact[at]alwaysdata.com_ to disable it. [A check will be performed](accounts/admin-access-loss#blocage-lié-à-lauthentification-2-facteurshahahugoshortcode-s0-hbhb).
+{{%/notice %}}
 
-## OTP applications
+## OTP apps
 
-- **[FreeOTP](https://freeotp.github.io/)** : [Android](https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp), [iOS](https://itunes.apple.com/us/app/freeotp-authenticator/id872559395?mt=8) et [F-Droid](https://f-droid.org/packages/org.fedorahosted.freeotp) ([Github](https://github.com/freeotp))
-- **Google Authenticator** : [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) et [iOS](https://apps.apple.com/fr/app/google-authenticator/id388497605)
+- **[FreeOTP](https://freeotp.github.io/)**: [Android](https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp), [iOS](https://itunes.apple.com/us/app/freeotp-authenticator/id872559395?mt=8) and [F-Droid](https://f-droid.org/packages/org.fedorahosted.freeotp) ([Github](https://github.com/freeotp))
+- **Google Authenticator**: [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) and [iOS](https://apps.apple.com/fr/app/google-authenticator/id388497605)
 
 ---
 
-Une authentification à deux facteurs est aussi disponible [en SSH](remote-access/ssh/ssh-two-factor-authentication) pour les utilisateurs des [offres Cloud Privés](accounts/billing/private-cloud-prices) d'alwaysdata.
+Two factor authentication is also available [in SSH](remote-access/ssh/ssh-two-factor-authentication) for users of alwaysdata [Private Cloud offers](accounts/billing/private-cloud-prices).
