@@ -1,20 +1,20 @@
 +++
-url = "/fr/domaines/changer-de-serveurs-dns/"
-title = "Comment changer de serveurs DNS"
-linkTitle = "Changer de serveurs DNS"
+url = "/domains/changer-de-serveurs-dns/"
+title = "How to change DNS servers"
+linkTitle = "Change DNS servers"
 layout = "howto"
 weight = 21
-tags = [ "dns", "domaine" ]
+tags = [ "dns", "domain" ]
 +++
 
-Les [serveurs DNS](https://fr.wikipedia.org/wiki/Domain_Name_System) définissent quels serveurs contacter pour chaque service. Ils sont donc définis chez le registrar - le prestataire de la gestion administrative du domaine.
+The [DNS servers](https://fr.wikipedia.org/wiki/Domain_Name_System) define which servers to contact for each service. They are therefore defined at the registrar - the provider of the administrative management of the domain.
 
-1. Demandez à votre nouveau prestataire ses serveurs DNS ;
-2. Dans votre interface d'administration, allez dans **Domaines > Détails** du domaine concerné **> Modifier** ses serveurs DNS ;
-   {{< fig "images/admin-panel_domain-details.fr.png" "Interface d'administration : Détails d'un domaine" >}}
-3. Indiquez les adresses de vos nouveaux serveurs DNS.  
-   {{< fig "images/admin-panel_change-dns.fr.png" "Interface d'administration : Changer de serveurs DNS" >}}
+1. Ask your new DNS service provider;
+2. In your admin interface, go to **Domains > Details** of the domain concerned **> Modify** its DNS servers;
+   {{< fig "images/admin-panel_domain-details. r.png" "Admin interface: Domain details" >}}
+3. Specify the addresses of your new DNS servers.  
+   {{< fig "images/admin-panel_change-dns.en.png" "Admin interface: Change DNS servers" >}}
 
 {{% notice note %}}
-Lorsque les champs des serveurs DNS sont vides, le domaine utilise les serveurs DNS d'alwaysdata.
-{{% /notice %}}
+When DNS server fields are empty, the domain uses alwaysdata DNS servers.
+{{%/notice %}}
