@@ -1,33 +1,33 @@
 +++
-url = "/fr/sites/desinfecter-un-site/"
-title = "Comment désinfecter un site web"
-linkTitle = "Désinfecter un site"
+url = "/sites/desinfecter-un-site/"
+title = "How to un-infect a website"
+linkTitle = "Un-infect a site"
 layout = "howto"
 weight = 90
-tags = [ "infection", "malware", "spam" ]
+tags = [ "Infection", "malware", "spam" ]
 +++
 
-L'infection d'un site peut se traduire de différentes manières :
+Infection of a site can result in different hands:
 
-- envoi de spam ;
-- malware attaquant d'autres serveurs ;
-- phishing ;
-- redirection vers un site tiers.
+- sending spam;
+- malware attacking other servers;
+- phishing;
+- redirect to a third party site.
 
-Lorsque le support alwaysdata détecte une infection il va bloquer le malware et contacter l'utilisateur pour qu'il fasse le nécessaire.
+When alwaysdata support detects an infection it will block the malware and contact the user to do the necessary thing.
 
-La très grande majorité des attaques est effectuée par des scripts automatiques. Il n'est donc pas recommandé de réinstaller le site et ses extensions dans le même état sous peine de subir une nouvelle infection dans les heures qui suivent. Voici les actions à entreprendre alors :
+The vast majority of attacks are done by automated scripts. It is therefore not recommended to reinstall the site and its extensions in the same condition on pain of suffering a new infection within hours. Here are the actions to be taken then:
 
-## 1. Supprimer les fichiers infectés
+## 1. Delete infected files
 
-Les commandes ci-après, présentées pour un site utilisant PHP, sont exécutées via [SSH](remote-access/ssh) dans le répertoire de votre site.
+The following commands, presented for a site using PHP, are executed via [SSH](remote-access/ssh) in the directory of your site.
 
-- Vérifiez que des redirections ou autres directives n'aient pas été rajoutées à votre insu en contrôlant le contenu de vos fichiers `.htaccess`. Il ne devrait y en avoir à priori qu'un, situé à la racine de votre site :
+- Make sure that redirects or other directives have not been added to your knowledge by controlling the content of your `.htaccess` files. There should be only one, located at the root of your site:
 
     ```sh
     $ find . -type f -name .htaccess
     ```
-- Parcourez vos fichiers à la recherche de [malwares](http://fr.wikipedia.org/wiki/Logiciel_malveillant) :
+- Browse your files for [malwares](http://fr.wikipedia.org/wiki/Logiciel_malveillant):
 
     ```sh
     $ find . -type f -name "*.php" | xargs grep base64_decode
@@ -40,17 +40,17 @@ Les commandes ci-après, présentées pour un site utilisant PHP, sont exécuté
 L'infection se présente comme une suite alphanumérique exécutée avec la fonction PHP [eval](http://www.php.net/manual/fr/function.eval.php) :
 
 ```php
-eval(gzinflate(base64_decode("FZy3sqMKFkX/ZaL3igDvaiI8QngPyRTee8/Xj24n3UFfCcE5e6+li1ScSf9P9TZj2Sd78U+abAWB/S8vsikv/vmPGL9ie7zfvQtBPE2Nzt4HaPd3Q0M1RB6eMYgHwFxCOF+T7/ppow3C7Tl5m9bcQWIs4uYlcw4Envy7f1QeBO4UpzkUACLAO8UvWkhraTtMMWF5rcCGA10u37A0klvx9GzqtUvc2arSuDhOsuvsRdbfTEW1C2IEAhBYr5uEHE/e4voIvKAhvBQJVQg0FD6i6KITcQ97cKjF7dSikH5jVZkgtqk/WoMZgF7NJmjon4izeYBw1d9Ll3Avr5O3g3LzoM192DV8f0tn/FJGIyGRo92...")));
+eval(gzinflate(base64_decode("FZy3sqMKFkX/ZaL3igDvaiI8QngPyRTee8/Xj24n3UFfCcE5e6+li1ScSf9P9TZjj2Sd78U+abAWB/S8vsikv/vmPGL9ie7zfvQtBPE2Nzt4HaPd3Q0M1RB6eMYgHwFxCOF+T7/ppow3C7Tl5m9bcQWIs4uYlcw4Envy7f1QeBO4UpzkUACLAO8UvWkhraTMMWF5rcCGA10u37A0klvx9Gzqt
 ```
 
-Cette suite, encodée en base64, est tout simplement un script PHP qui sera exécuté à l'appel de la page.
-Vous pouvez donc décoder cette suite pour comprendre ce que le hackeur tente de faire :
+This base64-encoded sequence is simply a PHP script that will be executed when the page is called.
+So you can decode this suite to understand what the hacker is trying to do:
 
 ```php
 echo gzinflate(base64_decode("FZy3sqMKFkX/ZaL3igDvaiI8QngPyRTee8/Xj24n3UFfCcE5e6..."));
 ```
 
-Ou alors :
+Or then:
 
 ```sh
 $ find . -name "*.php" -print0 | xargs -0 grep eval
@@ -64,97 +64,97 @@ $sF="PCT4BA6ODSE_";$s21=strtolower($sF[4].$sF[5].$sF[9].$sF[10].$sF[6]...
 $qV="stop_";$s20=strtoupper($qV[4].$qV[3]...
 ```
 
-Tous ces fichiers doivent être **supprimés**.
+All these files must be **deleted**.
 
-- Inspectez vos sources à la recherche de dossiers cachés contenant une copie des malwares précédemment supprimés :
+- Check your sources for hidden folders that contain a copy of previously deleted malware:
 
     ```sh
     $ find . -type d -name ".*"
     ```
 
-- Listez les fichiers modifiés ces dernières 24 heures (1 étant le nombre de jour) :
+- List the modified files in the last 24 hours (1 having the number of days):
 
     ```sh
     $ find . -type f -mtime -1 -print
     ```
 
-- Vérifiez l'intégrité de votre base de données en parcourant les derniers enregistrements.
+- Check your database integrity by browsing the latest records.
 
-## 2. Recherche de la faille
+## 2. Failure search
 
-En fonction de la date de création des fichiers, de leur nom et de leur appel, il est possible de retrouver l'URL permissive appelée.
-Pour se faire, épluchez les requêtes POST de vos logs Apache situés dans le répertoire `$HOME/admin/logs/http` :
+Depending on the creation date of the files, their name and call, it is possible to find the permissive URL called.
+To do so, check for POST requests from your Apache logs located in the `$HOME/admin/logs/http` directory:
 
 ```sh
 $ grep POST $HOME/admin/logs/http/[année]/http-[date].log[.gz]
 ```
 
-Exemple d'appels suspects :
+Sample suspicious calls:
 
 ```
-domain.tld 37.139.47.91 - - [23/Nov/2013:09:13:37 +0100] "POST /wp-content/themes/twentythirteen/404.php?pwd HTTP/1.0" 200 4598 "-" "Mozilla/5.0 
-domain.tld 81.27.32.147 - - [23/Nov/2013:03:19:16 +0100] "POST //wp-content/themes/lightspeed/framework/_scripts/valums_uploader/php.php HTTP/1.1" 200 100 "-" "-"
-domain.tld 31.184.244.18 - - [31/May/2013:02:12:37 +0200] "POST /templates/beez/7c31.php HTTP/1.1" 200 - "-" "-"
+domain.tld 37.139.47.91 - [23/Nov/2013:09:13:37 +0100] "POST /wp-content/themes/twentythirteen/404.php?pwd HTTP/1.0" 200 4598 "-" "Mozilla/5.0 
+domain.tld 81.27.32. 47 - [23/Nov/2013:03:19:16 +0100] "POST //wp-content/themes/lightspeed/framework/_scripts/valums_uploader/php.php HTTP/1. " 200 100 "-" "-"
+domain.tld 31.184.244.18 - [31/May/2013:02:12:37 +0200] "POST /templates/beez/7c31.php HTTP/1.1" 200 - "-" "-"
 ```
 
-Le nom des fichiers, des appels en POST sur des URLs ne contenant pas de traitements, sont des indices vous permettant de remonter jusqu'à la première requête HTTP, origine de l'infection.
+The name of the files, POST calls on URLs that do not contain treatments, are hints that allow you to go back to the first HTTP request that is the source of the infection.
 
 {{% notice tip %}}
-Si l'infection est **récente** et la recherche de l'infection compliquée, il est possible de repartir d'une [sauvegarde](backups).
-{{% /notice %}}
+If the infection is **was** and the search for the complicated infection, it is possible to restart an [sauvegarde](backups).
+{{%/notice %}}
 
-## 3. Supprimer les vecteurs d'infection
+## 3. Remove infection vectors
 
-- **Mettez régulièrement à jour** l'application, ses plugins et thèmes ;
+- **Update application** and its plugins and themes;
 
-- Supprimez tous les plugins et thèmes inactifs ;
+- Delete all inactive plugins and themes;
 
-- Informez-vous sur les rapports de bugs et failles de sécurité des applications/plugins avant de les installer ;
+- Find out about bug reports and security vulnerabilities of applications/plugins before installing them;
 
-- Mettez en place le [pare-feu applicatif web](sites/waf) ;
+- Set up the [web application firewall](sites/waf);
 
-- Modifiez le préfixe du nom des tables de votre base de données (par exemple pour WordPress _wp\__) ;
+- Change the prefix of your database tables names (e.g. for WordPress _wp\__);
 
-- Supprimez le fichier readme.txt à la racine de votre application ;
+- Delete the readme.txt file from the root of your application;
 
-- Supprimez les utilisateurs créés par défaut ;
+- Delete users created by default;
 
-- Protégez-vous du [hotlinking](http://fr.wikipedia.org/wiki/Hotlinking) en ajoutant au fichier .htaccess :
+- Protect yourself from [hotlinking](http://fr.wikipedia.org/wiki/Hotlinking) by adding to the .htaccess file:
 
     ```
-    # Activation du mode Rewrite
+    # Enable Rewrite Mode
     RewriteEngine on
-    RewriteCond %{HTTP_REFERER} !^$
+    RewriteCond %{HTTP_REFERER} ! $
     
-    # Les requêtes en provenance de votre domaine sont autorisées
-    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?votredomaine.com [NC]
+    # Requests from your domain are allowed
+    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\. ?your domain. om [NC]
     
-    # Autorisation d'utilisation du contenu par les moteurs de recherche
-    RewriteCond %{HTTP_REFERER}  !search\?q=cache               [NC]
+    # Permission to use content by
+    RewriteCond %{HTTP_REFERER}  ! earch\?q=               [NC]
     RewriteCond %{HTTP_REFERER}  !google\.                      [NC]
     
-    # Renvoi d'une image alternative en cas d'emploi abusif des vôtres
-    RewriteRule \.(gif|jpg|png)$ http://domain.tld/hotlink.jpg  [R,NC,L]
+    # Referring an alternative image in case of misuse of your
+    RewriteRule \. gif|jpg|png)$ http://domain.tld/hotlink.jpg [R,NC,L]
     ```
 
-- autres règles de filtrage contre le XSS, les redirections HTTP et modifications de variables PHP :
+- other XSS filtering redirects, HTTP redirects, and PHP variable changes:
 
     ```
     RewriteEngine On
     RewriteCond %{REQUEST_METHOD} (GET|POST) [NC]
-    RewriteCond %{QUERY_STRING} ^(.*)(%3C|<)/?script(.*)$ [NC,OR]
+    RewriteCond %{QUERY_STRING} ^(.*)(%3C|<)/?script(. )$ [NC,OR]
     RewriteCond %{QUERY_STRING} ^(.*)(%3D|=)?javascript(%3A|:)(.*)$ [NC,OR]
-    RewriteCond %{QUERY_STRING} ^(.*)document\.location\.href(.*)$ [OR]
+    RewriteCond %{QUERY_STRING} ^(.*)document\.location\.href(. )$ [OR]
     RewriteCond %{QUERY_STRING} ^(.*)base64_encode(.*)$ [OR]
-    RewriteCond %{QUERY_STRING} ^(.*)GLOBALS(=|[|%[0-9A-Z]{0,2})(.*)$ [OR]
-    RewriteCond %{QUERY_STRING} ^(.*)_REQUEST(=|[|%[0-9A-Z]{0,2})(.*)$ [OR]
+    RewriteCond %{QUERY_STRING} ^(.*)GLOBALS(=|%[0-9A-Z]{0,2})(. )$ [OR]
+    RewriteCond %{QUERY_STRING} ^(.*)_REQUEST(=|%[0-9A-Z]{0,2})(.*)$ [OR]
     RewriteRule (.*) - [F]
     ```
 
 ---
 
-## Liens
+## Links
 
-- [Sucuri](http://sucuri.net/) : scanne et identifie les failles potentielles de votre site ;
-- [Google Webmaster Tools](https://www.google.com/webmasters/tools/home) : fournit des rapports détaillés sur la visibilité de votre site.
+- [Sucuri](http://sucuri.net/): scans and identifies potential vulnerabilities in your site;
+- [Google Webmaster Tools](https://www.google.com/webmasters/tools/home): Provides detailed reports on the visibility of your site.
 
