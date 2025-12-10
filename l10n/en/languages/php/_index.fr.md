@@ -1,22 +1,22 @@
 +++
-url = "/fr/langages/php/"
+url = "/en/languages/php/"
 title = "PHP"
 archetype = "chapter"
 tags = [ "php" ]
 +++
 
-Le fonctionnement de [PHP](https://www.php.net) chez alwaysdata est très standard. Si vous avez l'habitude d'utiliser PHP sous un système Unix (par exemple, Linux), vous savez déjà presque tout ce qu'il faut.
+The operation of [PHP](https://www.php.net) at alwaysdata is standard. If you are used to using PHP under a Unix system (e.g. Linux), you already know almost everything you need.
 
-- les [versions proposées](languages/php/configuration#versions-supportées) vont de la 4.4 à la 8.5 ;
-- il est tout à fait possible de [personnaliser le fichier php.ini](languages/php/configuration#paramètres-phpini) ;
-- PHP tourne en _FastCGI_, derrière [Apache](sites/configure-apache) : il est donc possible de créer des fichiers `.htaccess` ;
-- il est possible d'[installer des extensions](languages/php/extensions) (depuis PECL ou autre) ;
-- il est possible d'[installer des paquets](languages/php/packages) (_Composer_, _PEAR_) ;
-- il est possible d'[installer des bibliothèques](languages/php/libraries).
+- [proposed versions](languages/php/configuration#versions-supportées) range from 4.4 to 8.5;
+- it is all possible to [customize php.ini](languages/php/configuration#paramètres-phpini);
+- PHP runs in _FastCGI_, behind [Apache](sites/configure-apache), so it is possible to create `.htaccess` files;
+- it is possible to [install extensions](languages/php/extensions) (from PECL or other);
+- it is possible to [install packages](languages/php/packages) (_Composer_, _PEAR_);
+- it is possible to [install libraries](languages/php/libraries).
 
-Notre marketplace propose l'installation des frameworks [CakePHP](https://cakephp.org/), [Laminas](https://getlaminas.org/), [Laravel](https://laravel.com/), [Symfony](https://symfony.com/) et [TNH](https://github.com/tnhfw/tnh-fw).
+Our marketplace offers the installation of [CakePHP]frameworks (https://cakephp.org/), [Laminas](https://getlaminas.org/), [Laravel](https://laravel.com/), [Symfony](https://symfony.com/) and [TNH](https://github.com/tnhfw/tnh-fw).
 
 ---
 
-- [Ressource API](https://api.alwaysdata.com/v1/environment/php/doc/)
-- [Problèmes fréquents](languages/php/troubleshooting)
+- [Resource API](https://api.alwaysdata.com/v1/environment/php/doc/)
+- [Freight issues](languages/php/troubleshooting)
