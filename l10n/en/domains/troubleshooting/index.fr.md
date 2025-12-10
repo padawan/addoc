@@ -1,65 +1,65 @@
 +++
-url = "/fr/domaines/problemes-frequents/"
-title = "Domaines - Problèmes fréquents"
+url = "/domaines/frequent-issues/"
+title = "Domains - Frequent Issues"
 layout = "faq"
 weight = 90
-tags = [ "dépannage", "domaine" ]
+tags = [ "troubleshooting", "domain" ]
 +++
 
-## Transfert
+## Transfer
 
-### "2304 : Object status prohibits operation", "Transfer Prohibited from Registry Request" ou "2308 : Data management policy violation (domain [example.org] has invalid status (clientTransferProhibited))"
+### "2304: Object status prohibited operation", "Transfer Prohibited from Registry Request" or "2308: Data management policy violation (domain [example.org] has invalid status (clientTransferProhibited)"
 
-Domaine protégé contre les transferts un `whois` [^1] renverra :
+Protected domain against transfers a `whois` [^1] will return:
 
 {{% notice %}}
-Domain Status: clientTransferProhibited
+Status: clientTransferProhibited
 {{% /notice %}}
 
-La protection doit être supprimée chez le registrar actuel.
+The protection must be removed from the current registrar.
 
 ### "Invalid Authorization Code"
 
-Vérifiez qu'aucune faute de frappe n'a été effectuée en reprenant le code d'autorisation ou régénérez un code d'autorisation.
+Please make sure that no typing errors were performed by using the authorization code or re-set an authorization code.
 
 {{% notice info %}}
-Pour le régénérer lors d'un transfert sortant contactez notre [support](https://admin.alwaysdata.com/support/add).
-{{% /notice %}}
+To reassign it during an outgoing transfer contact our [support](https://admin.alwaysdata.com/support/add).
+{{%/notice %}}
 
-### "Registry error - 2308 : Data management policy violation (domain expired)"
+### "Registry error - 2308: Data management policy violation (domain expired)"
 
-Domaine expiré, renouvelez-le avant de relancer le transfert.
+Domain expired, please try again before relaunching the transfer.
 
 ### "Transfer Refused by Registrar (Queue Message #[id])"
 
-Le prestataire actuel du domaine a bloqué le transfert. Contactez-les pour en connaître la cause avant de relancer le transfert.
+The current domain provider blocked the transfer. Contact them to know the cause of the transfer before relaunching.
 
-## Changement de propriétaire
+## Ownership Change
 
-### "Max waiting duration for owner responses (15 days) reached"
+### Max waiting duration for owner responses (15 days) reached.
 
-Un changement de propriétaire doit être accepté par l'ancien et le nouveau propriétaire dans un délai de 15 jours. Vérifiez les adresses email des deux contacts.
+A change of ownership must be accepted by the old and the new owner within a period of 15 days. Check the email addresses of both contacts.
 
-## Domaine suspendu par l'ICANN
+## ICANN suspended domain
 
-L'[ICANN](https://www.icann.org/fr) vérifie les adresses email des propriétaires de domaine pour s'assurer de leur bon fonctionnement. Les propriétaires ont 15 jours pour valider l'email envoyé par l'ICANN.
+The[ICANN](https://www.icann.org/fr) checks email addresses of domain owners to make sure they are working properly. The owners have 15 days to validate the email sent by ICANN.
 
-Un `whois` indiquera le message suivant : `Domain Status: clientHold`
+A `whois` will indicate the following message: `Domain Status: clientHold`
 
 Dans l'interface d'administration alwaysdata, le message suivant - onglet **Domaines > Détails de [example.org] - 🔎 > Statut** - vous permettra de renvoyer l'email :
 
 ```
-Ce domaine a été suspendu par l'ICANN car son propriétaire n'a pas confirmé son adresse email dans les 15 jours suivant sa création, son transfert ou sa cession.
+This domain was suspended by ICANN because its owner did not confirm its email address within 15 days of its creation, transfer or transfer.
 ```
 
-Si vous n'êtes pas sûr de l'adresse email, vous pouvez la changer dans le détail du contact propriétaire, menu **Domaines > Gestion des contacts** :
+If you do not know about the email address, you can change it in the contact details, menu **Domains > Contact Management**:
 
-{{< fig "images/admin-panel_domains-list.fr.png" "Interface d'administration : accès au menu Gestion des contacts" >}}
+{{< fig "images/admin-panel_domains-list.png" "Admin interface: access to the Contact Management menu" >}}
 
-{{< fig "images/admin-panel_contacts-management.fr.png" "Interface d'administration : menu Gestion des contacts" >}}
+{{< fig "images/admin-panel_contacts-management.en.png" "Admin interface: Contact management menu" >}}
 
-## Liens
+## Links
 
-- [Glossaire des codes de statut EPP](https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en)
+- [EPP's status codes Glossary](https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en)
 
-[^1]: Plus d'informations sur [whois](https://fr.wikipedia.org/wiki/Whois)
+[^1]: More information about [whois](https://fr.wikipedia.org/wiki/Whois)
