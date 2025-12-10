@@ -1,31 +1,31 @@
 +++
-url = "/fr/domaines/utiliser-des-mx-externes/"
-title = "Comment utiliser un serveur mail externe"
-linkTitle = "Utiliser des MX externes"
+url = "/domaines/utiliser-des-mx-externes/"
+title = "How to use an external mail server"
+linkTitle = "Use external MX"
 layout = "howto"
 weight = 20
-tags = [ "dns", "domaine", "email" ]
+tags = [ "dns", "domain", "email" ]
 +++
 
-Pour utiliser le serveur de messagerie d'un autre prestataire, il faut changer d'[enregistrements MX](https://fr.wikipedia.org/wiki/Enregistrement_Mail_eXchanger). Ils determinent le serveur de réception d'un courrier électronique.
+To use another provider's mail server, change [MX records](https://fr.wikipedia.org/wiki/Enregistrement_Mail_eXchanger). They determine the receiving server of an electronic mail.
 
-1. {{< fig "images/admin-panel_dns-record-list.fr.png" "Interface d'administration : liste des enregistrements DNS" >}}
-2. Choisissez **Ajouter un enregistrement DNS** ;
-3. {{< fig "images/admin-panel_add-mx.fr.png" "Interface d'administration : ajouter un enregistrement MX" >}}
+1. {{< fig "images/admin-panel_dns-record-list.png" "Administration interface: list of DNS records" >}}
+2. Choose **Add DNS record**;
+3. {{< fig "images/admin-panel_add-mx.en.png" "Admin interface: add MX record" >}}
 
-Cela désactivera automatiquement nos enregistrements MX.
+This will automatically disable our MX recordings.
 
 {{% notice warning %}}
-Ne mettez pas la racine dans **Nom d'hôte**. Par exemple, en indiquant _example.org_ dans cette case, vous créerez un enregistrement pour _example.org.example.org_.
-{{% /notice %}}
+Do not put the root in **Host Name**. For example, by specifying _example.org_ in this box, you will create a record for _example.org.example.org_.
+{{%/notice %}}
 
 {{% notice note %}}
-Un enregistrement ayant `@` comme nom d'hôte pour certains prestataires correspond au sous-domaine vide. Dans notre cas, la case **Nom d'hôte** devra être vide.
-{{% /notice %}}
+A record with `@` as host name for some providers matches the empty subdomain. In our case, the **Host Name** box should be empty.
+{{%/notice %}}
 
-## Serveurs MX de différents prestataires
+## MX servers of different providers
 
-| Prestataire       | TTL   | Priorité | Valeur                                                                                                                                                                                                      |
+| Provider          | TTL   | Priority | Value                                                                                                                                                                                                       |
 | ----------------- | ----- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Gandi             | 10800 | 10       | spool.mail.gandi.net                                                                                                                                        |
 |                   | 10800 | 50       | fb.mail.gandi.net                                                                                                                                           |
@@ -41,16 +41,16 @@ Un enregistrement ayant `@` comme nom d'hôte pour certains prestataires corresp
 |                   | 3600  | 100      | mx3.mail.ovh.net                                                                                                                                            |
 
 {{% notice note %}}
-[id_mx_microsoft] est généré aléatoirement par Microsoft selon le nom du domaine
+[id_mx_microsoft] is randomly managed by Microsoft by the domain name
 {{% /notice %}}
 
-## Outrepasser les serveurs MX
+## Override MX servers
 
-Il peut être utile de court-circuiter les MX externes pour joindre directement les MX d'alwaysdata.
+It can be useful to short-circuit external MX to reach alwaysdata MX.
 
-Pour envoyer un email à `foobar@example.org` en passant par les MX d'alwaysdata (alors que les MX de `example.org` sont externes) :
+To send an email to `foobar@example.org` via the MX alwaysdata (while the MX from `example.org` is external):
 
-- créez [l'adresse email](e-mails/create-an-e-mail-address) sur l'interface d'administration ;
-- envoyez un email à :
-  - `foobar%example.org@mx.alwaysdata.com` si le compte est sur le Cloud Public ;
-  - `foobar%example.org@serveur.alwaysdata.com` si le compte est sur un Cloud Privé (`serveur` à remplacer par le nom du serveur).
+- create [email address](e-mails/create-an-e-mail-address) on the admin interface;
+- send an email to:
+  - `foobar%example.org@mx.alwaysdata.com` if the account is on the Public Cloud;
+  - `foobar%example.org@server.alwaysdata.com` if the account is on a Private Cloud (`server` should be replaced by the server name).
