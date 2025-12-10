@@ -1,30 +1,30 @@
 +++
-url = "/fr/comptes/programmes/open-source"
-title = "Programme Open Source"
+url = "/accounts/programs/open-source"
+title = "Open Source Program"
 linkTitle = "Open Source"
 layout = "man"
-tags = [ "facturation", "open source" ]
+tags = [ "invoicing", "open source" ]
 +++
 
-Un **[pack Small](accounts/billing/public-cloud-prices)** est offert **gratuitement** aux projets libres actifs.
+A **[Small Pack](accounts/billing/public-cloud-prices)** is offered **free** to active free projects.
 
-Notre programme a pour but d'héberger _uniquement_ le site du projet Open Source, c'est-à-dire le dépôt du code, la documentation et/ou un site vitrine (de présentation/démonstration/communication).
+Our program aims to host _only_ the Open Source project site, i.e. the code period, documentation and/or a showcase site (presentation/demo/communication).
 
-Pour en bénéficier présentez-nous votre projet en nous contactant par [email](mailto:community@alwaysdata.com) ou en ouvrant un [ticket de support](https://admin.alwaysdata.com/support/add/).
+To be able to send us your project by contacting us by [email](mailto:community@alwaysdata.com) or by opening a [support ticket](https://admin.alwaysdata.com/support/add/).
 
-Liste des projets libres actuellement hébergés par _alwaysdata_ :
+List of currently hosted free projects by _alwaysdata_:
 
 - [Agorakit](https://agorakit.org/)
-- AllegianceOS
-- Base de données de décors pour le simulateur de vol FlightGear
+- GermanyOS
+- FlightGear Flight Simulator Decoration Database
 - [Biblys](https://biblys.fr)
 - [Chariotte](https://chariotte.fr/)
 - [Colocauto](https://www.colocauto.org)
 - Fosseryweb
 - Hyperscandev
 - [I Hate Money](https://ihatemoney.org/)
-- Services tiers pour [Kaz](https://kaz.bzh)
+- Third Party Services for [Kaz](https://kaz.bzh)
 - [Paris Web](https://www.paris-web.fr/)
 - [PrePostPrint](https://www.prepostprint.org/)
-- Différents services pour la communauté [SPIP](https://www.spip.net/)
+- Different services for community [SPIP](https://www.spip.net/)
 - [Velvetyne](https://velvetyne.fr/)
