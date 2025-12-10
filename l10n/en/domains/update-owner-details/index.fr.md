@@ -1,19 +1,19 @@
 +++
-url = "/fr/domaines/mettre-a-jour-informations-proprietaire/"
-title = "Comment mettre à jour les informations du propriétaire d'un domaine"
+url = "/domaines/update-informations-proprietaire/"
+title = "How to update the owner information of a domain"
 layout = "howto"
 hidden = true
-tags = [ "domaine" ]
+tags = [ "domain" ]
 +++
 
-Chaque domaine est lié à un utilisateur propriétaire. Rendez-vous dans **Domaines > Gestion des contacts** pour trouver la liste des utilisateurs domaines.
+Each domain is linked to a proprietary user. Go to **Domains > Contact Management** to find the list of domain users.
 
-{{< fig "images/admin-domains-contacts.fr.png" "" >}}
+{{< fig "images/admin-domains-contacts.png" "" >}}
 
-Vous pourrez changer l'adresse, l'email et le numéro de téléphone.
+You can change the address, email and phone number.
 
-Pour connaître quel utilisateur est lié à un domaine rendez-vous dans les détails du domaine :
+To know which user is linked to a domain go to the details of the domain:
 
-{{< fig "images/admin-domains-details.fr.png" "" >}}
+{{< fig "images/admin-domains-details.png" "" >}}
 
-Pour modifier le nom du propriétaire ou l'entreprise tournez-vous vers le [changement de propriétaire](domains/change-of-owner).
+To change the owner's name or company name turn to the [change of ownership](domains/change-of-owner).
