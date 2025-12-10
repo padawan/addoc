@@ -1,18 +1,18 @@
 +++
-url = "/fr/avance/migrations/postgresql-17/"
-title = "Migration PostgreSQL 17"
+url = "/avance/migrations/postgresql-17/"
+title = "PostgreSQL 17 Migration"
 layout = "man"
 hidden = true
 tags = [ "infrastructure", "migration", "postgresql" ]
 +++
 
-Cette migration met à jour vos bases de données vers la version 17 de PostgreSQL ([Notes de version](https://www.postgresql.org/docs/release/17.0/)).
+This migration updates your database to PostgreSQL version 17 ([Release Notes](https://www.postgresql.org/docs/release/17.0/)).
 
-Elle s'accompagne des mises à jour suivantes :
+It is accompanied by the following updates:
 
-- `pgRouting` en version 3.8.0,
-- `PostGIS` en version 3.5.3,
-- `postgresql-ogr-fdw` en version 1.1.7
-- et `pgvector` en version 0.8.0.
+- `pgRouting` to version 3.8.0,
+- `PostGIS` on version 3.5.3,
+- `postgresql-ogr-fdw` to version 1.1.7
+- and `pgvector` in version 0.8.0.
 
-Pour plus d'informations, rendez-vous sur la ou les notes de mises à jour concernées par votre version actuelle  (visible dans la section _Bases de données > PostgreSQL_ de votre compte).
+For more information go to the release notes related to your current release (visible in the _Databases > PostgreSQL_ section of your account).
