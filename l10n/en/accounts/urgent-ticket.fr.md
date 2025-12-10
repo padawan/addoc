@@ -1,38 +1,38 @@
 +++
-url = "/fr/comptes/ticket-urgent/"
-title = "Ticket urgent"
+url = "/accounts/ticket-urgent/"
+title = "Urgent ticket"
 layout = "man"
 hidden = true
 tags = [ "monitoring" ]
 +++
 
-L'ouverture d'un ticket urgent, réservée aux utilisateurs possesseurs d'un serveur Dédié/Gold, déclenche immédiatement la prise en charge par un ingénieur (24h/24, 7j/7).
+Opening an urgent ticket, reserved for users owning a Deedie/Gold server, triggers incoming support by an engineer (24/7).
 
-Si le ticket concerne un problème couvert par notre _garantie de service_, nous nous chargeons de le résoudre en priorité. Cela n'engendre aucun surcoût pour notre client.
+If the ticket concerns a problem covered by our _service guarantee_, we will resolve it first. This does not result in any overlap for our customer.
 
-En revanche, si le problème n'est pas de notre responsabilité, l'intervention sera facturée _100 € HT_, sans devis préalable : le fait d'ouvrir le ticket en mode urgent vaut pour acceptation. Nous essayerons toutefois, dans la mesure du possible, de vous aider dans la résolution du problème.
+However, if the problem is not our responsibility, the intervention will be invoiced _100 € HT_, without a quote: opening the ticket in emergency mode is valid for acceptance. However, we will try to help you solve the problem as far as possible.
 
-## Problèmes couverts par la garantie de service
+## Problems covered by the service guarantee
 
-Dans l'immense majorité des cas, notre monitoring détecte automatiquement les anomalies couvertes par la garantie de service. Il n'est donc pas nécessaire d'ouvrir de ticket, notre équipe étant déjà alertée.
+In the vast majority of cases, our monitoring automatically detects the anomalies covered by the service guarantee. It is therefore not necessary to open a ticket, our team has already been alerted.
 
-Exemples (liste non exhaustive) :
+Examples (non-exhaustive list):
 
-- un service administré par alwaysdata a cessé de fonctionner (HTTP, FTP, IMAP, SSH, etc.) ;
-- les modifications effectuées depuis l'administration alwaysdata ne sont pas correctement prises en compte.
+- a service administered by alwaysdata has ceased to work (HTTP, FTP, IMAP, SSH, etc.);
+- changes made since the alwaysdata administration are not correctly taken into account.
 
-## Problèmes NON couverts par la garantie de service
+## Problems NOT covered by service guarantee
 
-Exemples (liste non exhaustive) :
+Examples (non-exhaustive list):
 
-- tout problème résultant d'une utilisation incorrecte du serveur par l'utilisateur ;
-- comportement anormal des applications de l'utilisateur ;
-- tout problème de performances ne provenant pas d'un dysfonctionnement du serveur ou du réseau ;
-- saturation des ressources du serveur par les applications de l'utilisateur ;
-- tout dysfonctionnement réseau dont l'origine ne serait pas de la responsabilité d'alwaysdata ;
-- toute demande générale d'aide.
+- any problems that result from the user's incorrect use of the server;
+- abnormal behavior of user apps;
+- any performance issues not related to server or network malfunctioning;
+- saturation of server resources by user apps;
+- any network malfunction whose origin would not be the responsibility of alwaysdata;
+- any general request for assistance.
 
-Des outils externes permettent de vérifier en temps réel le fonctionnement de certains services :
+External tools make it possible to check in real time the operation of certain services:
 
 - [HTTP](https://downforeveryoneorjustme.com/)
 - [ping](https://ping.eu/ping/)
