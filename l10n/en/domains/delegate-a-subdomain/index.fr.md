@@ -1,21 +1,21 @@
 +++
-url = "/fr/domaines/deleguer-un-sous-domaine/"
-title = "Comment déléguer un sous-domaine"
+url = "/domaines/deleguer-un-subdomain/"
+title = "How to Delegate a Subdomain"
 layout = "howto"
 hidden = true
-tags = [ "domaine", "site" ]
+tags = [ "domain", "site" ]
 +++
 
-Pour permettre à un autre utilisateur d'alwaysdata de pouvoir utiliser un sous-domaine de votre domaine, il faut lui donner votre permission.
+In order to allow another alwaysdata user to use a subdomain of your domain, you must give it your permission.
 
 Pour ce faire, rendez-vous dans **Domaines > Détails de [example.org] - 🔎 > Délégations > Ajouter une délégation**.
 
-{{< fig "images/admin-panel_subdomain-delegation-list.fr.png" "Menu des délégations" >}}
+{{< fig "images/admin-panel_subdomain-delegation-list.png" "Levels Menu" >}}
 
-{{< fig "images/admin-panel_subdomain-add-delegation.fr.png" "Ajout d'une délégation : formulaire" >}}
+{{< fig "images/admin-panel_subdomain-add-delegation.en.png" "Adding a layout: form" >}}
 
 {{% notice info %}}
-Ne mettez pas la racine dans **Nom d'hôte**. Par exemple, en indiquant `www.example.org` dans cette case, vous créerez une délégation pour `www.example.org.example.org`.
-{{% /notice %}}
+Do not put the root in **Host Name**. For example, by typing `www.example.org` in this box, you will create a detail for `www.example.org.example.org`.
+{{%/notice %}}
 
-{{< fig "images/admin-panel_subdomain-delegation-result.fr.png" "Ajout d'une délégation : résultat" >}}
+{{< fig "images/admin-panel_subdomain-delegation-result.png" "Added a result: result" >}}
