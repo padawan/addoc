@@ -1,51 +1,51 @@
 +++
-url = "/fr/langages/elixir/configuration/"
-title = "Configurer Elixir"
+url = "/en/languages/elixir/configuration/"
+title = "Configure Elixir"
 hidden = true
 layout = "man"
 tags = [ "elixir" ]
 +++
 
-## Versions supportées
+## Supported Versions
 
 |                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1.13 \\| 1.14 \\| 1.15 \\| 1.16 \\| 1.17 \\| 1.18 |
 
-La version par défaut est modifiable dans l'administration, section **Environnement > Elixir**. C'est cette version qui est notamment utilisée lorsque vous démarrez `mix`.
+The default version is editable in the administration, section **Environment > Elixir**. This version is especially used when you start `mix`.
 
-Les versions ne sont pas forcément [déjà installées](languages#versions).
+Versions are not forcefully [already installed](languages#versions).
 
-## Binaire à utiliser
+## Binary to use
 
-Pour forcer une version de Elixir différente de celle par défaut, définissez la variable d'environnement `ELIXIR_VERSION` :
+To force a version of Elixir different from the default, define the `ELIXIR_VERSION` environment variable:
 
 ```sh
 $ ELIXIR_VERSION=1.14 elixir
 ```
 
-Dans vos scripts, utilisez `/usr/bin/elixir` comme _shebang_ :
+In your scripts, use `/usr/bin/elixir` as _shebang_:
 
 ```
 #!/usr/bin/elixir
 ```
 
-## Environnement
+## Environments|Environment
 
-Votre environnement Elixir est initialement vide, sans aucune bibliothèque préinstallée.
+Your Elixir environment is initially empty, without any preinstalled libraries.
 
-## Déploiement HTTP
+## HTTP Deployment
 
-Pour déployer une application HTTP avec Elixir, créez un site de type _Elixir_ dans la section **Web > Sites**.
+To deploy an HTTP application with Elixir, create a _Elixir_ site in the **Web > Sites** section.
 
-{{< fig "images/elixir.png" "Type de site Elixir">}}
+{{< fig "images/elixir.png" "Elixir Site Type">}}
 
-Vous devrez spécifier la commande qui démarre votre application Elixir, par exemple :
+You will need to specify the command that starts your Elixir application, for example:
 
 ```
 mix $HOME/myapp/phx.server
 ```
 
 {{% notice warning %}}
-Votre application doit impérativement écouter sur l'ip `::` et le port indiqués dans la vue de configuration du site sous le champ _Commande_ ; ou utiliser les variables d'environnement IP et PORT.
-{{% /notice %}}
+Your application must not listen on the `::` ip and port specified in the site configuration view under the _Command_ field; or use the IP and PORT environment variables.
+{{%/notice %}}
