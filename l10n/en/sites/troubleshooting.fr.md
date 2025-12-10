@@ -1,58 +1,58 @@
 +++
-url = "/fr/sites/problemes-frequents/"
-title = "Sites web - Problèmes fréquents"
+url = "/sites/frequent-issues/"
+title = "Websites - Problems"
 layout = "faq"
 weight = 90
-tags = [ "dépannage", "http", "site" ]
+tags = [ "troubleshooting", "http", "site" ]
 +++
 
-## Connexion
+## Login
 
-Service externe permettant de vérifier la disponibilité : [Where's It Up?](https://wheresitup.com/)
+External service to check availability: [Where's It Up?](https://wheresitup.com/)
 
-- [Connection to upstream refused, Connection to upstream skipped, Upstream not ready, Cannot parse upstream response](sites/connection-to-upstream)
+- Connection to upstream refused, Connection to upstream skipped, Upstream not ready, Cannot parse upstream response](sites/connection-to-upstream)
 - [PHP](languages/php/troubleshooting)
 
-### This site can’t be reached / server DNS address could not be found
+### This site could not be reached / server DNS address could not be found
 
-- Vérifiez si le domaine existe, n'est pas expiré ou bloqué par l'[ICANN](https://www.icann.org/fr) via un `whois`[^1] ;
-- Vérifiez la [résolution DNS](https://www.dnswatch.info/) de l'adresse.
+- Check if the domain exists, is not expired or blocked by the[ICANN](https://www.icann.org/fr) via a `whois`[^1] ;
+- Check the [DNS solution](https://www.dnswatch.info/) of the address.
 
-Ajouter le domaine dans **Domaines** ne suffit pas à créer un site internet. L'ajout des adresses dans **Web > Sites** est nécessaire.
+Adding the domain to **Domains** is not enough to create a website. Adding addresses to **Web > Sites** is required.
 
 ### 403 Forbidden
 
-Pour les sites utilisant [Apache](sites/configure-apache), il va par défaut rechercher pour la page d'accueil un fichier nommé `index.html` ou `index.php`. Renommez votre fichier ou utilisez la directive [DirectoryIndex](https://httpd.apache.org/docs/2.4/fr/mod/mod_dir.html#directoryindex) dans un `.htaccess`.
+For sites using [Apache](sites/configure-apache), a file named `index.html` or `index.php` should be searched for the home page. Rename your file or use the [DirectoryIndex]directive (https://httpd.apache.org/docs/2.4/fr/mod/mod_dir.html#directoryindex) in a `.htaccess`.
 
-### Erreurs 500
+### 500 Errors
 
-Ces erreurs peuvent être renvoyées par le serveur web (exemple Apache), le langage utilisé ou l'application elle-même. Mettre en place des logs de debogguage permet d'avoir plus d'informations pour corriger.
+These errors can be returned by the web server (e.g. Apache), the language used, or the application itself. Setting up debug logs allows you to have more information to fix.
 
-### Page blanche
+### White Page
 
-Une page blanche sans message ni code d'erreur signifie généralement un problème applicatif : le code renvoyé par les logs HTTP est _200_, indiquant que la requête atteint l'application. Mettre en place des logs de debogguage permet d'avoir plus d'informations pour corriger.
+A blank page with no message or error code means an application problem: the code returned from HTTP logs is _200_, indicating that the request reaches the application. Setting up debug logs allows you to have more information to fix.
 
-## Logs Apache
+## Apache Logs
 
-Les logs sont disponibles dans le répertoire `$HOME/logs/apache`.
+Logs are available in the `$HOME/logs/apache` directory.
 
 ### Broken pipe / Connection reset by peer
 
 ```txt
-Broken pipe: [client X.X.X.X:0] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function
-(104)Connection reset by peer: [client X.X.X.X:0] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function
+Broken pipe: [X.X.X:0] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function
+(104)Connection reset by peer: [X.X.X.X:0] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function
 ```
 
-La connexion a été rompue par le client. Par exemple, parce que le visiteur a fermé son onglet alors que la page n'était pas complètement chargée. **Cela n'a rien d'anormal.**
+The connection was broken by the client. For example, because the visitor closed his tab while the page was not fully loaded. **This is not abnormal.**
 
-### Premature end of script headers
+### Premature script headers
 
 ```txt
 Premature end of script headers: index.php, referer: https://example.org
 ```
 
-Le _serveur_ s'est arrêté subitement et Apache renvoie une erreur 500. **Cela ne doit pas arriver en situation normale.** Cela peut provenir de nombreuses raisons (bug PHP, bug applicatif, processus PHP tué par le kernel, etc.).
+The _server_ suddenly stopped and Apache returned an error 500. **This should not happen in normal situation.** This can be due to many reasons (PHP bug, application bug, kernel kill PHP process, etc.).
 
-Il vous faut analyser tous les logs à votre disposition pour trouve la cause : logs applicatifs, logs PHP...
+You have to parse all the logs at your disposal to find the cause: application logs, PHP logs...
 
-[^1]: Plus d'informations sur [whois](https://fr.wikipedia.org/wiki/Whois)
+[^1]: More information about [whois](https://fr.wikipedia.org/wiki/Whois)
