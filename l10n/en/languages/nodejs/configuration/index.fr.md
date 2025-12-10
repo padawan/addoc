@@ -1,14 +1,14 @@
 +++
-url = "/fr/langages/nodejs/configuration/"
-title = "Configurer Node.js"
+url = "/en/languages/nodejs/configuration/"
+title = "Configure Node.js"
 hidden = true
 layout = "man"
 tags = [ "nodejs" ]
 +++
 
-`[paquet]` est à remplacer par le nom du paquet à installer.
+`[paquet]` is to be replaced by the package name to install.
 
-## Versions supportées
+## Supported Versions
 
 |    |
 | -- |
@@ -23,56 +23,56 @@ tags = [ "nodejs" ]
 | 8  |
 | 6  |
 
-La version par défaut est modifiable dans l'administration, section **Environnement > Node.js**. C'est cette version qui est notamment utilisée lorsque vous démarrez `node`.
+The default version can be changed in the administration section **Environment > Node.js**. This version is especially used when you start `node`.
 
-Versions ne sont pas forcément [déjà installées](languages#versions).
+Versions are not forcefully [already installed](languages#versions).
 
 {{% notice note %}}
-Seules les **[versions LTS](https://nodejs.org/fr/about/previous-releases)** sont rendues disponibles.
-{{% /notice %}}
+Only **[LTS](https://nodejs.org/fr/about/previous-releases)** are made available.
+{{%/notice %}}
 
-## Binaire à utiliser
+## Binary to use
 
-Vous devez toujours utiliser `node` (ou `/usr/bin/node`). `nodejs` ne fonctionne pas.
+You should always use `node` (or `/usr/bin/node`). `nodejs` does not work.
 
-Pour forcer une version de Node.js différente de celle par défaut, définissez la variable d'environnement `NODEJS_VERSION` :
+To force a different version of Node.js than the default one, define the `NODEJS_VERSION` environment variable:
 
 ```sh
 $ NODEJS_VERSION=12 node
 ```
 
-Dans vos scripts, utilisez `/usr/bin/node` comme _shebang_ :
+In your scripts, use `/usr/bin/node` as _shebang_:
 
 ```
 #!/usr/bin/node
 ```
 
-## Environnement
+## Environments|Environment
 
-Votre environnement Node.js est initialement vide, sans aucune bibliothèque préinstallée. Vous pouvez utiliser `npm` pour installer des paquets :
+Your Node.js environment is initially empty, without any preinstalled libraries. You can use `npm` to install packages:
 
 ```sh
 $ npm install [paquet]
 ```
 
-Vous pouvez également utiliser `npm` en mode global, les paquets seront installés dans le répertoire `$HOME/.npm-packages` :
+You can also use `npm` in global mode, packages will be installed in the `$HOME/.npm-packages` directory:
 
 ```sh
 $ npm install -g [paquet]
 ```
 
-## Déploiement HTTP
+## HTTP Deployment
 
-Pour déployer une application HTTP avec Node.js, créez un site de type _Node.js_ dans la section **Web > Sites**.
+To deploy an HTTP application with Node.js, create a _Node.js_ site in the **Web > Sites** section.
 
-{{< fig "images/nodejs.png" "Type de site Node.js">}}
+{{< fig "images/nodejs.png" "Node.js Site Type">}}
 
-Vous devrez spécifier la commande qui démarre votre application Node.js, par exemple :
+You will need to specify the command that starts your Node.js application, for example:
 
 ```
-node $HOME/myapp/index.js
+$HOME/myapp/index.js node
 ```
 
 {{% notice warning %}}
-Votre application doit impérativement écouter sur l'ip et le port indiqués dans la vue de configuration du site sous le champ _Commande_. Vous pouvez utiliser les variables d'environnement `IP` / `HOST` et `PORT`.
-{{% /notice %}}
+Your app must not listen on the ip and port specified in the site configuration view under the _Command_ field. You can use the `IP` / `HOST` and `PORT` environment variables.
+{{%/notice %}}
