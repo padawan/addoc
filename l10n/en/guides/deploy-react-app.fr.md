@@ -1,36 +1,36 @@
 +++
-url = "/fr/guides/deployer-app-react/"
-title = "Déployer une application Create React App"
+url = "/guides/deployer-app-react/"
+title = "Deploy a Create React App app"
 layout = "howto"
 hidden = true
-tags = [ "deploiement", "statique", "react", "front-end" ]
+tags = [ "deploy", "static", "React", "front-end" ]
 +++
 
-Une application conçue avec [React](https://reactjs.org/) est essentiellement constituée, pour sa partie production, d'_assets_ statiques.
+An application consistent with [React](https://reactjs.org/) is essentially made up of static _assets_ for its production part.
 
 Si le cycle de développement fait intervenir Node.js pour servir les pages/vues dans un serveur HTTP avec tout le
-confort des outils de développement (_hot-reloading_, etc.), elle n'est pas nécessaire pour sa mise en production. Un
-simple serveur Web fera l'affaire :
+confort des outils de développement (_hot-reloading_, etc.), elle n'est pas nécessaire pour sa mise en production. A simple
+web server will do the deal:
 
 > Set up your favorite HTTP server so that a visitor to your site is served index.html, and requests to static paths
 > like /static/js/main.[hash].js are served with the contents of the /static/js/main.[hash].js file.
 
-## Côté _alwaysdata_
+## _Alwaysdata_
 
-Créez simplement un site de type [Fichiers statiques](sites/static-files) pointant vers le répertoire de votre choix (par exemple
+Simply create a [Static Files](sites/static-files) site pointing to the directory of your choice (e.g.
 `www/my-app`).
 
-## Côté développement
+## Development co-operation
 
-Commencez par ajouter dans votre fichier `package.json` une entrée indiquant au build l', par exemple :
+Start by adding in your `package.json` file an entry telling the build the final , for example:
 
 ```json
 "homepage": "https://[account].alwaysdata.net/my-app"
 ```
 
-Dans votre environnement local de développement, lancez la tâche de _build_. Si vous avez utilisé un outil comme Create
-React App pour initialiser votre projet, celle-ci est disponible _via_ la tâche _npm_
-`npm run build`. Cette commande va produire les _assets_ statiques dans un répertoire `build`.
+In your local development environment, run the _build_ task. If you used a tool like Create
+React App to initialize your project, this is available _via_ the _npm_
+`npm run build`. This command will produce the static _assets_ in a `build` directory.
 
 Vous pouvez ensuite déployer ces fichiers résultant du _build_ dans le répertoire indiqué précédemment lors de la
 création du site, par exemple via [_rsync/SSH_](remote-access/ssh) :
