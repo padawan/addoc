@@ -1,12 +1,12 @@
 +++
-url = "/fr/langages/deno/configuration/"
-title = "Configurer Deno"
+url = "/languages/deno/configuration/"
+title = "Configure Deno"
 hidden = true
 layout = "man"
 tags = [ "deno" ]
 +++
 
-## Versions supportées
+## Supported Versions
 
 |                      |
 | -------------------- |
@@ -16,26 +16,26 @@ tags = [ "deno" ]
 | 1.45 |
 | 1.43 |
 
-La version par défaut est modifiable dans l'administration alwaysdata, **Environnement > Deno**. C'est cette version qui est notamment utilisée lorsque vous démarrez `deno`.
+The default version can be changed in the alwaysdata administration, **Environment > Deno**. This version is especially used when you start `deno`.
 
-Les versions ne sont pas forcément [déjà installées](languages#versions).
+Versions are not forcefully [already installed](languages#versions).
 
-## Environnement
+## Environments|Environment
 
-Votre environnement Deno est initialement vide, sans aucune bibliothèque préinstallée.
+Your Deno environment is initially empty, without any preinstalled libraries.
 
-## Déploiement HTTP
+## HTTP Deployment
 
-Pour déployer une application HTTP avec Deno, créez un site de type _Deno_ dans la section **Web > Sites**.
+To deploy an HTTP application with Deno, create a _Deno_ site in the **Web > Sites** section.
 
 {{< fig "images/deno.png" "Deno Site Type">}}
 
-Vous devrez spécifier la commande qui démarre votre application Deno, par exemple :
+You will need to specify the command that starts your Deno application, for example:
 
 ```
 deno run --allow-env --allow-net $HOME/myapp/index.ts
 ```
 
 {{% notice warning %}}
-Votre application doit impérativement écouter sur l'ip et le port indiqués dans la vue de configuration du site sous le champ _Commande_. Vous pouvez utiliser les variables d'environnement `IP` / `HOST` et `PORT`.
-{{% /notice %}}
+Your app must not listen on the ip and port specified in the site configuration view under the _Command_ field. You can use the `IP` / `HOST` and `PORT` environment variables.
+{{%/notice %}}
