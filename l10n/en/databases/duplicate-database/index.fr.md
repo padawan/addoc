@@ -1,21 +1,21 @@
 +++
-url = "/fr/bases-de-donnees/dupliquer-base-de-donnees"
-title = "Dupliquer une base de données"
+url = "/en/datasets/duplicate-dataset"
+title = "Duplicate database"
 layout = "howto"
 hidden = true
 tags = [ "databases" ]
 +++
 
-Il est possible de dupliquer une base de données via **Bases de données > [SGBD] > Dupliquer la [base de donnée] - 📄**.
+It is possible to duplicate a database via **Databases > [SGBD] > Duplicate [database] - 📄**.
 
-{{< fig "images/list.fr.png" "" >}}
+{{< fig "images/list.png" "" >}}
 
-Choisissez le compte destinataire et le nom de la nouvelle base.
+Choose the recipient account and the name of the new database.
 
-{{< fig "images/duplication.fr.png" "" >}}
+{{< fig "images/duplication.png" "" >}}
 
-À la création de cette nouvelle base, aucun utilisateur du compte n'a de droit dessus. Il faudra choisir les permissions pour chaque utilisateur du compte via **Bases de données > [SGBD] > Modifier [la base voulue] - ⚙️**.
+No account user is allowed to create this new database. You will need to set permissions for each account user via **Databases > [SGBD] > Edit [desired database] - ⚙️**.
 
-{{< fig "images/list2.fr.png" "" >}}
+{{< fig "images/list2.en.png" "" >}}
 
-{{< fig "images/permissions.fr.png" "" >}}
+{{< fig "images/permissions.png" "" >}}
