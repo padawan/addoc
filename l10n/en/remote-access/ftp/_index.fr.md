@@ -1,53 +1,53 @@
 +++
-url = "/fr/acces-distant/ftp/"
+url = "/remote/ftp/"
 title = "FTP"
 weight = 5
-tags = [ "accès distant", "ftp" ]
+tags = [ "remote access", "[currency symbol] ftp" ]
 archetype = "chapter"
 +++
 
-FTP, pour [File Transfer Protocol](https://fr.wikipedia.org/wiki/File_Transfer_Protocol) est un protocole permettant le partage de fichiers sur un réseau distant.
+FTP, for [File Transfer Protocol](https://fr.wikipedia.org/wiki/File_Transfer_Protocol) is a protocol for sharing files on a remote network.
 
 - [API - FTP](https://api.alwaysdata.com/v1/ftp/doc/)
-- [Créer un utilisateur FTP](create-a-ftp-user)
-- [Télécharger des fichiers avec FileZilla](use-filezilla)
-- [Problèmes fréquents](remote-access/ftp/troubleshooting)
+- [Create FTP User](create-a-ftp-user)
+- [Download files with FileZilla](use-filezilla)
+- [Freight issues](remote-access/ftp/troubleshooting)
 
-## Se connecter en FTP
+## Connect to FTP
 
-| Informations    |                                                                                                                     |
-| --------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Hôte            | **ftp-[compte].alwaysdata.net** |
-| Port            | **990 (SSL/TLS)**                                                                                |
-| Port alternatif | 21 (STARTTLS)                                                                                    |
-| Identifiant     | **utilisateur** et **mot de passe** associé                                                                         |
+| Information    |                                                                                                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Hostels        | **ftp-[compte].alwaysdata.net** |
+| Port           | **990 (SSL/TLS)**                                                                                |
+| Alternate Port | 21 (STARTTLS)                                                                                    |
+| Username       | **user** and **password** associated                                                                                |
 
-{{< fig "admin-panel_list-ftp-users.fr.png" "Interface d'administration : liste des utilisateurs FTP" >}}
+{{< fig "admin-panel_list-ftp-users.en.png" "Admin interface: list of FTP users" >}}
 
 {{% notice note %}}
-Remplacez `ftp-[compte].alwaysdata.net` par votre nom d'hôte FTP.
-{{% /notice %}}
+Replace `ftp-[compte].alwaysdata.net` with your FTP host-name.
+{{%/notice %}}
 
-Le nombre de connexions simultanées maximum par utilisateur est de _10_. Il est possible à la demande de le modifier en environnements Cloud Privé.
+Maximum simultaneous connections per user is _10_. It is possible to change it in Private Cloud environments.
 
-## .ftpaccess
+## ftpaccess
 
-Il est possible de créer des fichiers [.ftpaccess](http://www.proftpd.org/docs/howto/ftpaccess.html) pour modifier la configuration FTP des dossiers concernés.
+It is possible to create [.ftpaccess]files (http://www.proftpd.org/docs/howto/ftpaccess.html) to change the FTP configuration of the relevant folders.
 
-### Exemple : Bloquer l'accès en lecture seule à un utilisateur
+### Example: Block read-only access to a user
 
-Créez un `.ftpaccess` à la racine du dossier avec la directive suivante :
+Create a `.ftpaccess` at the root of the folder with the following directive:
 
 ```sh
 <Limit WRITE>
-DenyUser [utilisateur FTP]
+DenyUser [FTP user]
 </Limit>
 ```
 
-## Divers
+## Misc
 
-La plage de ports utilisée pour le mode passif est _53000-53999_.
+The port range used for passive mode is _53000-53999_.
 
 ---
 
-- [FileZilla](https://filezilla-project.org/download.php) : client FTP gratuit
+- [FileZilla](https://filezilla-project.org/download.php): Free FTP client
