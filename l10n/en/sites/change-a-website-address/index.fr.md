@@ -1,34 +1,34 @@
 +++
-url = "/fr/sites/changer-ladresse-dun-site-web"
-title = "Changer l'adresse d'un site web"
+url = "/sites/changer-ladresse-dun-site-web"
+title = "Change website address"
 hidden = true
 layout = "howto"
 tags = [ "http", "site" ]
 +++
 
-Votre site pointe sur une adresse et vous souhaitez utiliser une autre adresse/un autre domaine. Voici les étapes à suivre :
+Your site points to an address and you want to use another address/domain. Here are the steps to follow:
 
-Dans cet exemple, l'adresse de base sera `foobar.alwaysdata.net` et la nouvelle adresse `foobar.com`.
+In this example, the base address will be `foobar.alwaysdata.net` and the new address `foobar.com`.
 
 {{% notice note %}}
-Les adresses `.alwaysdata.net` ne seront pas un choix possible.
-{{% /notice %}}
+The addresses `.alwaysdata.net` will not be a possible choice.
+{{%/notice %}}
 
-{{< fig "images/step1.fr.png" "Etat initial" >}}
+{{< fig "images/step1.en.png" "Initial state" >}}
 
-1. Faire pointer les adresses de votre domaine sur nos serveurs :
+1. Point your domain addresses to our servers:
 
-   - si le domaine n'existe pas, il faut [l'acheter](domains/buy-a-domain) ;
-   - si le domaine existe, vous pouvez :
-     - n'ajouter que les [adresses nécessaires](sites/use-external-addresses) au site web ;
-     - passer toute la [gestion technique](domains/add-an-external-domain) sur nos serveurs DNS ;
-     - [transférer](domains/transfer-a-domain) le domaine ;
-2. Ajouter les nouvelles adresses au site dans **Web > Sites** - l'ancienne est toujours présente ;
+   - if the domain does not exist, [buy it] (domains/buy-a-domain);
+   - if the domain exists, you can:
+     - only add [necessary addresses](sites/use-external-addresses) to the website;
+     - pass all [technical management](domains/add-an-external-domain) on our DNS servers;
+     - [transférer](domains/transfer-a-domain) the domain;
+2. Add new addresses to the site in **Web > Sites** - the old one is still available;
 
-{{< fig "images/step2.fr.png" "" >}}
+{{< fig "images/step2.en.png" "" >}}
 
-3. Modifier l'adresse au niveau de l'application (dans son interface d'administration par exemple) ;
+3. Change the address at the application level (e.g. its admin interface)
 
-4. Supprimer l'ancienne adresse dans **Web > Sites**. Ce dernier point n'est _pas indispensable_, si vous ne le faites pas le site restera juste accessible sur l'ancienne adresse - tant qu'elle pointe sur nos serveurs.
+4. Delete the old address in **Web > Sites**. This last point is _not required_, if you do not do the site will remain just accessible on the old address - as long as it points to our servers.
 
-{{< fig "images/step3.fr.png" "Etat final" >}}
+{{< fig "images/step3.en.png" "Final status" >}}
