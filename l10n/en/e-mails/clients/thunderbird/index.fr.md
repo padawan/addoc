@@ -1,52 +1,52 @@
 +++
-url = "/fr/emails/clients/thunderbird/"
-title = "Comment configurer Thunderbird"
+url = "/emails/clients/thunderbird/"
+title = "How to configure Thunderbird"
 layout = "howto"
-tags = [ "email", "thunderbird", "mozilla" ]
+tags = [ "email", "Thunderbird", "Mozilla" ]
 hidden = true
 +++
 
-## Général
+## General
 
 {{% notice tip %}}
-Pour les domaines utilisant nos serveurs DNS, l'_autoconfiguration_ Thunderbird est utilisable. Vous n'avez qu'à indiquer votre nom d'utilisateur (adresse email) et votre mot de passe. Les autres paramètres sont automatiquement générés.
-{{% /notice %}}
+For domains using our DNS servers, Thunderbird _autoconfiguration_ is usable. All you have to do is enter your username and password. Other parameters are automatically managed.
+{{%/notice %}}
 
-| Serveur | Service | Information                |                                                                                                                    |
-| ------- | ------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Entrant | IMAP    | Nom d'hôte                 | imap-_[compte]_.alwaysdata.net |
-|         |         | Port                       | 993                                                                                                                |
-|         |         | Sécurité de la connexion   | Sera automatiquement choisi                                                                                        |
-|         |         | Méthode d'authentification | Mot de passe normal                                                                                                |
-|         |         | Nom d'utilisateur          | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe               | Le mot de passe de votre adresse email                                                                             |
-|         | POP3    | Nom d'hôte                 | pop-_[compte]_.alwaysdata.net  |
-|         |         | Port                       | 995                                                                                                                |
-|         |         | Sécurité de la connexion   | Sera automatiquement choisi                                                                                        |
-|         |         | Méthode d'authentification | Mot de passe normal                                                                                                |
-|         |         | Nom d'utilisateur          | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe               | Le mot de passe de votre adresse email                                                                             |
-| Sortant | SMTP    | Nom d'hôte                 | smtp-_[compte]_.alwaysdata.net |
-|         |         | Port                       | 465                                                                                                                |
-|         |         | Sécurité de la connexion   | Sera automatiquement choisi                                                                                        |
-|         |         | Méthode d'authentification | Mot de passe normal                                                                                                |
-|         |         | Nom d'utilisateur          | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe               | Le mot de passe de votre adresse email                                                                             |
+| Server   | Service | Information           |                                                                                                                    |
+| -------- | ------- | --------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Incoming | IMAP    | Host Name             | imap-_[compte]_.alwaysdata.net |
+|          |         | Port                  | 993                                                                                                                |
+|          |         | Connection security   | Will be automatically chosen                                                                                       |
+|          |         | Authentication Method | Normal Password                                                                                                    |
+|          |         | Username              | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password              | Your email address password                                                                                        |
+|          | POP3    | Host Name             | pop-_[compte]_.alwaysdata.net  |
+|          |         | Port                  | 995                                                                                                                |
+|          |         | Connection security   | Will be automatically chosen                                                                                       |
+|          |         | Authentication Method | Normal Password                                                                                                    |
+|          |         | Username              | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password              | Your email address password                                                                                        |
+| Outgoing | SMTP    | Host Name             | smtp-_[compte]_.alwaysdata.net |
+|          |         | Port                  | 465                                                                                                                |
+|          |         | Connection security   | Will be automatically chosen                                                                                       |
+|          |         | Authentication Method | Normal Password                                                                                                    |
+|          |         | Username              | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password              | Your email address password                                                                                        |
 
-_`[compte]`_ doit être remplacé par le nom de votre compte et _`contact@example.org`_ par votre adresse email. Ils sont définis dans le menu **Emails > Adresses** de notre interface d'administration.
+_`[compte]`_ must be replaced with your account name and _`contact@example.org`_ with your email address. They are defined in the **Emails > Addresses** menu of our admin interface.
 
-## Captures d'écran
+## Screenshots
 
-Dans notre exemple nous considérons les informations suivantes (à remplacer par vos informations de connexion personnelles) :
+In our example we will have the following information (to replace with your personal login information):
 
-- Nom du compte : `test`
-- Adresse email : `test@alwaysdata.net`
+- Account name: `test`
+- Email address: `test@alwaysdata.net`
 
-Rendez-vous dans **Comptes > Configurer un compte : Courrier électronique**.
+Go to **Accounts > Set up an Account: E-Mail**.
 
-{{< fig "images/thunderbird_new-account.fr.png" "Thunderbird : créer un compte" >}}
+{{< fig "images/thunderbird_new-account.en.png" "Thunderbird: Create an account" >}}
 
-Pour la modifier une fois créée, rendez-vous dans **Comptes > Voir les paramètres pour ce compte** ou dans la barre de menu **Édition > Paramètres des comptes** :
+To edit it once created, go to **Accounts > View settings for this account** or in the **Edit > Account Settings**:
 
-- {{< fig "images/thunderbird_imap-settings.fr.png" "Thunderbird : paramètres serveur entrant" >}}
-- {{< fig "images/thunderbird_smtp-settings.fr.png" "Thunderbird : paramètres serveurs sortant" >}}
+- {{< fig "images/thunderbird_imap-settings.en.png" "Thunderbird: Incoming server settings" >}}
+- {{< fig "images/thunderbird_smtp-settings.png" "Thunderbird: Outgoing server settings" >}}
