@@ -1,36 +1,36 @@
 +++
-url = "/fr/avance/adresses-ip-dediees"
-title = "Adresses IP dédiées"
+url = "/advance/ip-dediees"
+title = "IP addresses assigned"
 layout = "man"
 hidden = true
 tags = [ "email", "http", "site" ]
 +++
 
-Quel que soit l'environnement pris[^1], des adresses IPv4 sont offertes à la location via le menu **Avancé > Adresses IP**. Ces IP - non partagées - sont facturées 5 € TTC par mois ou 60 € TTC par an[^2].
+Whatever the environment is taken[^1], IPv4 addresses are offered through the **Advanced> IP Addresses** menu. These IPs - not shared - are invoiced at €5 including VAT per month or €60 including VAT per year[^2].
 
 ## HTTP
 
-Une fois l'IP prise :
+Once the IP is taken:
 
-- Si le domaine est géré sur nos serveurs DNS, vous pourrez la lier à une adresse via **Avancé > Adresses IP** ;
-- Si le domaine utilise d'autres serveurs DNS, créez un **enregistrement DNS de type A** pointant sur l'IP privée chez votre prestataire DNS.
+- If the domain is managed on our DNS servers, you can link it to an address via **Advanced > IP Addresses**;
+- If the domain uses other DNS servers, create a **DNS record of type A** pointing to the private IP address of your DNS provider.
 
 {{% notice note %}}
-Cette IP servira pour les requêtes entrantes mais les requêtes sortantes passeront toujours par l'IP du serveur HTTP sur lequel est le compte. Cette IP est donnée dans le menu **Avancé > Statut des serveurs**.
-{{% /notice %}}
+This IP will be used for incoming requests, but outgoing requests will always pass through the IP of the HTTP server on which the account is based. This IP is given in the **Advanced> Server Status** menu.
+{{%/notice %}}
 
 ## SMTP
 
-Cette IP va servir à l'envoi des mails.
+This IP will be used to send emails.
 
-Une fois l'IP prise vous pourrez lui indiquer quels emails doivent passer par cette IP selon le [score qu'ils auront reçus par l'antispam](e-mails/delivery#système-de-notation) :
+Once the IP is taken you will be able to tell it which emails should pass through this IP according to the [score they receive from antispam](e-mails/delivery#système-de-notation):
 
-{{< fig "images/dedicated-ip-smtp.fr.png" "" >}}
+{{< fig "images/dedicated-ip-smtp.en.png" "" >}}
 
 {{% notice note %}}
-Plus la note est basse mieux l'email sera noté.
-{{% /notice %}}
+The lower the note the better the email will be rated.
+{{%/notice %}}
 
-[^1]: Disponibles sur toutes nos offres, ces IP ne sont pas à confondre avec nos [offres Cloud Privé](accounts/billing/choose-its-paas).
+[^1]: Available on all our offerings, these IPs are not confused with our [Private Cloud offers](accounts/billing/choose-its-paas).
 
-[^2]: Pour un engagement annuel, contactez le [support](https://admin.alwaysdata.com/support/add).
+[^2]: For an annual commitment, contact [support](https://admin.alwaysdata.com/support/add).
