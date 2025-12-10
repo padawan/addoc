@@ -1,21 +1,21 @@
 +++
-url = "/fr/avance/"
-title = "Avancé"
+url = "/advance/"
+title = "Advanced"
 pre = "<i class='fas fa-fw fa-asterisk'></i> "
 weight = 99
 archetype = "chapter"
 +++
 
-Vous retrouverez ici des sujets avancés ou spécifiques à alwaysdata.
+Here you will find advanced or specific alwaysdata topics.
 
 - [Migrations](migrations)
-- [Adresses IP dédiées](dedicated-ip-addresses)
+- [IP addresses dedicated](dedicated-ip-addresses)
 
-## Cloud Privé
+## Private Cloud
 
-- [Ressources systèmes : alertes et limitations](system-resources-alerts-and-limitations)
+- [System Resources: Alerts and Limitations](system-resources-alerts-and-limitations)
 - [Docker](docker)
 
-## Rediriger les logs
+## Redirect logs
 
-Tout champ de type `command` (programme utilisateur, site Node.js, tâche planifiée, service...) peut être suffixé par `> foo/bar` (chemin de votre choix) pour rediriger les logs de la commande dans un fichier.
+Any `command` field (user program, Node.js site, scheduled task, service...) can be suffixed with `> foo/bar` (path of your choice) to redirect command logs to a file.
