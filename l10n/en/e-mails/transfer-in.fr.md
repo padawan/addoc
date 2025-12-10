@@ -1,22 +1,22 @@
 +++
-url = "/fr/emails/migrer-des-adresses-email-chez-alwaysdata/"
-title = "Migrer des adresses email chez alwaysdata"
+url = "/emails/migrer-des-adreses-email-chez-alwaysdata/"
+title = "Migrate email addresses to alwaysdata"
 layout = "howto"
 hidden = true
 tags = [ "email" ]
 +++
 
-Voici comment procéder à la migration d'adresses email chez alwaysdata.
+Here's how to migrate email addresses to alwaysdata.
 
-1. [Créer les adresses email](e-mails/create-an-e-mail-address) sur votre interface d'administration, onglet **Emails > Adresses** ;
+1. [Create email addresses](e-mails/create-an-e-mail-address) on your admin interface, **Emails > Addresses**;
 
-2. Migrer les emails déjà présents chez le prestataire actuel via **Emails > Adresses > Modifier [exemple@example.org] -  ⚙️ > Importer des emails**.
+2. Migrate emails already at the current provider via **Emails > Addresses > Edit [example@example.org] - ⚙️ > Import emails**.
 
-Cet import est effectué avec une authentification [IMAP](https://fr.wikipedia.org/wiki/Internet_Message_Access_Protocol) classique. Vous devez donc connaître le nom d'hôte, l'utilisateur et le mot de passe de l'adresse email à importer. Certains services ne permettent pas d'utiliser un accès direct en IMAP standard. Vous pouvez alors :
+This import is done with classic [IMAP]authentication (https://fr.wikipedia.org/wiki/Internet_Message_Access_Protocol) You must therefore know the host name, the user and the password of the email address to be imported. Some services do not allow to use a standard IMAP direct access. You can then:
 
-- suivre les documentations suivantes : [Gmail](https://imapsync.lamiral.info/FAQ.d/FAQ.Gmail.txt) et [Office 365](https://imapsync.lamiral.info/FAQ.d/FAQ.Office365.txt) ;
-- ou faire des exports/imports via un client mail.
+- follow the following documentations: [Gmail](https://imapsync.lamiral.info/FAQ.d/FAQ.Gmail.txt) and [Office 365](https://imapsync.lamiral.info/FAQ.d/FAQ.Office365.txt);
+- or make exports/imports via an email client.
 
-3. Changer les enregistrements MX, pour utiliser les serveurs d'alwaysdata : `mx1.alwaysdata.com` et `mx2.alwaysdata.com`.
+3. Change MX records, to use alwaysdata servers: `mx1.alwaysdata.com` and `mx2.alwaysdata.com`.
 
-Cette migration peut être couplée par une [migration de site web](sites/transfer-in) ou encore un [transfert de domaine](domains/transfer-a-domain).
+This migration can be coupled with a [website migration](sites/transfer-in) or [domain transfer] (domains/transfer-a-domain).
