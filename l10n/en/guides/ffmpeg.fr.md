@@ -1,22 +1,22 @@
 +++
-url = "/fr/guides/ffmpeg/"
-title = "Comment installer FFmpeg"
+url = "/guides/ffmpeg/"
+title = "How to install FFmpeg"
 layout = "howto"
 hidden = true
 +++
 
-[FFmpeg](https://www.ffmpeg.org/) fournit des outils destinés au traitement de flux audio ou vidéo.
+[FFmpeg](https://www.ffmpeg.org/) provides tools for processing audio or video streams.
 
-Cette bibliothèque étant source de traitements lourds elle n'est pas disponible par défaut sur le Cloud Public.
+This bibliotheque is a source of heavy processing and is not available by default on the Public Cloud.
 
 {{% notice info %}}
-Si vous êtes propriétaire d'un [Cloud Privé](accounts/billing/private-cloud-prices), contactez notre [support](https://admin.alwaysdata.com/support/add/). Il l'installera globalement sur le serveur.
-{{% /notice %}}
+If you own a [Private Cloud](accounts/billing/private-cloud-prices), contact our [support](https://admin.alwaysdata.com/support/add/). It will install it globally on the server.
+{{%/notice %}}
 
-Dans notre exemple, nous utilisons l'[accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom du compte : `foo`
-- Répertoire de ffmpeg : `$HOME/ffmpeg/`
+- Account name: `foo`
+- ffmpeg directory: `$HOME/ffmpeg/`
 
 ```sh
 foo@ssh:~/ffmpeg$ wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
@@ -24,6 +24,6 @@ foo@ssh:~/ffmpeg$ tar -xJf ffmpeg-release-amd64-static.tar.xz --strip-components
 foo@ssh:~/ffmpeg$ rm ffmpeg-release-amd64-static.tar.xz
 ```
 
-Les binaires seront disponibles dans le répertoire `$HOME/ffmpeg/`.
+Binaries will be available in the `$HOME/ffmpeg/` directory.
 
-Prenez la [dernière version amd64 stable disponible](https://johnvansickle.com/ffmpeg/).
+Take the [latest stable amd64 release](https://johnvansickle.com/ffmpeg/).
