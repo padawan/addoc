@@ -1,27 +1,27 @@
 +++
-url = "/fr/domaines/deplacer-un-domaine/"
-title = "Comment déplacer un domaine"
+url = "/domaines/moplacer-un-domain/"
+title = "How to move a domain"
 layout = "howto"
 hidden = true
-tags = [ "domaine", "email" ]
+tags = [ "domain", "email" ]
 +++
 
-Cet article explique comment transférer un domaine _et_ ses adresses email sur **un autre compte alwaysdata**.
+This article explains how to transfer a domain _and_ its email addresses to **another alwaysdata account**.
 
-1. Dans le menu **Domaines** du compte initial ;
+1. In the **Domains** menu of the initial account;
 
-2. {{< fig "images/admin-panel_domain-move-1.fr.png" "Interface d'administration : déplacement de domaine - étape 1" >}}
+2. {{< fig "images/admin-panel_domain-move-1.en.png" "Admin interface: domain move - step 1" >}}
 
-3. {{< fig "images/admin-panel_domain-move-2.fr.png" "Interface d'administration : déplacement de domaine - étape 2" >}}
+3. {{< fig "images/admin-panel_domain-move-2.en.png" "Admin interface: domain move - step 2" >}}
 
 {{% notice info %}}
-Seul le _propriétaire du compte_ peut initier la cession.
-{{% /notice %}}
+Only the _account owner_ can initiate the assignment.
+{{%/notice %}}
 
-Le profil destinataire devra simplement l'accepter dans la section **Cessions** et attendre que les boites email se copient sur son compte. Cette action étant dépendante de la taille des boites email, elle peut prendre du temps.
+The recipient profile will simply have to accept it in the **Cessions** section and wait for the mailboxes to copy to their account. This action depends on the size of mailboxes, it can take time.
 
-{{< fig "images/transfers_menu.fr.png" "" >}}
+{{< fig "images/transfers_menu.png" "" >}}
 
 {{% notice tip %}}
-Pour déplacer un domaine vers un compte appartenant au _même profil_ avec lequel vous êtes connecté(e), il suffit d'indiquer votre adresse email.
-{{% /notice %}}
+To move a domain to an account belonging to the _same profile_ with which you are logged in, just enter your email address.
+{{%/notice %}}
