@@ -1,80 +1,76 @@
 +++
-url = "/fr/comptes/permissions/"
+url = "/accounts/permissions/"
 title = "Permissions"
 weight = 12
 layout = "man"
-tags = [
-  "facturation",
-  "environnement technique",
-  "interface d'administration"
-]
+tags = [ "invoicing", "technical environment", "admin interface" ]
 +++
 
-Parce que l'hébergement de vos données implique très souvent différents acteurs, notre interface d'administration vous permet d'octroyer des permissions sur différents niveaux de granularité.
+Because hosting your data often involves different players, our administration interface allows you to grant permissions on different granularity levels.
 
-Vous pouvez paramétrer les permissions via le menu **Permissions** de votre espace client.
+You can set permissions through the **Permissions** menu in your client space.
 
-{{< fig "images/menu.fr.png" "" >}}
+{{< fig "images/menu.png" "" >}}
 
-## Permissions globales
+## Global Permissions
 
-- **Gestion des comptes** : délègue l'ouverture de comptes à vos associés (menu _Abonnements_)  ;
-- **[Facturation](accounts/billing)** : permet aux services comptables ou administratifs de recevoir une alerte lorsque le solde de votre compte est négatif ou lors de l'ouverture d'un ticket concernant la facturation par nos services et de payer les factures, acheter/renouveler/transférer les domaines (menu _Facturation_) ;
-- **Technique au niveau des comptes** : permet aux équipes techniques de gérer l'aspect purement technique de votre hébergement (sites, emails, bases de données..) sans se soucier de sa gestion et facturation ;
-- **Technique au niveau des serveurs** : disponible sur [Cloud Privé](accounts/billing/private-cloud-prices), votre administrateur réseau pourra gérer règles de firewall, queue d'envoi des emails et bien d'autres...
+- **Account Management**: Lets you open accounts with your associates (_Subscriptions_);
+- **[Facturation](accounts/billing)** : allows accounting or administrative services to receive an alert when your account balance is negative or when opening a billing ticket by our services and pay invoices, buy/renew/transmit domains (_Billing_ menu);
+- **Account-level Technique**: allows technical teams to manage the purely technical aspect of your accommodation (websites, emails, databases..) without worrying about its management and billing;
+- **Server level technique**: available on [Private Cloud](accounts/billing/private-cloud-prices), your network administrator will be able to manage firewall settings, email queue, and many more...
 
-## Permissions techniques
+## Technical permissions
 
-Que ce soit pour l'aspect purement technique de vos comptes ou de vos serveurs, votre organisation impose un découpage des responsabilités techniques en interne entre plusieurs personnes ou groupes de personnes ou entre sous-traitants externes qui ont besoin d'accès même restreints. Vous pouvez donc définir des permissions par **service** et par **compte** ou **serveur**.
+Whether it's for the purely technical aspect of your accounts or servers, your organization imposes a decoupling of the technical responsibilities internally between several persons or groups of persons or between external subcontractors who need even restricted access. So you can set permissions by **service** and by **account** or **server**.
 
-### Par compte
+### By account
 
-À partir du moment où un profil a des permissions sur le compte, il a accès au menu _Statut des serveurs_.
+From time to time a profile has account permissions, it has access to the _Server Status_ menu.
 
-- **Contact technique** : soyez alerté lors de l'ouverture d'un ticket technique par nos services concernant le compte ;
-- **Consommation** : suivez la consommation d'espace disque (menus _Espace disque_, _Avancé > Logs_) ;
-- **Ressources** : permission pour les comptes sur [Cloud privé](accounts/billing/private-cloud-prices) permet de gérer les [sondes](sites/use-probes) (menu _Web > Sondes_) et [ressources](advanced/system-resources-alerts-and-limitations) (menu _Avancé > Ressources_) ;
-- **[Statistiques](analytics)** : analysez les visites de vos sites (menu _Web > Analytics_)  ;
-- **[Sites](sites)** : configurez les sites web et l'environnement Apache (menus _Web > Sites_, _Web > Configuration_) ;
-- **[Domaines](domains)** gérez techniquement les domaines et leurs DNS (menu _Domaines_). Pour toutes les opérations facturables, il faudra aussi les permissions **Facturation** sur le profil propriétaire ;
-- **[Emails](e-mails)** (menus _Emails > Adresses_, _Emails > Listes de diffusion_, _Emails > Configuration_) ;
-- **[Historique des emails envoyés](e-mails/check-email-sending)** (menu _Emails > Historique_) ;
-- **[Bases de données](databases)** (menu _Bases de données_) ;
-- **[FTP](remote-access/ftp)** (menu _Accès distant > FTP_) ;
-- **[SSH](remote-access/ssh)** (menu _Accès distant > SSH_) ;
-- **[WebDAV](remote-access/webdav)** (menu _Accès distant > WebDAV_) ;
-- **[Environnement](/languages)** : configurez les langages de programmation (menu _Environnement_) ;
-- **Processus** : processus en cours d'exécution pouvant être analysés ou tués (menu _Avancé > Processus_) ;
-- **[Adresses IP](advanced/dedicated-ip-addresses)** : louer des IP dédiées pour HTTP ou SMTP (menu _Avancé > Adresses IP_) ;
-- **[Certificats SSL](security/ssl-tls)** (menu _Avancé > Certificats SSL_) ;
-- **[Migration](advanced/migrations)** (menu _Avancé > Migrations_) ;
-- **[Tâches planifiées](tasks)** (menu _Avancé > Tâches planifiées_) ;
-- **[Sauvegardes](backups)** (menu _Avancé > Restauration de sauvegardes_) ;
-- **[Services](services)** (menu _Avancé > Services_).
+- **Technical contacts** : be alerted when opening a technical ticket by our account departments;
+- **Consommation** : Track disk space usage (_Disk space_, _Advanced > Logs_) menus;
+- **Ressources** : permission for accounts on [Private Cloud](accounts/billing/private-cloud-prices) allows to manage [sondes](sites/use-probes) (_Web > Sondes_ menu\*) and [ressources](advanced/system-resources-alerts-and-limitations) (_Advanced > Resources_);
+- **[Statistiques](analytics)** : analyze visits to your sites (menu _Web > Analytics_);
+- **[Sites](sites)** : configure websites and Apache environment (menus _Web > Sites_, _Web > Configuration_);
+- **[Domaines](domains)** technically manage domains and their DNS (_Domains_ menu). For all invoicable actions, you will also need the **Facturation** permissions on the proprietary profile;
+- **[Emails](e-mails)** (menus _Emails > Addresses_, _Emails > Mailings_, _Emails > Configuration_);
+- **[Email history sent](e-mails/check-email-sending)** (menu _Emails > History_);
+- **[Databases](databases)** (menu _Databases_);
+- **[FTP](remote-access/ftp)** (menu _Remote access > FTP_);
+- **[SSH](remote-access/ssh)** (menu _Remote access > SSH_);
+- **[WebDAV](remote-access/webdav)** (menu _Remote access > WebDAV_);
+- **[Environnement](/languages)**: configure programming languages (menu _Environment_);
+- **Processus** : running process that can be analyzed or killed (menu _Advanced > Processes_);
+- **[IP Addresses](advanced/dedicated-ip-addresses)** : Rent dedicated IP addresses for HTTP or SMTP (menu _Advanced > IP Addresses_);
+- **[SSL Certificates](security/ssl-tls)** (menu _Advanced > SSL Certificates_);
+- **[Migration](advanced/migrations)** (_Advanced> Migrations_);
+- **[Scheduled Tasks](tasks)** (menu _Advanced > Scheduled Tasks_);
+- **[Sauvegardes](backups)** (menu _Advanced > Backup restore_);
+- **[Services](services)** (menu _Advanced > Services_).
 
-### Par serveur
+### By server
 
-À partir du moment où un profil a des permissions sur le serveur, il a accès au menu _Configuration_.
+From the moment on or before a profile has permissions on the server, it has access to the _Configuration_ menu.
 
-- **Contact technique** : soyez alerté lors de l'ouverture d'un ticket technique par nos services concernant un serveur ;
-- **[Utilisateurs SSH](remote-access/ssh/install-globally-ssh-keys)** : installez des clés SSH pour un accès simplifié aux différents comptes (menu _Clés SSH_);
-- **[Règles firewall](security/network/configure-firewall)** : créez des règles firewall et consultez le bannissement automatique d'IP au niveau du serveur  (menu _Firewall_);
-- **Configuration SMTP** : gérez la queue d'envoi d'emails, le relais SMTP et le score de spam (menu _SMTP_);
-- **Utilisateurs base de données** : donnez un accès global aux bases de données de l'ensemble des comptes (menu _Utilisateurs MySQL_) ;
-- **Configuration SSL** : choisissez le certificat SSL à retourner sur le serveur (`*.alwaysdata.net` par défaut) et la [configuration TLS](security/ssl-tls/configure-tls) du serveur (menu _SSL_) ;
-- **Configuration HTTP** : choisissez un site web qui sera la [page d'accueil par défaut](sites/misc#site-http-par-defaut) et la [période de rétention des logs](remote-access/admin-directory#logs) (menu _HTTP_) ;
-- **Consommation** : accédez à un ensemble d'information sur votre serveur (menus Comptes, Statut du serveur). Pour ouvrir des comptes sur le serveur il sera nécessaire d'avoir la permission **Gestion des comptes** sur le profil propriétaire ;
-- **[Ressources](advanced/system-resources-alerts-and-limitations)** : modifiez les limitations de ressources par compte - RAM, CPU, espace disque (menu _Ressources_).
-- **[Migration](advanced/migrations)** (menu _Migrations_) ;
+- **Technical contacts** : be alerted when opening a technical ticket by our services regarding a server;
+- **[SSH Users](remote-access/ssh/install-globally-ssh-keys)**: Install SSH keys for simplified access to different accounts (menu _SSH Keys_);
+- **[Firewall Reggles](security/network/configure-firewall)** : create firewall files and view automatic IP ban at server level (_Firewall_ menu);
+- **SMTP** configuration: Manage email sending queue, SMTP relay and spam score (_SMTP menu_);
+- **Database Users** : Give global access to all accounts databases (_MySQL Users_);
+- **SSL Configuration** : choose the SSL certificate to return to the server (`*.alwaysdata. and` by default) and the server's [TLS configuration](security/ssl-tls/configure-tls) (_SSL_ menu);
+- **HTTP** configuration: choose a website that will be the [default homepage](sites/misc#site-http-par-defaut) and [log retention period](remote-access/admin-directory#logs) (_HTTP_ menu);
+- **Consommation** : Access a set of information about your server (Accounts menu, Server Status). To open accounts on the server it will be necessary to have **Account Management** permission on the proprietary profile;
+- **[Ressources](advanced/system-resources-alerts-and-limitations)** : modify resources limitations per account - RAM, CPU, disk space (_Resources_ menu).
+- **[Migration](advanced/migrations)** (_Migrations_ menu);
 
-## 2FA nécessaire
+## 2FA Required
 
-Lorsque la case **2FA nécessaire** est cochée, l'utilisateur en question doit se connecter [avec 2 facteurs](security/two-factor-authentication) pour accéder aux menus auxquels on lui a donné accès.
+When the **2FA needed** checkbox is checked, the user must login [with 2 factors](security/two-factor-authentication) to access the menus they have been given access.
 
-## Mes permissions
+## My Permissions
 
-Il est possible de supprimer les permissions que nous avons sur d'autres profils via le menu **Permissions > Mes permissions**. La suppression ne s'effectue pas finement, elles le seront toutes.
+It is possible to remove the permissions we have on other profiles from the **Permissions > My Permissions** menu. The deletion is not done fine, they will all be deleted.
 
-## Divers
+## Misc
 
-En créant des permissions à une adresse email n'ayant pas de profil alwaysdata, cette personne recevra un email pour initialiser son profil.
+By creating permissions to an email address that does not have an alwaysdata profile, this person will receive an email to initialize their profile.
