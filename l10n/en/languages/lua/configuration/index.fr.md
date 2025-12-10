@@ -1,12 +1,12 @@
 +++
-url = "/fr/langages/lua/configuration/"
-title = "Configurer Lua"
+url = "/languages/lua/configuration/"
+title = "Configure Lua"
 hidden = true
 layout = "man"
-tags = [ "lua" ]
+tags = [ "Lua" ]
 +++
 
-## Versions supportées
+## Supported Versions
 
 |                     |
 | ------------------- |
@@ -15,30 +15,30 @@ tags = [ "lua" ]
 | 5.2 |
 | 5.1 |
 
-La version par défaut est Lua 5.4. C'est cette version qui est notamment utilisée lorsque vous démarrez `lua`.
+The default version is Lua 5.4. This version is especially used when you start `lua`.
 
-Les versions ne sont pas forcément [déjà installées](languages#versions).
+Versions are not forcefully [already installed](languages#versions).
 
-## Binaire à utiliser
+## Binary to use
 
-Pour se servir d'une version de Lua différente que celle par défaut utilisez `lua5.X`.
+To use a different version of Lua than default, use `lua5.X`.
 
-## Environnement
+## Environments|Environment
 
-[Luarocks](https://luarocks.org/) et [LuaJIT](http://luajit.org/) sont préinstallées.
+[Luarocks](https://luarocks.org/) and [LuaJIT](http://luajit.org/) are preinstalled.
 
-## Déploiement HTTP
+## HTTP Deployment
 
-Pour déployer une application HTTP avec Lua, créez un site de type _[Programme utilisateur](sites/user-program)_ dans la section **Web > Sites**.
+To deploy an HTTP application with Lua, create a _[User Program](sites/user-program)_ site in the **Web > Sites** section.
 
-{{< fig "images/user-program.fr.png" "Type de site Programme utilisateur">}}
+{{< fig "images/user-program.en.png" "User Program Site Type">}}
 
-Vous devrez spécifier la commande qui démarre votre application Lua, par exemple :
+You will need to specify the command that starts your Lua application, for example:
 
 ```
 lua5.1 $HOME/myapp/start-server.lua
 ```
 
 {{% notice warning %}}
-Votre application doit impérativement écouter sur l'ip `::` et le port indiqués dans la vue de configuration du site sous le champ _Commande_ ; ou utiliser les variables d'environnement IP et PORT.
-{{% /notice %}}
+Your application must not listen on the `::` ip and port specified in the site configuration view under the _Command_ field; or use the IP and PORT environment variables.
+{{%/notice %}}
