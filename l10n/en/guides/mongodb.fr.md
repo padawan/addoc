@@ -1,25 +1,25 @@
 +++
-url = "/fr/guides/mongodb/"
+url = "/guides/mongodb/"
 title = "MongoDB"
 layout = "howto"
 hidden = true
-tags = [ "base de données", "mongodb" ]
+tags = [ "database", "Mongodb" ]
 +++
 
-[MongoDB](https://www.mongodb.com/) est un SGBD noSQL orienté documents.
+[MongoDB](https://www.mongodb.com/) is a noSQL RDBMS oriented documents.
 
-Dans notre exemple, nous utilisons un [accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use a [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom du compte : `foo`
-- Répertoire de MongoDB : `$HOME/mongodb/`
+- Account name: `foo`
+- MongoDB directory: `$HOME/mongodb/`
 
 {{% notice note %}}
-`[foo]` est à remplacer par le nom de votre compte.
-{{% /notice %}}
+`[foo]` is to replace with the name of your account.
+{{%/notice %}}
 
-## Installation
+## Setup
 
-### Téléchargement
+### Download
 
 ```sh
 foo@ssh:~$ mkdir mongodb
@@ -28,39 +28,39 @@ foo@ssh:~/mongodb$ wget -O- https://fastdl.mongodb.org/linux/mongodb-linux-x86_6
 foo@ssh:~/mongodb$ mkdir -p data log
 ```
 
-Choisissez le paquet _tgz_ et la plateforme _Debian_ de la [dernière version de la tarball](https://www.mongodb.com/try/download/community).
+Choose the _tgz_ package and _Debian_ platform of the [latest tarball version](https://www.mongodb.com/try/download/community).
 
-### Lancement du service
+### Launching service
 
-Créez un [service](services) avec les détails suivants :
+Create an [service](services) with the following details:
 
-- _Commande_ : `./bin/mongod --dbpath ./data/ --logpath ./log/mongo.log --ipv6 --bind_ip_all --port=27017`
-- _Répertoire de travail_ : `/home/[foo]/mongodb`
+- _Command_: `./bin/mongod --dbpath ./data/ --logpath ./log/mongo.log --ipv6 --bind_ip_all --port=27017`
+- _Work directory_: `/home/[foo]/mongodb`
 
-Les utilisateurs du [Cloud public](accounts/billing/public-cloud-prices) devront faire pointer le service sur un port entre 8300 à 8499 à la place du port par défaut de MongoDB.
+[Public Cloud](accounts/billing/public-cloud-prices) users will need to point the service to a port between 8300 and 8499 instead of the default port of MongoDB.
 
-L'adresse pour se connecter à l'instance MongoDB sera `services-[foo].alwaysdata.net:[port]`.
+The address to connect to the MongoDB instance will be `services-[foo].alwaysdata.net:[port]`.
 
 {{% notice note %}}
-Remplacez `[port]` par le port choisi au niveau de la commande.
-{{% /notice %}}
+Replace `[port]` with the chosen port at command level.
+{{%/notice %}}
 
-### Création de la règle de parefeu
+### Creation of Firewall
 
-Les utilisateurs du [Cloud Privé](accounts/billing/private-cloud-prices) devront ouvrir le port utilisé en créant une règle sur le [parefeu](security/network/configure-firewall) s'ils souhaitent y accéder depuis l'extérieur :
+[Private Cloud] (accounts/billing/private-cloud-prices) users will have to open the port they use by creating a replica on the [parefeu](security/network/configure-firewall) if they wish to access it from the outset:
 
-| Intitulé   | Valeur               |
-| ---------- | -------------------- |
-| Protocole  | UDP/TCP              |
-| Type       | ACCEPT               |
-| Direction  | Entrée               |
-| Hôtes      | \<ne rien indiquer> |
-| Ports      | 27017                |
-| Version IP | IPv4/IPv6            |
+| Featured                        | Value                |
+| ------------------------------- | -------------------- |
+| Order set                       | UDP/TCP              |
+| SMESH_TYPE | ACCEPT               |
+| Direction                       | Company              |
+| Hosts                           | \<ne rien indiquer> |
+| Ports                           | 27017                |
+| IP Version                      | IPv4/IPv6            |
 
-## Téléchargement et installation des utilitaires
+## Downloading and installing utilities
 
-- [mongosh](https://www.mongodb.com/try/download/shell) - choisissez le paquet _tgz_ et la plateforme _Linux x64_ de la dernière version.
+- [mongosh](https://www.mongodb.com/try/download/shell) - choose the _tgz_ package and the _Linux x64_ platform of the latest version.
 
 ```sh
 foo@ssh:~/mongodb$ wget -O- https://downloads.mongodb.com/compass/mongosh-2.3.2-linux-x64.tgz | tar -xz --strip-components=0
@@ -68,7 +68,7 @@ foo@ssh:~/mongodb$ mv mongosh-2.3.2-linux-x64/bin/* bin/
 foo@ssh:~/mongodb$ rm -rf mongosh-2.3.2-linux-x64
 ```
 
-- [cli](https://www.mongodb.com/try/download/database-tools) - choisissez le paquet _tgz_ et la plateforme _Debian 12.0 x86-64_ de la dernière version.
+- [cli](https://www.mongodb.com/try/download/database-tools) - choose the _tgz_ package and the _Debian 12.0 x86-64_ platform of the latest version.
 
 ```sh
 foo@ssh:~/mongodb$ wget -O- https://fastdl.mongodb.org/tools/db/mongodb-database-tools-debian12-x86_64-100.10.0.tgz | tar -xz --strip-components=0
@@ -76,39 +76,39 @@ foo@ssh:~/mongodb$ mv mongodb-database-tools-debian12-x86_64-100.10.0/bin/* bin/
 foo@ssh:~/mongodb$ rm -rf mongodb-database-tools-debian12-x86_64-100.10.0
 ```
 
-Tous les exécutables seront ainsi dans `$HOME/mongodb/bin`.
+All executables will thus be in `$HOME/mongodb/bin`.
 
-## Authentification
+## Authentication
 
-Nous allons ici créer l'utilisateur _admin_ en suivant [leur documentation](https://www.mongodb.com/docs/manual/tutorial/configure-scram-client-authentication/#create-the-user-administrator).
+Here we will create the user _admin_ by following [their documentation](https://www.mongodb.com/docs/manual/tutorial/configure-scram-client-authentication/#create-the-user-administrator).
 
 ```sh
 foo@ssh: ~/mongodb$ ./bin/mongosh services-[foo].alwaysdata.net:[port]
-Current Mongosh Log ID:	6707c8c098d8f59e6efe6910
-Connecting to:		mongodb://services-[foo].alwaysdata.net:[port]/?directConnection=true&appName=mongosh+2.3.2
-Using MongoDB:		8.0.1
-Using Mongosh:		2.3.2
+Current Mongosh Log ID:6707c8c098d8f59e6efe6910
+Connecting to:mongodb://services-[foo].alwaysdata. and:[port]/?directConnection=true&appName=mongosh+2.3.2
+Using MongoDB: 8.0.1
+Using Mongosh:2.3.2
 
 ------
 
 test> use admin
 switched to db admin
-admin> db.createUser(
-...   {
-...     user: "admin",
-...     pwd: "monsupermotdepasse",
-...     roles: [
-...       { role: "userAdminAnyDatabase", db: "admin" },
-...       { role: "readWriteAnyDatabase", db: "admin" }
-...     ]
-...   }
+admin> db. reateUser(
+... {
+... user: "admin",
+... pwd: "mysuperpassword",
+. . roles: [
+... { role: "userAdminAnyDatabase", db: "admin" },
+. { role: "readWriteAnyDatabase", db: "admin" }
+... ]
+. . }
 ... )
 { ok: 1 }
 admin>
 ```
 
 {{% notice note %}}
-`monsupermotdepasse` est à remplacer par le mot de passe de votre choix.
-{{% /notice %}}
+`mysuperpassword` is to be replaced with the password of your choice.
+{{%/notice %}}
 
-Vous pourrez ensuite rajouter l'option `--auth` à la commande du [service](#lancement-du-service).
+You can then add the `--auth` option to the command of the [service](#lancement-du-service).
