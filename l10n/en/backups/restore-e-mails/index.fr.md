@@ -1,35 +1,35 @@
 +++
-url = "/fr/sauvegardes/restaurer-des-emails/"
-title = "Comment restaurer des emails"
-linkTitle = "Restaurer des emails"
+url = "/savegardes/restaurer-des-emails/"
+title = "How to restore emails"
+linkTitle = "Restore emails"
 layout = "howto"
 weight = 10
-tags = [ "email", "récupération", "sauvegarde" ]
+tags = [ "email", "start", "backup" ]
 +++
 
-Les sauvegardes de vos emails se trouvent dans le répertoire `$HOME/admin/backup` de votre compte. Vous pouvez les restaurer via le menu **Avancé > Restauration de sauvegardes**.
+Your email backups can be found in your account's `$HOME/admin/backup` directory. You can restore them via the **Advanced> Backup restore** menu.
 
 {{% notice info %}}
-Les emails à la date de la sauvegarde seront remis en place. Aucun email reçu ou envoyé depuis ne sera supprimé.
-{{% /notice %}}
+Emails on the backup date will be restored. No emails received or sent since will be deleted.
+{{%/notice %}}
 
-1. Choisissez la date voulue ;
-   {{< fig "images/admin-panel_restoration.fr.png" "Interface d'administration : restauration de sauvegarde - étape 1" >}}
+1. Choose the desired date;
+   {{< fig "images/admin-panel_restoration.en.png" "Administration interface: restore backup - step 1" >}}
 
-2. Puis cochez la/les boîte(s) email(s).  
-   {{< fig "images/admin-panel_restoration-emails.fr.png" "Interface d'administration : restauration de sauvegarde - étape 2" >}}
+2. Then check the email(s).  
+   {{< fig "images/admin-panel_restoration-emails.en.png" "Admin interface: restore backup - step 2" >}}
 
 {{% notice note %}}
-Le temps de restauration dépend de la taille des fichiers à restaurer.
-{{% /notice %}}
+Restore time depends on file size to restore.
+{{%/notice %}}
 
-## En SSH
+## In SSH
 
-Si vous souhaitez restaurer une sauvegarde manuellement.
+If you want to restore a backup manually.
 
-- Connectez-vous à votre compte [en SSH](remote-access/ssh) ;
+- Log in to your [SSH](remote-access/ssh);
 
-- Restaurer des emails :
+- Restore Emails:
 
     ```sh
     $ rsync -av $HOME/admin/backup/[date]/mails/[domaine]/[boîte_email]/ $HOME/admin/mail/[domaine]/[boîte_email]/
