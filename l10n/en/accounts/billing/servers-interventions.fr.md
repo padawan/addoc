@@ -1,25 +1,25 @@
 +++
-url = "/fr/comptes/facturation/interventions-sur-serveurs/"
-title = "Montant des interventions sur serveurs"
+url = "/accounts/billing/interventions-on-servers/"
+title = "Server intervention amount"
 layout = "man"
 hidden = true
-tags = [ "facturation" ]
+tags = [ "invoicing" ]
 +++
 
-La mise en place d'un nouveau serveur est **gratuite** mais d'autres opérations effectuées par nos administrateurs systèmes sont payantes. Voici leur montant :
+Setting up a new server is **free** but other requests made by our system administrators are charged. Here's their amount:
 
-| Détail                | Tarif (HT)[^1] |
-| --------------------- | -------------- |
-| Changement de CPU     | 400 €          |
-| Changement de disques | 400 €          |
-| Changement de RAM     | 200 €          |
-| Ajout de GPU          | 200 €          |
-| Ajout de disques      | 200 €          |
+| Detail       | Price (HT)[^1] |
+| ------------ | -------------- |
+| CPU Change   | 400 €          |
+| Switch Disks | 400 €          |
+| RAM change   | 200 €          |
+| Add GPU      | 200 €          |
+| Add discs    | 200 €          |
 
-Si plusieurs changements ont lieu en même temps chaque intervention est facturée avec un plafond à 600 € HT.
+If several changes take place at the same time, each intervention is invoiced with a ceiling of 600€ excluding tax.
 
-Contactez le [support](https://admin.alwaysdata.com/support/add/) pour plus d'informations et planifier l'intervention.
+Contact [support](https://admin.alwaysdata.com/support/add/) for more information and schedule intervention.
 
-Toute opération annulée dans les 24 heures précédent l'intervention sera facturée.
+Any cancellations cancelled within 24 hours of the intervention will be invoiced.
 
-[^1]: Pour les [serveurs Gold](accounts/billing/private-cloud-prices#serveurs-gold-infogérés), le prix des interventions est doublé. Le plafond est alors à 1200 € HT.
+[^1]: For [Gold servers] (accounts/billing/private-cloud-prices#serveurs-gold-infogérés), the price of interventions is doubled. The ceiling is then 1200 € excl. VAT.
