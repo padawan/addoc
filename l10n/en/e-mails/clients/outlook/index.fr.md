@@ -1,64 +1,64 @@
 +++
-url = "/fr/emails/clients/outlook/"
-title = "Comment configurer Outlook"
+url = "/emails/clients/outlook/"
+title = "How to configure Outlook"
 layout = "howto"
 tags = [ "email", "outlook", "microsoft" ]
 hidden = true
 +++
 
-## Général
+## General
 
 {{% notice tip %}}
-Pour les domaines utilisant nos serveurs DNS, l'_autoconfiguration_ Outlook est utilisable. Vous n'avez qu'à indiquer votre nom d'utilisateur (adresse email) et votre mot de passe. Les autres paramètres sont automatiquement générés.
-{{% /notice %}}
+For domains using our DNS servers, Outlook _autoconfiguration_ is usable. All you have to do is enter your username and password. Other parameters are automatically managed.
+{{%/notice %}}
 
-| Serveur | Service | Information                |                                                                                                                    |
-| ------- | ------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Entrant | IMAP    | Serveur                    | imap-_[compte]_.alwaysdata.net |
-|         |         | Port                       | 993                                                                                                                |
-|         |         | Méthode de chiffrement     | Sera automatiquement choisi                                                                                        |
-|         |         | Méthode d'authentification | Exiger l'authentification par mot de passe sécurisé (SPA) lors de la connexion                  |
-|         |         | Adresse de courrier        | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe               | Le mot de passe de votre adresse email                                                                             |
-|         | POP3    | Serveur                    | pop-_[compte]_.alwaysdata.net  |
-|         |         | Port                       | 995                                                                                                                |
-|         |         | Méthode de chiffrement     | Sera automatiquement choisi                                                                                        |
-|         |         | Méthode d'authentification | Exiger l'authentification par mot de passe sécurisé (SPA) lors de la connexion                  |
-|         |         | Adresse de courrier        | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe               | Le mot de passe de votre adresse email                                                                             |
-| Sortant | SMTP    | Serveur                    | smtp-_[compte]_.alwaysdata.net |
-|         |         | Port                       | 465                                                                                                                |
-|         |         | Méthode de chiffrement     | Sera automatiquement choisi                                                                                        |
-|         |         | Méthode d'authentification | Exiger l'authentification par mot de passe sécurisé (SPA) lors de la connexion                  |
-|         |         | Adresse de courrier        | Votre adresse email - par exemple _contact\@example.org_                             |
-|         |         | Mot de passe               | Le mot de passe de votre adresse email                                                                             |
+| Server   | Service | Information           |                                                                                                                    |
+| -------- | ------- | --------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Incoming | IMAP    | Server                | imap-_[compte]_.alwaysdata.net |
+|          |         | Port                  | 993                                                                                                                |
+|          |         | Encryption method     | Will be automatically chosen                                                                                       |
+|          |         | Authentication Method | Require secure password authentication (SPA) when logging in                                    |
+|          |         | Mail Address          | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password              | Your email address password                                                                                        |
+|          | POP3    | Server                | pop-_[compte]_.alwaysdata.net  |
+|          |         | Port                  | 995                                                                                                                |
+|          |         | Encryption method     | Will be automatically chosen                                                                                       |
+|          |         | Authentication Method | Require secure password authentication (SPA) when logging in                                    |
+|          |         | Mail Address          | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password              | Your email address password                                                                                        |
+| Outgoing | SMTP    | Server                | smtp-_[compte]_.alwaysdata.net |
+|          |         | Port                  | 465                                                                                                                |
+|          |         | Encryption method     | Will be automatically chosen                                                                                       |
+|          |         | Authentication Method | Require secure password authentication (SPA) when logging in                                    |
+|          |         | Mail Address          | Your email address - e.g. _contact\@example.org_     |
+|          |         | Password              | Your email address password                                                                                        |
 
-_`[compte]`_ doit être remplacé par le nom de votre compte et _`contact@example.org`_ par votre adresse email. Ils sont définis dans le menu **Emails > Adresses** de notre interface d'administration.
+_`[compte]`_ must be replaced with your account name and _`contact@example.org`_ with your email address. They are defined in the **Emails > Addresses** menu of our admin interface.
 
-## Captures d'écran
+## Screenshots
 
-Dans notre exemple nous considérons les informations suivantes (à remplacer par vos informations de connexion personnelles) :
+In our example we will have the following information (to replace with your personal login information):
 
-- Nom du compte : `test`
-- Adresse email : `test@alwaysdata.net`
+- Account name: `test`
+- Email address: `test@alwaysdata.net`
 
-### Ordinateur
+### Computer
 
-Rendez-vous dans **Fichiers > Informations > Ajouter un compte**.
+Go to **Files > Information > Add Account**.
 
-{{< fig "images/outlook_desktop_interface2_fr.png" "Outlook : interface messagerie" >}}
-{{< fig "images/outlook_desktop_interface1_fr.png" "Outlook : menu Fichiers" >}}
+{{< fig "images/outlook_desktop_interface2_en.png" "Outlook: messaging interface" >}}
+{{< fig "images/outlook_desktop_interface1_en.png" "Outlook: Files menu" >}}
 
-{{< fig "images/outlook_desktop_fr.png" "Outlook : ajouter un compte" >}}
+{{< fig "images/outlook_desktop_en.png" "Outlook: Add Account" >}}
 
-- Configurez manuellement le compte ;
-- Choisissez entre POP et IMAP ;
-- Cochez les cases **Exiger l'authentification par mot de passe sécurisé (SPA) lors de la connexion**.
+- Set up account manually;
+- Choose between POP and IMAP;
+- Check the **Require Secure Password Authentication (SPA) checkboxes on login**.
 
 ### Mobile
 
-Rendez-vous sur **C'est parti > Ignorer** si on propose des types de comptes **> Avancé IMAP** ou **POP3**.
+Go to **Let's go > Ignore** if we offer account types **> IMAP Advance** or **POP3**.
 
-{{< fig "images/outlook_mobile_fr.png" "Outlook sur mobile" >}}
+{{< fig "images/outlook_mobile_en.png" "Outlook on mobile" >}}
 
-Cliquez sur **Paramètres avancés** pour indiquer les _noms d'hôtes_.
+Click **Advanced** to specify _host names_.
