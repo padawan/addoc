@@ -1,21 +1,21 @@
 +++
-url = "/fr/acces-distant/divers/"
-title = "Diverses questions"
+url = "/remote/diverse/"
+title = "Various questions"
 layout = "faq"
 hidden = true
-tags = [ "compte", "environnement technique" ]
+tags = [ "account", "technical environment" ]
 +++
 
-## Lister les comptes
+## List Accounts
 
-La liste des comptes alwaysdata est visible de plusieurs manières. Leurs contenus ne sont par contre PAS accessibles.
+The list of alwaysdata accounts is visible in several ways. Their contents are NOT accessible, however.
 
-## Répertoire `/tmp`
+## `/tmp` directory
 
-Le répertoire `/tmp` est un répertoire partagé par tous les utilisateurs d'un serveur. Il est déconseillé de l'utiliser et, par défaut, les fichiers sont lisibles par les autres utilisateurs. `$HOME/admin/tmp` est à préférer, bénéficiant de la même isolation que le reste des répertoires d'un compte.
+The `/tmp` directory is a directory shared by all users on a server. It is not recommended to use it and, by default, files are readable by other users. `$HOME/admin/tmp` is preferred, having the same isolation as the rest of the directories of an account.
 
-## Quota d'espace disque
+## Disk space quota
 
-Les sauvegardes (`$HOME/admin/backup`) comme la plupart des logs (`$HOME/admin/logs`) ne rentrent pas en compte dans le quota d'espace disque.
+Backups (`$HOME/admin/backup`) like most logs (`$HOME/admin/logs`) do not count into disk space quota.
 
-Seuls les logs _apache_, _php_ et _uwsgi_ du mois en cours rentrent en compte dans le quota d'espace disque d'un compte.
+Only the _apache_, _php_ and _uwsgi_ logs of the current month are included in an account's disk space quota.
