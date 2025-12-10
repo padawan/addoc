@@ -1,6 +1,6 @@
 +++
-url = "/fr/langages/go/configuration/"
-title = "Configurer Go"
+url = "/languages/go/configuration/"
+title = "Configure Go"
 hidden = true
 layout = "man"
 tags = [ "golang" ]
@@ -8,22 +8,22 @@ tags = [ "golang" ]
 
 ## Version
 
-Go étant un langage compilé, il n’a pas besoin d’être ins­tal­lé chez always­da­ta pour être uti­li­sé. Nous proposons cependant la version 1.22 qui est utilisée lorsque vous démarrez `go`.
+Go being a compile language, it does not need to be special at alwaysdata for use. However, we offer version 1.22 which is used when you start `go`.
 
-Vous pouvez compiler vos programmes ailleurs, localement par exemple.
+You can compile your programs elsewhere, for example locally.
 
-## Déploiement HTTP
+## HTTP Deployment
 
-Pour déployer une application HTTP avec Go, créez un site de type _[Programme utilisateur](sites/user-program)_ dans la section **Web > Sites**.
+To deploy an HTTP application with Go, create a _[User Program](sites/user-program)_ site in the **Web > Sites** section.
 
-{{< fig "images/user-program.fr.png" "Type de site Programme utilisateur">}}
+{{< fig "images/user-program.en.png" "User Program Site Type">}}
 
-Après avoir compilé le programme et l'avoir chargé sur votre compte, vous devrez spécifier la commande qui démarre votre application Go, par exemple :
+After compiling the program and loading it to your account, you will need to specify the command that starts your Go application, for example:
 
 ```
 $ $HOME/myapp/hello
 ```
 
 {{% notice warning %}}
-Votre application doit impérativement écouter sur l'ip et le port indiqués dans la vue de configuration du site sous le champ _Commande_. Vous pouvez utiliser les variables d'environnement `IP` / `HOST` et `PORT`.
-{{% /notice %}}
+Your app must not listen on the ip and port specified in the site configuration view under the _Command_ field. You can use the `IP` / `HOST` and `PORT` environment variables.
+{{%/notice %}}
