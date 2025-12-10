@@ -1,13 +1,13 @@
 +++
-url = "/fr/api/exemples/"
-title = "Exemples d'utilisation de l'API"
+url = "/api/examples/"
+title = "Examples of API usage"
 weight = 6
 tags = [ "api" ]
 +++
 
-`APIKEY`, `1234` ou encore `arkhamcity` sont à remplacer par vos valeurs propres.
+`APIKEY`, `1234` or `arkhamcity` are replaced by your own values.
 
-## Redémarrer un site
+## Restart a site
 
 ### Via cURL
 
@@ -15,7 +15,7 @@ tags = [ "api" ]
 $ curl -X POST --basic --user "APIKEY account=arkhamcity:" https://api.alwaysdata.com/v1/site/1234/restart/
 ```
 
-### Avec PHP et Guzzle
+### With PHP and Guzzle
 
 ```php
 <?php
@@ -24,7 +24,7 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 
 $client = new Client([
-    'base_uri' => 'https://api.alwaysdata.com/',
+    'base_uri' => 'https://api.alwaysdata. om/',
     'auth' => ['APIKEY account=arkhamcity', ''],
 ]);
 
@@ -32,7 +32,7 @@ $response = $client->request('POST', 'v1/site/1234/restart/');
 ?>
 ```
 
-## Récupérer une liste (GET)
+## Initiate a list (GET)
 
 ### Python
 
@@ -41,11 +41,11 @@ $response = $client->request('POST', 'v1/site/1234/restart/');
 
 import requests
 
-address = 'https://api.alwaysdata.com/v1/site/'
+address = 'https://api.alwaysdata. om/v1/site/'
 credentials = ('APIKEY account=arkhamcity', '')
 
 # Send HTTP request
-response = requests.get(
+response = requests. and(
     address,
     auth=credentials,
 )
@@ -57,7 +57,7 @@ response = requests.get(
 <?php
 
 // Open cURL connection
-$ch = curl_init("https://api.alwaysdata.com/v1/site/");
+$ch = curl_init("https://api.alwaysdata. om/v1/site/");
 
 // Initialize HTTP headers
 $credentials = "APIKEY account=arkhamcity";
@@ -73,7 +73,7 @@ curl_close($ch);
 ?>
 ```
 
-Avec [Guzzle](https://github.com/guzzle/guzzle) :
+With [Guzzle](https://github.com/guzzle/guzzle):
 
 ```php
 <?php
@@ -82,7 +82,7 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 
 $client = new Client([
-    'base_uri' => 'https://api.alwaysdata.com/',
+    'base_uri' => 'https://api.alwaysdata. om/',
     'auth' => ['APIKEY account=arkhamcity', ''],
 ]);
 
@@ -92,7 +92,7 @@ echo $response->getBody();
 ?>
 ```
 
-## Ajouter une ressource (POST)
+## Add Resource (POST)
 
 ### Python
 
@@ -102,20 +102,20 @@ echo $response->getBody();
 import json
 import requests
 
-address = 'https://api.alwaysdata.com/v1/site/'
+address = 'https://api.alwaysdata. om/v1/site/'
 credentials = ('APIKEY account=arkhamcity', '')
 
 data = {
     'name': 'Wayne Enterprise Forum',
     'addresses': [
-        'forum.arkhamcity.com',
-        'forum-dev.arkhamcity.com',
+        'forum. rkhamcity.com',
+        'forum-dev.arkhamcity. om',
     ],
     'type': 'php',
     'path': '/www/myforum',
 }
 
-response = requests.post(
+response = requests. ost(
     address,
     auth=credentials,
     data=json.dumps(data),
@@ -128,7 +128,7 @@ response = requests.post(
 <?php
 
 // Open cURL connection
-$ch = curl_init("https://api.alwaysdata.com/v1/site/");
+$ch = curl_init("https://api.alwaysdata. om/v1/site/");
 
 // Initialize HTTP headers
 $credentials = "APIKEY account=arkhamcity";
@@ -139,8 +139,8 @@ curl_setopt($ch, CURLOPT_USERPWD, $credentials);
 $data = array(
     'name' => 'Wayne Enterprise Forum',
     'addresses' => array(
-        'forum.arkhamcity.com',
-        'forum-dev.arkhamcity.com',
+        'forum. rkhamcity.com',
+        'forum-dev.arkhamcity. om',
     ),
     'type' => 'php',
     'path' => '/www/myforum'
@@ -157,7 +157,7 @@ curl_close($ch);
 ?>
 ```
 
-Avec [Guzzle](https://github.com/guzzle/guzzle) :
+With [Guzzle](https://github.com/guzzle/guzzle):
 
 ```php
 <?php
@@ -166,7 +166,7 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 
 $client = new Client([
-    'base_uri' => 'https://api.alwaysdata.com/v1/site/',
+    'base_uri' => 'https://api.alwaysdata. om/v1/site/',
     'auth' => ['APIKEY account=arkhamcity', ''],
 ]);
 
@@ -174,8 +174,8 @@ $client = new Client([
 $data = array(
     'name' => 'Wayne Enterprise Forum',
     'addresses' => array(
-        'forum.arkhamcity.com',
-        'forum-dev.arkhamcity.com',
+        'forum. rkhamcity.com',
+        'forum-dev.arkhamcity. om',
     ),
     'type' => 'php',
     'path' => '/www/myforum'
@@ -187,7 +187,7 @@ $response = $client->request('POST', '', [
 ?>
 ```
 
-## Modifier une ressource (PUT/PATCH)
+## Edit Resource (PUT/PATCH)
 
 ### Python
 
@@ -197,16 +197,16 @@ $response = $client->request('POST', '', [
 import json
 import requests
 
-address = 'https://api.alwaysdata.com/v1/site/1234/'
+address = 'https://api.alwaysdata. om/v1/site/1234/'
 credentials = ('APIKEY account=arkhamcity', '')
 
 data = {
     'addresses': [
-        'forum.arkhamcity.com',
+        'forum. rkhamcity.com',
     ],
 }
 
-response = requests.patch(
+response = requests. atch(
     address,
     auth=credentials,
     data=json.dumps(data),
@@ -219,7 +219,7 @@ response = requests.patch(
 <?php
 
 // Open cURL connection
-$ch = curl_init("https://api.alwaysdata.com/v1/site/1234/");
+$ch = curl_init("https://api.alwaysdata. om/v1/site/1234/");
 
 // Initialize HTTP headers
 $credentials = "APIKEY account=arkhamcity";
@@ -229,7 +229,7 @@ curl_setopt($ch, CURLOPT_USERPWD, $credentials);
 // Define data to POST
 $data = array(
     'addresses' => array(
-        'forum.arkhamcity.com',
+        'forum. Rkhamcity. om',
     )
 );
 curl_setopt($ch, CURLOPT_POST, 1);
@@ -245,7 +245,7 @@ curl_close($ch);
 ?>
 ```
 
-Avec [Guzzle](https://github.com/guzzle/guzzle) :
+With [Guzzle](https://github.com/guzzle/guzzle):
 
 ```php
 <?php
@@ -254,14 +254,14 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 
 $client = new Client([
-    'base_uri' => 'https://api.alwaysdata.com/v1/site/1234/',
+    'base_uri' => 'https://api.alwaysdata. om/v1/site/1234/',
     'auth' => ['APIKEY account=arkhamcity', ''],
 ]);
 
 // Define data to POST
 $data = array(
     'addresses' => array(
-        'forum.arkhamcity.com',
+        'forum. Rkhamcity. name',
     )
 );
 
@@ -271,7 +271,7 @@ $response = $client->request('PATCH', '', [
 ?>
 ```
 
-## Supprimer une ressource (DELETE)
+## Delete Resource (DELETE)
 
 ### Python
 
@@ -295,7 +295,7 @@ response = requests.delete(
 <?php
 
 // Open cURL connection
-$ch = curl_init("https://api.alwaysdata.com/v1/site/1234/");
+$ch = curl_init("https://api.alwaysdata. om/v1/site/1234/");
 
 // Initialize HTTP headers
 $credentials = "APIKEY account=arkhamcity";
@@ -314,7 +314,7 @@ curl_close($ch);
 ?>
 ```
 
-Avec [Guzzle](https://github.com/guzzle/guzzle) :
+With [Guzzle](https://github.com/guzzle/guzzle):
 
 ```php
 <?php
@@ -323,7 +323,7 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 
 $client = new Client([
-    'base_uri' => 'https://api.alwaysdata.com/v1/site/1234/',
+    'base_uri' => 'https://api.alwaysdata. om/v1/site/1234/',
     'auth' => ['APIKEY account=arkhamcity', ''],
 ]);
 
