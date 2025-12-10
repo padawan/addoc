@@ -1,29 +1,29 @@
 +++
-url = "/fr/securite/mode-restreint/"
-title = "Lever le mode restreint"
+url = "/security/mode-restreint/"
+title = "Raise restricted mode"
 layout = "man"
 hidden = true
-tags = [ "interface d'administration", "sécurité" ]
+tags = [ "admin interface", "security" ]
 +++
 
-Depuis toujours, nous offrons à nos utilisateurs la possibilité d'être hébergé gratuitement, afin de répondre par exemple à des besoins très peu gourmands, ou tout simplement pour tester notre plateforme avant de s'engager dans un abonnement. C'est une offre que nous ne regrettons pas, mais qui a quelques inconvénients assez évidents venant principalement d'abus d'utilisateurs mal intentionnés.
+We have always offered our users the possibility to be hosted for free, in order to respond for example to small needs, or simply to test our platform before committing to a subscription. This is an offer that we do not regret, but which has some quite obvious inconsistencies coming mainly from the abuse of improper users.
 
-Le mode restreint que nous avons mis en place (et espérons améliorer au fur et à mesure) doit permettre de mieux isoler les utilisateurs légitimes (ou de confiance) et donc d'améliorer les performances de leurs services hébergés, tout en limitant encore plus les désagréments qui pourraient être causés par des voisins encombrants (en Cloud Public, des voisins, il y en a beaucoup).
+The restricted mode we have put in place (and hope to improve as it progress) should help to isolate legitimate (or trustworthy) users better and thus improve the performance of their hosted services, while further limiting the setbacks that could be caused by cumbersome neighbors (in Public Cloud, neighbors, there are many).
 
-## Lever le mode restreint
+## Raise restricted mode
 
-Afin de montrer patte blanche et nous témoigner vos intentions les plus honnêtes, rien de plus simple. Il vous faut respecter un des deux cas suivants :
+In order to show white leg and we temote your most honoured intentions, nothing easier. You must comply with one of the following two cases:
 
-- avoir renseigné une carte de crédit dans vos moyens de paiement (même en ayant un compte gratuit) ;
-- avoir effectué au moins une fois un règlement sur notre plateforme.
+- filled in a credit card in your payment methods (even with a free account);
+- did at least once on our platform.
 
-C'est aussi simple que cela et nous estimons que cela va nous permettre de filtrer une grande majorité des utilisateurs mal intentionnés. Donc si vous respectez un de ces critères, aucune restriction ne sera appliquée à votre profil.
+It is as simple as this and we believe that it will allow us to filter a large majority of malicious users. So if you follow any of these screens, no restrictions will be applied to your profile.
 
 ## Restrictions
 
-Si en revanche, aucune carte de crédit n'est configurée dans votre compte, et que vous n'avez encore jamais réglé quoi que ce soit, les comptes que vous posséderez sur alwaysdata seront restreints techniquement.
+If no credit card is configured in your account and you have never set anything yet, the accounts you own on alwaysdata will be restricted technically.
 
-Cette restriction n'est pas bloquante du tout pour le compte concerné mais nous permet en revanche de limiter les abus possibles. Par exemple :
+This restriction is not blocking at all for the relevant account, but allows us to limit possible abuses. For example:
 
-- HTTP : les traitements peuvent être un peu plus longs car les requêtes seront filtrées par des règles un peu plus strictes ;
-- emails : l'envoi des messages depuis nos serveurs SMTP peuvent se voir également limités en quantité et/ou dans le temps.
+- HTTP: Processing may be a bit longer as requests will be filtered by a bit stricter reactions;
+- emails: sending messages from our SMTP servers can also be limited in quantity and/or time.
