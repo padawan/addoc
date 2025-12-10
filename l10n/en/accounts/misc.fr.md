@@ -1,13 +1,13 @@
 +++
-url = "/fr/comptes/divers/"
-title = "Diverses questions"
+url = "/accounts/miscellaneous/"
+title = "Various questions"
 layout = "man"
 hidden = true
-tags = [ "compte", "profil" ]
+tags = [ "account", "profile" ]
 +++
 
-## Cycle de suppression automatique
+## Automatic delete cycle
 
-La suppression automatique d'un profil a lieu _30 jours_ après sa suspension. Pour l'éviter, il faut effectuer l'action correctrice.
+The automatic deletion of a profile takes place _30 days_ after its suspension. To avoid this, corrective action is required.
 
-Si la raison de la suspension n'est pas claire, consultez vos tickets, notifications et alertes sur votre interface d'administration alwaysdata.
+If the reason for the suspension is unclear, check your tickets, notifications, and alerts on your alwaysdata admin interface.
