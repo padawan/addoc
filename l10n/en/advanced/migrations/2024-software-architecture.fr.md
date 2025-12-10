@@ -1,159 +1,159 @@
 +++
-url = "/fr/avance/migrations/architecture-logicielle-2024/"
-title = "Architecture Logicielle 2024"
+url = "/forward/migrations/software-architecture-2024/"
+title = "Software Architecture 2024"
 layout = "man"
 hidden = true
 tags = [ "infrastructure", "migration" ]
 +++
 
-## Les changements majeurs
+## Major changes
 
-- SSL est désormais requis pour les protocoles de mail (IMAP, SMTP, POP3) et d’accès distant (FTP, WebDAV).
-- Les bases de données MongoDB et CouchDB sont supprimées.
-- MariaDB est mis à jour en version 10.11.
-- PostgreSQL est mis à jour en version 16.
+- SSL is required for mail protocols (IMAP, SMTP, POP3) and remote access protocols (FTP, WebDAV).
+- MongoDB and CouchDB databases are deleted.
+- MariaDB is updated to version 10.11.
+- PostgreSQL is updated to version 16.
 
-## Chiffrement SSL requis pour l'accès mail et l'accès distant
+## SSL encryption required for email access and remote access
 
-Il est désormais nécessaire d'activer le chiffrement SSL pour vous connecter aux protocoles :
+It is necessary to enable SSL encryption to connect to protocols:
 
-- de mail (IMAP, SMTP, POP3) ;
-- d'accès distant (FTP et WebDAV).
+- of mail (IMAP, SMTP, POP3);
+- remote access (FTP and WebDAV).
 
-Cela ne concerne pas vos sites web qui sont toujours accessibles sans chiffrement (vous pouvez toutefois décider de [forcer le chiffrement](security/ssl-tls/redirect-http-to-https/)).
+This does not affect your websites that are still accessible without encryption (however you can decide to [force encryption](security/ssl-tls/redirect-http-to-https/)).
 
-### Versions TLS supportées
+### Supported TLS Versions
 
-- Les versions TLS 1.2 et 1.3 sont supportées.
-- Les versions TLS 1.0 et 1.1 ne sont plus supportées.
+- TLS 1.2 and 1.3 versions are supported.
+- TLS 1.0 and 1.1 versions are no longer supported.
 
-Cela ne concerne pas vos sites web pour lesquels vous pouvez toujours [configurer vous-même le TLS](security/ssl-tls/configure-tls/).
+This does not affect your websites for which you can always [configure the TLS yourself](security/ssl-tls/configure-tls/).
 
-## Arrêt du support de MongoDB
+## MongoDB support stop
 
-**MongoDB** a basculé vers une [licence SSPL](https://www.mongodb.com/licensing/server-side-public-license/faq) qui nous interdit légalement de continuer à proposer l'hébergement de bases de données MongoDB. Par conséquent, les bases MongoDB seront supprimées lors de la migration et il ne sera plus possible d'en créer.
+**MongoDB** switched to an [SSPL license](https://www.mongodb.com/licensing/server-side-public-license/faq) that also prohibits us from continuing to offer hosting MongoDB databases. As a result, MongoDB databases will be removed during migration and will no longer be possible to create them.
 
-Vous pouvez :
+You can:
 
-- faire tourner vous-même MongoDB [dans un service](guides/mongodb). _MongoDB ne sera alors plus géré par alwaysdata._ Si vous êtes sur cloud privé, nous pouvons vous aider à réaliser cette opération.
-- migrer vos bases de données chez [MongoDB Atlas](https://www.mongodb.com/atlas).
+- run MongoDB yourself [in a service](guides/mongodb). _MongoDB will then no longer be managed by alwaysdata._ If you have a private cloud, we can help you achieve this result.
+- migrate your databases to [MongoDB Atlas](https://www.mongodb.com/atlas).
 
-## Arrêt du support de CouchDB
+## CouchDB support stop
 
-Nous avons lancé le support de **CouchDB** [en 2011](https://blog.alwaysdata.com/2011/05/12/official-support-of-couchdb/), mais son utilisation est restée très confidentielle (moins de 0,4 % de nos clients en 2024). Par conséquent, nous arrêtons le support de CouchDB : les bases seront supprimées lors de la migration et il ne sera plus possible d'en créer.
+We launched **CouchDB** support [in 2011](https://blog.alwaysdata.com/2011/05/12/official-support-of-couchdb/), but its use is kept confidential (less than 0.4% of our customers in 2024). As a result, we stop CouchDB support: the bases will be removed during the migration and it will not be possible to create one.
 
-Vous pouvez :
+You can:
 
-- faire tourner vous-même CouchDB [dans un service](guides/couchdb). _CouchDB ne sera alors plus géré par alwaysdata._ Si vous êtes sur cloud privé, nous pouvons vous aider à réaliser cette opération.
-- migrer vos bases de données chez un hébergeur tiers comme [Cloudant](https://www.ibm.com/products/cloudant).
+- run CouchDB yourself [in a service](guides/couchdb). _CouchDB will no longer be managed by alwaysdata._ If you have a private cloud, we can help you to realize this pattern.
+- migrate your databases to a third-party host such as [Cloudant](https://www.ibm.com/products/cloudant).
 
-## Mise à jour de MariaDB
+## Update MariaDB
 
-**MariaDB** est mis à jour en [version 10.11](https://mariadb.com/kb/en/release-notes-mariadb-1011-series/).
+**MariaDB** is updated to [version 10.11](https://mariadb.com/kb/en/release-notes-mariadb-1011-series/).
 
-Vous pouvez consulter les notes de mises à jour (votre version actuelle est indiquée dans la section _Bases de données > MySQL_):
+You can check the update notes (your current version is listed in the _Databases > MySQL_ section):
 
-- de la [10.6 à la 10.11](https://mariadb.com/kb/en/upgrading-from-mariadb-10-6-to-mariadb-10-11/) ;
-- de la [10.5 à la 10.6](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6) ;
-- de la [10.4 à la 10.5](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5).
+- of [10.6 at 10.11](https://mariadb.com/kb/en/upgrading-from-mariadb-10-6-to-mariadb-10-11/);
+- from [10.5 at 10.6](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6);
+- of [10.4 at 10.5](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5).
 
-## Mise à jour de PostgreSQL
+## Updating PostgreSQL
 
-**PostgreSQL** est mis à jour en [version 16](https://www.postgresql.org/docs/16/release-16.html). Vous pouvez consulter les [notes de mises à jour](https://www.postgresql.org/docs/release/) (votre version actuelle est indiquée dans la section _Bases de données > PostgreSQL_):
+**PostgreSQL** is updated to [version 16](https://www.postgresql.org/docs/16/release-16.html). You can check the [update notes](https://www.postgresql.org/docs/release/) (your current version is listed in the _Databases > PostgreSQL section_):
 
-**PostGIS** est mis à jour en [version 3.4](https://postgis.net/docs/manual-3.4/) (auparavant 3.1).
+**PostGIS** is updated to [version 3.4](https://postgis.net/docs/manual-3.4/) (previously 3.1).
 
-## Versions des langages
+## Language Versions
 
-### Bascule vers les versions majeures
+### Switch to major versions
 
-Depuis [quelques mois](https://changelog.alwaysdata.com/409/detail/), vous pouvez choisir une version majeure d'un langage plutôt qu'une version mineure précise. Cela permet d'utiliser automatiquement la dernière version mineure disponible, avec les derniers correctifs.
+For [a few months] (https://changelog.alwaysdata.com/409/detail/), you can choose a major version of a language rather than a minor one. This allows you to automatically use the latest minor version available, with the latest patches.
 
-La migration va automatiquement remplacer toutes les versions sélectionnées par la version majeure correspondante. Par exemple, PHP 8.3.1 sera remplacé par PHP 8.3, qui fait tourner la dernière version 8.3.x disponible. Lorsqu'une nouvelle version de PHP 8.3 sera ajoutée, elle remplacera alors la version précédente.
+The migration will automatically replace all selected versions with the corresponding major version. For example, PHP 8.3.1 will be replaced by PHP 8.3, which runs the latest version 8.3.x available. When a new version of PHP 8.3 is added, it will replace the previous version.
 
-Vous aurez toujours la possibilité de sélectionner, après la migration, une version mineure. Ce sera alors cette version précise qui tournera, sans mise à jour automatique.
+You will always have the option to select, after the migration, a minor version. It will then be this pre-release version that will run, without automatic update.
 
-### Versions disponibles
+### Available versions
 
-Voici la liste des versions mineures disponibles :
+Here is the list of available minor versions:
 
-| Langage                 | Versions disponibles                                                                                                                 |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| PHP                     | `4.4.9` `5.2.17` `5.3.29` `5.4.45` `5.5.38` `5.6.40` `7.0.33` `7.1.33` `7.2.34` `7.3.33` `7.4.33` `8.0.30` `8.1.28` `8.2.19` `8.3.7` |
-| Python                  | `2.4.6` `2.5.6` `2.6.9` `2.7.18` `3.3.7` `3.4.10` `3.5.10` `3.6.15` `3.7.17` `3.8.19` `3.9.19` `3.10.14` `3.11.9` `3.12.3`           |
-| Ruby                    | `1.8.7-p374` `1.9.3-p551` `2.0.0-p648` `2.1.10` `2.2.10` `2.3.8` `2.4.10` `2.5.9` `2.6.10` `2.7.8` `3.0.7` `3.1.6` `3.2.4` `3.3.2`   |
-| Node.js | `6.17.1` `8.17.0` `10.24.1` `12.22.12` `14.21.3` `16.20.2` `18.20.3` `20.14.0`                                                       |
-| Elixir                  | `1.13.4` `1.14.5` `1.15.8` `1.16.3`                                                                                                  |
-| Java                    | `8.0.412` `11.0.23` `17.0.11` `21.0.3`                                                                                               |
-| Deno                    | `1.43.5`                                                                                                                             |
-| .NET    | `6.0.31` `8.0.6`                                                                                                                     |
+| Language                | Available versions                                                                                                                                                                                                                                                                                                         |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PHP                     | `4.4.9` `5.2.17` `5.3.29` `5.4.45` `5.5.38` `5.6.40` `7.0.33` `7.1.33` `7.2.34` `7.3.33` `7.4.33` `8.0.30` `8.1.28` `8.2.19` `8.3.7`                                                                                                                                                                                       |
+| Python                  | `2.4.6` `2.5.6` `2.6.9` `2.7.18` `3.3.7` `3.4.10` `3.5.10` `3.6.15` `3.7.17` `3.8.19` `3.9.19` `3.10.14` `3.11.9` `3.12.3`                                                                                                                                                                                                 |
+| Ruby                    | `1.8.7-p374` `1.9.3-p551` `2.0.0-p648` `2.1.10` `2.2.2.10` `2.3.8` `2.4.10` `2.5.9` `2.6.10` \`\`2.7.8` `3.0.7` `3.1.6` `3.2.4` `3.3.3.2\` |
+| Node.js | `6.17.1` `8.17.0` `10.24.1` `12.22.12` `14.21.3` `16.20.2` `18.20.3` `20.14.0`                                                                                                                                                                                                                                             |
+| Elixir                  | `1.13.4` `1.14.5` `1.15.8` `1.16.3`                                                                                                                                                                                                                                                                                        |
+| Java                    | `8.0.412` `11.0.23` `17.0.11` `21.0.3`                                                                                                                                                                                                                                                                                     |
+| Deno                    | `1.43.5`                                                                                                                                                                                                                                                                                                                   |
+| .NET    | `6.0.31` `8.0.6`                                                                                                                                                                                                                                                                                                           |
 
-En particulier, les versions non-LTS de plusieurs langages ont été supprimées :
+In particular, non-LTS versions of multiple languages have been removed:
 
 - Node.js : 9, 11, 13, 15, 17, 19, 21
-- Java : 14
-- .NET : 5
+- Java: 14
+- .NET: 5
 
-Si vous utilisiez une de ces versions, elle sera remplacée par la version majeure suivante.
+If you used any of these releases, it will be replaced with the next major release.
 
-## Mises à jour diverses
+## Various updates
 
-Le système d'exploitation passe de _Debian 10 (Buster)_ à _Debian 12 (Bookworm)_. Par conséquent, de très nombreux logiciels et bibliothèques seront mis à jour. Parmi les mises à jour notables :
+The operating system changes from _Debian 10 (Buster)_ to _Debian 12 (Bookworm)_. As a result, numerous software and bibliothetics will be updated. Among notable updates:
 
-- Erlang 25.2 (auparavant 21.2)
-- GDAL 3.9 (auparavant 2.4)
-- git 2.45 (auparavant 2.20)
-- Go 1.22 (auparavant 1.17)
-- MapServer 8.0 (auparavant 7.4)
-- PROJ 9.4 (auparavant 5.2)
-- QGIS 3.34 (auparavant 3.4)
-- RabbitMQ 3.10 (auparavant 3.7)
+- Erlang 25.2 (previously 21.2)
+- GDAL 3.9 (previously 2.4)
+- git 2.45 (previously 2.20)
+- Go 1.22 (before 1.17)
+- MapServer 8.0 (previously 7.4)
+- PROJ 9.4 (before 5.2)
+- QGIS 3.34 (formerly 3.4)
+- RabbitMQ 3.10 (formerly 3.7)
 
-### Sur cloud privé
+### Private cloud
 
-- **Redis**, s'il est installé sur votre serveur, est mis à jour en [version 7.0](https://github.com/redis/redis/blob/7.0/00-RELEASENOTES) (auparavant 6.0).
+- **Redis**, if installed on your server, is updated to [version 7.0](https://github.com/redis/redis/blob/7.0/00-RELEASENOTES) (previously 6.0).
 
-* **MySQL**, s'il est installé sur votre serveur, est mis à jour en [version 8.0](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/).
+* **MySQL**, if installed on your server, is updated to [version 8.0](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/).
 
-- **Elasticsearch**, s'il est installé sur votre serveur, est mis à jour en version 8.17.
+- **Elasticsearch**, if installed on your server, is updated to version 8.17.
 
-## Divers
+## Misc
 
-- La commande `composer` exécute désormais **Composer** 2. Vous pouvez démarrer Composer 1 avec la commande `composer1`.
-- Le [format des logs HTTP](/sites/formatting-http-logs) par défaut devient le format **Avancé**.
-- Les sites de type **Redirection transparente** sont transformés en **Reverse proxy**.
-- L'IP 185.31.40.10 est une ancienne IP dépréciée et sera supprimée.
+- The `composer` command executes **Composer** 2. You can start Dial 1 with the `compose1` command.
+- Default [HTTP Log Format](/sites/formatting-http-logs) becomes **Advanced**.
+- **Transparent Redirect** sites are transformed into **Reverse Proxy**.
+- IP 185.31.40.10 is an old IP address and will be deleted.
 
-## Conseils & problèmes courants
+## Common tips & issues
 
-- Vous pouvez effectuer vous-même, _avant la migration_, certains changements comme sélectionner les versions majeures des langages, utiliser le format de logs _Avancé_ ou modifier vos sites de type _Redirection transparente_.
+- You can do yourself, _before migration_, some changes like selecting major versions of languages, use _Advanced_ log format or change your _Transparent Redirect_ sites.
 
-- En [Cloud public](accounts/billing/public-cloud-prices), votre compte sera déplacé sur de nouveaux serveurs lors de la migration, et tous les services vont donc changer d'IP. Les IP utilisées par chaque serveur sont données dans le menu **Avancé > Statut des serveurs**.
-  - les adresses de type `[service]-[compte].alwaysdata.net` peuvent ne pas être immédiatement accessibles depuis l'extérieur à cause de la propagation DNS ;
-  - pour les domaines n'utilisant pas nos serveurs DNS, le serveur HTTP précédent fera la redirection vers le nouveau serveur HTTP. La redirection peut ne plus fonctionner et il est pertinent de faire les changements d'IP pour pointer sur le bon serveur.
+- In [Public Cloud](accounts/billing/public-cloud-prices), your account will be moved to new servers during migration, so all services will change IP. The IPs used by each server are given in the **Advanced> Server Status** menu.
+  - addresses of type `[service]-[compte].alwaysdata.net` may not be accessible from outside due to DNS propagation;
+  - for domains not using our DNS servers, the previous HTTP server will redirect to the new HTTP server. Redirect may no longer work and it is appropriate to make IP changes to point to the correct server.
 
-- Il sera nécessaire de mettre à jour votre fichier `known_hosts` local pour vous connecter en SSH. Vous pouvez le faire via la commande (_[compte] à remplacer par le nom du compte_) :
+- It will be necessary to update your local `known_hosts` file to connect to SSH. You can do this via the command (_[compte] to replace with the account name_):
 
 ```sh
 $ ssh-keygen -R ssh-[compte].alwaysdata.net
 ```
 
-### Erreurs suite à la migration
+### Errors due to migration
 
 1. `cannot open shared object file: No such file or directory`
 
-La mise à jour de certaines bibliothèques système requiert une recompilation du code qui les utilise. Les bibliothèques suivantes sont concernées :
+Updating some system bibliotheques requires a recompilation of the code that uses them. The following bibliotheques are concerned:
 
 - `libtiff`
 
-En général, ces bibliothèques ne sont pas utilisées directement par les applications mais par l'intermédiaire de dépendances (extension PHP, module Python, gem Ruby, etc.). Il vous suffit de réinstaller ces dépendances sur la nouvelle infrastructure pour résoudre le problème.
+In general, these libraries are not used directly by applications but by dependencies (PHP extension, Python module, Ruby gem, etc. ). Simply reinstall these dependencies on the new infrastructure to solve the problem.
 
-## Pourquoi imposer une migration ?
+## Why should migration be imposed?
 
-Les migrations d'architecture ont pour principal objectif de mettre à jour nos serveurs vers une version plus récente de leur système d'exploitation (Debian). Il est important de procéder à ces mises à jour pour deux raisons :
+The main purpose of the architecture migration is to upgrade our servers to a newer version of their operating system (Debian). It is important to proceed to these updates for two reasons:
 
-- la sécurité. Les vieilles versions de logiciels ne sont pas supportées éternellement par leurs auteurs ou distributeurs. Lorsqu'un logiciel cesse d'être supporté, il continue à fonctionner, mais les nouvelles failles de sécurité ne sont alors plus corrigées. Continuer à utiliser ces vieilles versions ferait donc courir un risque pour la sécurité et la fiabilité de vos applications et données.
+- the security. Old software versions are not supported by their authors or distributors eternally. When a software stops supporting, it continues to work, but new security vulnerabilities are no longer fixed. Continuing to use these old versions would therefore run a risk for the security and reliability of your applications and data.
 
-- pouvoir utiliser des versions récentes des logiciels. Plus un système d'exploitation est ancien, plus il risque d'avoir des difficultés à faire tourner les logiciels récents. Pour continuer à vous offrir les toutes dernières versions des logiciels que nous proposons (ou que vous pouvez installer vous-même dans votre compte), il est important d'être sur une version relativement récente du système d'exploitation.
+- to be able to use recent versions of software. The older an operating system is, the more difficult it is to run recent software. To continue offering you the latest versions of the software we offer (or that you can install yourself in your account), it is important to have a relatively recent version of the operating system.
 
-Ces migrations d'infrastructure sont effectuées tous les quatre ans. Cela correspond à la durée de vie d'une version de Debian (de [cinq ans](https://wiki.debian.org/LTS), mais il faut compter le temps incompressible de développement interne avant de basculer sur les nouvelles versions). Cela nous parait être un bon équilibre, évitant des migrations trop fréquentes, mais permettant de faire tourner la quasi-totalité des logiciels récents.
+These infrastructure migrations are carried out every four years. This corresponds to the hard life of a Debian release (from [five years](https://wiki.debian.org/LTS), but it is necessary to count the incompressible internal development time before switching to new versions). This seems to us to be a good balance, avoiding excessive migrations, but allowing to run the virtual totality of the recent software.
