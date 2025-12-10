@@ -1,21 +1,21 @@
 +++
-url = "/fr/avance/migrations/migration-cloud-prive/"
-title = "Comment effectuer une migration en Cloud Privé"
+url = "/avance/migrations/migration-cloud-prive/"
+title = "How to Migrate to Private Cloud"
 layout = "howto"
 hidden = true
 tags = [ "migration" ]
 +++
 
-La plupart des migrations impliquent un changement global sur le serveur. Par exemple, la migration vers une nouvelle version de notre infrastructure logicielle va demander une réinstallation complète du serveur.
+Most migration involves a global change on the server. For example, migrating to a new version of our software infrastructure will require a complete reinstallation of the server.
 
-Sur le Cloud Public, lors d'une migration, les comptes sont migrés vers un nouveau serveur faisant tourner la nouvelle version. Lorsque vous avez un Cloud Privé, ce n'est pas possible : vous n'avez qu'un seul serveur.
+On the Public Cloud, when migrating, accounts are migrated to a new server that runs the new version. When you have a Private Cloud, this is not possible: you only have one server.
 
-## Migrations obligatoires
+## Mandatory Migrations
 
-Pour vous éviter d'avoir à effectuer la migration brutale de votre serveur, et donc de l'ensemble des comptes s'y trouvant, [elles se font en plusieurs étapes](advanced/migrations/private-cloud-migrations/required-migrations-process).
+To avoid having to perform the brutal migration of your server, and thus of all the accounts found there, [they are done in several steps](advanced/migrations/private-cloud-migrations/required-migrations-process).
 
-## Migrations optionnelles
+## Optional migrations
 
-Certaines migrations ne concernant qu'un service de notre infrastructure (exemple : les serveurs de gestion de bases de données) peuvent être proposées.
+Some migration related only to a service from our infrastructure (example: database management servers) may be proposed.
 
-Dans ce cas, aucune préparation, aucun test n'est possible, la mise à jour est directement effectuée sur le serveur. Vous pouvez cependant ouvrir un compte sur le Cloud Public si ce service y est proposé pour tester certaines de vos applications.
+In this case, no preparations, no test is possible, the update is performed directly on the server. However, you can open an account on the Public Cloud if this service is offered to test some of your applications.
