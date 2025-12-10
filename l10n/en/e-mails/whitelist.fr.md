@@ -1,13 +1,13 @@
 +++
-url = "/fr/emails/liste-blanche/"
-title = "Liste blanche de reception d'emails"
+url = "/emails/whitelist/"
+title = "Email whitelist"
 layout = "man"
 hidden = true
 tags = [ "email" ]
 +++
 
-Pour être assuré de recevoir les emails d'adresses et domaines précis, ceux-ci peuvent être renseignés dans **Emails > Configuration**. L'antispam entrant n'aura alors plus d'incidence sur leurs emails.
+To ensure that you receive emails from specific addresses and domains, they can be entered in **Emails > Configuration**. The incoming antispam will no longer affect their emails.
 
-Les mails envoyés à ces adresses seront toujours soumis à la [validation antispam](e-mails/delivery#système-de-notation).
+Emails sent to these addresses will still be submitted to [anti-spam validation](e-mails/delivery#système-de-notation).
 
-Les listes blanches sont paramétrées au niveau du compte. Elles seront donc utilisées par toutes les adresses email du compte.
+Whitelisted lists are set at account level. They will therefore be used by all email addresses of the account.
