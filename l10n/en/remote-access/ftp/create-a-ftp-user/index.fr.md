@@ -1,23 +1,23 @@
 +++
-url = "/fr/acces-distant/ftp/creer-un-utilisateur-ftp/"
-title = "Comment créer un utilisateur FTP"
+url = "/remote-access/ftp/creer-a-user-ftp/"
+title = "How to create an FTP user"
 layout = "howto"
 weight = 30
 hidden = true
-tags = [ "accès distant", "ftp" ]
+tags = [ "remote access", "[currency symbol] ftp" ]
 +++
 
-Afin de vous connecter à votre compte en _FTP_, il est nécessaire de disposer d'un utilisateur. Par défaut, un utilisateur du nom de votre _compte_ est crée à sa création. Vous pouvez créer autant d'utilisateurs FTP que vous le souhaitez que vous pouvez administrer depuis votre interface d'administration, onglet **Accès distant > FTP**.
+In order to connect to your _FTP_account it is necessary to have a user. By default, a user with the name of your _account_ is created at its creation. You can create as many FTP users as you wish that you can administer from your admin interface to the **Remote Access > FTP tab**.
 
-{{< fig "images/admin-panel_list-ftp-users.fr.png" "Interface d'administration : liste des utilisateurs FTP">}}
+{{< fig "images/admin-panel_list-ftp-users.en.png" "Admin interface: list of FTP users">}}
 
-- Nom : nom de l'utilisateur FTP, préfixé du nom de votre compte ;
-- Mot de passe : mot de passe associé à l'utilisateur ;
-- Répertoire racine : répertoire dans lequel l'utilisateur arrive à sa connexion.
+- Name: FTP user name, prefixed to your account name;
+- Password: password associated with the user;
+- Root directory: directory in which the user is logged in.
 
-{{< fig "images/admin-panel_add-ftp-user.fr.png" "Interface d'administration : ajout d'utilisateur FTP">}}
+{{< fig "images/admin-panel_add-ftp-user.en.png" "Admin interface: adding FTP user">}}
 
 {{% notice note %}}
-FTP propose une isolation : l'utilisateur ne pourra pas circuler librement sur les répertoires parents de son répertoire racine.
-{{% /notice %}}
+FTP offers an insulation : the user will not be able to circulate freely on the parent directories of his root directory.
+{{%/notice %}}
 
