@@ -1,68 +1,68 @@
 +++
-url = "/fr/acces-distant/ssh/"
+url = "/remote-access/ssh/"
 title = "SSH"
 weight = 5
-tags = [ "accès distant", "ssh" ]
+tags = [ "remote access", "ssh" ]
 archetype = "chapter"
 +++
 
-SSH, pour [Secure Shell](https://fr.wikipedia.org/wiki/Secure_Shell), est un protocole de connexion sécurisé par un échange de clés de chiffrement en début de connexion. alwaysdata le propose sur TOUS ses environnements.
+SSH, for [Secure Shell](https://fr.wikipedia.org/wiki/Secure_Shell), is a connection protocol secured by an initial connection exchange of encryption keys. alwaysdata offers it on ALL its environments.
 
-**L'accès distant par SSH est désactivé par défaut.** Pour l'activer, modifiez votre utilisateur et cochez la connexion par mot de passe. Il est ensuite possible de mettre en place une connexion par [clés SSH](use-keys) et désactiver la connexion par mot de passe.
+**Remote SSH access is disabled by default.** To enable it, change your user and check password login. It is then possible to set up a connection by [SSH keys](use-keys) and disable password login.
 
 - [API - SSH](https://api.alwaysdata.com/v1/ssh/doc/)
-- [Créer un utilisateur SSH](create-a-ssh-user)
-- [Problèmes fréquents](remote-access/ssh/troubleshooting)
+- [Create SSH user](create-a-ssh-user)
+- [Freight issues](remote-access/ssh/troubleshooting)
 
-* Utilisateurs de [Cloud privé](accounts/billing/private-cloud-prices) :
-  - [Authentification 2 facteurs SSH](remote-access/ssh/ssh-two-factor-authentication)
-  - [Clés SSH globales](install-globally-ssh-keys)
+* [Private Cloud] Users (accounts/billing/private-cloud-prices):
+  - [SSH 2-factor authentication](remote-access/ssh/ssh-two-factor-authentication)
+  - [Global SSH Keys](install-globally-ssh-keys)
 
 {{% notice info %}}
-Toutes nos offres sont infogérées, il n'est pas possible d'avoir un accès `root`.
-{{% /notice %}}
+All our offers are info, it is not possible to have a `root` access.
+{{%/notice %}}
 
-## Se connecter en SSH
+## Connect in SSH
 
-| Informations |                                                                                                                 |
-| ------------ | --------------------------------------------------------------------------------------------------------------- |
-| Hôte         | ssh-[compte].alwaysdata.net |
-| Ports        | 22                                                                                                              |
-| Identifiant  | utilisateur et mot de passe associé OU clés SSH                                                                 |
+| Information |                                                                                                                 |
+| ----------- | --------------------------------------------------------------------------------------------------------------- |
+| Hostels     | ssh-[compte].alwaysdata.net |
+| Ports       | 22                                                                                                              |
+| Username    | associated user and password OR SSH keys                                                                        |
 
-{{< fig "admin-panel_ssh-users-list.fr.png" "Interface d'administration : liste des utilisateurs SSH" >}}
+{{< fig "admin-panel_ssh-users-list.en.png" "Admin interface: list of SSH users" >}}
 
-### Par un terminal
+### By a terminal
 
-Ouvrez votre terminal et saisissez la commande suivante :
+Open your terminal and type the following command:
 
 ```ssh
 $ ssh [utilisateur]@ssh-[compte].alwaysdata.net
 ```
 
 {{% notice note %}}
-Remplacez `[utilisateur]` par le nom de votre utilisateur SSH et `ssh-[compte].alwaysdata.net` par votre nom d'hôte SSH.
-{{% /notice %}}
+Replace `[utilisateur]` with your SSH username and `ssh-[compte].alwaysdata.net` with your SSH host-name.
+{{%/notice %}}
 
-### Par le web
+### Web
 
-Utile si vous êtes derrière un firewall, notre [interface web](https://tsl0922.github.io/ttyd/) vous permet d'utiliser le protocole SSH à partir de votre navigateur. Pour l'utiliser, indiquez `https://ssh-[compte].alwaysdata.net` dans la barre d'adresse de votre navigateur web.
+Useful if you are behind a firewall, our [web interface](https://tsl0922.github.io/ttyd/) allows you to use SSH from your browser. To use it, type `https://ssh-[compte].alwaysdata.net` in your web browser's address bar.
 
-Attention, cette solution peu fiable et lente ne remplace pas un client SSH.
+Warning, this unreliable and slow solution does not replace an SSH client.
 
 {{% notice info %}}
-Cette interface n'est pas compatible avec le [Cloud Privé](accounts/billing/private-cloud-prices).
-{{% /notice %}}
+This interface is not compatible with [Private Cloud](accounts/billing/private-cloud-prices).
+{{%/notice %}}
 
-## Divers
+## Misc
 
-Les _fingerprints_ de nos serveurs SSH sont affichés dans l’onglet **Accès distant > SSH** de votre interface d’administration.
+The _fingerprints_ of our SSH servers are displayed in the **Remote Access > SSH** tab of your admin interface.
 
-Les processus en cours sont accessible via le menu **Avancé > Processus > SSH**.
+Ongoing processes can be accessed via the **Advanced> Process > SSH** menu.
 
-Les utilisateurs SSH ne sont pas `chroot`. Même si le répertoire racine de l'utilisateur n'est pas la racine du compte, il pourra accéder au compte entier.
+SSH users are not `chroot`. Even if the root directory of the user is not the root directory of the account, he will be able to access the entire account.
 
 ---
 
-- [OpenSSH](https://www.openssh.com/) ;
-- [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) : terminal SSH sous Windows.
+- [OpenSSH](https://www.openssh.com/);
+- [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) : SSH terminal on Windows.
