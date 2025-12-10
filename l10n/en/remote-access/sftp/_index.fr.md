@@ -1,30 +1,30 @@
 +++
-url = "/fr/acces-distant/sftp/"
+url = "/remote/sftp/"
 title = "SFTP"
 weight = 5
-tags = [ "accès distant", "sftp" ]
+tags = [ "remote access", "sftp" ]
 archetype = "chapter"
 +++
 
-Le protocole SFTP (pour [SSH File Transfer Protocol](https://fr.wikipedia.org/wiki/SSH_File_Transfer_Protocol)) permet de sécuriser un transfert FTP en passant par un tunnel SSH. Les utilisateurs peuvent de ce fait utiliser une interface graphique simple via le client FTP de leur choix.
+The SFTP protocol (for [SSH File Transfer Protocol](https://fr.wikipedia.org/wiki/SSH_File_Transfer_Protocol)) allows to secure an FTP transfer through an SSH tunnel. Users can thus use a simple graphical interface via the FTP client of their choice.
 
-## Se connecter en SFTP
+## Sign in as SFTP
 
-Dans **Accès distant > SSH** autorisez la _connexion par mot de passe_ à votre utilisateur SSH.
+In **Remote Access > SSH** allow _password login_ to your SSH user.
 
-{{< fig "admin-panel_ssh-users-list.fr.png" "Interface d'administration : liste des utilisateurs SSH">}}
+{{< fig "admin-panel_ssh-users-list.en.png" "Admin interface: list of SSH users">}}
 
-Puis renseignez dans votre client FTP les informations de connexion SSH. Prenons l'exemple du compte _test_ et du client FTP [FileZilla](https://filezilla-project.org/) :
+Then fill in your FTP client the SSH login information. Let's take the example of the _test_ account and the FTP client [FileZilla](https://filezilla-project.org/):
 
-- utilisateur : `test`
-- mot de passe
-- nom d'hôte : `ssh-test.alwaysdata.net`
-- port : `22`
+- user: `test`
+- password
+- hostname: `ssh-test.alwaysdata.net`
+- port: `22`
 
-{{< fig "filezilla_sftp-connection.fr.png" "Interface FileZilla : connexion SFTP" >}}
+{{< fig "filezilla_sftp-connection.png" "FileZilla interface: SFTP connection" >}}
 
-## Divers
+## Misc
 
-Comme pour le protocole SSH, les utilisateurs SFTP ne sont pas `chroot`. Néanmoins, il est possible de limiter leurs actions en choisissant le shell **SFTP uniquement**.
+As with the SSH protocol, SFTP users are not `chroot`. Nevertheless it is possible to limit their actions by choosing the **SFTP only** shell.
 
-Il ne doit pas être confondu avec le protocole [FTPS](remote-access/ftp) : transfert FTP sécurisé par les protocoles SSL ou TLS.
+It must not be confused with the [FTPS]protocol (remote-access/ftp): FTP transfer secured by SSL or TLS protocols.
