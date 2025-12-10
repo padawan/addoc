@@ -1,30 +1,30 @@
 +++
-url = "/fr/bases-de-donnees/memcached/"
+url = "/en/data-bases/memcached/"
 title = "Memcached"
 layout = "man"
 hidden = true
-tags = [ "base de données", "memcached" ]
+tags = [ "database", "memcached" ]
 +++
 
-## Connexion
+## Login
 
-|             |                                                                        |
-| ----------- | ---------------------------------------------------------------------- |
-| **Serveur** | localhost ou 127.0.0.1 |
-| **Port**    | 11211 (Port Memcached par défaut)                   |
+|            |                                                                        |
+| ---------- | ---------------------------------------------------------------------- |
+| **Server** | localhost or 127.0.0.1 |
+| **Port**   | 11211 (default Memcached port)                      |
 
-Memcached ne tourne qu'en local avec des droits isolés (utilisateur distinct).
+Memcached only runs locally with isolated privileges (separate user).
 
 {{% notice info %}}
-Cette configuration est disponible en environnements [Cloud Privé](accounts/billing/private-cloud-prices). Sur le [Cloud Public](accounts/billing/public-cloud-prices) vous pouvez le faire tourner en suivant ce [guide](guides/memcached).
-{{% /notice %}}
+This configuration is available in [Cloud Privacy](accounts/billing/private-cloud-prices). On [Public Cloud](accounts/billing/public-cloud-prices) you can spin it by following this [guide](guides/memcached).
+{{%/notice %}}
 
 ---
 
-- [Documentation Memcached](https://github.com/memcached/memcached/wiki)
+- [Memcached documentation](https://github.com/memcached/memcached/wiki)
 
 ---
 
-Retrouvez nos guides :
+Find our guides:
 
-- [Configurer une application PHP avec Memcached](databases/memcached/php)
+- [Configure a PHP application with Memcached](databases/memcached/php)
