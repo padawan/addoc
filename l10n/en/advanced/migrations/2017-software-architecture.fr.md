@@ -1,258 +1,258 @@
 +++
-url = "/fr/avance/migrations/architecture-logicielle-2017/"
-title = "Architecture Logicielle 2017"
+url = "/forward/migrations/software-architecture-2017/"
+title = "Software Architecture 2017"
 layout = "man"
 hidden = true
 tags = [ "infrastructure", "migration" ]
 +++
 
-Cette migration regroupe de nombreuses modifications ayant pour objectifs principaux :
+This migration groups many changes with the main objectives:
 
-- la mise à jour globale des logiciels préinstallés ;
-- la simplification de certains points de notre infrastructure logicielle.
+- global update of preinstalled software;
+- simplifying certain aspects of our software infrastructure.
 
-Pour les plus anciens comptes mutualisés, cette migration inclut également la migration vers notre propre infrastructure matérielle.
+For older mutual accounts, this migration also includes migration to our own corporate infrastructure.
 
-Ce document décrit les incompatibilités principales introduites par cette migration. Nous nous efforçons d'être le plus complet possible, mais il est impossible d'être absolument exhaustif. Nous vous invitons vivement à procéder à un test de la migration pour détecter un maximum d'incompatibilités.
+This document describes the main incompatibilities introduced by this migration. We strive to be as complete as possible, but it is impossible to be absolutely exhaustive. We strongly invite you to conduct a migration test to detect as many incompatibilities as possible.
 
-Ce document ne décrit pas les nouvelles fonctionnalités apportées par l'infrastructure logicielle 2017, ceci ayant été fait dans un [article de blog](https://blog.alwaysdata.com/2017/01/24/python-3-6-ruby-2-4-and-others/) dédié.
+This document does not describe the new features contributed by the 2017 software infrastructure, which was done in a dedicated [blog article](https://blog.alwaysdata.com/2017/01/24/python-3-6-ruby-2-4-and-others/).
 
-## Généralités
+## Geaelite
 
-- Vous devez impérativement utiliser le nouveau format des noms d'hôte d'accès aux services [introduit en 2015](https://blog.alwaysdata.com/2015/03/05/change-of-hostname-for-access-to-our-services/). Vous trouverez les adresses à utiliser dans l'administration alwaysdata, dans chaque section concernée. Les anciens formats, utilisant le domaine `alwaysdata.com` (par exemple, `mysql.alwaysdata.com` ou `postgresql1.alwaysdata.com`), ou un point entre le nom du service et celui du compte (par exemple `mysql.compte.alwaysdata.net`) cesseront totalement de fonctionner.
+- You must not use the new hostname format to access services [introduced in 2015](https://blog.alwaysdata.com/2015/03/05/change-of-hostname-for-access-to-our-services/). You will find the addresses to use in the alwaysdata administration in each relevant section. Old formats, using the `alwaysdata.com` domain (e.g. `mysql.alwaysdata.com` or `postgresql1.alwaysdata. om`), or a dot between the service name and the account name (e.g. `mysql.accounte.alwaysdata.net`) will stop working.
 
-- Plusieurs fichiers et répertoires situés dans chaque compte sont déplacés ou supprimés. Notamment :
-  - les 4 fichiers par défaut (`php5.fcgi`, `php5.ini`, `php4.fcgi`, `php4.ini`) du répertoire `$HOME/cgi-bin` sont supprimés, et le répertoire également s'il est désormais vide ;
-  - les différents fichiers de configuration internes (`$HOME/.env.*`, `$HOME/admin/apache`) sont déplacés dans un répertoire `$HOME/admin/config` ;
-  - les répertoires `$HOME/admin/ssl`, `$HOME/admin/session` et `$HOME/admin/log/awstats` sont supprimés ;
-  - les logs sont désormais stockés dans le répertoire `$HOME/admin/logs`, avec un sous-répertoire par type (`http`, `apache`, etc.). L'ancien répertoire de logs (`$HOME/admin/log`) est déplacé dans `$HOME/admin/logs/old`.
+- Multiple files and directories located in each account are moved or deleted. In particular:
+  - the 4 default files (`php5.fcgi`, `php5.ini`, `php4.fcgi`, `php4.ini`) from the `$HOME/cgi-bin` directory are removed, and the directory is also empty and empty;
+  - the different internal configuration files (`$HOME/.env.*`, `$HOME/admin/apache`) are moved to an$HOME/admin/config\` directory;
+  - `$HOME/admin/ssl`, `$HOME/admin/session` and `$HOME/admin/log/awstats` are removed;
+  - logs are stored in the directory `$HOME/admin/logs`, with one subdirectory per type (`http`, `apache`, etc.). The old log directory (`$HOME/admin/log`) is moved to `$HOME/admin/logs/old`.
 
-## Langages
+## Languages
 
 ### PHP
 
-- Les extensions de fichiers `.php4` et `.php5` ne sont plus supportées, seuls les fichiers `.php` sont interprétés par PHP par défaut. Vous pouvez néanmoins retrouver l'ancien comportement en créant un fichier `.htaccess` à la racine de votre compte. Par exemple, pour que les fichiers `.php5` soient interprétés par PHP, il devra contenir :
+- The `.php4` and `.php5` file extensions are no longer supported, only `.php` files are interpreted by PHP by default. You can still retrieve the old behavior by creating a `.htaccess` file at the root of your account. For example, for `.php5` files to be interpreted by PHP, it will need to contain:
 
 ```
 AddHandler fcgid-script .php5
 FCGIWrapper /usr/bin/php-cgi .php5
 ```
 
-- Il n'est plus possible de faire tourner PHP 4 et PHP 5 en même temps sur le même compte. PHP 4 est désormais simplement considéré comme étant une version de PHP comme une autre, sans aucune spécificité.
+- It is no longer possible to run PHP 4 and PHP 5 at the same time. PHP 4 is just like having a PHP version like any other, without any specificity.
 
-- Les versions 5.5.0, 5.5.1 et 5.5.6 sont remplacées par la 5.5.19.
+- Versions 5.5.0, 5.5.1 and 5.5.6 are replaced by 5.5.19.
 
-- Le seul binaire PHP disponible est `php`. N'utilisez plus, par exemple, `php-cgi`.
+- The only PHP binary available is `php`. Do not use `php-cgi` anymore.
 
-- Les extensions non standard (APC, Xapian, Xdebug et Mapscript pour PHP 5.3 et 5.2 et Fileinfo en 5.2) sont supprimées. Vous pourrez toutefois les [installer vous-même](languages/php/extensions) dans votre propre compte.
+- Non-standard extensions (APC, Xapian, Xdebug and Mapscript for PHP 5.3 and 5.2 and Fileinfo in 5.2) are removed. However, you can [install yourself](languages/php/extensions) in your own account.
 
-- Symfony n'est plus préinstallé, vous devrez [manuellement l'installer](languages/php/packages).
+- Symfony is no longer preinstalled, you will need to [manually install it](languages/php/packages).
 
-- Les extensions `calendar` et `intl` ne sont désormais plus automatiquement activées, il faudra les charger explicitement dans votre `php.ini` si nécessaire.
+- The `calendar` and `intl` extensions are no longer automatically enabled, they will have to be explicitly loaded into your `php.ini` if necessary.
 
-- Certaines options mineures de compilation ont été modifiées.
+- Some minor compilation options have been changed.
 
-- Les directives internes Apache qui configurent PHP (en FastCGI) ont été modifiées. Cela n'a d'importance que si vous y faisiez référence explicitement, par exemple si vous avez un site de type _Apache personnalisé_ et que vous aviez copié-collé les directives de la configuration interne Apache. Nous vous suggérons de remplacer vos sites _Apache personnalisé_ par des sites _Apache standard_ et de mettre vos propres directives dans le champ _Directives supplémentaires du virtual host_ (dans _Configuration avancée_) ou dans un fichier `.htaccess`.
+- The internal Apache directives that configure PHP (in FastCGI) have been changed. This only matters if you explicitly refer to it, e.g. if you have a _customized_ site and copied the directives from the internal Apache configuration. We would like you to replace your _Apache customized_ sites with _Apache standard_ sites and put your own directives in the _Additional virtual host guidelines_ field (in _Advanced configuration_) or in a ` file. taccess`.
 
 ### Python
 
-- Le seul binaire Python disponible est `python`. N'utilisez plus, par exemple, `python2.6`. Vous devrez notamment penser à remplacer vos shebangs (première ligne d'un script, par exemple `#!/usr/bin/python`) s'ils n'utilisent pas déjà `python`.
+- The only Python binary available is `python`. Do not use `python2.6` anymore. You will need to think about replacing your shebangs (first line of a script, e.g. `#!/usr/bin/python`) if they do not already use `python`.
 
-- Les quelques bibliothèques auparavant préinstallées par défaut sont supprimées, y compris Django. Vous devez donc [manuellement installer](languages/python/configuration#environnement) toutes les bibliothèques dont vous aurez besoin.
+- Some of the previously preinstalled libraries are removed, including Django. So you need to [manually install] (languages/python/configuration#environnement) all the bibliotheks you will need.
 
-- Les applications de type _WSGI_ sont désormais servies par [uWSGI](http://uwsgi-docs.readthedocs.io/en/latest/) et non plus [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/). Dans la grande majorité des cas cela ne changera rien pour vous. Si vous aviez compilé votre propre mod_wsgi avec un site de type _Apache personnalisé_, il continuera à fonctionner.
+- _WSGI_ applications are served by [uWSGI](http://uwsgi-docs.readthedocs.io/en/latest/) instead of [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/). In the vast majority of cases this will not change anything for you. If you had compiled your own mod_wsgi with a _custom Apache site_, it will continue to work.
 
-- La version 2.5.5 est remplacée par la 2.5.6, la 2.6.6 par la 2.6.9 et la 3.1 par la 3.3.6.
+- Version 2.5.5 is replaced by 2.5.6, 2.6.6 by 2.6.9 and 3.1 by 3.3.6.
 
 ### Ruby
 
-- Le seul binaire Ruby disponible est `ruby`. N'utilisez plus, par exemple, `ruby1.8`. Vous devrez notamment penser à remplacer vos shebangs (première ligne d'un script, par exemple `#!/usr/bin/ruby`) s'ils n'utilisent pas déjà `ruby`.
+- The only Ruby binary available is `ruby`. Do not use `ruby1.8` anymore. You will need to think about replacing your shebangs (first line of a script, e.g. `#!/usr/bin/ruby`) if they do not already use `ruby`.
 
-- Les quelques bibliothèques auparavant préinstallées par défaut sont supprimées, y compris Ruby on Rails. Vous devez donc [manuellement installer](languages/ruby/configuration#environnement) toutes les bibliothèques dont vous aurez besoin.
+- The few previously preinstalled libraries are removed, including Ruby on Rails. So you need to [manually install] (languages/ruby/configuration#environnement) all the bibliotheks you will need.
 
-- Les applications de type _Ruby Rack_ ou _Ruby on Rails_ sont désormais servies par [uWSGI](http://uwsgi-docs.readthedocs.io/en/latest/) et non plus [Passenger](https://www.phusionpassenger.com). Dans la grande majorité des cas cela ne changera rien pour vous. Si vous aviez compilé votre propre Passenger avec un site de type _Apache personnalisé_, il continuera à fonctionner.
+- The _Ruby Rack_ or _Ruby on Rails_ applications are served by [uWSGI](http://uwsgi-docs.readthedocs.io/en/latest/) and no longer [Passenger](https://www.phusionpassenger.com). In the vast majority of cases this will not change anything for you. If you compiled your own Passenger with a _custom Apache site_, it will continue to work.
 
-- Les versions 1.8.6 et 1.8.7 sont remplacées par la 1.8.7-p374 et la 1.9.2 par la 1.9.2-p320.
+- Versions 1.8.6 and 1.8.7 are replaced by 1.8.7-p374 and 1.9.2 by 1.9.2-p320.
 
-## Bases de données
+## Databases
 
 ### MySQL
 
-Nous remplaçons MySQL par MariaDB 10.1, qui est parfaitement compatible avec MySQL. MariaDB 10.1 correspond à MySQL 5.6, voire 5.7. Pour plus de détails sur la compatibilité :
-https://mariadb.com/kb/en/mariadb/mariadb-vs-mysql-compatibility/
+We replace MySQL with MariaDB 10.1, which is perfectly compatible with MySQL. MariaDB 10.1 matches MySQL 5.6 or even 5.7. For more details on compatibility:
+https://mariadb.com/kb/en/mariadb/mariadb/mariadb-vs-mysql-compatibility/
 
 ### PostgreSQL
 
-Nous mettons à jour PostgreSQL en version 9.6 :
+We update PostgreSQL to version 9.6:
 https://www.postgresql.org/docs/9.6/static/release.html
 
-Nous mettons également à jour PostGIS en 2.3 :
+We also update PostGIS to 2.3:
 http://postgis.net/docs/manual-2.3/PostGIS_Special_Functions_Index.html#NewFunctions
 
 ### MongoDB
 
-Nous mettons à jour MongoDB en version 3.2 :
+We are upgrading MongoDB to version 3.2:
 https://docs.mongodb.com/manual/release-notes/
 
-Attention : le mécanisme d'authentification change. Les utilisateurs ayant tous les droits ont le rôle `readWrite`, les utilisateurs n'ayant que les permissions de lecture seule ont le rôle `read`.
+Warning: Authentication mechanism changes. Users with all permissions have the `readWrite` role, users with read-only permissions have the `read` role.
 
-### CouchDB
+### LayDB
 
-Nous mettons à jour CouchDB en version 1.6 : https://docs.couchdb.org/en/stable/whatsnew/1.6.html#version-1-6-0
+We update CouchDB to version 1.6: https://docs.couchdb.org/en/stable/whatsnew/1.6.html#version-1-6-0
 
-## Divers
+## Misc
 
 ### Apache
 
-- [Apache](https://httpd.apache.org) est mis à jour en version 2.2.32
+- [Apache](https://httpd.apache.org) is updated to version 2.2.32
 
-- Les fichiers `index.htm`, `index.cgi`, `index.pl` et `index.xhtml` ne sont plus considérés comme des index. Seuls `index.php` et `index.html` le sont, et `index.php` devient désormais prioritaire sur `index.html`.
+- `index.htm`, `index.cgi`, `index.pl` and `index.xhtml` are no longer indexed as indexes. Only `index.php` and `index.html` are and `index.php` becomes a priority on `index.html`.
 
-- Si aucun fichier d'index n'est présent, une page d'erreur _Forbidden_ s'affichera plutôt que de lister les fichiers.
-  Ils peuvent l'être à nouveau via l'ajout dans un fichier _.htaccess_ de la directive `Options +Indexes`.
+- If no index file is present, a _Forbidden_ error page will be displayed rather than listing the files.
+  They can re-add it to a _.htaccess_ file of the `Options +Indexes` directive.
 
-- Les modules `mod_dav_svn`, `mod_wsgi` et `Passenger` sont supprimés.
+- The `mod_dav_svn`, `mod_wsgi` and `Passenger` modules are removed.
 
-- Les fichiers des autres modules sont déplacés, mais la migration s'occupera de modifier automatiquement le chemin des directives `LoadModule` dans les sites de type _Apache personnalisé_ y faisant référence. Vous n'avez donc pas besoin de vous en soucier.
+- Files from other modules are moved, but the migration will automatically change the path of `LoadModule` directives in _Apache customized_ sites that refer to it. So you don't have to worry about it.
 
-### Mises à jour diverses
+### Various updates
 
-De très nombreuses applications et bibliothèques sont également mises à jour. Elles sont trop nombreuses pour être toutes listées, mais parmi les plus notables, susceptibles de provoquer des incompatibilités :
+Numerous applications and bibliotheques are also updated. They are too numerous to all listed, but among the most notable ones, likely to cause incompatibilities:
 
-- Erlang 19.1 (auparavant en 15.b)
-- Haskell 7.10 (auparavant en 6.8)
-- GDAL 1.10 (auparavant en 1.5)
-- git 2.9 (auparavant en 1.8)
-- ImageMagick 6.8 (auparavant en 6.5)
-- Java JRE 7 et 8 (auparavant en 6)
-- Lua 5.3 (auparavant en 5.1)
-- MapServer 7.0 (auparavant en 5.6)
-- Mercurial 3.9 (auparavant en 1.3)
-- OCaml 4.01 (auparavant en 3.10)
-- Perl 5.20 (auparavant en 5.10)
-- PROJ 4.8 (auparavant en 4.7)
-- Subversion 1.8 (auparavant en 1.6)
-- Texlive 2014 (auparavant en 2007)
+- Erlang 19.1 (previously in 15.b)
+- Haskell 7.10 (previously in 6.8)
+- GDAL 1.10 (previously in 1.5)
+- git 2.9 (previously in 1.8)
+- ImageMagick 6.8 (earlier in 6.5)
+- Java Java 7 and 8 (previously in 6)
+- Lua 5.3 (previously in 5.1)
+- MapServer 7.0 (previously in 5.6)
+- Mercurial 3.9 (previously in 1.3)
+- OCaml 4.01 (previously in 3.10)
+- Perl 5.20 (previously in 5.10)
+- PROJ 4.8 (previously in 4.7)
+- Subversion 1.8 (previously in 1.6)
+- Texlive 2014 (formerly in 2007)
 
-### Environnement VPS/dédié
+### VPS/dedicated environment
 
-Les services suivants, installés sur demande, seront également mis à jour :
+The following services, installed on request, will also be updated:
 
-- RabbitMQ est mis à jour en version 3.5
-- Redis est mis à jour en version 3.2
-- Elasticsearch est mis à jour en version 5.5
+- RabbitMQ is updated to version 3.5
+- Redis is updated to version 3.2
+- Elasticsearch is updated to version 5.5
 
-### Disparition des anciennes bibliothèques
+### Older bibliotheques disappear
 
-Si vous aviez compilé vos propres applications, elles sont susceptibles d'être liées à des bibliothèques ou des versions ayant disparu (à cause d'un saut de l'ABI). Vos applications, ou certaines fonctionnalités, peuvent alors cesser de fonctionner. Il faudra alors recompiler les applications en question.
+If you had compiled your own apps, they are likely to be linked to bibliotheques or versions that have disappeared (due to a jump from the BIA). Your applications, or some functionality, may then stop working. You will then have to recompile the applications in question.
 
-Parmi les bibliothèques les plus susceptibles d'être concernées :
+Among the most likely bibliotheks affected:
 
-- [OpenSSL](https://www.openssl.org). La version 0.9.8 reste toutefois installée, aux côtés de la version 1.0.2, donc vos applications continueront à fonctionner. La version 0.9.8 étant toutefois ancienne, il est fortement recommandé de recompiler vos applications malgré tout pour qu'elles utilisent une version récente d'OpenSSL.
-- libreadline
+- [OpenSSL](https://www.openssl.org). However, version 0.9.8 is still installed, in conjunction with version 1.0.2, so your applications will continue to work. However, since version 0.9.8 is old, it is highly recommended to recompile your unwanted applications to use a recent version of OpenSSL.
+- free adline
 
-## Changement d'IP du serveur HTTP
+## HTTP Server IP Change
 
-Pour certains utilisateurs mutualisés encore hébergés dans notre ancienne infrastructure matérielle, l'adresse IP de leur serveur HTTP sera amenée à changer. Ce sera indiqué, le cas échéant, sur la page de détails de la migration, dans l'administration alwaysdata. Si vous utilisez nos serveurs DNS ou un CNAME, vous n'aurez rien besoin de faire. En revanche, si vous aviez défini manuellement un enregistrement DNS de type A ou AAAA, vous devrez les modifier après avoir effectué la migration afin d'indiquer les nouvelles adresses IP.
+For some users still hosted in our old master infrastructure, the IP address of their HTTP server will be changed. This will be indicated, as the case happens, on the migration details page in the alwaysdata administration. If you use our DNS servers or a CNAME, you will not need to do anything. However, if you had manually defined a DNS record of type A or AAAA, you will need to change them after migrating to specify new IP addresses.
 
-Les anciennes IP continueront néanmoins à fonctionner pendant encore plusieurs semaines (fonctionnement en _reverse proxy_), mais passer par elles implique une augmentation faible de la latence de vos sites et une augmentation du risque de pannes. Il est donc vivement recommandé de les changer au plus vite.
+Older IPs will continue to work for more weeks (_reverse proxy_ working), but going through them implies a low increase in the latency of your sites and an increase in the risk of failures. It is therefore highly recommended that they be changed as soon as possible.
 
-## Test de la migration
+## Migration Test
 
-Il est très fortement recommandé d'effectuer un test de migration préalablement à la migration réelle pour vous assurer que vos applications continueront à fonctionner, et pour les corriger dans le cas contraire.
+It is highly recommended that you run a migration test predominantly to ensure that your applications will continue to work, and to correct them otherwise.
 
-### Accès SSH
+### SSH Access
 
-Vous pourrez vous connecter à votre compte en SSH sur un serveur temporaire. Ce serveur est équipé de l'architecture logicielle 2017, mais **il accède à vos vrais fichiers**, pas à une copie. Toute modification que vous effectueriez sera donc répercutée immédiatement sur votre compte.
+You will be able to connect to your SSH account on a temporary server. This server is equipped with the 2017 software architecture, but **it can access your real files**, not a copy. Any changes you make will be posted to your account.
 
-L'accès SSH peut être ralenti par rapport au serveur SSH usuel. C'est une conséquence du test, mais cette lenteur disparaitra après la migration réelle.
+SSH access can be slowed down compared to the normal SSH server. This is a test advice, but this slowness will disappear after the actual migration.
 
-### Accès HTTP
+### HTTP Access
 
-Vous pourrez tester vos sites de plusieurs manières :
+You can test your sites in several ways:
 
-- en y accédant via l'URL usuelle, à laquelle vous ajouterez le suffixe `.migration.alwaysdata.net`. Par exemple, si votre site est accessible normalement à l'adresse `www.example.org`, vous pourrez y accéder sur l'infrastructure de test en allant sur `www.example.org.migration.alwaysdata.net`.
-  Attention : le certificat SSL renvoyé sur l'adresse `*.migration.alwaysdata.net` ne sera pas valide, vous devrez explicitement l'autoriser par votre navigateur. Cela ne concerne que le test de la migration, pas la migration réelle, pour laquelle les certificats ne changeront pas.
-  Attention : certaines applications font une redirection vers l'URL nominale, ce qui empêche de les tester en utilisant cette méthode.
+- by accessing it via the usual URL, to which you will add the suffix `.migration.alwaysdata.net`. For example, if your site is normally accessible at `www.example.org`, you can access it on the test infrastructure by going to `www.example.org.migration.alwaysdata.net`.
+  Warning: SSL certificate returned on the address `*.migration.alwaysdata.net` will not be valid, you will have to explicitly authorize it by your browser. This only concerns the test of migration, not real migration, for which certificates will not change.
+  Warning: some applications are redirecting to the nominal URL, which requires testing using this method.
 
-- en utilisant une extension de navigateur permettant de forcer l'en-tête `Host` (donc le site demandé). Par exemple sous Chrome, l'extension [Virtual Hosts](https://chrome.google.com/webstore/detail/virtual-hosts/aiehidpclglccialeifedhajckcpedom). Vous devrez vous connecter en indiquant l'adresse du serveur HTTP de test (par exemple, `migration-test1.paris1.alwaysdata.com`), mais en demandant l'adresse de votre site.
+- using a browser extension to force the `Host` header (hence the requested site). For example under Chrome, the extension [Virtual Hosts](https://chrome.google.com/webstore/detail/virtual-hosts/aiehidpclglccialeifedhajckcpedom). You will need to log in by entering the HTTP test server address (for example, `migration-test1.paris1.alwaysdata.com`), but asking your site address.
 
-- en modifiant votre fichier `hosts` pour forcer à utiliser l'IP du serveur HTTP de test pour se connecter à vos sites. C'est faisable en éditant directement le fichier concerné, ou bien par l'intermédiaire d'une extension de navigateur, par exemple HostAdmin sous Firefox.
+- by modifying your `hosts` file to force use the HTTP test server IP to connect to your sites. This can be done by directly editing the relevant file, or by means of a browser extension, for example HostAdmin on Firefox.
 
-Vos applications seront alors démarrées sur un serveur temporaire tournant sous l'infrastructure logicielle 2017, comme si la migration avait eu lieu. Comme en SSH, les fichiers de votre compte auxquels ce serveur a accès sont vos vrais fichiers. Les accès peuvent également être ralentis, n'en tenez donc pas compte.
+Your applications will then be started on a temporary server running the 2017 software infrastructure, as if the migration had taken place. As in SSH, the files in your account this server has access to are your real files. Access can also be slowed down, so ignore this.
 
-Attention : la configuration interne de votre compte alwaysdata sur ce serveur temporaire est générée au moment où vous exécutez la migration de test. Elle n'est pas modifiée ensuite. Par exemple, si vous exécutez la migration de test alors que la version PHP définie dans votre environnement est la 5.6.27, puis que vous modifiez ensuite cette version, cette modification ne sera pas répercutée sur le serveur temporaire de migration. Vous devrez alors à nouveau exécuter une migration de test pour prendre en compte la modification. Même chose pour les modifications que vous apportez dans la section Web > Sites.
+Warning: The internal configuration of your alwaysdata account on this temporary server is managed at the time you run the test migration. It is not changed afterwards. For example, if you run the test migration while the PHP version defined in your environment is 5.6. 7, and then you modify this version, this change will not be performed on the temporary migration server. You will then have to run a test migration again to take the change into account. Meme for the changes you make in the Web section > Sites.
 
-### Bases de données
+### Databases
 
-Lorsque vous exécutez la migration de test, l'ensemble de vos bases et utilisateurs de bases de données sont copiés sur un serveur temporaire, faisant tourner les nouvelles versions. Vous pourrez ensuite accéder à vos données copiées sur ce serveur en utilisant vos identifiants usuels pour faire vos tests. Contrairement aux fichiers utilisés par les serveur SSH et HTTP, vous travaillez donc ici sur une copie de vos données. À chaque exécution de la migration de test, vos précédentes copies sont écrasées par de nouvelles.
+When running the test migration All of your databases and database users are copied to a temporary server, running new versions. You will then be able to access your data copied to this server using your usual credentials to perform your tests. Unlike the files used by the SSH and HTTP servers, you work here on a copy of your data. At each execution of the test migration, your previous copies are overwritten by new ones.
 
-## Aide à la migration
+## Migration help
 
-### Stratégie générale
+### GEOM_GEOM_SURFACE
 
-Il peut être tentant de profiter de la migration pour faire des modifications drastiques sur vos applications web, leur configuration ou leur déploiement. Nous vous recommandons plutôt de faire le minimum de changements possibles pour que la migration se déroule avec succès (après l'avoir testée), et n'effectuer les grandes modifications qu'après, lorsque votre compte sera sur la nouvelle infrastructure.
+It may be tempting to take advantage of migration to make drastic changes to your web applications, their configuration or deployment. Instead, we recommend that you make as few changes as possible to make the migration unfold with success (after testing it), and make major changes only after your account is on the new infrastructure.
 
-L'intérêt majeur de procéder dans ce sens est qu'une fois que votre compte sera sur la nouvelle infrastructure, vous pourrez bénéficier de nouvelles options et de méthodes de déploiement largement simplifiées, notamment avec Python et Ruby. Par exemple, si vous aviez compilé votre propre interpréteur ou vos propres modules Apache (mod_wsgi, Passenger), il est fort probable que vous pourrez vous en passer une fois que votre compte sera sur la nouvelle infrastructure.
+The major integer to do this is that once your account is on the new infrastructure you will be able to discover new options and widely simplified deployment methods, especially with Python and Ruby. For example, if you compiled your own interpreter or Apache modules (mod_wsgi, Passenger), you will most likely be able to do without it once your account is on the new infrastructure.
 
-### Vous avez des références à la configuration Apache relative à PHP
+### You have PHP relative Apache configuration references
 
-Vous avez des références à la configuration interne PHP soit dans un fichier `.htaccess`, soit dans un site de type _Apache personnalisé_ (peut-être aviez-vous copié des morceaux de configuration du fichier `sites.conf`). Par exemple, vous avez des références à `application/x-httpd-fastphp5`.
+You have references to the PHP internal configuration either in a ` file. taccess`, or in a _custom Apache site_ (maybe you copied some configuration pieces from `sites.conf` file). For example, you have references to `application/x-httpd-fastphp5`.
 
-Notre configuration interne de PHP ayant changé, votre configuration cessera de fonctionner. Si vous utilisez PHP et un site de type _Apache personnalisé_, nous vous invitons à le convertir en site de type _Apache standard_ et à indiquer vos directives Apache spécifiques soit dans un fichier `.htaccess`, soit dans le champ _Directives supplémentaires du virtual host_.
+Since our internal PHP configuration has changed, your configuration will stop working. If you are using PHP and a _custom Apache site_, we invite you to convert it to a _standard Apache site_ and specify your specific Apache directives either in a ` file. taccess`, or in the _Additional virtual host guidelines_ field.
 
-### Erreur : "cannot open shared object file: No such file or directory"
+### Error: "cannot open shared object file: No such file or directory"
 
-Cette erreur indique qu'une bibliothèque système est absente. Si la grande majorité des bibliothèques système mises à jour sur la nouvelle infrastructure restent compatibles avec les anciennes versions (car l'ABI reste la même), certaines ne le sont pas (il y a un saut de version de l'ABI). Si vos applications dépendent de ces bibliothèques, elles ne les trouveront plus.
+This error indicates that a system library is missing. While the vast majority of updated system bibliotheques on the new infrastructure remain compatible with older versions (because ABI remains the me), some are not (there is an ABI's version jump). If your applications depend on these libraries, they will no longer find them.
 
-Les bibliothèques suivantes sont concernées :
+The following bibliotheques are concerned:
 
 - [libgmp](https://gmplib.org)
-- libreadline
+- free adline
 - [libtiff](http://www.libtiff.org/)
 
-En général, ces bibliothèques ne sont pas utilisées directement par les applications, mais par l'intermédiaire de dépendances (module Python, gem Ruby, extension PHP). Recompiler ces modules sur la nouvelle infrastructure leur permettra en général d'utiliser la nouvelle version de la bibliothèque, mais ils ne fonctionneront alors plus sur l'ancienne infrastructure.
+In general, these libraries are not used directly by applications, but by dependencies (Python module, gem Ruby, PHP extension). Recompiling these modules on the new infrastructure will allow them to use the new version of the bibliotheque, but they will no longer work on the old infrastructure.
 
-Une autre solution est parfois possible : indiquer à la compilation du module de désactiver certaines fonctionnalités pour éviter qu'il n'utilise la bibliothèque en question. Par exemple, vous pouvez compiler le module [Pillow](https://python-pillow.org/) sans le support des fichiers TIFF de cette manière :
+Another solution is sometimes possible: indicate when compiling the module to disable some features to prevent it from using the relevant library. For example, you can compile module [Pillow](https://python-pillow.org/) without support for TIFF files in this way:
 
 ```
 $ pip install Pillow --global-option="build_ext" --global-option="--disable-tiff"
 ```
 
-### Migrer une application Python en FastCGI
+### Migrate a Python application to FastCGI
 
-Vous avez une application Python (par exemple, utilisant [Django](https://www.djangoproject.com/)) fonctionnant avec FastCGI, avec un fichier `.htaccess` et un script `.fcgi`. FastCGI continuera à fonctionner sur la nouvelle infrastructure comme avant, mais si vous n'utilisez pas un virtualenv, vous devrez installer manuellement les bibliothèques Python système car elles ne sont plus préinstallées sur la nouvelle infrastructure.
+You have a Python application (for example, using [Django](https://www.djangoproject.com/)) that works with FastCGI, with a `.htaccess` file and a `.fcgi` script. FastCGI will continue to work on the new infrastructure as before, but if you are not using a virtualenv you will need to manually install the Python system libraries because they are no longer preinstalled on the new infrastructure.
 
-- en SSH, installez l'ensemble des bibliothèques dont vous avez besoin, par exemple :
+- in SSH, install all the bibliotheques you need, for example:
 
     ```
     $ mkdir $HOME/python_libs; PYTHONPATH=$HOME/python_libs easy_install --always-copy --install-dir $HOME/python_libs Django==1.6 flup==1.0.3.dev-20110405 psycopg2==2.0.11
     ```
 
-- modifiez votre fichier `.fcgi` pour remplacer le shebang (la première ligne), généralement `#!/usr/bin/python`, par `#!/usr/bin/eval PYTHONPATH=/home/foo/python_libs python`, `foo` étant à remplacer par le nom de votre compte.
+- edit your ` file. cgi` to replace the shebang (the first line), usually `#!/usr/bin/python`, with `#!/usr/bin/eval PYTHONPATH=/home/foo/python_libs python`, `foo` having to replace with your account name.
 
-### Vous utilisez votre propre module mod_wsgi
+### You are using your own mod_wsgi module
 
-Vous avez compilé votre propre interpréteur Python et le module [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/), que vous utilisez avec un site de type _Apache personnalisé_. Assurez-vous bien d'avoir défini la directive Apache _WSGIPythonHome_, sans quoi vous risquez d'avoir des erreurs sur la nouvelle infrastructure, comme par exemple :
+You compiled your own Python interpreter and [mod_wsgi]module (https://modwsgi.readthedocs.io/en/develop/), which you use with a _custom Apache site_. Make sure you have defined the Apache directive _WSGIPythonHome_, otherwise you may have errors with the new infrastructure, for example:
 
 ```
 ImportError: No module named _sysconfigdata_nd
 ```
 
-Si votre interpréteur Python est dans le répertoire `/home/foo/python`, alors vous devrez avoir utilisé la directive :
+If your Python interpreter is in the `/home/foo/python` directory, then you should have used the directive:
 
 ```
 WSGIPythonHome /home/foo/python
 ```
 
-### Vous utilisez le module mod_wsgi du système
+### You are using the system mod_wsgi module
 
-Vous avez un site de type _Apache personnalisé_ qui charge le module système `/usr/lib/apache2/modules/mod_wsgi.so-2.6`. Comme stipulé plus haut, ce module disparait sur la nouvelle infrastructure (au profit de WSGI). Pour vous simplifier la migration, vous pouvez :
+You have a _custom Apache site_ that loads the system module `/usr/lib/apache2/modules/mod_wsgi.so-2.6`. As mentioned above, this module disappears on the new infrastructure (for the benefit of WSGI). To simplify migration, you can:
 
-- télécharger le fichier https://files.alwaysdata.com/migrations/software-2017/mod_wsgi.so-2.6 sur votre compte :
+- download https://files.alwaysdata.com/migrations/software-2017/mod_wsgi.so-2.6 to your account:
 
     ```
     wget https://files.alwaysdata.com/migrations/software-2017/mod_wsgi.so-2.6
     ```
 
-- remplacer le chemin `/usr/lib/apache2/modules/mod_wsgi.so-2.6` dans les directives de votre site _Apache personnalisé_ par le chemin du fichier téléchargé sur votre compte, par exemple `/home/foo/mod_wsgi.so-2.6`.
+- replace `/usr/lib/apache2/modules/mod_wsgi.so-2.6` in your _custom Apache directives_ with the file path to your account, e.g. `/home/foo/mod_wsgi.so-2.6`.
