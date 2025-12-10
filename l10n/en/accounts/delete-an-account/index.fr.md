@@ -1,33 +1,33 @@
 +++
-url = "/fr/comptes/supprimer-un-compte/"
-title = "Comment supprimer un compte"
+url = "/account/remove-a-account/"
+title = "How to delete an account"
 layout = "howto"
 hidden = true
-tags = [ "compte", "profil" ]
+tags = [ "account", "profile" ]
 +++
 
-Vous pouvez supprimer un _compte_ (par exemple `mon_projet`) ou votre _profil_ (par exemple `<name@example.org>` propriétaire du compte `mon_projet`).
+You can delete a _account_ (e.g. `my_project`) or your _profile_ (e.g. `<name@example.org>` owner of the `my_project` account).
 
-## Supprimer un compte
+## Delete Account
 
-Allez dans le menu **Abonnements** et cliquez sur la _poubelle_ du compte à supprimer.
+Go to the **Subscriptions** menu and click the _trash_ of the account to delete.
 
-{{< fig "images/delete-account.fr.png" "Supprimer un compte">}}
+{{< fig "images/delete-account.en.png" "Delete Account">}}
 
-Cela va supprimer tous les domaines, adresses email, sites web, fichiers, bases de données (...) liés à ce compte.
+This will delete all domains, email addresses, websites, files, databases (...) linked to this account.
 
 {{% notice note %}}
-Seul le **propriétaire du compte** peut effectuer cette action. Par ailleurs, aucun remboursement n'est prévu lors d'une suppression avant échéance.
-{{% /notice %}}
+Only the **account owner** can perform this action. In addition, no refund is foreseen during deletion prior to receipt.
+{{%/notice %}}
 
-## Supprimer son profil
+## Delete profile
 
-Allez dans le menu **Profil** et cliquez sur _Supprimer ce profil_.
+Go to the **Profile** menu and click _Delete this profile_.
 
-{{< fig "images/delete-profile.fr.png" "Supprimer un profil">}}
+{{< fig "images/delete-profile.png" "Delete a profile">}}
 
-Cela va supprimer tous les comptes et serveurs attachés, ainsi que votre historique.
+This will delete all attached accounts and servers, as well as your history.
 
 {{% notice warning %}}
-Une fois cette opération effectuée, il ne sera en aucun cas possible de revenir en arrière.
-{{% /notice %}}
+Once this operation is completed, it will not be possible to go back.
+{{%/notice %}}
