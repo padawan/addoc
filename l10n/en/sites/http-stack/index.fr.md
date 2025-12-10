@@ -1,26 +1,26 @@
 +++
-url = "/fr/sites/stack-http/"
-title = "Stack HTTP"
+url = "/sites/stack-http/"
+title = "HTTP Stack"
 hidden = true
 layout = "man"
 tags = [ "http", "site" ]
 +++
 
-Un reverse-proxy frontal est installé sur tous nos serveurs. Celui-ci écoute les requêtes HTTP entrantes puis :
+A front-end reverse-proxy is installed on all our servers. This listens for incoming HTTP requests and:
 
-- lance les serveurs HTTP et programmes [définis](sites/add-a-site) pour servir vos données ;
-- renvoie le bon [certificat SSL](security/ssl-tls/certificates-priorities) ;
-- logue les requêtes HTTP. Ces logs sont disponibles via le [répertoire `$HOME/admin/logs`](remote-access/admin-directory#logs).
+- launches HTTP servers and [définis]programs (sites/add-a-site) to serve your data;
+- returns the voucher [SSL certificate](security/ssl-tls/certificates-priorities);
+- log HTTP requests. These logs are available through the [$HOME/admin/logs\`](remote-access/admin-directory#logs).
 
-Il gère aussi le [pare-feu applicatif web (WAF)](sites/waf) et le [cache HTTP](http-cache) activables dans **Web > Sites**.
+It also manages the [web application firewall (WAF)](sites/waf) and the [HTTP cache] (http-cache) that can be enabled in **Web > Sites**.
 
-{{< fig "images/http-stack.fr.png" "Fonctionnement du reverse-proxy alwaysdata" >}}
+{{< fig "images/http-stack.en.png" "Alwaysdata reverse-proxy operation" >}}
 
-Nous ajoutons aux _headers_ :
+We add to _headers_:
 
-- `X-Forwarded-Proto`, qui vaut http ou https selon que la connexion est faite en HTTP ou HTTPS. Ainsi le reverse proxy accède aux serveurs web en HTTP que la connexion au niveau du navigateur soit HTTP ou HTTPS ;
-- `X-Real-IP`, qui prend la valeur de l'adresse IP de l'utilisateur.
+- `X-Forwarded-Proto`, which is http or https depending on whether the connection is made in HTTP or HTTPS. Thus the reverse proxy access to HTTP web servers whether the browser connection is HTTP or HTTPS;
+- `X-Real-IP`, which takes the value of the user's IP address.
 
 ---
 
-Icônes : The Noun Project
+The Noun Project
