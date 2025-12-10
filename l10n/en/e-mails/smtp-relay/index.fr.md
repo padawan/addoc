@@ -1,22 +1,22 @@
 +++
-url = "/fr/emails/relais-smtp/"
-title = "Relais SMTP"
+url = "/emails/relais-smtp/"
+title = "SMTP Relay"
 layout = "man"
 hidden = true
 tags = [ "email" ]
 +++
 
-Le relais SMTP permet d'utiliser un serveur tiers externe pour l'envoi des emails. Cela peut, par exemple, être utile pour :
+The SMTP relay allows to use an external third-party server for sending emails. This may, for example, be useful for:
 
-- ne pas toucher à la réputation de votre serveur alwaysdata ;
-- profiter de services spécialisés.
+- do not touch the reputation of your alwaysdata server;
+- take advantage of special services.
 
-Cette option est disponible sur les [offres Cloud Privés](accounts/billing/private-cloud-prices) d'alwaysdata.
+This option is available on [Private Cloud Plans](accounts/billing/private-cloud-prices) alwaysdata.
 
-## Mise en place
+## Setting up
 
-Rendez-vous dans le menu **SMTP > Paramètres** de votre serveur, puis renseignez les informations d'authentification du relais SMTP choisi.
+Go to the **SMTP > Settings** menu on your server and then enter the authentication information for the selected SMTP relay.
 
-{{< fig "images/smtp-parameters.fr.png" "" >}}
+{{< fig "images/smtp-parameters.png" "" >}}
 
-Tous les emails devant partir du serveur partiront désormais du serveur relais.
+All emails in front of the server will leave the relay server.
