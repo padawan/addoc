@@ -1,89 +1,89 @@
 +++
-url = "/fr/bases-de-donnees/postgresql/"
+url = "/en/data-bases/postgresql/"
 title = "PostgreSQL"
 layout = "man"
-tags = [ "base de données", "postgresql" ]
+tags = [ "database", "postgresql" ]
 +++
 
-## Connexion
+## Login
 
 |                   |                                                                                                                        |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **Serveur**       | postgresql-[compte].alwaysdata.net |
-| **Port**          | 5432 (Port PostgreSQL par défaut)                                                                   |
-| **Interface web** | [phpPgAdmin](https://phppgadmin.alwaysdata.com/)                                                                       |
+| **Server**        | postgresql-[compte].alwaysdata.net |
+| **Port**          | 5432 (Default PostgreSQL Port)                                                                      |
+| **Web interface** | [phpPgAdmin](https://phppgadmin.alwaysdata.com/)                                                                       |
 
-Ces informations de connexion dépendent du compte concerné. Vous pouvez retrouver les valeurs précises dans la section **Bases de données > PostgreSQL** de l'interface d'administration.
+These login details depend on the account concerned. You can find the specific values in the **Databases > PostgreSQL** section of the administration interface.
 
-Un _pgBouncer_ tourne sur le port `5433`. Il est possible de s'y connecter à la place de PostgreSQL directement.
+A _pgBouncer_ rotates on port `5433`. It is possible to connect to PostgreSQL instead of PostgreSQL directly.
 
-### Exemple avec `psql`
+### Example with `psql`
 
-Dans notre exemple, nous utilisons l'[accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom du compte : `foo`
-- Nom de la base de données : `foo_base`
-- Nous utiliserons les utilisateurs SSH et de base de données par défaut, c'est à dire ceux créés à l'ouverture des comptes (c'est-à-dire `foo` pour le compte _foo_).
+- Account name: `foo`
+- Database name: `foo_base`
+- We will use SSH and default database users that is, those created at the opening of accounts (i.e. `foo` for the _foo_ account).
 
 ```sh
-foo@ssh:~$ psql -h postgresql-foo.alwaysdata.net -U foo -W -d foo_base
+foo@ssh:~$ psql -h postgresql-foo.alwaysdata.net -U foo -d foo_base
 ```
 
 ## Permissions
 
-Lors de la création de vos bases et utilisateurs PostgreSQL, vous définissez les permissions souhaitées puis notre système effectue les opérations suivantes :
+When creating your PostgreSQL databases and users, you define the permissions you want and our system performs the following steps:
 
-- REVOKE ALL PRIVILEGES sur la base et ses schémas ;
-- Si votre utilisateur doit avoir **tous les droits** :
-  - GRANT ALL PRIVILEGES sur la base et ses schémas ;
-  - ALTER DEFAULT PRIVILEGES : GRANT ALL PRIVILEGES sur les TABLES, SEQUENCES et FUNCTIONS ;
+- REVOKE ALL PRIVILEGES on the basis and its schemes;
+- If your user should have **all rights**:
+  - GRANT ALL PRIVILEGES on the basis and its schemes;
+  - ALTER DEFAULT PRIVILEGES: GRANT ALL PRIVILEGES sur les TABLES, SEQUENCES et FUNCTIONS;
   - GRANT ALL PRIVILEGES sur les TABLES, SEQUENCES et FUNCTIONS.
-- Si votre utilisateur doit avoir le droit **lecture seule** :
-  - GRANT CONNECT sur la base ;
-  - GRANT USAGE sur les schémas ;
-  - ALTER DEFAULT PRIVILEGES :
-    - GRANT SELECT sur les TABLES, SEQUENCES ;
-    - GRANT EXECUTE sur les FUNCTIONS.
-  - GRANT SELECT sur les TABLES, SEQUENCES ;
-  - GRANT EXECUTE sur les FUNCTIONS.
+- If your user should have **read-only** permission:
+  - GRANT CONNECT on basis;
+  - GRANT USAGE on schemes;
+  - ALTER DEFAULT PRIVILEGES:
+    - GRANT SELECT on TABLE, SEQUENCES;
+    - GRANT EXECUTE on FUNCTIONS.
+  - GRANT SELECT on TABLE, SEQUENCES;
+  - GRANT EXECUTE on FUNCTIONS.
 
 {{% notice warning %}}
-Si vous modifiez les permissions de vos utilisateurs via une application tierce, toute validation via l'interface d'administration (ou via l'API) réinitialisera les permissions selon les directives ci-dessus.
-{{% /notice %}}
+If you change the permissions of your users through a third-party app, any validation via the admin interface (or through the API) will reset the permissions according to the above directives.
+{{%/notice %}}
 
 ## Options
 
-À la création d'une base de données, vous disposez des options suivantes :
+When creating a database, you have the following options:
 
-- **locale** : détermine l'encodage, `LC_COLLATE` et `LC_CTYPE` ;
-- **extensions** : vous pouvez activer d'un simple clic des extensions PostgreSQL (`hstore`, `pgcrypto`, `PostGIS`, etc.). Si vous souhaitez utiliser une extension non listée, vous pouvez contacter le [support](https://admin.alwaysdata.com/support/add/) pour qu'il considère le besoin.
+- **local**: Determines the encoding, `LC_COLLATE` and `LC_CTYPE`;
+- **extensions**: you can activate PostgreSQL extensions with a single click (`hstore`, `pgcrypto`, `PostGIS`, etc.). If you would like to use an unlisted extension, you can contact the [support](https://admin.alwaysdata.com/support/add/) to make it feel the need.
 
-## Restaurer une base de données depuis sa sauvegarde quotidienne
+## Restore a database from its daily backup
 
-Plusieurs possibilités :
+Multiple possibilities:
 
-- utiliser notre fonctionnalité de [restauration de sauvegarde](backups/restore-a-site) ;
+- use our [backup restore](backups/restore-a-site);
 
-- utiliser la commande suivante :
+- use the following command:
 
     ```sh
     $ zstdcat $HOME/admin/backup/[date]/postgresql/[base].sql.zst | psql -h postgresql-[compte].alwaysdata.net -U [utilisateur] -W -d [base]
     ```
 
-- récupérer l'archive et utiliser le client de son choix.
+- Retrieve the archive and use the client of his choice.
 
 {{% notice tip %}}
-Les contenus archivés (e.g. les dumps de BDD) dans votre espace de _backup_ sont au format [Zstandard](https://github.com/facebook/zstd), vous pouvez utiliser les [outils `zstd*` officiels](https://github.com/facebook/zstd/releases/latest) ou le [plugin adapté pour 7zip](https://www.tc4shell.com/en/7zip/modern7z/) pour les manipuler.
-{{% /notice %}}
+Archived content (e.g. DB dumps in your _backup_ space are in [Zstandard]format (https://github.com/facebook/zstd), you can use the official [zstd\*\` tools](https://github.com/facebook/zstd/releases/latest) or the [plugin suitable for 7zip](https://www.tc4shell.com/en/7zip/modern7z/) to manipulate them.
+{{%/notice %}}
 
-## Divers
+## Misc
 
-En Cloud Public, le nombre de connexions simultanées maximum par utilisateur est de _50_. Il est possible à la demande de le modifier en [Cloud Privé](accounts/billing/private-cloud-prices).
+In Public Cloud, the maximum number of simultaneous connections per user is _50_. It is possible to modify it in [Private Cloud](accounts/billing/private-cloud-prices).
 
-Il est possible de voir les noms de toutes les bases de données et utilisateurs sur les serveurs PostgreSQL. C'est une limitation de l'utilisation de PostgreSQL en environnement mutualisé. Les contenus des bases ne sont **pas** accessibles.
+It is possible to see the names of all databases and users on PostgreSQL servers. This is a limitation of the use of PostgreSQL in a shared environment. The contents of the bases are **not** accessible.
 
-Les langages PostgreSQL _untrusted_, permettant d'exécuter du code arbitraire sous les droits de l'utilisateur administrateur (faisant tourner PostgreSQL), ne peuvent être utilisés sur nos serveurs.
+PostgreSQL _untrusted_ languages, allowing to execute arbitrary code under the rights of the administrator user (running PostgreSQL), cannot be used on our servers.
 
 ---
 
-- [Documentation PostgreSQL](https://www.postgresql.org/docs/)
+- [PostgreSQL documentation](https://www.postgresql.org/docs/)
