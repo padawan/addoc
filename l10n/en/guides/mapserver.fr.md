@@ -1,25 +1,25 @@
 +++
-url = "/fr/guides/mapserver/"
-title = "Comment utiliser MapServer CGI"
+url = "/guides/mapserver/"
+title = "How to use MapServer CGI"
 layout = "howto"
 hidden = true
 tags = [ "http", "site" ]
 +++
 
-[MapServer](https://mapserver.org/) est une plateforme permettant de publier des données spatiales et des applications cartographiques interactives sur le web.
+[MapServer](https://mapserver.org/) is a platform for publishing spatial data and interactive cartographic applications on the web.
 
-Dans notre exemple, nous utilisons un [accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use a [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom de compte : `foo`
-- Répertoire d'installation de MapServer : `$HOME/mapserver`
+- Account name: `foo`
+- MapServer installation directory: `$HOME/mapserver`
 
-1. Créer le lien symbolique :
+1. Create symlink:
 
 ```sh
-foo@ssh:~/mapserver$ ln -s /usr/lib/cgi-bin/mapserv mapserv
+foo@ssh:~/mapserver$ ln -s /usr/lib/cgi-bin/mapserv
 ```
 
-2. Créer un fichier `.htaccess` contenant :
+2. Create a `.htaccess` file containing:
 
 ```
 Options +ExecCGI
