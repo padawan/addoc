@@ -1,14 +1,14 @@
 +++
-url = "/fr/comptes/programmes/etudiants_sans-emploi"
-title = "Programme étudiants / sans emploi"
-linkTitle = "Étudiants / Sans emploi"
+url = "/accounts/programs/unemployed_students"
+title = "Student/Unemployed Program"
+linkTitle = "Students / Unemployed"
 layout = "man"
-tags = [ "facturation" ]
+tags = [ "invoicing" ]
 +++
 
-Une **réduction de 50 %** sur notre [Cloud Public](accounts/billing/public-cloud-prices) est offerte aux étudiants et personnes sans emploi. Pour en bénéficier, ouvrez un [ticket](https://admin.alwaysdata.com/support/add/) contenant une preuve pour l'année en cours :
+A **50% discount** on our [Cloud Public](accounts/billing/public-cloud-prices) is offered to unemployed students and people. To get it, open an [ticket](https://admin.alwaysdata.com/support/add/) containing proof for the current year:
 
-- pour les étudiants : certificat de scolarité ou attestation d'inscription ;
-- pour les personnes sans emploi : avis de situation Pôle-emploi ou attestation d'allocation.
+- for students: Certificate of Education or Certificate of Registration;
+- for unemployed persons: Po®️ employment status notice or allowance certificate.
 
-Ces certificats seront demandés chaque année.
+These certificates will be requested each year.
