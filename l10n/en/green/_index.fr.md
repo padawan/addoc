@@ -1,42 +1,42 @@
 +++
-url = "/fr/green-hosting/"
-title = "Éco-responsabilité"
+url = "/green-hosting/"
+title = "Environmental Responsibility"
 pre = "<i class='fas fa-fw fa-leaf'></i> "
 weight = 55
 tags = [ "green" ]
 +++
 
-## Organisation
+## Organization
 
-Il est de notre responsabilité à tous d'effectuer les efforts possibles dans le cadre de notre mission afin de limiter l'impact de notre activité dans les émissions néfastes pour notre planète.
+It is our responsibility to all of us to make every effort in the course of our mission to limit the impact of our activities on the negative broadcasts for our planet.
 
-Ainsi, notre entreprise a intégré les éléments suivant dans son fonctionnement quotidien :
+Thus, our company has incorporated the following elements into its daily operation:
 
-- **Télétravail à 100%** : notre équipe travaille depuis plusieurs années en télétravail, permettant ainsi de limiter toutes les émissions liées au transport (à l'exception des déplacements en datacenters) ;
-- **Gestion d'un stock minimum** : ajouter des serveurs en grandes quantités juste pour faire plus de chiffre ne nous intéresse pas, nous anticipons un stock raisonnable, en fonction du rythme constaté des commandes effectuées les derniers mois ;
-- **Conseil approprié** : nous attachons de l'importance à apporter un conseil personnalisé à nos utilisateurs afin qu'ils s'orientent vers l'offre la plus adaptée à leur véritable besoin et donc vers une consommation maîtrisée.
+- **Work at 100%**: our team has been working for several years thus limiting all emissions connected to transport (except datacenters);
+- **Minimum stock management**: adding servers in large quantities just to make more numbers do not integrate us, we anticipate a reasonable stock, depending on the rate of orders made in the last months;
+- **Appropriate advice**: we attach importance to bringing personalized advice to our users so that they focus on the most suitable offer for their real need and thus on a meager consumption.
 
 ## Compensation
 
-_Dernière mise à jour : 28 janvier 2025_
+_Last Updated: January 28, 2025_
 
-Chaque année, nous souhaitons **compenser à hauteur de 200%** nos émissions de GES (gaz à effet de serre). Bien que notre impact soit extrêment compliqué à déterminer de manière précise, nous voulons détailler ici en toute transparence notre méthode de calcul pour déterminer le budget alloué à cette compensation.
+Each year, we want to **compensate 200%** for our GHG emissions (greenhouse gases). Although our impact is extremely complicated to determine accurately, we want to transparently delineate our calculation method to determine the budget allocated to this compensation.
 
-### Données et hypothèses
+### Donated and hypothetical
 
-Afin de simplifier la méthode, mais également de compenser dans le bon sens, certaines données sont margées. Nous précisons cela dans le tableau suivant.
+In order to simplify the method, but also to compensate in the right direction, some data are marginalized. We specify this in the following table.
 
-| Donnée                                          | Détails                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |          Valeur 2024 |
-| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------: |
-| Nombre de serveurs                              | Ensemble des appareils consommateurs (serveurs, routeurs, hyperviseurs, etc.) achetés et intégrés à notre infrastructure dans le courant de l'année.                                                                                                                                                                                                                                                                                                                 |                   39 |
-| Puissance apparente (kVA)    | Puissance souscrite auprès des datacenters sur l'ensemble de notre infrastructure. Marge : le calcul utilise donc la puissance maximale souscrite plutôt que la consommation réelle.                                                                                                                                                                                                                                                                                    |               31 kVA |
-| Facteur de puissance (cos φ) | En général, on prend 0.8 comme valeur moyenne pour des installations standards. Marge : même si la plupart des serveurs modernes ont un facteur supérieur à 0.9 (s'approchant effectivement du Power Factor [affiché par nos alimentations](https://store.supermicro.com/us_en/pub/media/wysiwyg/productspecs/PWS-606P-1R/PWS-606P-1R_quick_spec.pdf)), nous choisissons de rester sur cette valeur plus pessimiste. |  0.8 |
-| Durée d'utilisation annuelle                    | Temps total de consommation des serveurs. Marge : hypothèse la plus énergivore, donc 100% du temps.                                                                                                                                                                                                                                                                                                                                                                     |          8760 heures |
-| PUE                                             | Efficacité énergétique moyenne de [nos datacenters partenaires](https://sustainability.equinix.com/environment/operational-sustainability/).                                                                                                                                                                                                                                                                                                                                                            | 1.42 |
-| Facteur d'émission                              | Prenons la moyenne en France. Dernière valeur 2024 : source [RTE-france.com](https://www.rte-france.com/actualites/production-electricite-francaise-atteint-plus-haut-niveau-depuis-5-ans).                                                                                                                                                                                                                                                             |      21,3 gCO₂eq/kWh |
-| Consommation de production d'un serveur         | Estimation de la consommation engendrée lors de la production d'un serveur : voir [Boavizta](https://boavizta.org/blog/empreinte-de-la-fabrication-d-un-serveur). Marge : information très complexe à trouver, qui dépend de nombreux facteurs. Les valeurs se situent toujours sous l'entier. On arrondit à l'entier supérieur.                                                                                        |             1 tCO₂eq |
+| Donated                                 | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |                      Value 2024 |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------: |
+| Number of servers                       | All consumer devices (servers, routers, hypervisors, etc. ) purchased and integrated into our infrastructure during the year.                                                                                                                                                                                                                                                                                           |                              39 |
+| Apparent Power (kVA) | Acquisition of data centers across our entire infrastructure. Margin: Calculation therefore uses the subscribed maximum power rather than the actual consumption.                                                                                                                                                                                                                                                          |                          31 kVA |
+| Power factor (cos φ) | In general it takes 0.8 as an average value for standard installations. Margin: Even if most modern servers have a higher factor than 0. (actually approaching the Power Factor [displayed by our food](https://store.supermicro.com/us_en/pub/media/wysiwyg/productspecs/PWS-606P-1R/PWS-606P-1R_quick_spec.pdf)), we choose to remain on this more pessimistic value. |             0.8 |
+| Annual hard to use                      | Total server consumption time. Margin : the most energy hypotheis, therefore 100% of the time.                                                                                                                                                                                                                                                                                                                             |                      8760 hours |
+| PUE                                     | Average power efficiency of [our partner datacenters](https://sustainability.equinix.com/environment/operational-sustainability/).                                                                                                                                                                                                                                                                                                                         |            1.42 |
+| Issue factor                            | Consider the average in France. Last value 2024: source [RTE-france.com](https://www.rte-france.com/actualites/production-electricite-francaise-atteint-plus-haut-niveau-depuis-5-ans).                                                                                                                                                                                                                    | 21.3 gCO2eq/kWh |
+| Server production consumption           | Estimated consumption generated when producing a server: see [Boavizta](https://boavizta.org/blog/empreinte-de-la-fabrication-d-un-serveur). Margin: Complex information to find, which depends on many factors. The values are always under the integer. Rounding to the top integer.                                                                                     |                        1 tCO2eq |
 
-### Calcul
+### Calculation
 
 ```python
 # Données pour le calcul
@@ -64,14 +64,14 @@ emissions_production = emission_production * serveurs
 emissions = emissions_consommation + emissions_production
 ```
 
-Le résultat :
+The result:
 
-- Consommation électrique pour l'année 2024 : **217 248 kWh** ;
-- Émissions liées à la consommation électrique : **6,57 tCO₂eq** ;
-- Émissions liées à la production des serveurs : **39 tCO₂eq** ;
-- Émissions totales : **45,57 tCO₂eq** ;
-- Compensation nécessaire (200%) : **92 tonnes de CO₂**.
+- Electric consumption for the year 2024: **217 248 kWh**;
+- Electrical consumption: **6.57 tCO2eq**;
+- Linked broadcasts to server production: **39 tCO2eq**;
+- Total emissions: **45.57 tCO2eq**;
+- Compensation Required (200%) : **92 tons of CO2**.
 
-Nous avons fait le choix de [Gold Standard](https://www.goldstandard.org/) pour acter notre compensation.
-Voir notre [certificat](https://files.alwaysdata.com/certifications/2025_GOLDSTANDARD_CERTIFICATE.zip).
+We chose [Gold Standard](https://www.goldstandard.org/) to record our compensation.
+See our [certificat](https://files.alwaysdata.com/certifications/2025_GOLDSTANDARD_CERTIFICATE.zip).
 
