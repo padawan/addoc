@@ -1,23 +1,23 @@
 +++
-url = "/fr/marketplace"
+url = "/marketplace"
 title = "Marketplace"
 weight = 110
 pre = "<i class='fas fa-fw fa-store'></i> "
 +++
 
-Déployez facilement et rapidement des applications ou frameworks dans votre espace utilisateur.
+Easily and quickly deploy applications or frameworks in your user space.
 
-{{< fig "admin-panel_1click-app.fr.png" "Interface d'administration : accès à notre marketplace" >}}
+{{< fig "admin-panel_1click-app.png" "Admin interface: access to our marketplace" >}}
 
-Les applications sont mises en place avec une configuration sécurisée standard. Libre à vous de modifier, mettre à jour, ou personnaliser votre installation par la suite.
+Applications are set up with a standard secure configuration. It is up to you to modify, update, or customize your installation afterwards.
 
-Le système créé leurs répertoires durant l'installation.
+The system created their directories during the installation.
 
-- [Changer l'adresse d'un site web](sites/change-a-website-address)
+- [Change website address](sites/change-a-website-address)
 
 {{% notice tip %}}
-Si notre marketplace ne propose pas ce que vous cherchez, installez-le à la main et automatisez son déploiement en créant un [script d'installation applicatif](marketplace/build-application-script).
-{{% /notice %}}
+If our marketplace does not offer what you are looking for, install it by hand and automate its deployment by creating an [application installation script](marketplace/build-application-script).
+{{%/notice %}}
 
 ## Guides
 
