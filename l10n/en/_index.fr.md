@@ -1,32 +1,32 @@
 +++
-title = "Assistance"
+title = "Support"
 +++
 
-## Démarrer avec alwaysdata
+## Start with alwaysdata
 
-Apprenez comment utiliser _alwaysdata_. Trouvez comment mettre en place un compte. Découvrez comment déployer un site web/service en une minute.
+Learn how to use _alwaysdata_. Find out how to set up an account. Find out how to develop a website/service in a minute.
 
-- Retrouvez toutes les [informations de connexion](remote-access/login-details) liées à votre compte ;
-- connectez-vous à votre [interface d'administration](https://admin.alwaysdata.com) ;
-- créez un [site web](sites/add-a-site), [achetez](domains/buy-a-domain) ou [transférez](domains/transfer-a-domain) un domaine, créez des [adresses email](e-mails/create-an-e-mail-address) ;
-- transférez vos fichiers en utilisant un protocole d'accès distant - [SFTP](remote-access/sftp) par exemple - et créez votre [base de données](databases).
+- Find all [login information](remote-access/login-details) linked to your account;
+- log in to your [administration interface](https://admin.alwaysdata.com);
+- create a [website](sites/add-a-site), [achetez](domains/buy-a-domain) or [transférez](domains/transfer-a-domain) a domain, create [email addresses](e-mails/create-an-e-mail-address);
+- transmit your files using a remote access protocol - [SFTP](remote-access/sftp) for example - and create your [database](databases).
 
-Un problème ? Contactez notre [support](https://admin.alwaysdata.com/support/add/).
+Problem? Contact our [support](https://admin.alwaysdata.com/support/add/).
 
-Vous n'êtes pas encore client ? Contactez notre [service commercial](https://www.alwaysdata.com/fr/) et / ou inscrivez-vous sur notre [plateforme](https://www.alwaysdata.com/fr/inscription/).
+Not a customer yet? Contact our [sales department] (https://www.alwaysdata.com/fr/) and/or register on our [plateforme](https://www.alwaysdata.com/fr/inscription/).
 
-Vous nous aimez ? [Montrez-nous votre ❤](love) !
+Do you like us? [Show us your ❤️](love)!
 
 {{% notice tip %}}
-Toute publication sur Internet comporte des [obligations légales](sites/legal-requirements-on-internet), prenez-en connaissance avant de mettre en ligne vos contenus.
-{{% /notice %}}
+Any post on the Internet has [legal obligations](sites/legal-requirements-on-internet), get to know it before uploading your content.
+{{%/notice %}}
 
 - [Terminologie](accounts/terminology)
 
-## Contribuer à la documentation
+## Contribute to documentation
 
-Si vous souhaitez nous aider à améliorer cette documentation, n'hésitez surtout pas. Voici quelques conseils pour optimiser la rédaction de votre article et son intégration. Utilisez :
+If you would like to help us improve this documentation, please do not hesitate. Here are some tips on how to optimize the writing of your article and its integration. Use:
 
-- la syntaxe [Markdown](https://commonmark.org/) ;
+- syntax [Markdown](https://commonmark.org/);
 - la [documentation](https://github.com/alwaysdata/documentation/blob/master/README.md) rédactionnelle ;
-- le style [encyclopédique](https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Style_encyclop%C3%A9dique).
+- style [encyclopédique](https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Style_encyclop%C3%A9dique).
