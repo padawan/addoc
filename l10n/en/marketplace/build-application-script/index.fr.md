@@ -1,66 +1,66 @@
 +++
-url = "/fr/marketplace/creer-script-dapplication/"
-title = "Créer son propre script d'application"
+url = "/marketplace/creer-script-dapplication/"
+title = "Create own app script"
 layout = "man"
 hidden = true
 +++
 
-Tout utilisateur peut proposer un script dans le _langage de son choix_ qui permettra aux utilisateurs d’installer son application. Ce script sera exécuté avec les _droits du compte sur lequel l’installation a lieu_ et doit débuter par un commentaire au format YAML.
+Any user can propose a script in the _language of their choice_ that will allow users to install their application. This script will be executed with the _rights of the account on which the installation occurs_ and must start with a YAML comment.
 
-{{< fig "images/create-script.fr.png" "Créer un script d'application" >}}
+{{< fig "images/create-script.en.png" "Create Application Script" >}}
 
-Les scripts se composent de deux parties :
+Scripts consist of two parts:
 
-- le **dataset** au format YAML, permettant de configurer le site et demander à l'utilisateur les informations nécessaires au script (les variables `FORM_*`). On peut le diviser en quatre :
-  - **site** : voir la [documentation API](https://api.alwaysdata.com/v1/site/doc/) qui reprend toutes les options possibles.
+- the YAML **dataset** which allows you to configure the site and ask the user for the information necessary for the script (the `FORM_*` variables). It can be divided into four :
+  - **site** : see the [API documentation](https://api.alwaysdata.com/v1/site/doc/) that uses all possible options.
   - **database** : mysql, postgresql, couchdb, rabbitmq.
-  - **requirements**: spécifier les conditions bloquantes pouvant être problématiques sur certains plan d'hébergement/packs.
-  - **form** : toutes les variables demandées à l'utilisateur créant le site. Exemple : titre du site, identifiant administrateur, adresse email, nom/prénom de l’administrateur...
-- le **script** en lui-même
+  - **requirements**: Specify blocking conditions that may be problematic on certain hosting planes/packs.
+  - **form**: all variables requested by the user creating the site. Example: Site title, Administrator ID, Email Address, Administrator First Name...
+- the **script** itself
 
-## Variables d’environnement
+## Environment Variables
 
-| Variables                                                       | Description                                                                                                                                                       | Exemple                                                    |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| USER                                                            | Nom du compte                                                                                                                                                     | `foo`                                                      |
-| HOME                                                            | Racine du compte pour le script                                                                                                                                   | `/home/foo/exemple/`                                       |
-| APPLICATION_NAME                           | Nom de l’application                                                                                                                                              |                                                            |
-| INSTALL_URL                                | Adresse du site                                                                                                                                                   | `foo.exemple.net/test`                                     |
-| INSTALL_URL_PATH      | Racine du site (base URL)                                                                                                                      | `/test`                                                    |
-| INSTALL_URL_HOSTNAME  | Nom d’hôte du site                                                                                                                                                | `foo.exemple.net`                                          |
-| INSTALL_PATH_RELATIVE | Chemin relatif depuis la racine du compte (sans slash final)                                                                                   | `exemple`                                                  |
-| INSTALL_PATH                               | Chemin absolu (sans slash final)                                                                                                               | `/home/foo/exemple`                                        |
-| DATABASE_USERNAME                          | Utilisateur de connexion à la base de données (automatiquement généré)                                                                         | `foo_*`                                                    |
-| DATABASE_PASSWORD                          | Mot de passe de l’utilisateur de connexion à la base de données (automatiquement généré)                                                       |                                                            |
-| DATABASE_NAME                              | Base de données du site (automatiquement générée)                                                                                              | `foo_*`                                                    |
-| DATABASE_HOST                              | Nom d’hôte de connexion au serveur de base de données                                                                                                             | `mysql-foo.alwaysdata.net` (base MySQL) |
-| SMTP_HOST                                  | Nom d’hôte de connexion au serveur d’envoi de mails                                                                                                               | `smtp-foo.alwaysdata.net`                                  |
-| RESELLER_DOMAIN                            | Domaine-racine utilisé par l'hébergeur                                                                                                                            | `alwaysdata.net`                                           |
-| FORM_\*                                    | Autres variables explicitement demandées à l'utilisateur dans la section "form" du dataset YAML                                                                   |                                                            |
-| PORT                                                            | Port spécifique pour les sites de type Programme utilisateur, Node.js, Elixir, .NET et Deno                                       |                                                            |
-| `::` ou IP                                                      | IP spécifique pour les sites de type Programme utilisateur, Node.js, Elixir, .NET et Deno (préférer `::` à IP) |                                                            |
+| Variables                                                       | Description                                                                                                                                   | Example                                                    |
+| --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| USER                                                            | Account Name                                                                                                                                  | `foo`                                                      |
+| HOME                                                            | Account Root for Script                                                                                                                       | `/home/foo/example/`                                       |
+| NAME_APP                                   | App name                                                                                                                                      |                                                            |
+| INSTALL_URL                                | Site Address                                                                                                                                  | `foo.example.net/test`                                     |
+| INSTALL_URL_PATH      | Site Root (base URL)                                                                                                       | `/test`                                                    |
+| INSTALL_URL_HOSTNAME  | Site Host Name                                                                                                                                | `foo.example.net`                                          |
+| INSTALL_PATH_RELATIVE | Relative path from account root (no slash final)                                                                           | `example`                                                  |
+| INSTALL_PATH                               | Absolute path (without trailing slash)                                                                                     | `/home/foo/example`                                        |
+| DATABASE_USERNAM                           | Database login user (automatically managed)                                                                                | `foo_*`                                                    |
+| DATABASE_PASSWORD                          | Password of the user login to the database (automatically managed)                                                         |                                                            |
+| DATABASE_NAME                              | Site Database (automatically managed)                                                                                      | `foo_*`                                                    |
+| DATABASE_HOST                              | Host name to connect to the database server                                                                                                   | `mysql-foo.alwaysdata.net` (MySQL base) |
+| SMTP_HOST                                  | Host name to connect to the mail server                                                                                                       | `smtp-foo.alwaysdata.net`                                  |
+| RESELLER_DOMAIN                            | Root-Domain used by host                                                                                                                      | `alwaysdata.net`                                           |
+| FOR_\*                                     | Other variables explicitly requested from the user in the "form" section of the YAML dataset                                                  |                                                            |
+| PORT                                                            | Specific port for User Program, Node.js, Elixir, .NET and Deno sites                                          |                                                            |
+| `::` or IP                                                      | Specific IP for User Program, Node.js, Elixir, .NET and Deno sites (preferring `::` to IP) |                                                            |
 
-Si d’autres variables sont nécessaires, ouvrez un [ticket de support](https://admin.alwaysdata.com/support/add/).
+If other variables are needed, open a [support ticket](https://admin.alwaysdata.com/support/add/).
 
-### Notes et astuces
+### Notes and hints
 
-- Le script doit commencer par `set -e` pour le stopper lorsqu’il échoue ;
-- Indiquer la **version du langage utilisée** (PHP, Python, Ruby, Node.js et Elixir) est préconisé pour éviter de dépendre de la configuration par défaut du compte ;
-- Le répertoire racine indiqué par l'utilisateur (`INSTALL_PATH`) sert de racine pour le script (un `export HOME=` est exécuté par défaut) ;
-- Pour rendre un script d'installation publique il faut indiquer la condition `disk` des `requirements` ;
-- Il est préférable de demander un nombre minimal d’informations pour éviter de rendre le script exhaustif. _Les utilisateurs pourront modifier la configuration de leur application ultérieurement._
-- Pour ajouter un champ de formulaire **optionnel**, il faut mettre l'option `required` à `false`. Si l'utilisateur n'indique rien le champ restera vide ;
-- Les _labels_ et _regex_text_ sont traductibles. En fonction de la langue choisie sur son interface d'administration alwaysdata, l'utilisateur peut avoir les questions du formulaire dans les langues précisées.
+- The script must start with `set -e` to stop it when it fails;
+- Specify the **language version** (PHP, Python, Ruby, Node. s and Elixir) is preferred to avoid depending on the default account configuration;
+- The root directory specified by the user (`INSTALL_PATH`) is the root directory for the script (a `export HOME=` is executed by default);
+- To make a install script public you must specify the `disk` condition of the `requirements`;
+- It is preferable to request a minimum amount of information to avoid making the script complete. _Users will be able to change their application configuration laterally._
+- To add a **optional** form field, set the `required` option to `false`. If the user does not specify anything the field will remain empty;
+- The _labels_ and _regex_text_ are translatable. Depending on the language chosen on its alwaysdata administration interface, the user can have the form questions in the specified languages.
 
 {{% notice note %}}
-Pour rendre son script accessible aux utilisateurs de la plateforme d’alwaysdata, il est nécessaire de cocher la case pour le rendre _public_. **Tout script marqué comme public doit être maintenu et sera à minima vérifié par l’équipe d’alwaysdata.**
+To make its script accessible to users of the alwaysdata platform, it is necessary to check the box to make it _public_. **Any script marked as public must be maintained and will be at least verified by the alwaysdata team.**
 {{% /notice %}}
 
 {{% notice tip %}}
-Une _URL d’un dépôt_ peut être indiquée pour faciliter la maintenance. Dans ce cas, une fois les modifications poussées sur le dépôt il ne reste qu’à mettre à jour l’application via le bouton prévu à cet effet.
-{{% /notice %}}
+A _URL of a time_ can be specified to facilitate maintenance. In this case, Once the changes have been pushed to the current time, the application has only to be updated via the previewed button to this effect.
+{{%/notice %}}
 
-## Exemple - script d’installation Drupal
+## Example - Drupal installation script
 
 ```
 #!/bin/bash
@@ -146,6 +146,6 @@ mv recommended-project/* .
 rmdir recommended-project
 ```
 
-La condition `disk:140` précise que l'installation de Drupal nécessite 140 Mo d'espace disque. L'offre gratuite est donc trop juste.
+The `disk:140` condition provides that installing Drupal requires 140 MB of disk space. The free offer is therefore too fair.
 
-Utilisez la condition `regex_text` pour expliquer les `regex` avec des mots.
+Use the `regex_text` condition to explain `regex` with words.
