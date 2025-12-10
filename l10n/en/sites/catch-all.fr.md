@@ -1,11 +1,11 @@
 +++
-url = "/fr/sites/adresses-collectrice/"
-title = "Adresse collectrice (catch-all)"
+url = "/sites/collector-addresses/"
+title = "Catch-all address"
 layout = "faq"
 hidden = true
-tags = [ "http", "site", "sous-domaine" ]
+tags = [ "http", "site", "subdomain" ]
 +++
 
-Pour collecter tout ce qui est envoyé vers des adresses HTTP de son domaine n’existant pas, une adresse collectrice (ou [catch-all](https://fr.wikipedia.org/wiki/Catch-all)) peut être créée.
+To collect everything that is sent to HTTP addresses of its non-existing domain a collector address (or [catch-all](https://fr.wikipedia.org/wiki/Catch-all)) can be created.
 
-Représentation : `*.example.org`
+Representation: `*.example.org`
