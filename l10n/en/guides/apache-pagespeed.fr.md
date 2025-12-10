@@ -1,38 +1,38 @@
 +++
-url = "/fr/guides/apache-pagespeed/"
-title = "Comment installer Apache PageSpeed"
+url = "/guides/apache-pagespeed/"
+title = "How to install Apache PageSpeed"
 layout = "howto"
 hidden = true
-tags = [ "apache", "http", "optimisation applicative", "site" ]
+tags = [ "apache", "http", "application optimization", "site" ]
 +++
 
-[PageSpeed](https://www.modpagespeed.com/) optimise automatiquement votre site internet en modifiant les ressources de cette page web pour mettre en œuvre les [meilleures pratiques](https://developers.google.com/speed/docs/best-practices/rules_intro) de performance web. **Apache mod_pagespeed** doit être installé sur le compte.
+[PageSpeed](https://www.modpagespeed.com/) automatically optimizes your website by modifying the resources on this web page to implement [best practices](https://developers.google.com/speed/docs/best-practices/rules_intro) web performance. **Apache mod_pagespeed** must be installed on the account.
 
-Du fait des particularités de notre infrastructure, leur script d'installation n'est pas exploitable sur nos serveurs, voici les étapes à suivre.
+Due to the special features of our infrastructure, their installation script is not usable on our servers, here are the steps to follow.
 
-Dans notre exemple, nous utilisons un [accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use a [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom de compte : `foo`
-- Répertoire de PageSpeed : `$HOME/pagespeed/`
+- Account name: `foo`
+- PageSpeed directory: `$HOME/pagespeed/`
 - Apache 2.4
 
-## Étape 1 : Téléchargement
+## Step 1: Downloading
 
 ```sh
 foo@ssh:~/pagespeed$ wget https://dl-ssl.google.com/dl/linux/direct/mod-pagespeed-stable_current_amd64.deb
 foo@ssh:~/pagespeed$ dpkg -x mod-pagespeed-stable_current_amd64.deb .
 ```
 
-Il y a deux modules, un pour Apache 2.2 et l'autre pour Apache 2.4.
+There are two modules, one for Apache 2.2 and the other for Apache 2.4.
 
-## Étape 2 : Modification de la configuration Apache
+## Step 2: Changing Apache Configuration
 
-Dans **Web > Configuration > Apache**, ajoutez :
+In **Web > Setup > Apache**, add:
 
 ```
-LoadModule pagespeed_module          "/home/[foo]/pagespeed/usr/lib/apache2/modules/mod_pagespeed_ap24.so"
-ModPagespeedFileCachePath            "/home/[foo]/pagespeed/cache/pagespeed/"
-ModPagespeedFileCacheSizeKb          102400
+LoadModule pagespeed_module "/home/[foo]/pagespeed/usr/lib/apache2/modules/mod_pagespeed_ap24.so"
+ModPagespeedFileCachePath "/home/[foo]/pagespeed/cache/pagespeed/"
+ModPagespeedFileCacheSizeKb 102400
 ModPagespeedFileCacheCleanIntervalMs 3600000
-ModPagespeedFileCacheInodeLimit      500000
+ModPagespeedFileCacheInodeLimit 500000
 ```
