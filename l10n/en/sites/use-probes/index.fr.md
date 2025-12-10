@@ -1,33 +1,33 @@
 +++
-url = "/fr/sites/utiliser-les-sondes-de-monitoring/"
-title = "Comment utiliser les sondes de monitoring"
+url = "/sites/utiliser-les-sondes-de-monitoring/"
+title = "How to use monitoring probes"
 layout = "howto"
 hidden = true
 tags = [ "http", "site" ]
 +++
 
-Pour nos utilisateurs qui disposent d'un serveur Dédié/Gold, il est possible de programmer des sondes de monitoring afin de vérifier qu'un site web fonctionne correctement. Si un problème est constaté par une sonde, une alerte est envoyée à notre équipe.
+For our users who have a dedicated / Gold server, it is possible to program monitoring probes in order to verify that a website is working properly. If a problem is detected by a probe, an alert is sent to our team.
 
-## Configuration
+## Setup
 
-La configuration d'une sonde permet de paramétrer différentes options :
+The configuration of a probe allows to configure different options:
 
-- adresse : l'adresse précise qui sera surveillée par la sonde, éventuellement via une identification HTTP ;
-- notification : quand enclencher une alerte et comment contacter le responsable de l'application ;
-- réponse : vérification du contenu de la réponse HTTP avec un texte (par défaut la sonde vérifie que la réponse HTTP est de type 2xx).
+- address: the exact address that will be monitored by the probe, possibly via HTTP authentication;
+- notification: when to start an alert and how to contact the app manager;
+- answer: checking the HTTP response content with a text (default probe checks that the HTTP response is of type 2xx).
 
-## Responsabilité
+## Responsibility
 
-Les interventions enclenchées par les sondes sont facturées si la responsabilité de l'application est engagée.
+The interventions initiated by the probes are invoiced if the responsibility for the application is committed.
 
-Exemples (liste non-exhaustive) :
+Examples (non-exhaustive list):
 
-- tout problème résultant d'une utilisation incorrecte du serveur par l'utilisateur ;
-- comportement anormal des applications de l'utilisateur ;
-- tout problème de performances ne provenant pas d'un dysfonctionnement du serveur ou du réseau ;
-- saturation des ressources du serveur par les applications de l'utilisateur ;
-- tout dysfonctionnement réseau dont l'origine ne serait pas de la responsabilité d'alwaysdata.
+- any problems that result from the user's incorrect use of the server;
+- abnormal behavior of user apps;
+- any performance issues not related to server or network malfunctioning;
+- saturation of server resources by user apps;
+- any network malfunction whose origin would not be the responsibility of alwaysdata.
 
 {{% notice note %}}
-Une sonde coûte 10€ HT par mois et chaque intervention déclenchée par une panne n'étant pas de notre responsabilité est facturée 100 € HT.
-{{% /notice %}}
+A probe is invoiced at €10 (tax excl.) per month and each intervention triggered by a failure not having our responsibility is invoiced at €100 (tax excl.)
+{{%/notice %}}
