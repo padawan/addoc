@@ -1,27 +1,27 @@
 +++
-url = "/fr/bases-de-donnees/mariadb/"
+url = "/en/donation-bases/mariadb/"
 title = "MariaDB / MySQL"
 layout = "man"
-tags = [ "base de données", "mariadb", "mysql" ]
+tags = [ "database", "Mariadb", "mysql" ]
 +++
 
-## Connexion
+## Login
 
 |                   |                                                                                                                   |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **Serveur**       | mysql-[compte].alwaysdata.net |
-| **Port**          | 3306 (Port MySQL par défaut)                                                                   |
-| **Interface web** | [phpMyAdmin](https://phpmyadmin.alwaysdata.com/)                                                                  |
+| **Server**        | mysql-[compte].alwaysdata.net |
+| **Port**          | 3306 (default MySQL port)                                                                      |
+| **Web interface** | [phpMyAdmin](https://phpmyadmin.alwaysdata.com/)                                                                  |
 
-Ces informations de connexion dépendent du compte concerné. Vous pouvez retrouver les valeurs précises dans la section **Bases de données > MySQL** de l'interface d'administration.
+These login details depend on the account concerned. You can find the specific values in the **Databases > MySQL** section of the administration interface.
 
-### Exemple avec `mysql`
+### Example with `mysql`
 
-Dans notre exemple, nous utilisons l'[accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom du compte : `foo`
-- Nom de la base de données : `foo_base`
-- Nous utiliserons les utilisateurs SSH et de base de données par défaut, c'est à dire ceux créés à l'ouverture des comptes (c'est-à-dire `foo` pour le compte _foo_).
+- Account name: `foo`
+- Database name: `foo_base`
+- We will use SSH and default database users that is, those created at the opening of accounts (i.e. `foo` for the _foo_ account).
 
 ```sh
 foo@ssh:~$ mysql -h mysql-foo.alwaysdata.net -u foo -p foo_base
@@ -29,53 +29,53 @@ foo@ssh:~$ mysql -h mysql-foo.alwaysdata.net -u foo -p foo_base
 
 ## Permissions
 
-Lors de la création de vos bases et utilisateurs MySQL, vous avez la possibilité de donner les permissions suivantes :
+When creating your MySQL databases and users, you have the possibility to give the following permissions:
 
-- tous les droits (GRANT ALL PRIVILEGES) ;
-- lecture seule (GRANT READONLY) ;
-- aucun droit.
+- all rights (GRANT ALL PRIVILEGES);
+- read-only (GRANT READONLY);
+- no rights.
 
 {{% notice warning %}}
-Si vous modifiez les permissions de vos utilisateurs via une application tierce, toute validation via l'interface d'administration (ou via l'API) réinitialisera les permissions selon les directives ci-dessus.
-{{% /notice %}}
+If you change the permissions of your users through a third-party app, any validation via the admin interface (or through the API) will reset the permissions according to the above directives.
+{{%/notice %}}
 
-## Restaurer une base de données depuis sa sauvegarde quotidienne
+## Restore a database from its daily backup
 
-Plusieurs possibilités :
+Multiple possibilities:
 
-- utiliser notre fonctionnalité de [restauration de sauvegarde](backups/restore-a-site) ;
+- use our [backup restore](backups/restore-a-site);
 
-- utiliser la commande suivante :
+- use the following command:
 
     ```sh
     $ zstdcat $HOME/admin/backup/[date]/mysql/[base].sql.zst | mysql -h mysql-[compte].alwaysdata.net -u [utilisateur] -p [base]
     ```
 
-- récupérer l'archive et utiliser le client de son choix.
+- Retrieve the archive and use the client of his choice.
 
 {{% notice tip %}}
-Les contenus archivés (e.g. les dumps de BDD) dans votre espace de _backup_ sont au format [Zstandard](https://github.com/facebook/zstd), vous pouvez utiliser les [outils `zstd*` officiels](https://github.com/facebook/zstd/releases/latest) ou le [plugin adapté pour 7zip](https://www.tc4shell.com/en/7zip/modern7z/) pour les manipuler.
-{{% /notice %}}
+Archived content (e.g. DB dumps in your _backup_ space are in [Zstandard]format (https://github.com/facebook/zstd), you can use the official [zstd\*\` tools](https://github.com/facebook/zstd/releases/latest) or the [plugin suitable for 7zip](https://www.tc4shell.com/en/7zip/modern7z/) to manipulate them.
+{{%/notice %}}
 
-## Divers
+## Misc
 
-En Cloud Public, le nombre de connexions simultanées maximum par utilisateur est de _40_. Il est possible à la demande de le modifier en Cloud Privé.
+In Public Cloud, the maximum number of simultaneous connections per user is _40_. It is possible to modify it in Private Cloud.
 
-MySQL bloque la taille du nom des utilisateurs ; si le nom de votre compte est trop important un _ID_ lui sera alloué. Vous le retrouverez dans **Bases de données > MySQL > Utilisateurs**.
+MySQL blocks user names; if your account name is too large a _ID_ will be allocated to it. You can find it in **Databases > MySQL > Users**.
 
-Un [ANALYZE TABLE](https://mariadb.com/kb/en/analyze-table/) est exécuté quotidiennement sur toutes vos tables pour garantir de bonnes performances, mais n'hésitez pas à le faire vous-même lorsque vos données changent drastiquement, par exemple après un import de base de données.
+A [ANALYZE TABLE](https://mariadb.com/kb/en/analyze-table/) is executed daily on all your tables to ensure good performance, but please do not do this yourself when your data changes drastically, for example after a database import.
 
-Pour connaître la configuration MariaDB, utilisez la requête SQL `show variables`.
+To know the MariaDB configuration, use the SQL `show variables` request.
 
-Les _events MySQL_ ne sont pas supportés sur notre Cloud Public.
+_MySQL events_ are not supported on our Public Cloud.
 
-Sur le Cloud Public, vous pouvez changer `sql_mode` par [connexion](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html) (SET SESSION).
+On the Public Cloud you can change `sql_mode` to [connexion](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html) (SET SESSION).
 
 {{% notice info %}}
-MariaDB est proposé par défaut sur nos serveurs mais les utilisateurs de [Cloud Privé](accounts/billing/private-cloud-prices) peuvent demander à utiliser MySQL.
-{{% /notice %}}
+MariaDB is offered by default on our servers but [Cloud Privacy](accounts/billing/private-cloud-prices) users may request to use MySQL.
+{{%/notice %}}
 
 ---
 
-- [Documentation MariaDB](https://mariadb.com/kb/en/library/documentation/)
-- [Documentation MySQL](https://dev.mysql.com/doc/)
+- [MariaDB](https://mariadb.com/kb/en/library/documentation/)
+- [MySQL documentation](https://dev.mysql.com/doc/)
