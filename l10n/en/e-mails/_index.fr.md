@@ -1,5 +1,5 @@
 +++
-url = "/fr/emails/"
+url = "/emails/"
 title = "Emails"
 pre = "<i class='fas fa-fw fa-paper-plane'></i> "
 weight = 15
@@ -7,42 +7,42 @@ archetype = "chapter"
 tags = [ "email" ]
 +++
 
-Nous fournissons un accès SMTP, IMAP et POP3, dont les adresses sont indiquées dans le menu **Emails > Adresses**. Si ce n'est depuis nos serveurs directement (par exemple, depuis une application HTTP), il est _nécessaire_ de s'authentifier avec une adresse mail pour envoyer des mails.
+We provide SMTP, IMAP and POP3 accesses, which are listed in the **Emails > Addresses** menu. If not from our servers directly (e.g. from an HTTP application), it is _necessary_ to authenticate with an email address to send emails.
 
-Nos serveurs emails sont classiques ; nous utilisons [Exim](https://www.exim.org/) et [Dovecot](https://www.dovecot.org/).
+Our email servers are common; we use [Exim](https://www.exim.org/) and [Dovecot](https://www.dovecot.org/).
 
-Vous pouvez [créer une adresse email](create-an-e-mail-address) dans l'onglet **Emails > Adresses** de votre interface d'administration alwaysdata et [consulter vos emails](use-an-e-mail-address) via un client mail de votre choix ou notre [webmail](https://webmail.alwaysdata.com).
+You can [create an email address](create-an-e-mail-address) in the **Emails > Addresses** tab of your alwaysdata administration interface and [check your emails](use-an-e-mail-address) via an email client of your choice or our [webmail](https://webmail.alwaysdata.com).
 
-À partir du moment où l'adresse email est créée, il sera possible d'envoyer des emails via nos serveurs SMTP. Pour en recevoir, il faut que le domaine ait des [enregistrements DNS MX](https://fr.wikipedia.org/wiki/Enregistrement_Mail_eXchanger). Pour utiliser nos serveurs de messagerie indiquez `mx1.alwaysdata.com` et `mx2.alwaysdata.com`.
+From the moment the email address is created, it will be possible to send emails via our SMTP servers. To receive it, the domain must have [MX DNS records](https://fr.wikipedia.org/wiki/Enregistrement_Mail_eXchanger). To use our email servers specify `mx1.alwaysdata.com` and `mx2.alwaysdata.com`.
 
-- [Listes de diffusions](mailing-lists)
+- [Mailing Lists](mailing-lists)
 
-## Ressources
+## Resources
 
 - [API](https://api.alwaysdata.com/v1/mailbox/doc/)
-- [Ajouter plusieurs adresses email en utilisant CSV](create-mailboxes-using-csv)
+- [Add multiple email addresses using CSV](create-mailboxes-using-csv)
 
-* [Ajouter une règle de filtrage](add-a-filter-rule)
-* [Utiliser les scripts Sieve](use-sieve-scripts)
-* [Liste blanche de réception](e-mails/whitelist)
+* [Add filtering regeneration](add-a-filter-rule)
+* [Use Sieve scripts](use-sieve-scripts)
+* [Receipt White List](e-mails/whitelist)
 
-- [Changer de prestataire](./transfer-in)
-- [Utiliser des MX externes](domains/use-external-mx)
-- [Relais SMTP](e-mails/smtp-relay)
+- [Change provider](./transfer-in)
+- [Use external MX](domains/use-external-mx)
+- [SMTP Relay](e-mails/smtp-relay)
 
-* [Délivrabilité : bonnes pratiques](delivery)
-* [Configurer SPF/DKIM/DMARC](set-up-spf-dkim-dmarc)
-* [Vérifier l'envoi d'un email](check-email-sending)
-* [File d'attente SMTP](smtp-queue)
-* [Lire la source d'un email](read-an-e-mail-source)
-* [Réagir à un envoi de spam](react-to-spam-mailing)
+* [Deliverable: best practices](delivery)
+* [Configure SPF/DKIM/DMARC](set-up-spf-dkim-dmarc)
+* [Check email sending](check-email-sending)
+* [SMTP Queue](smtp-queue)
+* [Read source email](read-an-e-mail-source)
+* [React to spam sending](react-to-spam-mailing)
 
-- [Restaurer des emails](backups/restore-e-mails)
+- [Restore emails](backups/restore-e-mails)
 - [Sender Rewriting Scheme](srs)
 - [Catch-all](./catch-all)
-- [Questions diverses](./misc)
+- [Miscellaneous Questions](./misc)
 
-## Clients mails
+## Email Clients
 
 - [iOS](clients/apple-ios)
 - [Gmail](clients/gmail)
