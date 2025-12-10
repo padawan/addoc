@@ -1,29 +1,29 @@
 +++
-url = "/fr/comptes/renommer-compte/"
-title = "Renommer un compte"
+url = "/accounts/rename-account/"
+title = "Rename account"
 layout = "howto"
 hidden = true
-tags = [ "compte" ]
+tags = [ "account" ]
 +++
 
-Si le nom d'un compte ne convient plus (changement de dénomination, faute d'orthographe, etc.), il est possible d'en changer.
+If an account name is no longer suitable (name change, spelling error, etc. ), it is possible to change it.
 
 {{% notice warning %}}
-C'est une fonctionnalité **avancée**. Renommer un compte change de nombreux éléments : les adresses par défaut, les noms d'hôtes aux différents services, les bases de données, les utilisateurs, ou encore le chemin du répertoire racine...
+This is a **advanced** feature. Renaming an account changes many elements: default addresses, hostnames to different services, databases, users, or path to the root directory...
 
-En conséquence, il faudra _certainement_ faire des modifications de configuration dans vos applications et cela peut rendre des services _temporairement indisponibles_.
-{{% /notice %}}
+As a result, it will _certainly_ need to make configuration changes in your applications and this may make services _temporarily unavailable_.
+{{%/notice %}}
 
-Rendez-vous :
+Appointment:
 
-- {{< fig "images/public-cloud-list.fr.png" "" >}}
+- {{< fig "images/public-cloud-list.png" "" >}}
 
-- {{< fig "images/private-cloud-list.fr.png" "" >}}
+- {{< fig "images/private-cloud-list.png" "" >}}
 
-Le nouveau nom de compte sera alors demandé :
+The new account name will then be requested:
 
-{{< fig "images/account-rename.fr.png" "" >}}
+{{< fig "images/account-rename.en.png" "" >}}
 
 {{% notice note %}}
-Seul le **propriétaire du compte** peut effectuer cette action.
-{{% /notice %}}
+Only the **account owner** can perform this action.
+{{%/notice %}}
