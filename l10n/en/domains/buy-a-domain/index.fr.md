@@ -1,31 +1,31 @@
 +++
-url = "/fr/domaines/acheter-un-domaine/"
-title = "Comment acheter un domaine"
-linkTitle = "Acheter un domaine"
+url = "/domains/acheter-un-domain/"
+title = "How to buy a domain"
+linkTitle = "Buy a domain"
 layout = "howto"
 weight = 1
-tags = [ "domaine" ]
+tags = [ "domain" ]
 +++
 
-1. {{< fig "images/admin-panel_domain-list.fr.png" "Interface d'administration : liste des domaines" >}}
+1. {{< fig "images/admin-panel_domain-list.en.png" "Admin interface: list of domains" >}}
 
-2. {{< fig "images/admin-panel_add-domain-1.fr.png" "Interface d'administration : étape 1" >}}
+2. {{< fig "images/admin-panel_add-domain-1.en.png" "Admin interface: Step 1" >}}
    {{% notice info %}}
-   Saisissez uniquement le domaine, sans le sous-domaine. Par exemple : example.org et non www.exemple\\.org.
-{{% /notice %}}
+   Enter only the domain, without the subdomain. For example: example.org and not www.example\\.org.
+{{%/notice %}}
 
-3. {{< fig "images/admin-panel_add-domain-2.fr.png" "Interface d'administration : étape 2" >}}
+3. {{< fig "images/admin-panel_add-domain-2.en.png" "Admin interface: Step 2" >}}
 
-4. Choisissez la _durée d'existence_ du domaine. Il pourra être renouvelé par la suite ;
+4. Choose the _hard domain_ existence. It may be renewed afterwards;
 
-5. {{< fig "images/admin-panel_add-domain-3.fr.png" "Interface d'administration : étape 3" >}}
+5. {{< fig "images/admin-panel_add-domain-3.en.png" "Admin interface: Step 3" >}}
 
 {{% notice note %}}
-Le domaine sera créé quelques minutes après le paiement.
-{{% /notice %}}
+The domain will be created a few minutes after the payment.
+{{%/notice %}}
 
 - [Prix](https://www.alwaysdata.com/fr/domaines/#main)
 
-## Quelle extension de domaine dois-je choisir ?
+## Which domain extension should I choose?
 
-Beaucoup d’extensions existent, certaines sont géographiques et rattachées à un pays ou une zone institutionnelle, d’autres sont génériques. L’extension à choisir, dépend de votre besoin, de votre budget mais aussi de la nationalité du propriétaire.
+Many extensions exist, some are geographic and connected to a country or an institutional area, others are managed. The extension to choose, depends on your need, your budget but also on the nationality of the owner.
