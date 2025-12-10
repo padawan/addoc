@@ -1,30 +1,30 @@
 +++
-url = "/fr/comptes/terminologie/"
-title = "Terminologie"
+url = "/accounts/terminology/"
+title = "Terminology"
 layout = "man"
 hidden = true
 +++
 
-Un utilisateur alwaysdata, nommé **profil** est représenté par une adresse email qui est utilisé pour se connecter à l'[interface d'administration](https://admin.alwaysdata.com).
+An alwaysdata user, named **profile** is represented by an email address that is used to login to the [admin interface](https://admin.alwaysdata.com).
 
-Celui-ci _peut_ être propriétaire de **comptes** sur notre [Cloud Public](/accounts/billing/public-cloud-prices) ainsi que des **[serveurs](/accounts/billing/private-cloud-prices)** sur lequel il peut y créer des comptes. Chaque **compte** est _isolé_ les uns des autres.
+This one _can_ own **accounts** on our [Cloud Public](/accounts/billing/public-cloud-prices) as well as **[serveurs](/accounts/billing/private-cloud-prices)** on which they can create accounts. Each **account** is _isolated_ from each other.
 
-Sur ces **comptes**, il est possible de gérer des [domaines](/domains), d'héberger des [adresses emails](/e-mails), des [sites web](/sites), des [bases de données](/databases) ou encore d'autres applications.
+On these **accounts**, it is possible to manage [domaines](/domains), host [email addresses](/e-mails), [website](/sites), [databases](/databases) or other applications.
 
-{{< fig "images/terminology.fr.png" "" >}}
+{{< fig "images/terminology.en.png" "" >}}
 
-Il peut aussi avoir des **[permissions](accounts/permissions)** sur d'autres profils alwaysdata.
+It may also have **[permissions](accounts/permissions)** on other alwaysdata profiles.
 
-{{< fig "images/permissions.fr.png" "" >}}
+{{< fig "images/permissions.png" "" >}}
 
-Les adresses emails hébergées sont liées à des domaines. Elles sont _toujours_ sur le même compte que le domaine.
+Hosted email addresses are linked to domains. They are _always_ on the same count as the domain.
 
-Les [adresses des sites](/sites/add-a-site/#adresses) _peuvent_ aussi être liées à des domaines. Si c'est le cas elles peuvent être :
+[site addresses](/sites/add-a-site/#adresses) _can_ also be linked to domains. If this is the case they can be:
 
-- sur le même compte ;
-- sur un autre compte du même profil alwaysdata ;
-- [déléguées](/domains/delegate-a-subdomain) à un compte d'un autre profil alwaysdata.
+- on the same account;
+- on another alwaysdata profile account;
+- [déléguées](/domains/delegate-a-subdomain) has an account of another alwaysdata profile.
 
-{{< fig "images/delegation.fr.png" "" >}}
+{{< fig "images/delegation.png" "" >}}
 
-> Icônes : The Noun Project
+> The Noun Project
