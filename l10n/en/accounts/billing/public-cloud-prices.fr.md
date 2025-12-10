@@ -1,34 +1,34 @@
 +++
-url = "/fr/comptes/facturation/prix-cloud-public/"
-title = "Tarifs : Cloud Public - Packs Plus"
+url = "/accounts/billing/pricx-cloud-public/"
+title = "Prices: Cloud Public - Packs Plus"
 layout = "man"
 hidden = true
-tags = [ "cloud public", "facturation" ]
+tags = [ "public cloud", "invoicing" ]
 +++
 
-Cette page recense les prix (hors taxes) des configurations Cloud Public. Pour plus d'informations contactez notre [équipe commerciale](https://www.alwaysdata.com/fr/).
+This page lists the (excluding taxes) prices of Public Cloud Configurations. For more information contact our [Sales Team](https://www.alwaysdata.com/fr/).
 
-- Garantie de Temps d'Intervention (GTI) : 1h
-- Garantie de Temps de Rétablissement (GTR) : 4h
-- Taux de disponibilité : 99.7 %
+- 1-Hour Intervention Time Guarantee
+- Reestablishment Time Warranty (GTR): 4 hours
+- Availability Rate: 99.7%
 
-|                                                             | Free [^1] | Small    | Medium    | Large     | X-Large    |
-| ----------------------------------------------------------- | --------- | -------- | --------- | --------- | ---------- |
-| Espace disque[^2]                                           | 1 Go      | 50 Go    | 100 Go    | 200 Go    | 500 Go     |
-| RAM                                                         | 256 Mo    | 1 Go     | 2 Go      | 4 Go      | 8 Go       |
-| CPU                                                         | 1/4       | 1        | 2         | 4         | 8          |
-| [Sauvegardes](backups) (jours glissants) | 3 jours   | 7 jours  | 20 jours  | 20 jours  | 30 jours   |
-| Paiement annuel                                             | Gratuit   | 5 €/mois | 20 €/mois | 50 €/mois | 150 €/mois |
-| Paiement mensuel                                            | Gratuit   | 6 €/mois | 22 €/mois | 55 €/mois | 165 €/mois |
+|                                                           | Free [^1] | Small      | Medium      | Wide        | X-Large     |
+| --------------------------------------------------------- | --------- | ---------- | ----------- | ----------- | ----------- |
+| Disk space[^2]                                            | 1GB       | 50 GB      | 100GB       | 200 GB      | 500GB       |
+| RAM                                                       | 256 MB    | 1GB        | 2GB         | 4GB         | 8GB         |
+| CPU                                                       | 1/4       | 1          | 2           | 4           | 8           |
+| [Sauvegardes](backups) (slippery days) | 3 days    | 7 days     | 20 days     | 20 days     | 30 days     |
+| Yearly payment                                            | Free      | €5 / month | €20/month   | €50 / month | 150 €/month |
+| Monthly payment                                           | Free      | 6€/month   | €22 / month | €55 / month | 165 €/month |
 
-Le [changement de configuration Cloud Public](accounts/billing/upgrade-your-plan) se passe via le menu **Abonnements**.
+[Public Cloud Configuration Change] (accounts/billing/upgrade-your-plan) happens via the **Subscriptions** menu.
 
-Nous proposons [plusieurs programmes](accounts/programs) pour profiter de réductions.
+We offer [multiple programs] (accounts/programs) to take advantage of discounts.
 
 {{% notice info %}}
-Le quota disque inclut fichiers, mails et bases de données.
-{{% /notice %}}
+Disk quota includes files, emails and databases.
+{{%/notice %}}
 
-[^1]: Le pack Free est sujet à des [restrictions spéciales](accounts/public-cloud-restrictions#compte-gratuit) et ne peut notamment servir à des fins lucratives.
+[^1]: The Free Pack is subject to [specific restrictions](accounts/public-cloud-restrictions#compte-gratuit) and cannot be used for profit.
 
-[^2]: L'espace disque alloué aux bases de données correspond à 1/10 de la limite du pack.
+[^2]: The disk space allocated to databases corresponds to 1/10 of the pack limit.
