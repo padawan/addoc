@@ -1,24 +1,24 @@
 +++
-url = "/fr/statistiques/"
-title = "Statistiques"
+url = "/statistics/"
+title = "Statistics"
 pre = "<i class='fas fa-fw fa-chart-line'></i> "
 layout = "man"
 weight = 35
-tags = [ "http", "statistiques", "site" ]
+tags = [ "http", "statistics", "site" ]
 +++
 
-À partir des logs bruts HTTP (`$HOME/admin/logs/http`) nous générons des statistiques de visites uniques[^1] en _temps réel_. Celles-ci sont disponibles dans la section **Web > Analytics**.
+From raw HTTP logs (`$HOME/admin/logs/http`) we will handle unique tour statistics[^1] in _real time_. These are available in the **Web > Analytics** section.
 
-{{< fig "stats-panel.fr.png" "" >}}
+{{< fig "stats-panel.en.png" "" >}}
 
-Vous pouvez afficher le graphe par site ou pour l'ensemble d'un compte.
+You can view the graph by site or for the whole account.
 
-Un graphe au niveau serveur est disponible dans le menu **HTTP > Analytics** pour le [Cloud Privé](accounts/billing/private-cloud-prices).
+A server-level graph is available in the **HTTP > Analytics** menu for the [Private Cloud](accounts/billing/private-cloud-prices).
 
-## Personnalisation des statistiques
+## Statistics customization
 
-Notre plateforme est exclusivement basée sur les logs HTTP et fournit une interface simple. Il n'est pas possible d'y ajouter des paramètres personnalisés.
+Our platform is based exclusively on HTTP logs and provides a simple interface. It is not possible to add custom settings.
 
-Tournez-vous vers l'installation de votre propre logiciel de mesure de statistiques web : [Matomo](https://matomo.org/) peut être installé via notre [marketplace](https://www.alwaysdata.com/fr/marketplace/). Si vous avez déjà un compte alwaysdata rendez-vous dans le menu **Web > Sites > Installer une application** pour l'installer.
+Look at the installation of your own web statistics measurement software: [Matomo](https://matomo.org/) can be installed via our [marketplace](https://www.alwaysdata.com/fr/marketplace/). If you already have an alwaysdata account, go to the **Web > Sites > Install an App** menu to install it.
 
-[^1]: Estimation sur l'IP : à partir de quelques minutes sans requêtes une même IP repasse en visite unique.
+[^1]: IP estimate: From a few minutes without a request a single IP address will be re-visited.
