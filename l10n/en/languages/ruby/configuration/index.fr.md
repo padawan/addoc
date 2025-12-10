@@ -1,14 +1,14 @@
 +++
-url = "/fr/langages/ruby/configuration/"
-title = "Configurer Ruby"
+url = "/languages/ruby/configuration/"
+title = "Configure Ruby"
 hidden = true
 layout = "man"
-tags = [ "ruby" ]
+tags = [ "Ruby" ]
 +++
 
-`[paquet]` et `[version]` sont à remplacer par le nom du paquet et de la version à installer.
+`[paquet]` and `[version]` are to be replaced by the package name and version to install.
 
-## Versions supportées
+## Supported Versions
 
 |                                                                                                                                                                                                    |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -16,89 +16,89 @@ tags = [ "ruby" ]
 | 2.7 \\| 2.6 \\| 2.5 \\| 2.4 \\| 2.3 \\| 2.2 \\| 2.1 \\| 2.0 |
 | 1.9 \\| 1.8                                                                                                                                                       |
 
-La version par défaut est modifiable dans l'administration, section **Environnement > Ruby**. C'est cette version qui est notamment utilisée lorsque vous démarrez `ruby`.
+The default version can be changed in the administration section **Environment > Ruby**. This version is especially used when you start `ruby`.
 
-Les versions ne sont pas forcément [déjà installées](languages#versions).
+Versions are not forcefully [already installed](languages#versions).
 
-## Logs d'erreur
+## Error logs
 
-Ruby tourne derrière [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/), vous pouvez consulter les logs d'erreur dans le fichier `$HOME/admin/logs/uwsgi/[id].log`, où `[id]` est l'identifiant de votre site, indiqué dans la section **Web > Sites**.
+Ruby is running behind [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/), you can check the error logs in the `$HOME/admin/logs/uwsgi/[id]file. og`, or `[id]` is the identifier of your site, indicated in the **Web > Sites** section.
 
-Un extrait de ces logs est présenté dans l'interface d'administration alwaysdata (Logs - 📄).
+An excerpt of these logs is present in the alwaysdata administration interface (Logs - 📄).
 
-## Binaire à utiliser
+## Binary to use
 
-Vous devez toujours utiliser `ruby` (ou `/usr/bin/ruby`). N'utilisez jamais `ruby2.4` ou toute autre commande.
+You should always use `ruby` (or `/usr/bin/ruby`). Never use `ruby2.4` or any other command.
 
-Pour forcer une version de Ruby différente de celle par défaut, définissez la variable d'environnement `RUBY_VERSION` :
+To force a different version of Ruby than default, set the `RUBY_VERSION` environment variable:
 
 ```sh
-$ RUBY_VERSION=2.3 ruby
+RUBY_VERSION=2.3 ruby
 ```
 
-Dans vos scripts, utilisez `/usr/bin/ruby` comme _shebang_ :
+In your scripts, use `/usr/bin/ruby` as _shebang_:
 
 ```
 #!/usr/bin/ruby
 ```
 
-Pour forcer une version de Ruby particulière :
+To force a partial Ruby version:
 
 ```
 #!/usr/bin/eval RUBY_VERSION=2.3 ruby
 ```
 
-Les autres binaires inclus dans Ruby (`gem`, `irb`, `ri`…) fonctionnent de la même manière.
+Other binaries included in Ruby (`gem`, `irb`, `ri`…) work in the same way.
 
-## Environnement
+## Environments|Environment
 
-Votre environnement Ruby est initialement vide, sans aucune bibliothèque préinstallée en dehors de la bibliothèque standard.
+Your Ruby environment is initially empty, without any library preinstalled outside the standard library.
 
-### Installer un paquet
+### Install Package
 
-Vous pouvez utiliser `gem` pour installer des paquets :
+You can use `gem` to install packages:
 
 ```sh
 $ gem install [paquet]
 ```
 
-Les paquets sont installés dans le répertoire standard `$HOME/.gem` et sont automatiquement ajoutés au load path par Ruby.
+Packages are installed in the standard `$HOME/.gem` directory and are automatically added to the load path by Ruby.
 
-Attention, il faudra réinstaller les paquets si vous changez de version majeure de Ruby (2.3 et 2.4 sont deux versions majeures différentes, tandis que 2.3.1 et 2.3.0 ont la même version majeure).
+Warning, you will need to reinstall the packages if you are switching to a major version of Ruby (2.3 and 2. are two major versions different, while 2.3.1 and 2.3.0 have the same major version).
 
-Vous pouvez spécifier une version précise :
+You can specify a specific version:
 
 ```sh
 $ gem install [paquet] -v [version]
 ```
 
-### Désinstaller un paquet
+### Uninstall Package
 
 ```sh
 $ gem uninstall [paquet]
 ```
 
-### Utiliser Bundler
+### Use Bundler
 
-Il est recommandé d'utiliser [Bundler](http://bundler.io/) si vous utilisez plusieurs applications Ruby distinctes, de manière à ce que chacune ait son propre environnement isolé. Bundle installe les paquets listés dans un fichier _Gemfile_.
+It is recommended to use [Bundler](http://bundler.io/) if you are using multiple separate Ruby apps, in such a way that each has its own isolated environment. Bundle installs packages listed in a _Gemfile_ file.
 
 ```sh
 $ bundle install
 ```
 
-## Déploiement HTTP
+## HTTP Deployment
 
-Pour qu'une application Ruby soit accessible par le web, vous devez ajouter un site dans la section **Web > Sites** de l'administration alwaysdata. Nous proposons le type **Ruby Rack** qui utilise le serveur web [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
+For a Ruby application to be accessible through the web, you need to add a site in the **Web > Sites** section of the alwaysdata administration. We offer the **Ruby Rack** type that uses the web server [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
 
-{{< fig "images/ruby-rack.png" "Type de site Ruby Rack">}}
+{{< fig "images/ruby-rack.png" "Ruby Rack Site Type">}}
 
-- type : choisissez _Ruby Rack_ ;
-- chemin de l'application : le chemin du fichier de votre application Rack.
+- type: choose _Ruby Rack_;
+- application path: the file path of your Rack application.
 
-Vous pouvez également renseigner plusieurs champs optionnels :
+You can also fill in several optional fields:
 
-- utiliser Bundler ;
-- des variables d'environnement à définir ;
-- une version de Ruby spécifique à utiliser.
+- use Bundler;
+- environment variables to be defined;
+- a specific version of Ruby to use.
 
-Vous pouvez utiliser un autre serveur web en le lançant en type [Programme utilisateur](sites/user-program).
+You can use another web server by launching it as a [User Program](sites/user-program).
