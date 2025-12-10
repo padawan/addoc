@@ -1,56 +1,56 @@
 +++
-url = "/fr/comptes/systeme-dalertes/"
-title = "Système d'alertes"
+url = "/accounts/system-dalertes/"
+title = "Alert System"
 layout = "man"
 hidden = true
-tags = [ "interface d'administration", "suspension" ]
+tags = [ "admin interface", "suspension" ]
 +++
 
-Pour de nombreuses raisons, une alerte peut-être enclenchée par notre système dont voici le fonctionnement :
+For many reasons, can an alert be triggered by our system and this is how it works:
 
-- **ouverture** de l'alerte (par un événement déclencheur) avec envoi d'un email informant le(s) utilisateur(s) concerné(s) ;
-- emails de **rappel** ;
-- **expiration** de l'alerte (si aucune action corrective n'a été effectuée) avec une action éventuelle.
+- **open** the alert (by an event) with sending an email informing the user(s) concerned;
+- **Reminder emails**;
+- **expiry** of the alert (if no corrective action was taken) with a possible action.
 
-## Les types d'alerte
+## Alert types
 
-### Inactivité
+### Inactivity
 
-Ce type d'alerte ne concerne que les _plans gratuits_ et a pour but de ne pas encombrer notre infrastructure avec des comptes laissés à l'abandon.
+This type of alert only concerns _free plans_ and is intended not to encumber our infrastructure with abandoned accounts.
 
-- événement déclencheur : absence de connexion à l'[interface d'administration](https://admin.alwaysdata.com) depuis un certain nombre de jours :
-  - un profil ayant moins d'un an d'ancienneté doit se connecter tous les 120 jours ;
-  - un profil ayant été créé entre 1 et 4 ans doit se connecter tous les 6 mois ;
-  - un profil ayant 4 ans d'ancienneté, 1 connexion par an est nécessaire.
-- résolution : se connecter à l'interface d'administration ;
-- expiration : suspension du profil inactif et ses comptes.
+- trigger: lack of connection to [admin interface](https://admin.alwaysdata.com) for a number of days:
+  - a profile with less than a year old must log in every 120 days;
+  - a profile created between 1 and 4 years must connect every 6 months;
+  - a profile with 4 years of age, 1 connection per year is required.
+- solution: connect to the admin interface;
+- expiry : suspension of inactive profile and its accounts.
 
-### Situation financière irrégulière
+### Financial situation irregular
 
-- événement déclencheur : solde négatif (à l'émission d'une facture par exemple) ;
-- résolution : régler afin d'avoir un solde supérieur ou égal à zéro ;
-- expiration : suspension du profil concerné et ses comptes.
+- trigger: Negative balance (such as issuing an invoice);
+- solution: set to have a higher balance or equal to zero;
+- expiration: suspension of the relevant profile and its accounts.
 
-### Expiration de domaine
+### Domain expiration
 
-- événement déclencheur : un domaine va expirer dans X jours ;
-- résolution : renouveler le domaine ;
-- expiration : le domaine expirera donc risque de devenir indisponible.
+- trigger: a domain will expire in X days;
+- solution: renew domain;
+- expiry : the domain will therefore expire in danger of becoming unavailable.
 
-### Renouvellement automatique de domaine
+### Automatic domain renewal
 
-- événement déclencheur : le renouvellement automatique d'un domaine est activé mais le solde est insuffisant OU aucune carte de crédit / aucun compte bancaire n'a été configuré ;
-- résolution : alimenter le compte prépayé d'un montant suffisant OU ajouter une carte de crédit / un compte bancaire en prélèvement automatique aux moyens de paiement ;
-- expiration : ce type d'alerte n'expire pas.
+- trigger: automatic domain renewal is active but the balance is insufficient OR no credit card / no bank account has been configured;
+- solution: fund the prepaid account with a sufficient amount OR add a credit card / bank account automatically to the payment methods;
+- expiration: this type of alert does not expire.
 
-### Expiration de carte de crédit
+### Credit Card Expiration
 
-- événement déclencheur : une carte de crédit va expirer dans moins de 31 jours ;
-- résolution : supprimer ou mettre à jour la carte de crédit ;
-- expiration : ce type d'alerte n'expire pas.
+- trigger: a credit card will expire in less than 31 days;
+- solution: remove or update credit card;
+- expiration: this type of alert does not expire.
 
-### Migration de compte
+### Account Migration
 
-- événement déclencheur : une [migration](advanced/migrations) concernant un compte est programmée ;
-- résolution : appliquer la migration ;
-- expiration : la migration sera appliquée automatiquement (pas nécessairement le jour même de l'expiration).
+- trigger: an [migration](advanced/migrations) for an account is programmed;
+- resolve: apply migration;
+- expiration: migration will be applied automatically (not necessary on the same day of expiration).
