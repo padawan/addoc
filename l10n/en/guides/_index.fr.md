@@ -1,5 +1,5 @@
 +++
-url = "/fr/guides/"
+url = "/guides/"
 title = "Guides"
 weight = 100
 archetype = "chapter"
@@ -21,6 +21,6 @@ pre = "<i class='fas fa-fw fa-book-open'></i> "
 - [Redis](./redis)
 - [Tideways](tideways)
 
-## Déploiements
+## Deployments
 
-- [Déployer une application React](deploy-react-app)
+- [Deploy React App](deploy-react-app)
