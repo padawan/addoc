@@ -1,52 +1,52 @@
 +++
-url = "/fr/acces-distant/webDAV/"
+url = "/remote/webDAV/"
 title = "WebDAV"
 weight = 5
-tags = [ "accès distant", "webdav" ]
+tags = [ "remote access", "webdav" ]
 archetype = "chapter"
 +++
 
-WebDAV, pour [Web-based Distributed Authoring and Versioning](http://www.webdav.org/), permet aux utilisateurs de modifier et de gérer en collaboration des fichiers sur des serveurs Web distants.
+WebDAV, for [Web-based Distributed Authoring and Versioning](http://www.webdav.org/), allows users to collaboratively modify and manage files on remote web servers.
 
 - [API - WebDAV](https://api.alwaysdata.com/v1/webdav/doc/)
-- [Créer un utilisateur WebDAV](create-a-webdav-user)
+- [Create WebDAV user](create-a-webdav-user)
 
 {{% notice info %}}
-WebDAV n'est pas activé par défaut sur le [Cloud Privé](accounts/billing/private-cloud-prices) (les ports par défaut sont utilisés par les sites). Contactez le [support](https://admin.alwaysdata.com/support/add/) si vous en avez besoin.
-{{% /notice %}}
+WebDAV is not active by default on [Cloud Private](accounts/billing/private-cloud-prices) (default ports are used by sites). Contact [support](https://admin.alwaysdata.com/support/add/) if you need it.
+{{%/notice %}}
 
-## Se connecter avec WebDAV
+## Login with WebDAV
 
-| Informations |                                                                                                                    |
-| ------------ | ------------------------------------------------------------------------------------------------------------------ |
-| Hôte         | webdav-[compte].alwaysdata.net |
-| Ports        | 80 (HTTP) ou 443 (HTTPS)                                                     |
-| Identifiant  | utilisateur et mot de passe associé                                                                                |
+| Information |                                                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| Hostels     | webdav-[compte].alwaysdata.net |
+| Ports       | 80 (HTTP) or 443 (HTTPS)                                                     |
+| Username    | associated user and password                                                                                       |
 
-{{< fig "admin-panel_list-webdav-users.fr.png" "Interface d'administration : liste des utilisateurs WebDAV" >}}
+{{< fig "admin-panel_list-webdav-users.png" "Admin interface: list of WebDAV users" >}}
 
-### Avec Windows
+### With Windows
 
-1. Faites un clic droit sur l'icône **Poste de travail** ou **Ordinateur** ;
-2. Choisissez **Connecter un lecteur réseau**. Dans le champ _Dossier_, indiquez :
-   - sous Vista et supérieurs : `https://webdav-[compte].alwaysdata.net/`
-3. Cliquez sur _Se connecter_ sous un nom d'utilisateur différent, puis rentrez vos identifiants. Validez et cliquez sur _Terminer_.
+1. Right-click on the icon **Workstation** or **Computer**;
+2. Choose **Connect a network drive**. In the _Folder_ field, say:
+   - on Vista and Superiors: `https://webdav-[compte].alwaysdata.net/`
+3. Click _Login_ under a different username and enter your credentials. Confirm and click _Finish_.
 
-### Avec Mac OS X
+### With Mac OS X
 
-1. Dans le **Finder**, choisissez _Aller > Se connecter au serveur_ ;
-2. Dans le champ _Adresse du serveur_, entrez `http://webdav-[compte].alwaysdata.net/` ;
-3. Cliquez sur _Se connecter_.
+1. In the **Finder**, choose _Go > Connect to Server_;
+2. In the _Server Address_ field, enter `http://webdav-[compte].alwaysdata.net/`;
+3. Click _Login_.
 
-### Avec davfs2 (Linux)
+### With davfs2 (Linux)
 
-**davfs2** a l'avantage de monter les partages WebDAV comme une partition locale, et de ce fait d'avoir ses fichiers accessibles depuis n'importe quelle application. Pour monter une partition dans `/mnt/alwaysdata` :
+**davfs2** has the advantage of mounting WebDAV shares as a local partition, so having its files accessible from any application. To mount a partition in `/mnt/alwaysdata`:
 
 ```sh
 $ sudo mount.davfs https://webdav-[compte].alwaysdata.net/ /mnt/alwaysdata
 ```
 
 {{% notice note %}}
-Remplacez `webdav-[compte].alwaysdata.net` par votre nom d'hôte WebDAV, disponible dans **Accès distant > WebDAV**.
-{{% /notice %}}
+Replace `webdav-[compte].alwaysdata.net` with your WebDAV host-name, available in **Remote Access > WebDAV**.
+{{%/notice %}}
 
