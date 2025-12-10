@@ -1,25 +1,25 @@
 +++
-url = "/fr/securite/ssl-tls/configurer-tls/"
-title = "Configurer TLS"
+url = "/security/ssl-tls/configurer-tls/"
+title = "Configure TLS"
 layout = "howto"
 hidden = true
-tags = [ "http", "sécurité", "site" ]
+tags = [ "http", "security", "site" ]
 +++
 
-[TLS](https://fr.wikipedia.org/wiki/Transport_Layer_Security) est un protocole cryptographique de sécurisation des échanges sur internet.
+[TLS](https://fr.wikipedia.org/wiki/Transport_Layer_Security) is a cryptographic protocol for storing exchanges over the internet.
 
-Trois profils pour les connexions HTTP sont possibles :
+Three profiles for HTTP connections are possible:
 
-- _Moderne_ : seulement TLS 1.3. Compatible avec les navigateurs les plus récents ;
-- _Intermédiaire_ : les versions de TLS supérieures à la 1.2 sont activées ce qui permet d'être compatible avec la plupart des navigateurs ;
-- _Ancien_ : toutes les versions de TLS sont activées ce qui permet d'être compatible avec les navigateurs les plus anciens.
+- _Modern_ : only TLS 1.3. Compatible with newest browsers;
+- _Intermediary_ : TLS versions higher than 1.2 are enabled which allows to be compatible with most browsers;
+- _Old_ : all versions of TLS are enabled which allows to be compatible with older browsers.
 
 {{% notice note %}}
-Le profil _Intermédiaire_ est activé par défaut sur les serveurs d'alwaysdata.
-{{% /notice %}}
+The _Intermediary_ profile is active by default on the alwaysdata servers.
+{{%/notice %}}
 
-{{< fig "images/account-tls-configuration.fr.png" "Interface d'administration : configurer TLS au niveau compte" >}}
+{{< fig "images/account-tls-configuration.png" "Admin interface: configure TLS at account level" >}}
 
-## Cloud Privé
+## Private Cloud
 
-{{< fig "images/server-tls-configuration.fr.png" "Interface d'administration : configurer TLS au niveau serveur" >}}
+{{< fig "images/server-tls-configuration.png" "Admin interface: configure TLS at server level" >}}
