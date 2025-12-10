@@ -1,54 +1,54 @@
 +++
-url = "/fr/acces-distant/ssh/problemes-frequents/"
-title = "SSH - Problèmes fréquents"
+url = "/remote-access/ssh/frequent-issues/"
+title = "SSH - Frequent Issues"
 layout = "faq"
 weight = 70
 hidden = true
-tags = [ "accès distant", "dépannage", "ssh" ]
+tags = [ "remote access", "troubleshooting", "ssh" ]
 +++
 
-## Connexion
+## Login
 
-Lors de problèmes de connexion vous pouvez utiliser la commande `ssh -v [utilisateur]@ssh-[compte].alwaysdata.net` pour avoir plus d'informations.
+When connecting problems you can use the `ssh -v [utilisateur]@ssh-[compte].alwaysdata.net` command for more information.
 
 {{% notice note %}}
-Remplacez `[utilisateur]` par le nom de votre utilisateur SSH et `ssh-[compte].alwaysdata.net` par votre nom d’hôte SSH.
-{{% /notice %}}
+Replace `[utilisateur]` with your SSH username and `ssh-[compte].alwaysdata.net` with your SSH host-name.
+{{%/notice %}}
 
-Un [blocage d'IP](security/network#prévention-des-intrusions) a lieu après une dizaine de tentatives échouées de connexion au serveur.
+A [IP block] (security/network#prévention-des-intrusions) occurs after about ten failed attempts to connect to the server.
 
 {{% notice info %}}
-alwaysdata a des logs de connexion dont vous pouvez exceptionnellement demander une copie.
-{{% /notice %}}
+alwaysdata has login logs from which you can exceptionally request a copy.
+{{%/notice %}}
 
 ### Too many authentication failures
 
-C'est un problème de clés SSH, précisez la clé correspondante. Si vous ne la trouvez pas, connectez-vous par mot de passe et mettez à jour le fichier `$HOME/.ssh/authorized_keys`.
+This is an SSH key issue, please specify the corresponding key. If you can't find it, log in by password and update the `$HOME/.ssh/authorized_keys` file.
 
-### WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+### WARNING: HOST REMOTE IDENTIFICATION HAS CHANGED!
 
-Un compte peut être déplacé de serveur SSH. Les nouveaux fingerprints sont indiqués dans **Accès distant > SSH**.
+An account can be moved from an SSH server. New fingerprints are specified in **Remote Access > SSH**.
 
-Il est nécessaire de mettre à jour le fichier `known_hosts`, ce qui est possible via la commande suivante :
+It is necessary to update the `known_hosts` file, which is possible via the following command:
 
 ```ssh
-$ ssh-keygen -R [nom_d'hôte]
+$ ssh-keygen -R [host_name]
 ```
 
 ### Input/output error
 
-Erreur liée à des opérations de notre côté, il faut patienter le temps qu'elle soit terminée mais vous pouvez aussi contacter le [support](https://admin.alwaysdata.com/support/add/) pour avoir plus d'informations.
+Error linked to opeditions from our side, wait for it to finish but you can also contact the [support](https://admin.alwaysdata.com/support/add/) for more information.
 
-## Droits
+## Permissions
 
-Utiliser plusieurs utilisateurs SSH peut avoir des effets secondaires non désirables : erreurs lors de l'accès à certains fichiers, de la suppression de dossiers...
+Using multiple SSH users may have undesirable side effects: errors when accessing certain files, deleting folders...
 
-Si c'est le cas, vous pouvez :
+If so, you can:
 
-- supprimer l'utilisateur SSH problématique. Cela réassigne automatiquement les fichiers dont il était propriétaire à l'utilisateur principal.
-- utiliser la commande `chmod` avec l'utilisateur propriétaire des fichiers concernés pour qu'il donne les droits nécessaires au groupe.
+- remove problem SSH user. This automatically reassigns the files it owned to the primary user.
+- use the `chmod` command with the owner user of the affected files to give the necessary group permissions.
 
 {{% notice warning %}}
-Les processus démarrés par un site (**Web > Sites**), typiquement _Apache_ ou _PHP_, tournent avec l'utilisateur principal.
-{{% /notice %}}
+Processes started by a site (**Web > Sites**), typically _Apache_ or _PHP_, run with the primary user.
+{{%/notice %}}
 
