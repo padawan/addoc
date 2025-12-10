@@ -1,59 +1,59 @@
 +++
-url = "/fr/sauvegardes/restaurer-un-site/"
-title = "Comment restaurer un site web"
-linkTitle = "Restaurer un site"
+url = "/savegardes/restaurer-un-site/"
+title = "How to restore a website"
+linkTitle = "Restore Site"
 layout = "howto"
 weight = 5
-tags = [ "base de données", "récupération", "sauvegarde", "site" ]
+tags = [ "database", "start", "backup", "site" ]
 +++
 
-Les sauvegardes de vos fichiers et bases de données se trouvent dans le répertoire `$HOME/admin/backup` de votre compte. Vous pouvez les restaurer via le menu **Avancé > Restauration de sauvegardes**.
+The backups of your files and databases can be found in your account's `$HOME/admin/backup` directory. You can restore them via the **Advanced> Backup restore** menu.
 
-1. Choisissez la date voulue ;
-   {{< fig "images/admin-panel_restoration.fr.png" "Interface d'administration : restauration de sauvegarde - étape 1" >}}
+1. Choose the desired date;
+   {{< fig "images/admin-panel_restoration.en.png" "Administration interface: restore backup - step 1" >}}
 
-2. Puis cochez la/les base(s) de données et/ou le/les répertoire(s) voulu(s) [^1].  
-   {{< fig "images/admin-panel\_restoration-site.fr.png" "Interface d'administration : restauration de sauvegarde - étape 2" >}}
+2. Then check the database(s) and/or the desired directory(s) [^1].  
+   {{< fig "images/admin-panel\_restoration-site.png" "Admin interface: restore backup - step 2" >}}
 
 {{% notice warning %}}
-La restauration va écraser la configuration actuelle, effectuez donc auparavant une sauvegarde.
-{{% /notice %}}
+Restore will overwrite the current configuration, so make a backup first.
+{{%/notice %}}
 
 {{% notice note %}}
-Le temps de restauration dépend de la taille des fichiers à restaurer.
-{{% /notice %}}
+Restore time depends on file size to restore.
+{{%/notice %}}
 
-## En SSH
+## In SSH
 
-Si vous souhaitez restaurer une sauvegarde manuellement.
+If you want to restore a backup manually.
 
-- Connectez-vous à votre compte [en SSH](remote-access/ssh) ;
+- Log in to your [SSH](remote-access/ssh);
 
-- Restaurez des fichiers :
+- Restore files:
 
     ```sh
     $ rsync -av --delete $HOME/admin/backup/[date]/files/[répertoire]/ $HOME/[répertoire]/
     ```
 
 {{% notice warning %}}
-`--delete` va supprimer tous les fichiers de ce répertoire ayant été créés depuis la date de la sauvegarde.
-Pour effectuer un test ajoutez `-n`.
-{{% /notice %}}
+`--delete` will delete all files in this directory that have been created since the backup date.
+To perform a test add `-n`.
+{{%/notice %}}
 
-- Restaurer une base de données MySQL :
+- Restore MySQL database:
 
     ```sh
     $ zstdcat $HOME/admin/backup/[date]/mysql/[base].sql.zst | mysql -h mysql-[compte].alwaysdata.net -u [utilisateur] -p [base]
     ```
 
-- Restaurer une base de données PostgreSQL :
+- Restore PostgreSQL database:
 
     ```sh
     $ zstdcat $HOME/admin/backup/[date]/postgresql/[base].sql.zst | psql -h postgresql-[compte].alwaysdata.net -U [utilisateur] -W -d [base]
     ```
 
 {{% notice tip %}}
-Les contenus archivés (e.g. les dumps de BDD) dans votre espace de _backup_ sont au format [Zstandard](https://github.com/facebook/zstd), vous pouvez utiliser les [outils `zstd*` officiels](https://github.com/facebook/zstd/releases/latest) ou le [plugin adapté pour 7zip](https://www.tc4shell.com/en/7zip/modern7z/) pour les manipuler.
-{{% /notice %}}
+Archived content (e.g. DB dumps in your _backup_ space are in [Zstandard]format (https://github.com/facebook/zstd), you can use the official [zstd\*\` tools](https://github.com/facebook/zstd/releases/latest) or the [plugin suitable for 7zip](https://www.tc4shell.com/en/7zip/modern7z/) to manipulate them.
+{{%/notice %}}
 
-[^1]: Il n'est pas obligatoire de restaurer à la fois bases et fichiers.
+[^1]: It is not mandatory to restore both databases and files.
