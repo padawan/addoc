@@ -1,11 +1,11 @@
 +++
-url = "/fr/langages/deno/"
+url = "/en/languages/deno/"
 title = "Deno"
 archetype = "chapter"
 tags = [ "deno" ]
 +++
 
-Le fonctionnement de [Deno](https://deno.land/) chez alwaysdata est très standard. Si vous avez l'habitude d'utiliser Deno sous un système Unix (par exemple, Linux), vous savez déjà presque tout ce qu'il faut.
+The operation of [Deno](https://deno.land/) at alwaysdata is standard. If you are used to using Deno on a Unix system (for example, Linux), you already know almost everything you need.
 
-- Plusieurs [versions](languages/deno/configuration#versions-supportées) sont disponibles ;
-- la [configuration d'environnement](languages/deno/configuration#environnement) se fait simplement.
+- Multiple [versions](languages/deno/configuration#versions-supportées) are available;
+- the [environment configuration](languages/deno/configuration#environnement) is simply done.
