@@ -1,64 +1,64 @@
 +++
-url = "/fr/emails/delivrabilite-bonnes-pratiques/"
-title = "Comment améliorer la délivrabilité d'emails"
-linkTitle = "Délivrabilité : bonnes pratiques"
+url = "/emails/delivrabilite-bonnes-pratiques/"
+title = "How to improve email delivery"
+linkTitle = "Deliverable: best practices"
 layout = "howto"
 weight = 20
 tags = [ "email" ]
 +++
 
-Que vos boîtes email soient hébergées dans un Cloud Public ou un environnement dédié, la délivrabilité de vos messages est très importante, et peut être optimisée par un travail conjoint de l'hébergeur et de ses utilisateurs.
+Whether your email addresses are hosted in a public cloud or a dedicated environment, delivery of your messages is important and can be optimized through joint work of the host and its users.
 
-## L'expéditeur
+## Sender
 
-- Vérifiez le nom de l'expéditeur ainsi que l'adresse email d'envoi ;
-- Utilisez les [protocoles d'identification](e-mails/set-up-spf-dkim-dmarc) ;
-- L'_ENVELOPE FROM_ doit correspondre au _FROM/HEADER FROM_ dans vos en-têtes.
+- Check the name of the sender and send email address;
+- Use [identification protocols](e-mails/set-up-spf-dkim-dmarc);
+- The _ENVELOPE FROM_ must match the _FROM/HEADER FROM_ in your headers.
 
-## Les destinataires
+## Recipients
 
-- Supprimez les adresses inexistantes ou inactives ;
-- Vérifiez les fautes d'orthographe dans les adresses ;
-- Évitez l'envoi de masse ;
-- Renseignez les adresses email dans le champ `Cc` (ou `Cci`) plutôt que les unes à la suite des autres dans le champ `To` (Pour) lors d'un envoi groupé.
+- Delete non-existent or inactive addresses;
+- Check for spelling errors in addresses;
+- Avoid mass shipment;
+- Enter the email addresses in the `Cc` (or `Cci`) field rather than one after another in the `To` field (To) when sending a group.
 
-## Le contenu
+## Content
 
-- Évitez :
-  - le HTML ;
-  - d'utiliser trop de ponctuation à la suite ;
-  - d'écrire en rouge ;
-  - d'écrire en majuscule ;
-  - d'utiliser des [spam words](https://www.pme-web.com/wp-content/uploads/2014/08/Emailing-Guide-Ultime-des-Mots-Interdits-PME-Web.pdf).
-- Soignez le sujet de l'email.
+- Avoid:
+  - HTML;
+  - use too much punctuation in continuation;
+  - to write in red;
+  - to write uppercase;
+  - using [spam words](https://www.pme-web.com/wp-content/uploads/2014/08/Emailing-Guide-Ultime-des-Mots-Interdits-PME-Web.pdf).
+- Heal the subject of the email.
 
-## Emailing
+## Email
 
-Vérifiez que les bonnes pratiques sont suivies en répondant "oui" aux questions suivantes :
+Make sure good practices are followed by answering "yes" to the following questions:
 
-- le destinataire a-t-il explicitement consenti à recevoir ces emails ?
-- un lien de désinscription est-il disponible, facilement identifiable et fonctionnel ?
+- Has the recipient explicitly agreed to receive these emails?
+- Is a signup link available, easily identifiable and functional?
 
-## Système de notation
+## Rating System
 
-Afin d'éviter les abus et optimiser la délivrabilité des emails envoyés par ses serveurs, alwaysdata a mis en place un système de notation qui se base sur différents critères comme l'analyse du contenu et la fréquence des envois.
+In order to avoid abuse and optimize delivery of emails sent by its servers, alwaysdata has set up a rating system that is based on different scripts, such as content analysis and forwarding speed.
 
-Plus la note est basse mieux l'email sera noté et l'envoi accepté. Sur le Cloud Public, tout email ayant une note supérieure à _3_ sera bloqué. En [Cloud Privé](accounts/billing/private-cloud-prices), la valeur par défaut est de _5_ et vous pouvez la modifier dans l'onglet **SMTP > Paramètres** de votre serveur. Il n'est pas possible de le désactiver.
+The lower the note the better the email will be recorded and the sending accepted. On the Public Cloud, any email with a higher rating at _3_ will be blocked. In [Private Cloud] (accounts/billing/private-cloud-prices), the default value is _5_ and you can change it in the **SMTP > Parameters** tab of your server. It is not possible to disable it.
 
 {{% notice note %}}
-Cette note n'est utilisée que pour l'envoi de nos serveurs. Elle n'a aucune incidence sur la gestion du message au niveau du serveur destinataire.
-{{% /notice %}}
+This note is only used for sending our servers. It does not affect the management of the message at the recipient server level.
+{{%/notice %}}
 
-Suivant cette notation, le message sera expédié via une adresse IP ayant une réputation plus ou moins bonne. Ainsi, en optimisant la qualité de vos emails et leurs envois, vous aurez moins de chance pour que votre message soit considéré comme indésirable.
+Depending on this rating, the message will be sent via an IP address with a more or less good reputation. This way, by optimizing the quality of your emails and their sending, you will have less chance of your message becoming undesirable.
 
-Ce système utilise [Rspamd](https://rspamd.com/) et un ensemble de règles propres à alwaysdata.
+This system uses [Rspamd](https://rspamd.com/) and an own set of alwaysdata.
 
-Pour ne pas être dépendant des abus d'autres utilisateurs étant sur le même serveur d'envoi de mails vous pouvez louer une [IP dédiée](advanced/dedicated-ip-addresses) dans l'onglet **Avancé > Adresses IP** du compte. Vous pourrez indiquer les emails envoyés par cette IP selon la note qu'ils auront reçus par l'antispam.
+In order to avoid abuse of other users on the same mail server you can rent a [dedicated IP](advanced/dedicated-ip-addresses) in the \*\*Advanced> IP Addresses tab of the account. You will be able to specify the emails sent by this IP depending on the note they have received from the antispam.
 
-## Remarques
+## Feedback
 
-- La taille limite des emails envoyés est fixée à **50 Mo**.
+- The size limit for emails sent is set to **50 MB**.
 
 ---
 
-Tester sa délivrabilité : [Mail tester](https://www.mail-tester.com/?lang=fr), [Experte.com](https://www.experte.com/fr/spam-checker)
+Test deliverable: [Mail test](https://www.mail-tester.com/?lang=fr), [Experte.com](https://www.experte.com/fr/spam-checker)
