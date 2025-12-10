@@ -1,39 +1,39 @@
 +++
-url = "/fr/comptes/restrictions-du-cloud-public/"
-title = "Restrictions du Cloud Public"
+url = "/accounts/cloud-public-restriction/"
+title = "Public Cloud Restrictions"
 layout = "man"
 hidden = true
-tags = [ "plan gratuit", "cloud public", "suspension" ]
+tags = [ "free plan", "public cloud", "suspension" ]
 +++
 
-Voici une liste - non exhaustive - d'interdictions :
+Here is a - not exhaustive - ban list:
 
-- utiliser les serveurs SSH pour faire tourner des bots et démons ;
-- utiliser le compte pour :
-  - faire du [phishing](https://fr.wikipedia.org/wiki/Hame%C3%A7onnage) ;
-  - envoyer du [spam](https://fr.wikipedia.org/wiki/Spam#Dans_l'Union_europ%C3%A9enne) ;
-    - tout message doit être envoyé avec le **consentement explicite** (_opt-in_) du destinataire ;
-    - utiliser une liste achetée à un tiers est donc considéré comme du spam ;
-    - [plusieurs questions à se poser avant de se lancer dans l'emailing](e-mails/delivery#emailing).
-  - tout autre usage illicite.
+- use SSH servers to run bots and daemons;
+- use account for:
+  - make [phishing](https://fr.wikipedia.org/wiki/Hame%C3%A7onnage);
+  - send [spam](https://fr.wikipedia.org/wiki/Spam#Dans_l'Union_europ%C3%A9enne);
+    - any message must be sent with the recipient's **explicit consent** (_opt-in_);
+    - using a purchased list at a third party is therefore obsolete as spam;
+    - [several questions to ask before going into emailing](e-mails/delivery#emailing).
+  - any other illegal use.
 
-Pour toutes ces restrictions, nous nous réservons le droit de suspendre et/ou résilier le profil.
+For all these restrictions, we reserve the right to suspend and/or cancel the profile.
 
-## Compte gratuit
+## Free account
 
-À ajouter aux règles présentées précédemment :
+Add to previous presentations:
 
-- avoir **plusieurs comptes gratuits** pour la même personne ;
-  - attention à ne pas confondre compte et fonctionnalités (sites web, domaines, adresses email, bases de données, etc.).
-  - Un compte peut héberger autant de fonctionnalités (autant de sites par exemple) que vous souhaitez.
-- utiliser le compte gratuit pour faire des _connexions distantes_ à une/des _base(s) de données_ ;
-- utiliser le compte gratuit pour héberger des applications consommatrices de ressources, notamment des proxies ou des systèmes d’envoi d’emails en masse ;
-- utiliser le compte gratuit pour des sites/adresses email à des _fins lucratives_. Il est donc exclu d’héberger le site ou les emails d’une entreprise commerciale, de placer des publicités qui pourraient générer des profits, de vendre directement sur son site ou via des emails un service ou des biens, etc.
+- have **multiple free accounts** for the same person;
+  - Be careful not to confuse account with functionality (websites, domains, email addresses, databases, etc.).
+  - An account can host as many functionalities (for example, as many sites) as you want.
+- use the free account to make _remote connections_ to a _database_;
+- use the free account to host resource-consuming apps, including proxies or mass mail systems;
+- use the free account for sites/email addresses for _lucrative purposes_. It is therefore not possible to host the website or emails of a commercial company, to place advertisements that could generate profits, to sell directly on its site or via emails a service or goods, etc.
 
 {{% notice note %}}
-Seule l'adresse `alwaysdata.net` du compte peut servir à la [création de _sites web_](/sites/add-a-site/) sur le pack Free. Pour utiliser son propre domaine pour héberger un site web, il est donc nécessaire de prendre un pack payant.
+Only the account `alwaysdata.net` address can be used for [creating _website_](/sites/add-a-site/) on the Free Pack. To use your own domain to host a website, it is therefore necessary to take a paid package.
 
-Vous pouvez, par contre, utiliser votre domaine pour [héberger des _adresses emails_](/e-mails/create-an-e-mail-address/) ou [créer des _enregistrements DNS_](/domains/add-dns/) sur le pack Free.
-{{% /notice %}}
+However, you can use your domain to [host _email addresses_](/e-mails/create-an-e-mail-address/) or [create _DNS records_](/domains/add-dns/) on the Free Pack.
+{{%/notice %}}
 
-Votre profil peut aussi être suspendu automatiquement après _[X jours d'inactivité](accounts/alerts-notifications#inactivité)_ sur votre interface d'administration.
+Your profile may also be automatically suspended after _[X days of inactivity](accounts/alerts-notifications#inactivité)_ on your admin interface.
