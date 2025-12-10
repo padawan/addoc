@@ -1,18 +1,18 @@
 +++
-url = "/fr/emails/divers/"
-title = "Diverses questions"
+url = "/emails/diverse/"
+title = "Various questions"
 layout = "man"
 hidden = "true"
 tags = [ "email" ]
 +++
 
-## Limite du nombre d'envoi de mails
+## Limit the number of emails sent
 
-Il n'y a pas de limites mais lors d'un envoi important, tous les emails ne partiront pas en même temps. Ils seront envoyés "au fil de l'eau".
+There are no limits, but when you send an important message, not all emails will leave at the same time. They will be sent "along the way".
 
-Le spam est totalement interdit.
+Spam is completely forbidden.
 
-## Certains dossiers ne sont pas visibles sur le webmail
+## Some folders are not visible on webmail
 
-{{< fig "images/folders-apparence-1.fr.png" "Accès pour s'abonner à des dossiers" >}}
-{{< fig "images/folders-apparence-2.fr.png" "Cocher les dossiers à s'abonner" >}}
+{{< fig "images/folders-skin-1.png" "Access to subscribe to records" >}}
+{{< fig "images/folders-skin-2.en.png" "Check folders to subscribe" >}}
