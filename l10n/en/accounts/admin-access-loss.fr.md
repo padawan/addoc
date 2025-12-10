@@ -1,59 +1,59 @@
 +++
-url = "/fr/comptes/perte-dacces-admin"
-title = "Perte d'accès à l'admin alwaysdata"
+url = "/accounts/perte-dacces-admin"
+title = "Access lost to alwaysdata admin"
 layout = "faq"
 hidden = true
-tags = [ "profil", "sécurité" ]
+tags = [ "profile", "security" ]
 +++
 
-Voici comment procéder lorsque vous perdez vos accès à [notre interface d'administration](https://admin.alwaysdata.com).
+Here's how to do this when you lose your access to [our admin interface](https://admin.alwaysdata.com).
 
-## Oubli du mot de passe
+## Forgot password
 
-Rendez-vous sur https://admin.alwaysdata.com/password/lost/ pour réinitialiser votre mot de passe.
+Go to https://admin.alwaysdata.com/password/lost/ to reset your password.
 
-## Oubli de l'adresse email/Perte d'accès à l'adresse email authentifiante
+## Forgot email address/lost access to authenticating email address
 
-Contactez nous par email (_contact[at]alwaysdata.com_) pour que vérifions la légitimité de la demande.
+Contact us by email (_contact[at]alwaysdata.com_) so that we can verify the validity of the request.
 
-> Notre équipe appellera le numéro de téléphone renseigné sur le profil concerné.
+> Our team will call the phone number information on the relevant profile.
 
-Si cette vérification échoue, les informations suivantes vous seront demandées, à envoyer à _contact[at]alwaysdata.com_ :
+If this verification failed, you will be asked for the following information, please send _contact[at]alwaysdata.com_:
 
-- Particulier : un justificatif d'identité ;
-- Entreprise : la déclaration d'existence auprès de l'autorité compétente (extrait KBIS en France), un justificatif d'identité du gérant ;
-- Association : la déclaration d'existence auprès de l'autorité compétente (avis SIRENE récent et déclaration en préfecture en France), un justificatif d'identité du président actuel et un document justifiant sa fonction.
+- Individual: a proof of identity;
+- Enterprise: the declaration of existence at the competent authority (extracts KBIS in France), a proof of identity of the giant-;
+- Association: the declaration of existence at the competent authority (SSIRENE opinion is the representative and declaration in prefecture in France), proof of identity of the current President and a document justifying his or her function.
 
-**Une fois la vérification d'identité effectuée nous vous indiquerons l'adresse email concernée et la modifierons si besoin.**
+**Once the identity verification has been completed, we will provide you with the relevant email address and change it if necessary.**
 
-## Blocage lié à l'authentification à 2 facteurs
+## Bound to 2-factor authentication
 
-Contactez nous par email (_contact[at]alwaysdata.com_) pour que vérifions la légitimité de la demande.
+Contact us by email (_contact[at]alwaysdata.com_) so that we can verify the validity of the request.
 
-> Notre équipe appellera le numéro de téléphone renseigné sur le profil concerné.
+> Our team will call the phone number information on the relevant profile.
 
-Si cette vérification échoue, les informations suivantes vous seront demandées, à envoyer à _contact[at]alwaysdata.com_ depuis l'adresse email du profil concerné :
+If this verification failed, you will be asked for the following information, please send _contact[at]alwaysdata.com_ from the relevant profile email address:
 
-- Particulier : un justificatif d'identité ;
-- Entreprise : la déclaration d'existence auprès de l'autorité compétente (extrait KBIS en France), un justificatif d'identité du gérant ;
-- Association : la déclaration d'existence auprès de l'autorité compétente (avis SIRENE récent et déclaration en préfecture en France), un justificatif d'identité du président actuel et un document justifiant sa fonction.
+- Individual: a proof of identity;
+- Enterprise: the declaration of existence at the competent authority (extracts KBIS in France), a proof of identity of the giant-;
+- Association: the declaration of existence at the competent authority (SSIRENE opinion is the representative and declaration in prefecture in France), proof of identity of the current President and a document justifying his or her function.
 
-* Un code aléatoire sera aussi envoyé à l'adresse email du profil concerné que vous devrez nous retransmettre.
+* A random code will also be sent to the email address of the profile you have to retransmit to us.
 
-**Une fois la vérification d'identité effectuée nous désactiverons l'authentification TOTP sur le profil alwaysdata.**
+**After the identity verification is performed we will disable TOTP authentication on the alwaysdata profile.**
 
-## Blocage lié à la limitation d'IP
+## Block bound to IP limitation
 
-Contactez nous par email (_contact[at]alwaysdata.com_) pour que vérifions la légitimité de la demande.
+Contact us by email (_contact[at]alwaysdata.com_) so that we can verify the validity of the request.
 
-> Notre équipe appellera le numéro de téléphone renseigné sur le profil concerné.
+> Our team will call the phone number information on the relevant profile.
 
-Si cette vérification échoue, les informations suivantes vous seront demandées, à envoyer à _contact[at]alwaysdata.com_ depuis l'adresse email du profil concerné :
+If this verification failed, you will be asked for the following information, please send _contact[at]alwaysdata.com_ from the relevant profile email address:
 
-- Particulier : un justificatif d'identité ;
-- Entreprise : la déclaration d'existence auprès de l'autorité compétente (extrait KBIS en France), un justificatif d'identité du gérant ;
-- Association : la déclaration d'existence auprès de l'autorité compétente (avis SIRENE récent et déclaration en préfecture en France), un justificatif d'identité du président actuel et un document justifiant sa fonction.
+- Individual: a proof of identity;
+- Enterprise: the declaration of existence at the competent authority (extracts KBIS in France), a proof of identity of the giant-;
+- Association: the declaration of existence at the competent authority (SSIRENE opinion is the representative and declaration in prefecture in France), proof of identity of the current President and a document justifying his or her function.
 
-* Un code aléatoire sera aussi envoyé à l'adresse email du profil concerné que vous devrez nous retransmettre.
+* A random code will also be sent to the email address of the profile you have to retransmit to us.
 
-**Une fois la vérification d'identité effectuée nous supprimerons les adresses IP autorisées sur le profil alwaysdata.**
+**After the identity verification is performed, we will delete the IP addresses allowed on the alwaysdata profile.**
