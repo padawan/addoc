@@ -1,46 +1,46 @@
 +++
-url = "/fr/domaines/ajouter-un-enregistrement-srv/"
-title = "Comment ajouter un enregistrement SRV"
+url = "/domaines/add-un-registrment-srv/"
+title = "How to add a SRV record"
 layout = "howto"
 hidden = true
-tags = [ "dns", "domaine" ]
+tags = [ "dns", "domain" ]
 +++
 
-Un [enregistrement SRV](https://fr.wikipedia.org/wiki/Enregistrement_de_service) définit l'emplacement de services précis.
+A [SRV record](https://fr.wikipedia.org/wiki/Enregistrement_de_service) defines the location of specific services.
 
-1. Rendez-vous sur **Domaines > Details de [example.org] - 🔎 > Enregistrements DNS** ;
-   {{< fig "images/admin-panel_dns-record-list.fr.png" "Interface d'administration : liste des enregistrements DNS" >}}
+1. Go to **Domains > [example.org] Details - 🔎 > DNS Records**;
+   {{< fig "images/admin-panel_dns-record-list.png" "Admin interface: DNS records list" >}}
 
-2. Choisissez **Ajouter un enregistrement DNS** ;
+2. Choose **Add DNS record**;
 
-3. Renseignez le formulaire.  
-   {{< fig "images/admin-panel_add-srv.fr.png" "Interface d'administration : ajouter un enregistrement SRV" >}}
+3. Fill in the form.  
+   {{< fig "images/admin-panel_add-srv.fr.png" "Admin interface: add SRV record" >}}
 
 {{% notice warning %}}
-Ne mettez pas la racine dans **Nom d'hôte**.
-Par exemple, en indiquant `www.example.org` dans cette case, vous créerez un enregistrement pour `www.example.org.example.org`.
-{{% /notice %}}
+Do not put the root in **Host Name**.
+For example, by entering `www.example.org` in this box, you will create a record for `www.example.org.example.org`.
+{{%/notice %}}
 
-## Quelques exemples
+## Some examples
 
-- Configurer automatiquement un client mail avec `_autodiscover._tcp` :
+- Automatically configure a mail client with `_autodiscover._tcp`:
     ```
-    » Nom d'hôte : _autodiscover._tcp
-    » Valeur : 0 443 adresse.serveur.mail
-    » Priorité : 1
-    » TTL : 300
+    » Host name: _autodiscover._tcp
+    » Value: 0 443 address.server.mail
+    » Priority: 1
+    » TTL: 300
     ```
 
-- Utiliser Lync (anciennement Skype) avec `_sip._tls` et `_sipfederationtls._tcp` :
+- Use Lync (formerly Skype) with `_sip._tls` and `_sipfederationtls._tcp`:
     ```
-    » Nom d'hôte : _sip._tls
-    » Valeur : 1 443 sipdir.online.lync.com
-    » Priorité : 100
-    » TTL : 3600
+    » Hostname: _sip._tls
+    » Value: 1 443 sipdir.online.lync.com
+    » Priority: 100
+    » TTL: 3600
     ```
     ```
-    » Nom d'hôte: _sipfederationtls._tcp
-    » Valeur: 1 443 sipfed.online.lync.com
-    » Priorité: 100
+    » Host name: _sipfederationtls._tcp
+    » Value: 1 443 sipfed.online.lync.com
+    » Priority: 100
     » TTL : 3600
     ```
