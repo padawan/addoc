@@ -1,24 +1,24 @@
 +++
-url = "/fr/domaines/transfert-sortant/"
-title = "Comment transférer un domaine chez un autre prestataire"
-linkTitle = "Transfert sortant"
+url = "/domains/transfer-out/"
+title = "How to transfer a domain to another provider"
+linkTitle = "Outgoing transfer"
 layout = "howto"
 hidden = true
-tags = [ "domaine" ]
+tags = [ "domain" ]
 +++
 
-Pour transférer un domaine chez un autre prestataire, il faut initier la commande chez le nouveau prestataire.
+To transfer a domain to another provider, the order must be initiated at the new provider.
 
-## Préparation
+## Preparing
 
-Avant de lancer l'opération le propriétaire doit :
+Before starting the project the owner must:
 
-- enlever la protection contre les transferts ;
-- vérifier que les informations du propriétaire sont correctes et visibles dans le `whois`[^1] ;
-- récupérer le code d'autorisation.
+- remove transfer protection;
+- make sure the property information is correct and visible in the `whois`[^1] ;
+- recover the authorization code.
 
-{{< fig "images/admin-panel_domain-details.fr.png" "Préparer un transfert" >}}
+{{< fig "images/admin-panel_domain-details.en.png" "Prepare transfer" >}}
 
-Un transfert ne peut avoir lieu dans les 60 jours suivant sa création ou un précédent transfert.
+A transfer cannot take place within 60 days of its creation, or a previous transfer.
 
-[^1]: Plus d'informations sur [whois](https://fr.wikipedia.org/wiki/Whois)
+[^1]: More information about [whois](https://fr.wikipedia.org/wiki/Whois)
