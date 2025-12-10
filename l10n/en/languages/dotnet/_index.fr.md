@@ -1,12 +1,12 @@
 +++
-url = "/fr/langages/dotnet/"
+url = "/languages/dotnet/"
 title = ".NET"
 archetype = "chapter"
 +++
 
-Le fonctionnement de [.NET](https://dotnet.microsoft.com/) chez alwaysdata est très standard. Si vous avez l'habitude d'utiliser .NET sous un système Unix (par exemple, Linux), vous savez déjà presque tout ce qu'il faut.
+The operation of [.NET](https://dotnet.microsoft.com/) at alwaysdata is standard. If you are used to using .NET on a Unix system (for example, Linux), you already know almost everything you need.
 
-- Les [versions](languages/dotnet/configuration#versions-supportées) 5.0, 6.0, 8.0 et 10.0 sont disponibles ;
-- la [configuration d'environnement](languages/dotnet/configuration#environnement) se fait simplement.
+- The [versions](languages/dotnet/configuration#versions-supportées) 5.0, 6.0, 8.0 and 10.0 are available;
+- the [environment configuration](languages/dotnet/configuration#environnement) is simply done.
 
-* [Tutoriel Hello World](https://learn.microsoft.com/fr-fr/aspnet/core/getting-started/?view=aspnetcore-6.0&tabs=linux)
+* [Hello World Tutorial](https://learn.microsoft.com/fr-fr/aspnet/core/getting-started/?view=aspnetcore-6.0&tabs=linux)
