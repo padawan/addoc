@@ -1,24 +1,24 @@
 +++
-url = "/fr/listes-de-diffusion/ajouter-des-membres-a-une-liste-de-diffusion/"
-title = "Ajouter des membres à une liste de diffusion"
+url = "/en/mailing lists/add-es-membres-a-a-mailing list/"
+title = "Add members to a mailing list"
 layout = "man"
 hidden = true
 tags = [ "email", "mailing list" ]
 +++
 
-Pour ajouter des membres à une liste de diffusion, vous devez vous connecter à l'[interface de gestion Postorius](https://mailman.alwaysdata.com/). Connectez-vous à l'aide d'une adresse mail d'administration que vous aurez défini à la [création de votre liste de diffusion](create-a-mailing-list).
+To add members to a mailing list, you need to connect to the [Postorius management interface](https://mailman.alwaysdata.com/). Log in using an admin email address that you have set to [create your mailing list](create-a-mailing-list).
 
-Une fois identifié, rendez vous dans la section de gestion de la liste de diffusion concernée en cliquant sur son nom.
+Once identified, go to the management section of the relevant mailing list by clicking on its name.
 
-## Ajout manuel de membres
+## Manual addition of members
 
-Pour ajouter manuellement des membres à la liste, rendez vous dans la section **Opérations groupées → Abonnement en Masse**.
+To manually add members to the list, go to the **Group memberships → Mass Subscription** section.
 
-Ajoutez les adresses mails dans la zone de saisie, à raison d'une adresse mail par ligne. Les formats acceptés sont indiqués sous la section.
+Add email addresses to the input box, due to one email address per line. Accepted formats are indicated under the section.
 
-Par défaut, les adresses mails :
+Default email addresses:
 
-- _pré-confirmées_ : les utilisateurs seront automatiquement inscrits sans confirmation de leur part.
-- _pré-approuvées_ : les modérateurs n'auront pas à revalider l'abonnement.
+- _preconfirmed_: Users will be automatically registered without confirmation from them.
+- _preapproved_: modelers will not have to revalidate the subscription.
 
-Les adresses ne sont pas _pré-vérifiées_ par défaut (ils doivent prouver que leur adresse est correcte en renvoyant un message), vous pouvez désactiver cette étape en cochant la case associée.
+Addresses are not _preferred_ by default (they must prove that their address is correct by sending a message), you can disable this step by checking the associated checkbox.
