@@ -1,14 +1,14 @@
 +++
-url = "/fr/domaines/supprimer-un-enregistrement-dns/"
-title = "Comment supprimer un enregistrement DNS"
+url = "/domains/remove-a-registrment-dns/"
+title = "How to delete a DNS record"
 layout = "howto"
 hidden = true
-tags = [ "dns", "domaine" ]
+tags = [ "dns", "domain" ]
 +++
 
-1. Allez dans **Domaines > Details de [example.org] - 🔎 > Enregistrements DNS** ;
-2. {{< fig "images/admin-panel_dns-record-list.fr.png" "Interface d'administration : liste des enregistrements DNS" >}}
+1. Go to **Domains > [example.org] Details - 🔎 > DNS Records**;
+2. {{< fig "images/admin-panel_dns-record-list.png" "Administration interface: list of DNS records" >}}
 
 {{% notice note %}}
-Les enregistrements créés par défaut par notre système (par exemple en ajoutant une adresse dans **Web > Sites**) ne sont pas _supprimables_ mais vous pouvez les _écraser_ en [ajoutant un enregistrement DNS](domains/add-dns) pour le nom d'hôte concerné.
-{{% /notice %}}
+Records created by default by our system (e.g. by adding an address in **Web > Sites**) are not _deletable_ but you can _overwrite_ them by [adding a DNS record](domains/add-dns) for the relevant host name.
+{{%/notice %}}
