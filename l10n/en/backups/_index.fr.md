@@ -1,29 +1,29 @@
 +++
-url = "/fr/sauvegardes"
-title = "Sauvegardes"
+url = "/en/backups"
+title = "Backups"
 pre = "<i class='fas fa-fw fa-history'></i> "
 weight = 34
 archetype = "chapter"
-tags = [ "récupération", "sauvegarde" ]
+tags = [ "start", "backup" ]
 +++
 
-Une sauvegarde de vos fichiers, bases de données et emails est effectuée **quotidiennement** et disponible dans le répertoire `$HOME/admin/backup` de votre compte. Ces sauvegardes sont conservées durant un nombre de jours _glissants_, selon l'offre choisie :
+A backup of your files, databases and emails is performed **daily** and available in your account's `$HOME/admin/backup` directory. These backups are kept for a number of _slipper_ days, depending on the plan chosen:
 
-| Cloud Public |         |          |          |          | Cloud Privé     |               |
-| ------------ | ------- | -------- | -------- | -------- | --------------- | ------------- |
-| Free         | Small   | Medium   | Large    | X-Large  | Serveurs dédiés | Serveurs Gold |
-| 3 jours      | 7 jours | 20 jours | 20 jours | 30 jours | 30 jours        | 30 jours      |
+| Public Cloud |        |         |         |         | Private Cloud     |              |
+| ------------ | ------ | ------- | ------- | ------- | ----------------- | ------------ |
+| Free         | Small  | Medium  | Wide    | X-Large | Servers dedicated | Gold Servers |
+| 3 days       | 7 days | 20 days | 20 days | 30 days | 30 days           | 30 days      |
 
-Quelque soit l'offre prise, les sauvegardes sont stockées dans un _datacenter dédié_, distant de plusieurs kilomètres du centre de production et utilisant un autre prestataire.
+Regardless of the offer taken, backups are stored in a data center, several kilometres away from the production center and using another provider.
 
-Vous pouvez restaurer [un site web](restore-a-site) ou des [emails](restore-e-mails) dans l'onglet **Avancé > Restauration de sauvegardes** de votre interface d'administration.
+You can restore [a website](restore-a-site) or [emails](restore-e-mails) in the **Advanced> Backup restore** tab of your admin interface.
 
 {{% notice info %}}
-Les sauvegardes ne rentrent pas en compte dans le quota d'espace disque d'un compte.
-{{% /notice %}}
+Backups do not count into an account's disk space quota.
+{{%/notice %}}
 
 {{% notice tip %}}
-Les contenus archivés (e.g. les dumps de BDD) dans votre espace de _backup_ sont au format [Zstandard](https://github.com/facebook/zstd), vous pouvez utiliser les [outils `zstd*` officiels](https://github.com/facebook/zstd/releases/latest) ou le [plugin adapté pour 7zip](https://www.tc4shell.com/en/7zip/modern7z/) pour les manipuler.
-{{% /notice %}}
+Archived content (e.g. DB dumps in your _backup_ space are in [Zstandard]format (https://github.com/facebook/zstd), you can use the official [zstd\*\` tools](https://github.com/facebook/zstd/releases/latest) or the [plugin suitable for 7zip](https://www.tc4shell.com/en/7zip/modern7z/) to manipulate them.
+{{%/notice %}}
 
-- [Plan de continuité d'activité d'alwaysdata](security/drp)
+- [Alwaysdata Activity Continuity Plan](security/drp)
