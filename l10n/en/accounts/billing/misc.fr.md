@@ -1,46 +1,46 @@
 +++
-url = "/fr/comptes/facturation/divers/"
-title = "Diverses questions"
+url = "/accounts/billing/diverse/"
+title = "Various questions"
 layout = "man"
 hidden = true
-tags = [ "facturation" ]
+tags = [ "invoicing" ]
 +++
 
-## Accéder à ses contrats
+## Acquire to its contracts
 
-Les contrats sont accessibles via le menu **Abonnements > Contrats**. Vous aurez accès à la dernière version validée, ainsi que les contrats à valider.
+Contracts can be accessed via the **Subscriptions > Contracts** menu. You will have access to the latest validated version, as well as the contracts to be validated.
 
-## Souscrire à un plan Cloud Privé
+## Subscribe to a Private Cloud Plan
 
-Pour souscrire à une offre du [Cloud Privé](accounts/billing/private-cloud-prices), contactez-nous par [ticket](https://admin.alwaysdata.com/support/add/), [email](https://www.alwaysdata.com/fr/) ou [téléphone](tel:+33184162340), nous vous guiderons sur la démarche à suivre.
+To subscribe to a [Private Cloud] offer (accounts/billing/private-cloud-prices), contact us by [ticket](https://admin.alwaysdata.com/support/add/), [email](https://www.alwaysdata.com/fr/) or [téléphone](tel:+33184162340), we will guide you on how to proceed.
 
-Il n'y a pas de frais d'installation mais un engagement minimum de 3 mois sera demandé lors de l'achat d'un serveur Dédié/Gold. Si vous ne souhaitez pas de cet engagement, le prix du serveur sera majoré de 20 % lors des 3 premiers mois.
+There is no installation fee but a minimum 3 months commitment will be required when purchasing a Deedie/Gold server. If you do not want this commitment, the server price will be increased by 20% in the first 3 months.
 
-## Regrouper ses factures
+## Group Invoices
 
-Il est possible de choisir le jour du mois de facturation, plus souple et pratique lorsque vous avez plusieurs abonnements (hébergement, adresse IP, etc.).
+It is possible to choose the day of the billing month, more flexible and convenient when you have multiple subscriptions (hosting, IP address, etc.).
 
-Pour le faire, rendez-vous dans **Facturation > Paramètres > Jour de facturation**.
+To do so, go to **Billing > Parameters > Billing Day**.
 
-Une _facture de prorata_ (sur chaque produit souscrit) est générée lors de la mise en place de cette fonctionnalité afin d’aligner les dates.
+A _prorata bill_ (on each subscribed product) is managed when setting up this feature to align dates.
 
-## Changer de raison sociale
+## Change Business Name
 
-Pour changer de raison sociale rendez-vous dans l'onglet **Profil**, les prochaines factures seront émises à la nouvelle domiciliation.
-Si une facture vient d'être émise vous pouvez _exceptionnellement_ contactez le [support](https://admin.alwaysdata.com/support/add) pour qu'il la régénère.
+To change your business name, go to the **Profile** tab, the next invoices will be issued to the new home.
+If an invoice has been issued you can _exceptionally_ contact the [support](https://admin.alwaysdata.com/support/add) to reassign it.
 
-## Où trouver son numéro client / le RIB d'alwaysdata
+## Open to find its customer number/alwaysdata RIB
 
-Ils sont disponibles dans **Facturation > Transactions > Alimenter le compte** ou **Facturation > Moyens de paiement > Alimenter le compte**.
+They are available in **Billing > Transactions > Account Payment** or **Billing > Payment Methods > Fund Account**.
 
-## Devis et factures proforma
+## Proforma Invoices and Quotes
 
-Les factures sont émises à la livraison d'un service. Nous pouvons cependant émettre des devis et factures proforma sur demande. Contactez le [support](https://admin.alwaysdata.com/support/add).
+Invoices are delivered to a service. However, we can issue proforma quotes and invoices upon request. Contact [support](https://admin.alwaysdata.com/support/add).
 
-## Supprimer avant échéance
+## Delete before issue
 
-Aucun remboursement n'aura lieu lors de la suppression d'un compte ou le décommissionnement d'un serveur avant son échéance.
+No refund will be made when deleting an account or discommissioning a server before its expiry.
 
-## Process spéciaux de facturation
+## Billing specific process
 
-Si vous avez des process spéciaux, contactez-notre [support](https://admin.alwaysdata.com/support/add) ou notre [équipe commerciale](https://www.alwaysdata.com/fr/).
+If you have specific processes, contact our [support](https://admin.alwaysdata.com/support/add) or our [sales team](https://www.alwaysdata.com/fr/).
