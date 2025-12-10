@@ -1,28 +1,28 @@
 +++
-url = "/fr/acces-distant/ftp/utiliser-filezilla/"
-title = "Comment télécharger des fichiers avec FileZilla"
+url = "/remote/ftp/user-filezilla/"
+title = "How to upload files with FileZilla"
 layout = "howto"
-tags = [ "fichiers", "filezilla", "ftp" ]
+tags = [ "files", "filezilla", "[currency symbol] ftp" ]
 hidden = true
 +++
 
-[Rappel des informations de connexion](remote-access/ftp#se-connecter-en-ftp)
+[Login Information Reminder](remote-access/ftp#se-connecter-en-ftp)
 
-[FileZilla](https://filezilla-project.org/) est un client FTP gratuit fonctionnel sur tous les systèmes d'exploitation.
+[FileZilla](https://filezilla-project.org/) is a free working FTP client on all operating systems.
 
-Dans notre exemple nous utilisons le compte `test` et son utilisateur FTP principal. C'est à remplacer par vos informations de connexion personnelles.
+In our example we use the `test` account and its main FTP user. This is to be replaced by your personal login information.
 
-- Rendez-vous dans **Fichiers > Gestionnaire de Sites > Nouveau site**
+- Go to **Files > Site Manager > New Site**
 
-{{< fig "images/site-manager.fr.png" "" >}}
+{{< fig "images/site-manager.en.png" "" >}}
 
-- Renseignez-y vos informations de connexion (nom d'hôte, identifiant et port) puis cliquez sur **Connecter**
-- Renseignez votre mot de passe
+- Fill in your login details (hostname, ID and port) and then click **Connect**
+- Enter your password
 
-{{< fig "images/password.fr.png" "" >}}
+{{< fig "images/password.en.png" "" >}}
 
-- La connexion s'effectue et vous n'avez plus qu'à faire des glisser-déposer du répertoire **Site Local** vers le répertoire **Site distant**.
+- The connection is done and you only have to drag and drop from the **Local Site** directory to the **Remote Site** directory.
 
-{{< fig "images/interface.fr.png" "" >}}
+{{< fig "images/interface.png" "" >}}
 
-Mettez les fichiers directement dans le répertoire `www`.
+Put the files directly into the `www` directory.
