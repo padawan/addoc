@@ -1,82 +1,82 @@
 +++
-url = "/fr/sites/formater-les-logs-http/"
-title = "Formater les logs HTTP"
+url = "/sites/formater-les-logs-http/"
+title = "Format HTTP logs"
 layout = "man"
 hidden = true
 tags = [ "http", "site" ]
 +++
 
-Rendez-vous dans l'onglet **Logs** de votre site (menu **Web > Sites**) pour personnaliser les logs d'accès HTTP ; stockés ensuite dans le répertoire `$HOME/admin/logs/http/`.
+Go to the **Logs** tab of your site (menu **Web > Sites**) to customize HTTP access logs; then stored in the `$HOME/admin/logs/http/` directory.
 
-{{< fig "images/admin-panel_add-site-logs_standard.fr.png" "" >}}
+{{< fig "images/admin-panel_add-site-logs_standard.png" "" >}}
 
-## Types de formats
+## Format types
 
-- le format _Standard_[^1] :
-
-```txt
-{request_hostname} {client_ip} - - [{completion_date:%d/%b/%Y:%H:%M:%S %z}] "{request}" {status} {response_size} "{referer}" "{user_agent}"
-```
-
-> Exemple :
-
-```sh
-blog.alwaysdata.com 198.51.100.42 - - [17/Feb/2022:14:19:01 +0100] "GET /2022/02/01/2022-au-rapport/ HTTP/2.0" 200 16634 "https://blog.alwaysdata.com/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0"
-```
-
-- le format _Avancé_ (format par défaut) :
+- _Standard_[^1] format:
 
 ```txt
-{request_hostname} {client_ip} - - [{completion_date:%d/%b/%Y:%H:%M:%S %z}] "{request}" {status} {response_size} "{referer}" "{user_agent}" {protocol} {duration}
+{request_hostname} {client_ip} - [{completion_date:%d/%b/%Y:%H:%M:%S %z}] "{request}" {status} {response_size} "{referer}" "{user_agent}"
 ```
 
-> Exemple :
+> Example:
 
 ```sh
-blog.alwaysdata.com 198.51.100.42 - - [17/Feb/2022:14:19:01 +0100] "GET /2022/02/01/2022-au-rapport/ HTTP/2.0" 200 16634 "https://blog.alwaysdata.com/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" https 0.128109
+blog.alwaysdata.com 198.51.100.42 - [17/Feb/2022:14:19:01 +0100] "GET /2022/02/01/2022-au-rapport / HTTP/2.0" 200 16634 "https://blog.alwaysdata.com/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0"
+```
+
+- _Advance_ format (default format):
+
+```txt
+{request_hostname} {client_ip} - [{completion_date:%d/%b/%Y:%H:%M:%S %z}] "{request}" {status} {response_size} "{referer}"{user_agent}" {protocol} {duration}
+```
+
+> Example:
+
+```sh
+blog.alwaysdata.com 198.51.100.42 - [17/Feb/2022:14:19:01 +0100] "GET /2022/02/01/2022-au-rapport / HTTP/2.0" 200 16634 "https://blog.alwaysdata.com/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" https 0.128109
 ```
 
 {{% notice tip %}}
-Pour extraire les requêtes longues, utilisez la commande suivante : `awk '{print $NF,$0}' $HOME/admin/logs/http/[année]/[fichier].log | sort -n | cut -f2- -d' '`
+To extract long requests, use the following command: `awk '{print $NF,$0}' $HOME/admin/logs/http/[année]/[fichier]. og | spell -n | cut -f2- -d' '`
 {{% /notice %}}
 
-- le format _Personnalisé_. La personnalisation du format des lignes de log s'effectue dans le champ **Format**. Ce champ accepte les chaînes de caractères ainsi qu'un certain nombre de variables listées ci-après.
+- the _Custom_ format. The format of the log lines is customised in the **Format** field. This field accepts character chains and a number of variables listed below.
 
-{{< fig "images/admin-panel_add-site-logs_custom.fr.png" "" >}}
+{{< fig "images/admin-panel_add-site-logs_custom.png" "" >}}
 
-La syntaxe à respecter est `{nom_de_variable}` pour voir apparaître sa valeur dans les lignes de logs d'accès.
+The syntax to follow is `{nom_de_variable}` to see its value appear in access log rows.
 
-### Variables disponibles
+### Available variables
 
-| Variables                               | Description                                                                                                                                  |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| {client_ip}        | Adresse IP de l'utilisateur ayant émis la requête                                                                                            |
-| {completion_date}  | Date à laquelle la requête a été servie [^2]                                                                                                 |
-| {duration}                              | Temps pris pour servir la requête en secondes                                                                                                |
-| {peer_ip}          | Adresse IP du pair ayant envoyé la requête (proxy ou utilisateur original le cas échéant)                                 |
-| {protocol}                              | Mécanisme du protocole de la requête (http, https, ws)                                                                    |
-| {referer}                               | Valeur de l'en-tête [`Referer`](https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Headers/Referer) transmis par la requête            |
-| {request}                               | Première ligne de la requête                                                                                                                 |
-| {request_header}   | En-têtes de la requête [^3]                                                                                                                  |
-| {request_hostname} | Nom d'hôte demandé dans la requête                                                                                                           |
-| {request_method}   | Méthode utilisée dans la requête (GET, POST, ...)                         |
-| {request_path}     | Chemin demandé dans la requête, incluant la chaîne d'interrogations                                                                          |
-| {request_protocol} | Protocole utilisé dans la requête (HTTP/1.1, HTTP/2, ...) |
-| {request_time}     | Date à laquelle la requête a été reçue [^2]                                                                                                  |
-| {response_header}  | En-têtes de la réponse [^3]                                                                                                                  |
-| {response_size}    | Taille de la réponse en bytes, en-têtes HTTP exclus                                                                                          |
-| {ssl_version}      | Version du protocole utilisé pour la connexion SSL                                                                                           |
-| {status}                                | Code de status de la réponse (200, 301, 404, 500, ...)                    |
-| {user_agent}       | Valeur de l'en-tête [`User-Agent`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/User-Agent) transmis par la requête   |
-| {username}                              | Nom d'utilisateur spécifié dans l'en-tête [`Authorization`](https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Headers/Authorization)  |
+| Variables                               | Description                                                                                                                         |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| {client_ip}        | IP address of the user who issued the request                                                                                       |
+| {completion_date}  | Date the request was served [^2]                                                                                                    |
+| {duration}                              | Time taken to serve the request in seconds                                                                                          |
+| {peer_ip}          | IP address of peer that sent request (proxy or original user in case)                                            |
+| {protocol}                              | Request protocol mechanism (http, https, ws)                                                                     |
+| {referer}                               | [`Referer`](https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Headers/Referer) header value transmitted by request           |
+| {request}                               | Request first line                                                                                                                  |
+| {request_header}   | Request Headings [^3]                                                                                                               |
+| {request_hostname} | Host name requested in request                                                                                                      |
+| {request_method}   | Method used in request (GET, POST, ...)                          |
+| {request_path}     | Requested path in the request, including question chain                                                                             |
+| {request_protocol} | Protocol used in request (HTTP/1.1, HTTP/2, ...) |
+| {request_time}     | Date the request was retrieved [^2]                                                                                                 |
+| {response_header}  | Answers [^3]                                                                                                                        |
+| {response_size}    | Response size in bytes, excluding HTTP                                                                                              |
+| {ssl_version}      | Protocol version used for SSL connection                                                                                            |
+| {status}                                | Response Status Code (200, 301, 404, 500, ...)                   |
+| {user_agent}       | [`User-Agent`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/User-Agent) header value transmitted by request  |
+| {username}                              | Username specified in header [`Authorization`](https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Headers/Authorization)      |
 
-## Cas spécifiques
+## Specific cases
 
-Pour afficher l'IP d'un utilisateur derrière [Cloudflare](https://support.cloudflare.com/hc/en-us/articles/200170986-How-does-Cloudflare-handle-HTTP-Request-headers-) utilisez `{request_header:cf-connecting-ip}`.
+To display a user's IP behind [Cloudflare](https://support.cloudflare.com/hc/en-us/articles/200170986-How-does-Cloudflare-handle-HTTP-Request-headers-) use `{request_header:cf-connecting-ip}`.
 
-[^1]: [Combined Log Format avec vhosts](https://httpd.apache.org/docs/2.4/logs.html)
+[^1]: [Combined Log Format with vhosts](https://httpd.apache.org/docs/2.4/logs.html)
 
-[^2]: Peut être formatée en suivant la syntaxe [strftime](https://docs.python.org/fr/3.6/library/datetime.html?highlight=strftime#strftime-strptime-behavior).
-    _Exemples : `{completion_date:%d/%b/%Y}` → 16/Jul/2018, `{completion_date:%H:%M:%S}` → 12:04:07_
+[^2]: Can be formatted by following syntax [strftime](https://docs.python.org/fr/3.6/library/datetime.html?highlight=strftime#strftime-strptime-behavior).
+    _Examples: `{completion_date:%d/%b/%Y}` → 16/Jul/2018, `{completion_date:%H:%M:%S}` → 12:04:07_
 
-[^3]: Un seul header peut être spécifié. Exemples : `{request_header:authorization}`, `{response_header:age}` (à utiliser avec le [cache HTTP](sites/http-cache))
+[^3]: A single header can be specified. Examples: `{request_header:authorization}`, `{response_header:age}` (used with [HTTP cache](sites/http-cache))
