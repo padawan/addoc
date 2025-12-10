@@ -1,37 +1,37 @@
 +++
-url = "/fr/guides/mattermost/"
-title = "Comment installer Mattermost"
+url = "/guides/mattermost/"
+title = "How to install Mattermost"
 layout = "howto"
 hidden = true
 +++
 
-[Mattermost](https://mattermost.com) est un logiciel de messagerie instantané.
+[Mattermost](https://mattermost.com) is an instant messaging software.
 
-Dans notre exemple, nous utilisons un [accès SSH](remote-access/ssh) et considérons les informations suivantes :
+In our example, we use a [SSH access](remote-access/ssh) and will have the following information:
 
-- Nom du compte : `foo`
-- Répertoire de Mattermost : `$HOME/mattermost/`
-- Base de données PostgreSQL : `foo_mattermost` - à créer dans le menu **Bases de données > PostgreSQL** de [l'interface d'administration](https://admin.alwaysdata.com)
-- Port : 8300 (les ports entre 8300 et 8499 peuvent être utilisés)
+- Account name: `foo`
+- Mattermost directory: `$HOME/mattermost/`
+- PostgreSQL database: `foo_mattermost` - created in the **Databases > PostgreSQL** menu of [the administration interface](https://admin.alwaysdata.com)
+- Port: 8300 (ports between 8300 and 8499 can be used)
 
 {{% notice note %}}
-`[foo]` et `[version]` doivent être remplacées par les informations correctes.
-{{% /notice %}}
+`[foo]` and `[version]` must be replaced with the correct information.
+{{%/notice %}}
 
-## Installation
+## Setup
 
 ```sh
 foo@ssh:~/mattermost$ wget -O- https://releases.mattermost.com/[version]/mattermost-[version]-linux-amd64.tar.gz | tar -xz --strip-components=1
 foo@ssh:~/mattermost$ mkdir data
 ```
 
-[Page de téléchargement](https://mattermost.com/deploy/)
+[Download page](https://mattermost.com/deploy/)
 
-## Configuration
+## Setup
 
-Une base de données et son utilisateur devront être créés dans le menu **Bases de données**. Ici nous les créons pour qu'il soient de la forme `account_mattermost`.
+A database and its user will have to be created in the **Databases** menu. Here we create them to be of the `account_mattermost` form.
 
-Modifiez le fichier `$HOME/mattermost/config/config.json` pour indiquer :
+Edit the `$HOME/mattermost/config/config.json` file to say:
 
 ```txt
 "ListenAddress": ":8300",
@@ -45,15 +45,15 @@ Modifiez le fichier `$HOME/mattermost/config/config.json` pour indiquer :
 "DataSource": "postgres://[foo]_mattermost:[motdepasse_pgsql]@postgresql-[foo].alwaysdata.net:5432/[foo]_mattermost?sslmode=disable\u0026connect_timeout=10",
 ```
 
-## Lancement du service
+## Launching service
 
-Créez un [service](services) avec les détails suivants :
+Create an [service](services) with the following details:
 
-- _Commande_ : `/home/[foo]/mattermost/bin/mattermost`
-- _Répertoire de travail_ : `/home/[foo]/mattermost`
+- _Command_: `/home/[foo]/mattermost/bin/mattermost`
+- _Work directory_: `/home/[foo]/mattermost`
 
-## Création du site
+## Site creation
 
-Déclarez un [site](sites/add-a-site) de type **Reverse proxy** avec :
+Make an [site](sites/add-a-site) of type **Reverse proxy** with:
 
-- _URL distante_ : `services-[foo].alwaysdata.net:8300`
+- _Remote URL_: `services-[foo].alwaysdata.net:8300`
