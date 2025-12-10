@@ -1,33 +1,33 @@
 +++
-url = "/fr/listes-de-diffusion/creer-une-liste-de-diffusion/"
-title = "Créer une liste de diffusion"
+url = "/en/lists-de-diffusion/creer-ane-list-de-diffusion/"
+title = "Create Mailing List"
 layout = "man"
 hidden = true
 tags = [ "email", "mailing list" ]
 +++
 
-Pour créer une liste de diffusion, vous devez vous connecter à l'interface d'administration alwaysdata - onglet **Emails > Listes de diffusion**.
+To create a mailing list, you need to log in to the alwaysdata admin interface - tab **Emails > Mailing Lists**.
 
-## Gestion utilisateur
+## User management
 
 {{% notice info %}}
-Vous devez définir au moins un utilisateur administrateur pour gérer votre liste de diffusion.
-{{% /notice %}}
+You must define at least one admin user to manage your mailing list.
+{{%/notice %}}
 
-Pour définir un nouvel utilisateur pour la gestion de vos listes de diffusion, rendez vous dans la section **Gestion des utilisateurs**, puis **Ajouter un utilisateur**.
+To define a new user for managing your mailing lists, go to the **User Management** section, then **Add User**.
 
-Si des listes de diffusion ont déjà été définies, vous pouvez d'ores-et-déjà associer des permissions vers ces listes à ce nouvel utilisateur.
+If mailing lists have already been defined, you can already assign permissions to these lists to this new user.
 
 {{% notice tip %}}
-Les adresses mails des utilisateurs n'ont pas besoin d'appartenir au même domaine que la liste de diffusion. Par exemple, vous pouvez définir un utilisateur `foo@bar.com` comme administrateur de la liste `baz@example.org`.
-{{% /notice %}}
+Users' email addresses do not need to belong to the same domain as the mailing list. For example, you can define a user `foo@bar.com` as administrator of the `baz@example.org` list.
+{{%/notice %}}
 
-## Gestion des listes de diffusion
+## Mailing List Management
 
-Pour définir une nouvelle liste de diffusion, rendez vous dans **Ajouter une liste de diffusion**.
+To define a new mailing list, go to **Add a mailing list**.
 
-Définissez :
+Define :
 
-- un nom pour votre liste de diffusion qui constituera la partie locale de l'adresse mail de la liste (par exemple, pour une liste de diffusion derrière l'adresse mail `foo@example.org`, le nom de la liste sera `foo`) ;
-- le domaine auquel la liste est attachée. Ce domaine doit être disponible dans la [liste des domaines](domains) dont vous avez les permissions d'administration ;
-- les permissions attachées aux utilisateurs que vous aurez défini dans la partie _Gestion utilisateurs_.
+- a name for your mailing list that will be the local part of the email address of the list (e.g. for a mailing list behind the email address `foo@example. reg`, the list name will be `foo`);
+- the domain the list is attached to. This domain must be available in the [list of domains](domains) where you have admin permissions;
+- the permissions attached to the users you have defined in the _User Management_ section.
