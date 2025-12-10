@@ -1,17 +1,17 @@
 +++
-url = "/fr/langages/ruby/"
+url = "/languages/ruby/"
 title = "Ruby"
 archetype = "chapter"
-tags = [ "ruby" ]
+tags = [ "Ruby" ]
 +++
 
-Le fonctionnement de [Ruby](https://www.ruby-lang.org/fr/) chez alwaysdata est très standard. Si vous avez l'habitude d'utiliser Ruby sous un système Unix (par exemple, Linux), vous savez déjà presque tout ce qu'il faut.
+The operation of [Ruby](https://www.ruby-lang.org/fr/) at alwaysdata is standard. If you are used to using Ruby under a Unix system (e.g. Linux), you already know almost everything you need.
 
-- les [versions proposées](languages/ruby/configuration#versions-supportées) vont de la 1.8 à la 3.4 ;
-- la [configuration d'environnement](languages/ruby/configuration#environnement) se fait très simplement.
+- [proposed versions](languages/ruby/configuration#versions-supportées) range from 1.8 to 3.4;
+- the [environment configuration](languages/ruby/configuration#environnement) is very straightforward.
 
-Les frameworks [Ruby on Rails](https://rubyonrails.org/) et [Sinatra](http://sinatrarb.com/) font partie de nos applications autoinstallables.
+The [Ruby on Rails](https://rubyonrails.org/) and [Sinatra](http://sinatrarb.com/) frameworks are part of our autoinstallable applications.
 
 ---
 
-- [Ressource API](https://api.alwaysdata.com/v1/environment/ruby/doc/)
+- [Resource API](https://api.alwaysdata.com/v1/environment/ruby/doc/)
