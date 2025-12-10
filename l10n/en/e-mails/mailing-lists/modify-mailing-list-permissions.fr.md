@@ -1,33 +1,33 @@
 +++
-url = "/fr/listes-de-diffusion/modifier-les-permissions-d-une-liste-de-diffusion/"
-title = "Modifier les permissions d'une liste de diffusion"
+url = "/en/mailing lists/modifier-les-permissions-d-une-mailing list/"
+title = "Edit mailing list permissions"
 layout = "man"
 hidden = true
 tags = [ "email", "mailing list" ]
 +++
 
-Pour modifier les permissions de diffusion d'une liste, vous devez vous connecter à l'[interface de gestion Postorius](https://mailman.alwaysdata.com/). Connectez-vous à l'aide d'une adresse mail d'administration que vous aurez défini à la [création de votre liste de diffusion](create-a-mailing-list).
+To change the mailing permissions of a list, you need to connect to the [Postorius management interface](https://mailman.alwaysdata.com/). Log in using an admin email address that you have set to [create your mailing list](create-a-mailing-list).
 
-Une fois identifié, rendez vous dans la section de gestion de la liste de diffusion concernée en cliquant sur son nom.
+Once identified, go to the management section of the relevant mailing list by clicking on its name.
 
-## Modération des contenus
+## Content Moderation
 
-Pour modifier les règles de diffusion, rendez vous dans la rubrique **Paramètres → Message Acceptance**. Vous pouvez y définir plusieurs règles de diffusion :
+To change the broadcast settings, go to **Parameters → Message Acceptance**. You can define multiple broadcast sites:
 
-- _Retenir en modération_ : les messages doivent être acceptés par un administrateur ou un modérateur pour être diffusés aux membres. C'est une modération _a priori_.
-- _Rejeter_ : les messages sont supprimés et les administrateurs sont notifiés du rejet.
-- _Éliminer_ : les messages sont supprimés, sans notification.
-- _Accepter immédiatement_: aucune action n'est requise et les membres recevront le message.
+- _Retain in Method_: Messages must be accepted by an administrator or model for dissemination to members. This is a _a priori_ pattern.
+- _Reject_: Messages are deleted and admins are notified of rejection.
+- _Remove_: messages are deleted, without notification.
+- _Accept Immediate_: No action is required and members will receive the message.
 
-Ces règles peuvent s'appliquer à deux typologies d'expéditeurs :
+These options can be applied to two types of senders:
 
-- _abonnés_ : action à prendre quand le message est envoyé par un membre de la liste.
-- _non-abonnés_ : action à prendre quand le message est envoyé depuis une adresse externe à la liste.
+- _subscriptions_: action to take when the message is sent by a member of the list.
+- _Unsubscribe_: action to take when the message is sent from an external address to the list.
 
-## Exemples
+## Examples
 
-Pour définir une **liste de diffusion ouverte**, réglez toutes les permissions à _Accepter immédiatement_ : n'importe qui pourra envoyer un message aux membres (dans le cas d'une liste de support par exemple).
+To define an **open mailing list**, set all permissions to _Accept Unediting_: anyone will be able to send a message to members (for example a support list).
 
-Pour définir une **newsletter**, réglez toutes les permissions à _Éliminer_ : seuls les administrateurs peuvent envoyer un message aux membres.
+To set a **newsletter**, set all permissions to _Remove_: only administrators can send a message to members.
 
-Pour définir une adresse d'une **groupe de travail**, réglez les permissions des membres à _Accepter_ et les permissions des non-membres à _Retenir en modération_ : les membres peuvent échanger des messages sans modération, et les utilisateurs externes au groupe peuvent demander à envoyer des messages en les faisant valider _a priori_.
+To define an address of a **workgroup**, set member permissions to _Accept_ and non-member permissions to _Keep mode_: members can exchange messages without models, and users outside the group can request to send messages by having them validated _a priori_.
