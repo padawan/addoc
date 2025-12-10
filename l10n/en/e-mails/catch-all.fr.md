@@ -1,26 +1,26 @@
 +++
-url = "/fr/emails/adresse-collectrice/"
-title = "Adresse collectrice (catch-all)"
+url = "/emails/collector-address/"
+title = "Catch-all address"
 layout = "faq"
 hidden = true
 tags = [ "email" ]
 +++
 
-Pour collecter tous les messages envoyés vers des adresses de son domaine n'existant pas (ou plus), une adresse collectrice (ou [catch-all](https://fr.wikipedia.org/wiki/Catch-all)) peut être créée.
+To collect all messages sent to addresses in their non-existing domain (or more), a collector address (or [catch-all](https://fr.wikipedia.org/wiki/Catch-all)) can be created.
 
-Représentation : `*@example.org`
+Representation: `*@example.org`
 
-## Mise en garde
+## Warning
 
-- Cela risque d'amasser une quantité importante de spam. Il est donc conseillé d'activer l'anti-spam sur cette adresse ;
-- Les emails d'erreurs normalement envoyés à des adresses n'existant pas ne le seront plus. À vous d'alerter les expéditeurs pouvant croire que l'adresse est valide.
+- This may collect a large amount of spam. It is therefore advisable to activate anti-spam on this address;
+- Error emails normally sent to non-existing addresses will no longer be sent. Be sure to alert any senders who believe the address is valid.
 
-## Divers
+## Misc
 
-- De part ses spécificités, il n'est pas possible de mettre en place réponse automatique. Cela pourrait sinon provoquer des vagues de spam.
+- Due to its specifications, it is not possible to set up automatic response. This could otherwise cause waves of spam.
 
-  - Néanmoins il est possible de l'utiliser pour des destinataires précis via les [scripts Sieve](e-mails/use-sieve-scripts) en ajoutant ces adresses destinataires dans les instructions `vacation` :
+  - Nevertheless it is possible to use it for specific recipients via [Sieve scripts](e-mails/use-sieve-scripts) by adding these recipient addresses in the `vacation` statements:
 
   ```
-  addresses ["foo@example.org", "bar@example.org"]
+  ["foo@example.org", "bar@example.org"] addresses
   ```
