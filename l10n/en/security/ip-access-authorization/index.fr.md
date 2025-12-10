@@ -1,15 +1,15 @@
 +++
-url = "/fr/securite/autorisation-dacces-selon-IP/"
-title = "Autorisation d'accès à l'interface d'administration selon l'IP"
+url = "/security/authorization-dacces-selon-IP/"
+title = "Permission to access the admin interface by IP"
 layout = "man"
 hidden = true
-tags = [ "profil", "sécurité" ]
+tags = [ "profile", "security" ]
 +++
 
-{{< fig "images/profile-security.fr.png" >}}
+{{< fig "images/profile-security.png" >}}
 
-L'accès sera bloqué à toute autre connexion venant d'IP non renseignée.
+Access will be blocked at any other unfilled IP connection.
 
 {{% notice note %}}
-Si vous vous êtes trompé - ou avez changé - d'IP d'accès envoyez un email à _contact[at]alwaysdata.com_ pour la désactiver. [Une vérification sera effectuée](accounts/admin-access-loss#blocage-lié-à-la-limitation-diphahahugoshortcode-s1-hbhb).
-{{% /notice %}}
+If you were mistaken - or have changed - access IP address send an email to _contact[at]alwaysdata. om_ to disable. [A check will be performed](accounts/admin-access-loss#blocage-lié-à-la-limitation-diphahahugoshortcode-s1-hbhb).
+{{%/notice %}}
