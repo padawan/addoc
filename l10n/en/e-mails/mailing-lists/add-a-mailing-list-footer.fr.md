@@ -1,30 +1,30 @@
 +++
-url = "/fr/listes-de-diffusion/ajouter-un-pied-de-page-a-une-liste-de-diffusion/"
-title = "Ajouter un pied de page à une liste de diffusion"
+url = "/en/listes-de-diffusion/ajouter-un-foot-de-page-a-une-list-de-diffusion/"
+title = "Add footer to mailing list"
 layout = "man"
 hidden = true
 tags = [ "email", "mailing list" ]
 +++
 
-Pour ajouter un pied de page à une liste de diffusion, vous devez vous connecter à l'[interface de gestion Postorius](https://mailman.alwaysdata.com/). Connectez-vous à l'aide d'une adresse mail d'administration que vous aurez défini à la [création de votre liste de diffusion](create-a-mailing-list).
+To add a footer to a mailing list, you need to connect to the [Postorius management interface](https://mailman.alwaysdata.com/). Log in using an admin email address that you have set to [create your mailing list](create-a-mailing-list).
 
-Une fois identifié, rendez vous dans la section de gestion de la liste de diffusion concernée en cliquant sur son nom.
+Once identified, go to the management section of the relevant mailing list by clicking on its name.
 
-## Utilisation des _Modèles_
+## Using _Mode_
 
-Les _Modèles_ vous permettent de définir des portions de contenus pouvant être injectés ou utilisés dans les messages automatiques de la liste.
+_Models_ allow you to define portions of content that can be injected or used in automatic messages in the list.
 
-Pour les définir, rendez vous dans la section _Modèles → Nouveau modèle_. La liste des modèles personnalisables s'affiche, avec leur contexte associé. Vous définissez ensuite le contenu du modèle dans la zone de saisie.
+To finalize these, go to the _Models→ New Model_. The list of customizable templates is displayed, with their associated context. You then define the content of the template in the input area.
 
-## Ajouter un pied de page avec un lien de désinscription
+## Add a footer with an unsubscribe link
 
-Par défaut, les messages diffusés aux membres ne contiennent pas de lien de désinscription. Vous pouvez ajouter ce lien en définissant un pied de page automatique.
+By default, messages sent to members do not contain an unsubscribe link. You can add this link by defining an automatic footer.
 
-Ajoutez un modèle de type `[list:member:regular:footer]`, avec le contenu suivant :
+Add a `[list:member:regular:footer]` template with the following content:
 
 ```txt
 --
 Unsubscribe: <mailto:$short_listname-unsubscribe@$domain>
 ```
 
-Chaque message diffusé à la liste se verra ajouté un pied de page en signature, contenant l'adresse mail de désincription générée depuis les _placeholders_ (par exemple `foo-unsubscribe@example.org`).
+Each message posted to the list will be added a signature footer, containing the email address of the sincript managed from the _placeholders_ (e.g. `foo-unsubscribe@example. reg`).
