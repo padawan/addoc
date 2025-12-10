@@ -1,19 +1,19 @@
 +++
-url = "/fr/securite/ssl-tls/renouveler-un-certificat-ssl"
-title = "Comment renouveler un certificat SSL"
+url = "/security/ssl-tls/renouveler-un-certificat-ssl"
+title = "How to renew an SSL certificate"
 layout = "howto"
 hidden = true
-tags = [ "https", "sécurité", "ssl" ]
+tags = [ "https", "security", "ssl" ]
 +++
 
-Lorsque vous renouvelez le certificat SSL chez votre fournisseur, celui-ci doit vous livrer un fichier contenant le nouveau certificat.
+When you renew the SSL certificate at your provider, it must deliver you a file containing the new certificate.
 
-Sur votre interface alwaysdata - onglet **Avancé > Certificats SSL** - modifiez alors le certificat actuel.
+On your alwaysdata interface - tab **Advanced> SSL Certificates** - then change the current certificate.
 
-{{< fig "images/ssl-certificates_list.fr.png" "" >}}
+{{< fig "images/ssl-certificates_list.png" "" >}}
 
-Changez le champ **Certificat** pour y mettre le contenu du fichier donné par votre fournisseur de certificat SSL.
+Change the **Certificate** field to put the contents of the file given by your SSL certificate provider.
 
-{{< fig "images/modify-certificate.fr.png" "" >}}
+{{< fig "images/modify-certificate.png" "" >}}
 
-Le certificat est maintenant mis à jour et sa nouvelle date d'expiration sera affichée.
+The certificate is now updated and its new expiration date will be displayed.
