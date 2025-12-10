@@ -1,148 +1,148 @@
 +++
-url = "/fr/langages/python/configuration/"
-title = "Configurer Python"
+url = "/languages/python/configuration/"
+title = "Configure Python"
 layout = "man"
 hidden = true
 tags = [ "python" ]
 +++
 
-`[paquet]` et `[version]` sont à remplacer par le nom du paquet et de la version à installer.
+`[paquet]` and `[version]` are to be replaced by the package name and version to install.
 
-## Versions supportées
+## Supported Versions
 
 |                                                                                                                                                                                                                                                                                                            |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 3.14 \\|3.13 \\| 3.12 \\| 3.11 \\| 3.10 \\| 3.9 \\| 3.8 \\| 3.7 \\| 3.6 \\| 3.5 \\| 3.4 \\| 3.3 |
 | 2.7 \\| 2.6 \\| 2.5 \\| 2.4                                                                                                                                                                                                             |
 
-La version par défaut est modifiable dans l'administration alwaysdata, **Environnement > Python**. C'est cette version qui est notamment utilisée lorsque vous démarrez `python`.
+The default version can be changed in the alwaysdata administration, **Environment > Python**. This version is especially used when you start `python`.
 
-Les versions ne sont pas forcément [déjà installées](languages#versions).
+Versions are not forcefully [already installed](languages#versions).
 
-## Logs d'erreur
+## Error logs
 
-Python tourne derrière [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/), vous pouvez consulter les logs d'erreur dans le fichier `$HOME/admin/logs/uwsgi/[id].log`, où [id] est l'identifiant de votre site, indiqué dans la section **Web > Sites**.
+Python is running behind [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/), you can check the error logs in the `$HOME/admin/logs/uwsgi/[id]file. og`, or [id] is the identifier of your site, specified in the **Web > Sites** section.
 
-Un extrait de ces logs est présenté dans l'interface d'administration alwaysdata (Logs - 📄).
+An excerpt of these logs is present in the alwaysdata administration interface (Logs - 📄).
 
-## Binaire à utiliser
+## Binary to use
 
-Vous devez toujours utiliser `python` (ou `/usr/bin/python`). N'utilisez jamais `python3`, `python2`, `python2.7`, ou toute autre commande.
+You must always use `python` (or `/usr/bin/python`). Never use `python3`, `python2`, `python2.7`, or any other command.
 
-Pour forcer une version de Python différente de celle par défaut, définissez la variable d'environnement `PYTHON_VERSION` :
+To force a different Python version to the default one, set the `PYTHON_VERSION` environment variable:
 
 ```sh
 $ PYTHON_VERSION=2.7 python
 ```
 
-Dans vos scripts, utilisez `/usr/bin/python` comme _shebang_ :
+In your scripts, use `/usr/bin/python` as _shebang_:
 
 ```
 #!/usr/bin/python
 ```
 
-Pour forcer une version de Python particulière :
+To force a particle Python version:
 
 ```
 #!/usr/bin/eval PYTHON_VERSION=2.7 python
 ```
 
-Les autres binaires inclus dans Python (`2to3`, `pep8`, `pip`, `pydoc`...) fonctionnent de la même manière.
+Other binaries included in Python (`2to3`, `pep8`, `pip`, `pydoc`...) work in the same way.
 
-## Environnement
+## Environments|Environment
 
-Votre environnement Python est initialement vide, sans aucune bibliothèque préinstallée en dehors de la bibliothèque standard. Vous pouvez utiliser `pip` pour installer des paquets, c'est l'outil standard de Python :
+Your Python environment is initially empty, without any library preinstalled outside the standard library. You can use `pip` to install packages, this is the standard Python tool:
 
 ```sh
 $ python -m pip install [paquet]
 ```
 
-Les paquets sont installés dans le répertoire standard `$HOME/.local` et sont automatiquement ajoutés au `sys.path` par Python.
+Packages are installed in the standard$HOME/.local`directory and are automatically added to`sys.path\` by Python.
 
-Attention, il faudra réinstaller les paquets si vous changez de version majeure de Python (3.5 et 3.6 sont deux versions majeures différentes, tandis que 3.5.1 et 3.5.2 ont la même version majeure).
+Warning, you will need to reinstall the packages if you are switching to a major version of Python (3.5 and 3. are two major versions different, while 3.5.1 and 3.5.2 have the same major version).
 
-Il est recommandé d'utiliser des environnements virtuels si vous utilisez plusieurs applications Python distinctes, de manière à ce que chacune ait son propre environnement isolé.
+It is recommended to use virtual environments if you are using multiple separate Python applications so that each has its own remote environment.
 
-Avec Python 3, utilisez `venv` :
+With Python 3, use `venv`:
 
 ```sh
 $ python -m venv myenv
 ```
 
-Avec Python 2, utilisez `virtualenv` :
+With Python 2, use `virtualenv`:
 
 ```sh
-$ virtualenv myenv
+$ virtualenv
 ```
 
-Une fois votre environnement virtuel installé, vous pourrez l'activer avec :
+Once your virtual environment is installed, you can activate it with:
 
 ```sh
 $ source myenv/bin/activate
 ```
 
-### Installer un paquet
+### Install Package
 
-Installer la dernière version d'un paquet :
+Install the latest version of a package:
 
 ```sh
 $ python -m pip install [paquet]
 ```
 
-Vous pouvez spécifier une version précise :
+You can specify a specific version:
 
 ```sh
 $ python -m pip install [paquet]==[version]
 ```
 
-Pour installer un ensemble de paquets définis dans un fichier `requirements.txt` :
+To install a set of packages defined in a `requirements.txt` file:
 
 ```sh
 $ python -m pip install -r requirements.txt
 ```
 
-### Désinstaller un paquet
+### Uninstall Package
 
 ```sh
 $ python -m pip uninstall [paquet]
 ```
 
-### Installer un paquet avec Distutils
+### Install a package with Distutils
 
-Vous pouvez installer un paquet utilisant Distutils sans passer par pip :
+You can install a package using Distutils without pip:
 
 ```sh
 $ python setup.py install --user
 ```
 
-Si vous utilisez un environnement virtuel, il n'est pas nécessaire de spécifier `--user`.
+If you are using a virtual environment, it is not necessary to specify `--user`.
 
-## Déploiement WSGI
+## WSGI Deployment
 
-Pour qu'une application [WSGI](https://wsgi.readthedocs.io) soit accessible par le web, vous devez ajouter un site dans la section **Web > Sites** de l'administration :
+For an [WSGI]application (https://wsgi.readthedocs.io) to be accessible via the web, you need to add a site in the **Web > Sites** section of the backend:
 
 {{< fig "images/python-wsgi.png" "">}}
 
-- type : choisissez _Python WSGI_ ;
-- chemin de l'application : le chemin du fichier de votre application WSGI.
+- type: choose _Python WSGI_;
+- application path: The file path of your WSGI application.
 
-Vous pouvez également renseigner plusieurs champs optionnels :
+You can also fill in several optional fields:
 
-- le répertoire de travail de votre application ;
-- des variables d'environnement à définir ;
-- une version de Python spécifique à utiliser ;
-- le répertoire du virtualenv à utiliser.
+- the working directory of your application;
+- environment variables to be defined;
+- a specific Python version to use;
+- the virtualenv directory to use.
 
-## Déploiement ASGI
+## ASGI Deployment
 
-Les applications se basant sur la norme [ASGI](https://asgi.readthedocs.io) comme les frameworks Python asynchrone peuvent utiliser le type de site _[Programme utilisateur](sites/user-program)_ dans la section **Web > Sites**. Le serveur HTTP le plus connu est [Uvicorn](https://www.uvicorn.org/).
+Apps based on standard [ASGI](https://asgi.readthedocs.io) such as asynchronous Python frameworks can use the site type _[User Program](sites/user-program)_ in the **Web > Sites** section. Best known HTTP server is [Uvicorn](https://www.uvicorn.org/).
 
-{{< fig "images/user-program.fr.png" "Type de site Programme utilisateur" >}}
+{{< fig "images/user-program.en.png" "User Program Site Type" >}}
 
-Il faudra faire écouter le serveur HTTP en IPv6 et sur le port donné. Par exemple :
+You will need to listen to the HTTP server on IPv6 and on the given port. For example:
 
-- Commande : `uvicorn example:app --reload --port $PORT --host $IP`
+- Command: `uvicorn example:app --reload --port $PORT --host $IP`
 
 ---
 
-- [Déployer une application Fastapi (asyncio)](https://vincent.jousse.org/blog/fr/tech/comment-deployer-fastapi-chez-alwaysdata/) (guide d'un utilisateur de la plateforme)
+- [Deploy a Fastapi application (asyncio)](https://vincent.jousse.org/blog/fr/tech/comment-deployer-fastapi-chez-alwaysdata/) (platform user guide)
