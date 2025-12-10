@@ -1,188 +1,188 @@
 +++
-url = "/fr/securite/bug-bounty"
-title = "Bug Bounty"
+url = "/securite/bug-bounty"
+title = "Bounty Bug"
 layout = "man"
 hidden = true
 tags = [ "" ]
 +++
 
-> **[Interface de suivi de bugs](https://security.alwaysdata.com/)**
+> **[Bug Tracking Interface](https://security.alwaysdata.com/)**
 
-## Règles
+## GEOM_REGISTERS
 
-Nous croyons qu'aucune technologie n'est parfaite et que travailler avec des chercheurs en sécurité compétents est crucial pour identifier les faiblesses de notre technologie. Si vous pensez avoir trouvé un bug de sécurité dans notre service, nous sommes heureux de travailler avec vous pour résoudre le problème rapidement et vous assurer que votre découverte est justement récompensée.
+We believe that no technology is perfect and that working with competent security researchers is crucial to identifying the weaknesses of our technology. If you think you found a security bug in our service, we are happy to work with you to resolve the problem quickly and ensure that your discovery is properly rewarded.
 
-Informez-nous dès que possible après la découverte d'un problème de sécurité potentiel, et nous ferons tout notre possible pour résoudre rapidement le problème. Accordez-nous un délai raisonnable pour résoudre le problème avant toute divulgation au public ou à un tiers.
+Let us know as soon as possible after a potential security problem has been discovered, and we will do everything we can to resolve the problem quickly. Give us a reasonable time to resolve the problem before any disclosure to the public or to a third party.
 
-Testez les failles uniquement sur des comptes que vous possédez ou des comptes pour lesquels vous avez l'autorisation du titulaire du compte pour effectuer des tests.
+Test vulnerabilities only on accounts you own or accounts for which you have authorization from the account holder to perform testing.
 
-N'utilisez jamais une découverte pour compromettre/exfiltrer des données ou pivoter vers d'autres systèmes. Utilisez une preuve de concept uniquement pour démontrer un problème.
+Never use a discovery to compromise/exfilter data or rotate to other systems. Use proof of concept only to show a problem.
 
-Si des informations sensibles — telles que des informations personnelles, des identifiants, etc. — sont accessibles dans le cadre d'une faille, elles ne doivent pas être sauvegardées, stockées, transférées ou autrement consultées après la découverte initiale. Toutes les informations sensibles doivent être retournées à _alwaysdata_ et aucune copie de ces informations ne doit être conservée.
+Whether sensitive information — such as personal information, identifiers, etc. — are accessible as part of a vulnerability, they must not be saved, stored, transmitted, or otherwise consulted after the initial discovery. All sensitive information must be returned to _alwaysdata_ and no copy of this information must be stored.
 
-**Tout type d'attaque par déni de service (DDoS) est strictement interdit, ainsi que toute interférence avec l'équipement réseau et l'infrastructure d'_alwaysdata_.**
+**Any type of denial of service attack (DDoS) is strictly prohibited, as well as any interference with the network equipment and infrastructure of _alwaysdata_.**
 
-Ne tentez pas d'exploiter outre mesure le bug et d'accéder à des données internes pour d'autres failles. Nous déterminerons la gravité et la récompense en conséquence.
+Do not attempt to exploit the bug and access internal data for other vulnerabilities. We will determine the gravity and reward accordingly.
 
-Si vous trouvez plusieurs fois la même faille, veuillez créer un seul rapport et éventuellement utiliser des commentaires. Vous serez récompensé en fonction de vos découvertes.
+If you find the same vulnerability several times, please create a single report and possibly use comments. You will be awarded according to your findings.
 
-**La violation de l'une de ces règles peut entraîner l'inéligibilité à une prime et/ou le retrait du programme.**
+**Violation of one of these fees may result in ineligibility for a premium and/or withdrawal from the program.**
 
-### Considérations juridiques
+### Legal Considies
 
-Nous n'entamerons pas d'action civile ni ne porterons plainte auprès des forces de l'ordre pour des violations accidentelles et de bonne foi de cette politique. Nous considérons les activités menées conformémentplainte contre vous pour avoir contourné les mesures technologiques que nous avons utilisées pour protéger les applications dans le cadre de ce programme.
+We will not initiate civil action or lodge complaints from the law enforcement agencies for accidental and bona fide violations of this policy. We will follow the activities conducted against you for bypassing the technological measures we have used to protect applications within the framework of this program.
 
-Si une action en justice est engagée par un tiers contre vous et que vous avez respecté cette politique de sécurité, nous prendrons des mesures pour faire savoir que vos actions ont été menées conformément à cette politique.
+If a third party action is brought against you and you have complied with this security policy, we will take steps to inform you that your actions have been conducted in accordance with this policy.
 
-Il est également important de noter que nous n'intenterons pas d'action en justice contre vous simplement pour nous avoir fourni une preuve de concept de la faille de sécurité. Veuillez suivre les directives énumérées dans la section [Preuves de concept](#preuves-de-concept) ci-dessous pour vous assurer que votre preuve de concept est suffisamment détaillée pour démontrer le problème et qu'elle respecte toujours les directives énumérées ci-dessus.
+It is also important to note that we will not take legal action against you simply because we have provided evidence of the security fault concept. Please follow the instructions listed in the [Proof of Concept](#preuves-de-concept) section below to ensure that your proof of concept is sufficiently detailed to demonstrate the problem and still follows the above guidelines.
 
-## Périmètre et tests
+## Period and tests
 
-Le périmètre de recherche inclus seulement les adresses suivantes :
+The search term includes only the following addresses:
 
 ```txt
 - https://www.alwaysdata.com
 - https://admin.alwaysdata.com
 - https://webmail.alwaysdata.com
-- https://api.alwaysdata.com
+- https://api.alwaysdata. om
 - ssh://ssh-[accountid].alwaysdata.net
 - https://webdav-[accountid].alwaysdata.net
 - ftp://ftp-[accountid].alwaysdata.net
 ```
 
-Les failles signalées sur d'autres services ou applications ne seront pas prises en compte.
+Vulnerabilities reported on other services or applications will not be considered.
 
-Une fois traités, les rapports sont _publics_. Toute information privée peut être transmise via un ticket de support sur [notre interface d'administration](https://admin.alwaysdata.com/).
+Once processed, reports are _public_. Any private information can be transmitted via a support ticket on [our admin interface](https://admin.alwaysdata.com/).
 
-Lors du test d'un bug, veuillez garder à l'esprit :
+When testing a bug, please keep in mind:
 
-- Utilisez des comptes de test pour ne pas compromettre involontairement la confidentialité de nos utilisateurs ;
-- Lorsque vous tentez de démontrer des permissions root avec les primitives suivantes dans un processus vulnérable, veuillez utiliser les commandes suivantes :
-  - Lire : `cat /proc/1/maps`
-  - Écrire : `touch /root/<accountid>`
-  - Exécuter : `id, hostname, pwd`
+- Use test accounts to avoid unintentionally compromising the confidentiality of our users;
+- When trying to show root permissions with the following primitives in a Vulnerable process, please use the following commands:
+  - Read: `cat /proc/1/maps`
+  - Write: `touch /root/<accountid>`
+  - Execute: `id, hostname, pwd`
 
-**Minimisez le chaos.** Respectez les règles du programme en tout temps. N'utilisez pas de scanners/outils automatisés — ces outils incluent des charges utiles qui pourraient déclencher des changements d'état ou endommager les systèmes de production et/ou les données.
+**Minimize chaos.** Respect the program at all times. Do not use automated scanners/tools — these tools include useful loads that could trigger status changes or damage production systems and/or data.
 
-**Avant de causer des dommages ou des dommages potentiels : arrêtez-vous, signalez ce que vous avez trouvé et demandez une autorisation de test supplémentaire.**
+**Before causing damage or potential damage: stop, report what you found and request additional test permission.**
 
-Les rapports sur les failles sont examinés par nos analystes de sécurité. Les rapports doivent être soumis en utilisant notre **[interface de suivi de bugs](https://security.alwaysdata.com/)**.
+The vulnerability reports are reviewed by our security analysts. Reports must be submitted using our **[bug tracking interface](https://security.alwaysdata.com/)**.
 
-_Tout rapport envoyé par email ou par notre interface de support sera rejeté._
+_All reports sent by email or our support interface will be rejected._
 
-Notre analyse est toujours basée sur l'exploitation du pire des cas de la faille, tout comme la récompense que nous payons.
+Our analysis is always based on exploiting the worst of the vulnerability cases, just as the compensation we pay.
 
-Nous travaillons continuellement à faire évoluer notre programme de bug bounty. Nous visons à répondre aux soumissions entrantes aussi rapidement que possible et faisons tout notre possible pour que les bugs soient corrigés dans les 10 jours suivant leur triage. Les récompenses seront payées lorsque le correctif sera appliqué.
+We are continually working on our bounty bug program. We aim to respond to incoming submissions as quickly as possible and do our utmost to ensure that bugs are fixed within 10 days of sorting. Rewards will be paid when the patch is applied.
 
-## Récompenses
+## Rewards
 
-Nous offrons des récompenses en espèces.
+We offer premium rewards.
 
-Ce qui suit est simplement un indicateur de récompenses, mais ne reflète pas ce que pourrait être la décision finale. _Nous valorisons les rapports de qualité et les preuves de concept._
+The following is simply a reward indicator, but does not reflect what the final decision might be. _We value quality reports and proof of concept._
 
-| Qualification | Exemples de failles (liste non exhaustive)                                                                 | Score CVSS                                 | Prime         |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------- |
-| Aucune        |                                                                                                                               | N/A                                        | Pas de prime  |
-| Faible        | Accéder à des parties restreintes d'éléments tiers ou de leurs plugins (blog, forum, etc.) | 0.1 - 3.9  | Jusqu'à 50 €  |
-| Moyenne       | Accéder aux permissions/configurations sur les comptes des utilisateurs sans accéder à leur contenu                           | 4.0 - 6.9  | Jusqu'à 200 € |
-| Élevée        | Accéder aux données/informations des clients                                                                                  | 7.0 - 8.9  | Jusqu'à 350 € |
-| Critique      | Accéder en mode lecture ou lecture-écriture à l'architecture de la plateforme centrale                                        | 9.0 - 10.0 | Jusqu'à 500 € |
+| Qualification | Examples of vulnerabilities (non-exhaustive list)                                                    | CVSS Score                                 | Bounty      |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ----------- |
+| None          |                                                                                                                         | N/A                                        | No Bounty   |
+| Low           | Access restricted parts of third-party elements or their plugins (blog, forum, etc.) | 0.1 - 3.9  | Up to €50   |
+| Average       | Grant user account permissions/configurations without access to their content                                           | 4.0 - 6.9  | Up to 200 € |
+| Highest       | Access customer data/information                                                                                        | 7.0 - 8.9  | Up to €350  |
+| Critical      | Access in read/read-write mode to the central platform architecture                                                     | 9.0 - 10.0 | Up to €500  |
 
-### Éligibilité
+### Eligible
 
-Nous sommes heureux de remercier tous ceux qui soumettent des rapports valides qui nous aident à améliorer la sécurité de _alwaysdata_. Cependant, seuls ceux qui répondent aux exigences d'éligibilité suivantes peuvent recevoir une récompense monétaire :
+We are pleased to thank all those who submit valid reports that help us improve the security of _alwaysdata_. However, only those who meet the following eligibility requirements can receive a monetary reward:
 
-- Vous devez être le premier à signaler une faille ;
-- La faille doit être qualifiée ;
-- Toute faille trouvée doit être signalée au plus tard 24 heures après sa découverte et exclusivement via notre interface de support ;
-- Vous devez envoyer une description textuelle claire du rapport ainsi que les étapes pour reproduire le problème en utilisant des outils Linux standard. Nous pouvons vous demander d'envoyer une preuve de concept qui reproduit la faille (par exemple, un script shell) ;
-- Vous devez éviter les tests qui pourraient causer la dégradation ou l'interruption de notre service (s'abstenir d'utiliser des outils automatisés et limiter les demandes par seconde) ;
-- Vous ne devez pas divulguer, manipuler ou détruire les données des utilisateurs ;
-- Vous ne devez pas être un ancien employé (depuis 1 an) ou un employé actuel de _alwaysdata_, ou l'un de ses sous-traitants.
+- You must be the first to report a flaw;
+- The fault must be qualified;
+- Any vulnerabilities found must be reported no later than 24 hours after its discovery and exclusively via our support interface;
+- You must send a clear text description of the report as well as steps to reproduce the problem using standard Linux tools. We may ask you to send proof of concept that reproduces the flaw (e.g. a shell script);
+- You must avoid tests that could cause our service to degrade/interrupt (refrain from using automated tools and limit requests per second);
+- You must not disclose, manipulate or destroy user data;
+- You must not be a former employee (since 1 year) or a current employee of _alwaysdata_, or any of his or her subcontractors.
 
-Aucune divulgation de faille, y compris partielle, n'est autorisée avant que le correctif soit appliqué et que nous acceptions la publication.
+No disclosure of vulnerabilities, including partial disclosure, is permitted before the patch is applied and we accept the release.
 
-## Preuves de concept
+## Proof of concept
 
-- XSS : Pour XSS, un simple `alert(document.domain)` devrait suffire ;
-- RCE : Veuillez exécuter uniquement du code inoffensif. Veuillez vous référer à la section [Test](#périmètre-et-tests) ;
-- SQLi : Signalez-le dès que vous avez une erreur SQL qui indique une injection SQL ou que vous êtes en mesure de divulguer le numéro de version du serveur SQL ;
-- Redirection non valide : Définissez le point de terminaison de redirection sur `http://example.org` _si possible_ ;
-- CSRF : Joignez un fichier pour démontrer le problème ou collez le code dans un bloc de code dans votre rapport ;
-- SSRF : Ne vous amusez pas sur les réseaux internes. Signalez dès que vous pensez avoir un problème potentiel de SSRF et nous l'examinerons pour vous ;
-- LFI : Il en va de même ici — veuillez ne pas aller à l'encontre des directives énumérées dans la section [Règles du Programme](#règles). Nous enquêterons sur les rapports LFI dans un environnement de développement pour nous assurer de leur validité.
+- XSS: For XSS, a simple `alert(document.domain)` should suffice;
+- RCE: Please execute harmless code only. Please refer to section [Test](#périmètre-et-tests);
+- SQLi: Report this as you have an SQL error indicating an SQL injection or are able to disclose the SQL server version number;
+- Invalid redirect: Set the redirect endpoint to `http://example.org` _if possible_;
+- CSRF: Attach a file to show the problem or paste the code into a code block in your report;
+- SSRF: Do not play on internal networks. Report as soon as you think you have a potential SSRF issue and we will review it for you;
+- LFI: The same is true here — please do not go against the guidelines listed in the [Program Reggles] section (#règles). We will report on LFI reports in a development environment to ensure they are validated.
 
-## Failles qualifiées
+## Qualified Scrap
 
-- Injection SQL ;
-- Trouver un identifiant utilisateur numérique indésirable (même le vôtre) dans les vues, qui vous permet de forger des demandes ;
-- Exposition d'informations sensibles des membres[^1] ;
-- Exposition d'outils internes ;
-- Exposition de fichiers de configuration ou de secrets ;
-- Problèmes de parcours de répertoire ;
-- Accès et manipulation de fichiers locaux (LFI, RFI, XXE, SSRF, XSPA) ;
-- Divulgation de fichiers locaux (LFD) ;
-- Injections de code (HTML, JS, SQL, PHP, ...) ;
-- Cross-Site Scripting (XSS) ;
-- Falsification de requête inter-site (CSRF) avec un véritable impact sur la sécurité ;
-- Falsification de requête côté serveur (SSRF) ;
-- Redirection ouverte ;
-- Exécution de code à distance (RCE) ;
-- Authentification & gestion de session défectueuses ;
-- Références d'objet direct non sécurisées ;
-- CORS avec un véritable impact sur la sécurité ;
-- Absence de drapeaux « sécurisés » sur les cookies d'authentification ;
-- Problèmes de contrôle d'accès ;
-- Élévation de privilèges horizontale et verticale.
+- SQL Injection;
+- Find an undesirable numeric user ID (even yours) in views, which allows you to forge requests;
+- Exposure of sensitive member information[^1] ;
+- Exposure of internal tools;
+- Exposure of configuration files or secrets;
+- Repertory Path Problems;
+- Local file access and manipulation (LFI, RFI, XXE, SSRF, XSPA);
+- Local File Disclosure (LFD);
+- Code injections (HTML, JS, SQL, PHP, ...) ;
+- Cross-Site Scripting (XSS);
+- Cross-site Request Falsification (CSRF) with a strong impact on the security;
+- Server request spoofing (SSRF);
+- Open redirect;
+- Remote code execution (RCE);
+- Authentication & Session Management
+- Direct object references not secured;
+- CORS with a strong impact on the security;
+- Missing "secured" flags on authentication cookies;
+- Access control problems;
+- Horizontal and vertical privilege elevation.
 
-## Rapports invalides
+## Invalid reports
 
-La liste suivante comprend les rapports de vulnérabilité non acceptés par nos services :
+The following list includes vulnerability reports not accepted by our services:
 
-- Toute faille hypothétique ou meilleures pratiques sans POC exploitable ;
-- CSRF de connexion, déconnexion, non authentifié ou de faible valeur ;
-- Absence de en-têtes HTTP liés à la sécurité qui ne mènent pas directement à une faille ;
-- Présence/absence de enregistrements SPF/DMARC ;
-- Rapports sur des chiffrements SSL/TLS non sécurisés (à moins que vous ayez un POC fonctionnel) ;
-- Attaques par force brute/réutilisation de mot de passe ;
-- Attaques d'énumération d'utilisateurs ;
-- Attaques de numéros de téléphone premium ;
-- Divulgation de fichiers ou répertoires publics connus (par exemple, robots.txt) ;
-- Actions automatisées massives sur la plateforme via des robots/crawling (sauf si cela recueille des informations sensibles sur les membres) ;
-- « Self » XSS ;
-- Absence de drapeaux de cookies ;
-- Meilleures pratiques SSL/TLS ;
-- Avertissements de contenu mixte ;
-- Attaques par déni de service ;
-- XSS sur "HTTP Host Header" ;
-- Détournement de clic/UI ;
-- Divulgation de version de logiciel ;
-- Traces de pile ou divulgation de chemin ;
-- Tentatives d'ingénierie physique ou sociale ;
-- Failles divulguées récemment (même jour) ;
-- Présence de l'attribut autocomplete sur les formulaires web ;
-- Failles affectant les navigateurs ou plateformes obsolètes ;
-- Problèmes nécessitant un accès physique à l'ordinateur/dispositif/interface de la victime (par exemple si la victime l'a laissé ouvert ou si l'attaquant est la victime) ;
-- Déconnexion et autres instances de CSRF de faible gravité ;
-- Rapports provenant de scanners automatiques de vulnérabilités web (Acunetix, Vega, etc.) qui n'ont pas été validés ;
-- Rapports concernant des applications tierces que nous fournissons à nos clients mais qui ne font pas directement partie de notre système (phpMyAdmin, Roundcube Webmail, etc.), si la faille n'expose pas directement les données et/ou métadonnées des clients ;
-- Rapports sur des applications tierces que nous fournissons à nos clients mais qui ne font pas partie directement de notre système (phpMyAdmin, Webmail Roundcube, etc.), à moins que la faille exposant les données et/ou métadonnées des utilisateurs ne soit corrigée depuis plus d'un mois dans la version publiée et que nous ne soyons pas à jour ;
-- Rapports concernant des failles connues dans des sous-composants (par exemple, OpenSSH) qui viennent juste d'être divulguées. Nous visons à appliquer des correctifs de sécurité en 30 jours ou moins, donc les rapports concernant des failles récemment divulguées ne sont pas pertinents ;
-- Rapports concernant des sites ou applications hébergés par notre client, sauf si la faille est due à notre plateforme en conjonction avec l'application du client ;
-- Rapports concernant des failles provenant d'applications tierces que nous utilisons qui sont soit inconnues, non corrigées ou corrigées dans des versions non publiées.
+- Any hypothetical flaws or best practices without exploitable POCs;
+- Connection, disconnect, unauthenticated or low value;
+- Absence of connected HTTP headers to the security that do not directly cause a flaw;
+- Prevention/absence of SPF/DMARC records;
+- Reports on unsecured SSL/TLS encryption (unless you have a working POC);
+- Brute force attacks/password reuse;
+- User Numbers Attacks;
+- Premium Phone Number Attacks;
+- Disclosure of known public files or directories (e.g. robots.txt);
+- Massive automated actions on the platform via robots/crawling (unless this collects sensitive information about members);
+- XSS Self;
+- No cookies flags;
+- Best Practices SSL/TLS;
+- Mixed Content Warnings;
+- Attacks by denial of service;
+- XSS on "HTTP Host Header" ;
+- Click/UI Stop;
+- Disclosure Software Version;
+- Stack tracks or path disclosure;
+- Physical or social ingenious attempts;
+- Recently Disclosed Scraps (same day);
+- Presence of autocomplete attribute on web forms;
+- Sizes affecting browsers or obsolete platforms;
+- Problems requiring physical access to the victim's computer/device/interface (e.g. if the victim left the victim open or the attacker was the victim);
+- Disconnection and other instances of low gravity CSRF;
+- Reports from automatic web vulnerability scanners (Acunetix, Vega, etc. ) that have not been validated;
+- Reports concerning third party applications that we provide to our customers but which are not directly part of our system (phpMyAdmin, Roundcube Webmail, etc. , if the vulnerability does not directly expose client data and/or metrics;
+- Reports on third party applications that we provide to our customers but which are not directly part of our system (phpMyAdmin, Webmail Roundcube, etc. , unless the vulnerability exposing user data and/or metrics has been fixed for more than a month in the published version and we are not up to date;
+- Reports about known vulnerabilities in subcomponents (e.g. OpenSSH) that have just been disclosed. We aim to apply security patches in 30 days or less so recently disclosed vulnerability reports are not relevant;
+- Reports about sites or applications hosted by our customer. unless the vulnerability is due to our platform in conjunction with the client application;
+- Reports of vulnerabilities from third party applications that we use that are either unknown, uncorrected, or fixed in unpublished versions.
 
-Notez que :
+Note that:
 
-- le nom des comptes est [accessible de nombreuses façons différentes](remote-access/misc#lister-les-comptes) ;
-- les adresses en `.alwaysdata.net` sont liées aux comptes de nos clients. Leurs failles ne sont pas de notre ressort ;
-  - notamment s'ils divulguent leurs informations de connexions ;
-- Le répertoire `/tmp` est un [répertoire partagé](remote-access/misc#répertoire-tmp) ;
-- `https://files.alwaysdata.com` et `https://share.alwaysdata.com` présentent des fichiers publics ;
-- le lien de réinitialisation du mot de passe expire après 3 jours ou la prochaine connexion à l'interface d'administration ;
-- un utilisateur peut réutiliser un ancien mot de passe. Ce n'est pas une [bonne pratique listée par NIST](https://pages.nist.gov/800-63-3/sp800-63-3.html) ;
-- la vérification de l'email (que ce soit à l'inscription, à la modification d'informations de profil ou autre) n'est qu'une pratique, non une faille ;
-- les injections HTML et XSS dans dans l'interface d'administration ne cibleraient que l'attaquant et ne peuvent donc être des failles ;
-- nous n'utilisons pas de CDN et nos IP sont publiques ;
-- le numéro de version des logiciels que nous utilisons [ne peut être déterminant](security/security-upgrades).
+- account names are [accessible in many ways](remote-access/misc#lister-les-comptes);
+- addresses in `.alwaysdata.net` are linked to our customers' accounts. Their flaws do not fall within our competence;
+  - including if they disclose their login information;
+- The `/tmp` directory is a [shared directory](remote-access/misc#répertoire-tmp);
+- `https://files.alwaysdata.com` and `https://share.alwaysdata.com` represent public files;
+- password reset link expires after 3 days or next login at the admin interface;
+- a user can re-use an old password. This is not a [good practice listed by NIST](https://pages.nist.gov/800-63-3/sp800-63-3.html);
+- email verification (whether registered or changed profile information) is only a practice, not a flaw;
+- HTML and XSS injections in the administration interface would only target the attacker and therefore cannot be vulnerabilities;
+- we do not use CDN and our IPs are public;
+- the version number of the software we use [cannot be terminating](security/security-upgrades).
 
-[^1]: nom, numéro de téléphone, email, adresse physique, carte d'identité physique
+[^1]: name, phone number, email, physical address, physical identity card
