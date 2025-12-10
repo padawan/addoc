@@ -1,27 +1,27 @@
 +++
-url = "/fr/listes-de-diffusion/"
-title = "Listes de diffusion"
+url = "/en/mailing lists/"
+title = "Mailing lists"
 weight = 50
 layout = "man"
 tags = [ "email", "mailing list" ]
 +++
 
-Les listes de diffusions (_mailing lists_) vous permettent de définir un _pool_ d'adresses mails vers lesquelles renvoyer un message. On les distingue dans leur usage par leur capacités de diffusion :
+Mailing lists (_mailing lists_) allow you to define a _pool_ of email addresses to return a message to. They are distinguished in their use by their broadcast capabilities:
 
-- seuls les adresses "administratrices" sont capables d'expédier du contenu vers les adresses de réception inscrites (par exemple, une newsletter) ;
-- tous les participant·e·s peuvent envoyer des messages sur la liste pour permettre une conversation (par exemple, les membres d'un groupe de travail).
+- only "administrator" addresses are able to send content to registered receiving addresses (e.g. a newsletter);
+- all participants can send messages to the list to allow a conversation (e.g. members of a workgroup).
 
-**alwaysdata** vous permet de définir des listes de diffusion à votre convenance, rattachées au(x) domaine(s) de votre choix. Elles utilisent le logiciel open-source [Mailman](https://docs.mailman3.org/projects/mailman/en/latest/) et leur configuration s'appuie sur l'interface [Postorius](https://docs.mailman3.org/projects/postorius/en/latest/). Vous pouvez vous référer à ces documentations pour leur usage quotidien.
+**alwaysdata** allows you to define mailing lists at your convenience, connected to the domain(s) of your choice. They use open-source software [Mailman](https://docs.mailman3.org/projects/mailman/en/latest/) and their configuration relies on interface [Postorius](https://docs.mailman3.org/projects/postorius/en/latest/). You can refer to these documentation for their daily use.
 
-## Connexion
+## Login
 
-La création / modification / suppression des listes de diffusion se fait depuis l'interface d'administration : https://admin.alwaysdata.com/mailinglist/.
+The creation / modification / deletion of mailing lists is done from the admin interface: https://admin.alwaysdata.com/mailinglist/.
 
-La gestion interne des listes de diffusions (membres, permissions, etc), se fait depuis l'interface d'administration Postorius : https://mailman.alwaysdata.com/.
+The internal management of mailing lists (members, permissions, etc) is done from the Postorius administration interface: https://mailman.alwaysdata.com/.
 
 ***
 
-- [Créer une liste de diffusion](create-a-mailing-list)
-- [Ajouter des membres manuellement à une liste](add-members-to-a-mailing-list)
-- [Modifier les droits de diffusion](modify-mailing-list-permissions)
-- [Ajouter un pied-de-page avec un lien de désabonnement](add-a-mailing-list-footer)
+- [Create mailing list](create-a-mailing-list)
+- [Add members manually to a list](add-members-to-a-mailing-list)
+- [Edit Broadcast Rights](modify-mailing-list-permissions)
+- [Add footer with default link](add-a-mailing-list-footer)
