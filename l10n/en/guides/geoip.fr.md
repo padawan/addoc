@@ -1,48 +1,48 @@
 +++
-url = "/fr/guides/geoip/"
-title = "Comment bloquer des visites via GeoIP"
+url = "/guides/geoip/"
+title = "How to block visits via GeoIP"
 layout = "howto"
 hidden = true
-tags = [ "sécurité", "site" ]
+tags = [ "security", "site" ]
 +++
 
-[MaxMind DB](https://www.maxmind.com/en/geoip2-services-and-databases)[^1] est un module [Apache](sites/configure-apache) de GeoIP qui vise à localiser un utilisateur en se basant sur son adresse IP.
+[MaxMind DB](https://www.maxmind.com/en/geoip2-services-and-databases)[^1] is a GeoIP module [Apache](sites/configure-apache) that aims to locate a user based on their IP address.
 
-## Installation
+## Setup
 
-Lancez les commandes suivantes en [SSH](remote-access/ssh) à la racine du compte :
+Run the following commands in [SSH](remote-access/ssh) at the root of the account:
 
 {{% notice note %}}
-Prendre la [dernière version disponible de `mod_maxminddb`](https://github.com/maxmind/mod_maxminddb)
+Take the [latest available version of `mod_maxminddb`](https://github.com/maxmind/mod_maxminddb)
 {{% /notice %}}
 
 ```sh
 mkdir mod_maxminddb
 cd mod_maxminddb/
 wget https://github.com/maxmind/mod_maxminddb/releases/download/1.2.0/mod_maxminddb-1.2.0.tar.gz
-tar xf mod_maxminddb-1.2.0.tar.gz 
+tar xf mod_maxminddb-1.2.0.tar. z 
 cd mod_maxminddb-1.2.0/
 ./configure --with-apxs=/usr/alwaysdata/apache/latest/bin/apxs && make
 cp ./src/.libs/mod_maxminddb.so ~/
 cd
-rm -fr mod_maxminddb
+rm -en mod_maxminddb
 ```
 
-Puis ajoutez dans le menu **Web > Configuration** de votre interface d'administration alwaysdata :
+Then add in the **Web > Configuration** menu of your alwaysdata admin interface:
 
 ```
-LoadModule maxminddb_module $HOME/mod_maxminddb.so
+maxminddb_module $HOME/mod_maxminddb.so
 ```
 
-Enfin créez un compte sur leur interface pour récupérer une de leur base de données : [gratuite](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en) ou [payante](https://www.maxmind.com/en/geoip2-databases) selon votre besoin.
+Finally create an account on their interface to receive one of their database: [gratuite](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en) or [payante](https://www.maxmind.com/en/geoip2-databases) as required.
 
-## Utilisations
+## Uses
 
-### Bloquer certains pays
+### Block some countries
 
-Dans cet exemple nous utilisons la base gratuite que nous mettons à la racine du compte et nous bloquons la Chine et les États-Unis.
+In this example we use the free basis that we put at the root of the account and we block China and the United States.
 
-Ajoutez en haut d'un `.htaccess` à la racine du site :
+Add at the top of a `.htaccess` to the root of the site:
 
 ```
 MaxMindDBEnable On
@@ -55,21 +55,21 @@ SetEnvIf COUNTRY_CODE US BlockCountry
 Deny from env=BlockCountry
 ```
 
-### N'autoriser que certains pays
+### Allow only some countries
 
-Dans cet exemple nous utilisons la base gratuite que nous mettons à la racine du compte et nous n'autorisons que la France.
+In this example we use the free basis that we put at the root of the account and only allow France.
 
-Ajoutez en haut d'un `.htaccess` à la racine du site :
+Add at the top of a `.htaccess` to the root of the site:
 
 ```
 MaxMindDBEnable On
-MaxMindDBFile COUNTRY_DB $HOME/GeoLite2-Country.mmdb
+MaxMindDBDBFile COUNTRY_DB $HOME/GeoLite2-Country.mmdb
 MaxMindDBEnv COUNTRY_CODE COUNTRY_DB/country/iso_code
 
-SetEnvIf COUNTRY_CODE FR AllowCountry
+SetEnvIf COUNTRY_CODE EN AllowCountry
 
 Deny from all
 Allow from env=AllowCountry
 ```
 
-[^1]: MaxMind DB peut aussi être utilisé pour marketing géographique et propose des bases villes.
+[^1]: MaxMind DB can also be used for geographic marketing and provides city bases.
