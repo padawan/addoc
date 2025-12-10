@@ -1,13 +1,13 @@
 +++
-url = "/fr/sites/desactiver-un-site/"
-title = "Comment désactiver un site web"
+url = "/sites/desactiver-un-site/"
+title = "How to disable a website"
 layout = "howto"
 hidden = true
 tags = [ "http", "site" ]
 +++
 
-Vous pourriez avoir besoin de désactiver votre site le temps d'une maintenance ou d'une indisponibilité : cette fonctionnalité n'est pas disponible dans l'interface d’administration. En revanche, des solutions simples permettant cela existent :
+You may need to disable your site for maintenance or unavailability: this feature is not available in the admin interface. On the other hand, simple solutions to enable this exist:
 
-- la création d'un fichier index (pensez à renommer celui de votre application) indiquant que le site est actuellement en maintenance ou désactivé. Il vous suffira de faire l'opération inverse lorsque le site pourra de nouveau être accessible ;
-- {{< fig "images/admin-panel_delete-site.fr.png" "Interface d'administration : supprimer un site" >}}
-- si vous utilisez une application CMS de type Wordress, Joomla (.etc) une option est généralement disponible directement dans leur interface d'administration.
+- the creation of an index file (think renaming your application) indicating that the site is currently under maintenance or disabled. All you have to do is do the opposite when the site can be accessed again;
+- {{< fig "images/admin-panel_delete-site.png" "Admin interface: remove a site" >}}
+- if you are using a Wordres-like CMS application, Joomla (.etc) an option is usually available directly in their admin interface.
