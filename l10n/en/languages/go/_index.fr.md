@@ -1,13 +1,13 @@
 +++
-url = "/fr/langages/go/"
-title = "Go"
+url = "/languages/go/"
+title = "GB"
 archetype = "chapter"
 tags = [ "golang" ]
 +++
 
-Le fonctionnement de [Go](https://golang.org/) chez alwaysdata est très standard. Si vous avez l'habitude d'utiliser Go sous un système Unix (par exemple, Linux), vous savez déjà presque tout ce qu'il faut.
+The operation of [Go](https://golang.org/) at alwaysdata is standard. If you are used to using Go on a Unix system (for example, Linux), you already know almost everything you need.
 
-- Go est un langage compilé ne nécessitant pas d'interpréteur pour faire tourner les programmes mais la [version](languages/go/configuration#version) 1.22 est disponible ;
-- le [déploiement HTTP](languages/go/configuration#déploiement-http) se fait simplement.
+- Go is a compile language that does not require interpreters to run programs, but the [version](languages/go/configuration#version) 1.22 is available;
+- [HTTP Deployment](languages/go/configuration#déploiement-http) is simply done.
 
-Notre marketplace propose l'installation du framework [Macaron](https://go-macaron.com/) et bien d'autres applications sont compatibles avec nos serveurs ; par exemple, [Beego](https://github.com/beego/beego), [Iris](https://iris-go.com/), [Gin](https://gin-gonic.com/) ou encore [Revel](https://revel.github.io/).
+Our marketplace offers the installation of the [Macaron]framework (https://go-macaron.com/) and many other applications are compatible with our servers; e.g. [Beego](https://github.com/beego/beego), [Iris](https://iris-go.com/), [Gin](https://gin-gonic.com/) or [Revel](https://revel.github.io/).
