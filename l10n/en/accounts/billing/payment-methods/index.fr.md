@@ -1,55 +1,55 @@
 +++
-url = "/fr/comptes/facturation/moyens-de-paiement/"
-title = "Moyens de paiement"
+url = "/accounts/billing/payment method/"
+title = "Payment methods"
 layout = "man"
 weight = 2
-tags = [ "facturation" ]
+tags = [ "invoicing" ]
 +++
 
-Il existe deux façons différentes de payer vos factures alwaysdata.
+There are two different ways to pay alwaysdata bills.
 
-## Compte prépayé
+## Prepayment account
 
-À chaque facturation, votre compte prépayé alwaysdata est débité de la somme due. Vous devez créditer ce compte prépayé de manière à couvrir vos débits.
+At each billing, your alwaysdata prepaid account is debited from the amount due. You need to create this prepaid account in a way that covers your bits.
 
-Nous proposons ces différentes méthodes :
+We offer these different methods:
 
-- Carte bancaire ;
-- PayPal ;
-- Virement bancaire : Notre compte bancaire est indiqué sur nos factures. Il faudra préciser dans la description du virement votre _numéro de client_ ou votre _numéro de facture_ dans les commentaires du virement.
+- Bank card;
+- PayPal;
+- Bank transfer: Our bank account is indicated on our invoices. In the transfer description, you will have to specify your _customer number_ or _invoice number_ in the transfer comments.
 
 {{% notice note %}}
-Les alimentations de compte par _virement_ apparaîtront dans votre interface dès qu'elles auront été prises en compte par notre équipe. Cela peut prendre plusieurs jours.
-{{% /notice %}}
+Account feeds by _transfer_ will appear in your interface as they have been taken into account by our team. This may take several days.
+{{%/notice %}}
 
-Les paiements par _mandat administratif_ sont possibles et reçus comme des virements.
+Payments by _administrative mandate_ are possible and received as transfers.
 
 {{% notice warning %}}
-Nous n'acceptons pas les paiements par _chèque_. Tout chèque reçu sera systématiquement détruit.
-{{% /notice %}}
+We do not accept payments by _cheque_. Any cheque recovered u will be systematically destroyed.
+{{%/notice %}}
 
-### Cartes bancaires acceptées
+### Credit cards accepted
 
-Les cartes bancaires autorisées par notre prestataire de paiement sont : CB, Visa et MasterCard.
+Credit cards authorized by our payment provider are: CB, Visa and MasterCard.
 
-## Prélèvement automatique
+## Automatic Preference
 
-Entrez vos coordonnées bancaires - compte ou carte - dans votre administration, menu **Facturation > Moyens de paiement**.
+Enter your bank account or card details in your administration, **Billing > Payment Methods**.
 
-Ce moyen de paiement sera alors prélevé automatiquement de la somme due. Vous n'avez plus à vous soucier de payer votre hébergement alwaysdata.
+This payment method will then be automatically deducted from the amount owed. You no longer have to worry about paying for your alwaysdata hosting.
 
-Lorsque vous activez le prélèvement automatique sur votre compte bancaire, remettez à votre banque, une [autorisation de prélèvement](http://static.alwaysdata.com/docs/Prelevement.png).
+When you activate the automatic payment on your bank account, give your bank a [Preference Authorization](http://static.alwaysdata.com/docs/Prelevement.png).
 
 ## Chorus Pro
 
-Les factures d'hébergement peuvent être mise à disposition sur le portail [Chorus Pro](https://portail.chorus-pro.gouv.fr/).
+Hosting invoices can be made available on the [Chorus Pro] portal (https://portail.chorus-pro.gouv.fr/).
 
-Pour cela, renseignez dans le menu **Facturation > Moyens de paiement > Paramètres** votre SIRET et le code de service (si votre administration en utilise un).
+To do so, enter your SIRET and service code in the **Billing > Payment Methods > Parameters** menu.
 
-{{< fig "images/chorus.fr.png" "" >}}
+{{< fig "images/chorus.en.png" "" >}}
 
-Les factures seront alors automatiquement envoyées sur le portail Chorus Pro à leur émission.
+Invoices will then be automatically sent to Chorus Pro portal when they are issued.
 
-Si votre administration requiert l'ajout d'un numéro d'engagement celui-ci sera demandé dans un deuxième temps au niveau de la facture.
+If your administration requires the addition of a commitment number it will be requested in a second time at the invoice level.
 
-{{< fig "images/chorus2.fr.png" "" >}}
+{{< fig "images/chorus2.en.png" "" >}}
