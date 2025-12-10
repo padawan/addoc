@@ -1,27 +1,27 @@
 +++
-url = "/fr/avance/ressources-systemes-alertes-et-limitations"
-title = "Ressources système : alertes et limitations"
+url = "/advance/resources-alert-and-limitations systems"
+title = "System resources: alerts and limitations"
 layout = "howto"
 hidden = true
 tags = [ ]
 +++
 
 {{% notice note %}}
-Fonctionnalité disponible uniquement sur les environnements [Cloud Privé](accounts/billing/private-cloud-prices).
-{{% /notice %}}
+Functionality available only on [Cloud Private](accounts/billing/private-cloud-prices).
+{{%/notice %}}
 
-Le menu **Ressources** permet de configurer ses ressources système, comme  l'espace disque, le CPU ou la mémoire :
+The **Resources** menu allows you to configure your system resources, such as disk space, CPU or memory:
 
-{{< fig "images/admin-panel_resources.fr.png" "" >}}
+{{< fig "images/admin-panel_resources.png" "" >}}
 
-- _Limite d'espace disque_ : limite maximale que peut atteindre un compte à un instant T. Si elle est atteinte, une indisponibilité est à prévoir.
+- _Disk space limit_: maximum limit that an account can reach for a moment T. If it is reached, an unavailability is expected.
 
-- _Limite de CPU_ : limite maximale que peut atteindre un compte à un instant T. Si elle est atteinte, des lenteurs ou indisponibilités sont à prévoir.
+- _CPU limit_: maximum limit that can reach an account at a moment T. If it is reached, delays or unavailability are expected.
 
-- _Limite de RAM_ : limite maximale que peut atteindre un compte à un instant T. Si elle est atteinte un processus (pas forcément le plus consommateur) est automatiquement tué par le système.
+- _RAM_ limit: maximum limit that an account can reach for a moment T. If it is reached a process (not forcefully the most consumer) is automatically killed by the system.
 
-Il est possible de gérer ces trois limites au niveau _serveur_ ou au niveau _compte_. Les valeurs au niveau du compte **prennent l'avantage** sur les valeurs serveurs.
+You can manage these three limits at _server_ or _account_ level. Account level values **take advantage** over server values.
 
-- _Seuil de RAM_ : seuil auquel est effectué le script présenté dessous.
+- _RAM threshold_: threshold at which the current script is performed.
 
-- _Commande à exécuter en cas de dépassement du seuil de RAM_ : commande/script exécuté par le système lorsque le seuil est atteint. Cela permet de ne pas tuer un processus "au hasard".
+- _Execute command in case of RAM-threshold exceeding_: command/script executed by system when threshold is reached. This makes it possible not to kill a "random" process.
