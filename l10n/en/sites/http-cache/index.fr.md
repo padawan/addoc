@@ -1,59 +1,59 @@
 +++
-url = "/fr/sites/cache-http/"
-title = "Cache HTTP"
+url = "/sites/cache-http/"
+title = "HTTP Cache"
 weight = 50
 layout = "man"
 tags = [ "cache", "http", "site" ]
 +++
 
-Le cache HTTP stocke tem­po­rai­re­ment des docu­ments web (exemples : pages HTML, docu­ments CSS, images) pour dimi­nuer la latence induite par le ser­veur lors­qu’il doit ser­vir une page et/ou réduire sa charge de travail.
+The HTTP cache stores web documents template(examples: HTML pages, CSS documents), images) to dimify the latency induced by the server when it has to serve a page and/or reduce its workload.
 
-- [Activer le cache HTTP sur WordPress](sites/activate-http-cache-on-wordpress)
+- [Enable HTTP Cache on WordPress](sites/activate-http-cache-on-wordpress)
 
 ## Concept
 
-Lorsqu’un utilisateur tente d'accéder à une page, le serveur web correspondant va géné­rer une page et l’en­voyer sur le réseau. Le cache inter­cepte alors la réponse pour la stocker dans sa mémoire locale avant de la ser­vir à l'utilisateur.
+When a user tries to access a page, the corresponding web server will manage a page and send it to the network. The cache then intercepts the response to store it in its local memory before serving it to the user.
 
-{{< fig "http-cache_part-1.fr.png" "Mise en cache d’une res­source lors de sa requête" >}}
+{{< fig "http-cache_part-1.en.png" "Caching a source when requesting" >}}
 
-Lorsqu’une requête pour la même page est émise par le même ou un autre utilisateur, le cache la restituera comme il détient alors une copie de la res­source deman­dée. Le ser­veur web ne sera plus inter­ro­gé.
+When a request for the same page is issued by the same or another user, the cache will render it as it holds a copy of the requested source. The web server will no longer be interrogested.
 
-{{< fig "http-cache_part-2.fr.png" "Restitution d’une res­source pré­cé­dement mise en cache" >}}
+{{< fig "http-cache_part-2.en.png" "Retrieving a previously cached source" >}}
 
-Les spé­ci­fi­ca­tions du stan­dard sont exposées dans la [RFC 7234](https://tools.ietf.org/html/rfc7234).
+The characteristics of the standard are exposed in the [RFC 7234](https://tools.ietf.org/html/rfc7234).
 
-## Utiliser le cache HTTP
+## Use HTTP Cache
 
-### 1. Vérifiez que votre application gère le cache
+### 1. Make sure your app geocaches the cache
 
-Pour que le cache puisse interroger l'upstream dans le but de savoir si la ressource visée n'a pas été modifiée, l'application **doit** fournir l'en-tête `Etag` et/ou `Last-Modified`.
+To enable the cache to query the upstream for the purpose of knowing if the target resource has not been modified, the application **must** provide the `Etag` and/or `Last-Modified` header.
 
-Une réponse ne peut **PAS** être cachée si :
+A response cannot **NOT** be hidden if:
 
-- l'en-tête **`Vary`** vaut `*` ;
-- l'en-tête **`Content-Type`** n'est pas présent ;
-- l'en-tête **`Content-Type`** n'est pas une des valeurs : `text/html`, `text/xml`, `text/plain`, `application/xml`, `application/html+xml`, `application/rss+xml`, `application/rdf+xml`, `application/atom+xml`, `text/css`, `text/javascript` ;
-- l'en-tête **`Cache-Control`** vaut une des valeurs : `private`, `no-store`, `no-cache`, `no-transform` ;
-- l'en-tête **`Set-Cookie`** est présent ;
-- l'en-tête **`Authorization`** existe mais que **`Cache-Control`** n'a aucune des valeurs suivantes : `public`, `must-revalidate`, `proxy-revalidate`, `s-maxage` ;
-- le **_code de status HTTP_** n'est pas l'un des suivants : 200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501.
+- the **`Vary`** header is `*`;
+- the **`Content-Type`** header is not present;
+- the header **`Content-Type`** is not one of the values: `text/html`, `text/xml`, `text/plain`, `application/xml`, `application/html+xml`, `application/rss+xml`, `application/rdf+xml`, `application/atom+xml`, `text/css`, `text/javascript`;
+- the **`Cache-Control`** header is one of the values: `private`, `no-store`, `no-cache`, `no-transform`;
+- **Set-Cookie\`** header is available;
+- the **`Authorization`** header exists but **`Cache-Control`** has none of the following values: `public`, `must-revalidate`, `proxy-revalidate`, `s-maxage`;
+- **HTTP_** status code is not one of the following: 200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501.
 
-### 2. Activez le cache HTTP
+### 2. Enable HTTP Cache
 
-Rendez vous dans **Web > Sites > Modifier le [site] - ⚙️ > Cache**.
+Go to **Web > Sites > Edit [site] - ⚙️ > Cache**.
 
-{{< fig "admin-panel_add-site-cache.fr.png" "" >}}
+{{< fig "admin-panel_add-site-cache.png" "" >}}
 
-### Utilisation de `PURGE`
+### Using `PURGE`
 
-`PURGE` peut être exécuté de trois manières différentes chez alwaysdata :
+`PURGE` can be executed in three different ways at alwaysdata:
 
-1. en utilisant l'URL complète de la ressource (ex : `https://test.alwaysdata.net/foo/bar`). Cela supprimera l'entrée de cache qui lui est liée et ses variations (générées par l'en-tête `Vary`) ;
-2. en ajoutant l'entête `X-Cache-Purge-Match : wildcard` et en ajoutant un wildcard à votre URL (ex : `https://test.alwaysdata.net/*`). Cela supprimera toutes les entrées correspondant au modèle d'URL ;
-3. en ajoutant l'entête `X-Cache-Purge-Match : startswith` et en ajoutant un chemin partiel à votre URL (ex : `https://test.alwaysdata.net/foo`). Cela supprimera toutes les entrées correspondant au modèle d'URL (et donc `https://test.alwaysdata.net/foo/bar`).
+1. using the full URL of the resource (e.g. `https://test.alwaysdata.net/foo/bar`). This will remove the related cache intern and its variations (managed by the `Vary` header);
+2. by adding the `X-Cache-Purge-Match: wildcard` and adding a wildcard to your URL (e.g. `https://test.alwaysdata.net/*`). This will remove all entries matching the URL pattern;
+3. by adding the `X-Cache-Purge-Match: startswith` and adding a partial path to your URL (e.g. `https://test.alwaysdata.net/foo`). This will remove all entries matching the URL pattern (and thus `https://test.alwaysdata.net/foo/bar`).
 
 {{% notice note %}}
-Bien que le cache HTTP convienne dans l'immense majorité des cas, vous pouvez également [faire tourner Varnish](sites/user-program) sur votre compte alwaysdata.
-{{% /notice %}}
+Although the HTTP cache works in the vast majority of cases, you can also [run Varnish](sites/user-program) on your alwaysdata account.
+{{%/notice %}}
 
-> Icônes : The Noun Project
+> The Noun Project
