@@ -1,85 +1,85 @@
 +++
-url = "/fr/sites/waf/"
-title = "Pare-feu applicatif web (WAF)"
+url = "/sites/waf/"
+title = "Web Application Firewall (WAF)"
 linkTitle = "WAF"
 weight = 60
 layout = "man"
 tags = [ "http", "site", "waf" ]
 +++
 
-Un [WAF](https://fr.wikipedia.org/wiki/Web_application_firewall) exa­mine chaque requête HTTP pour protéger les applications web face à différents vecteurs d'attaques pour minimiser les infections. Il peut les auto­ri­ser à tran­si­ter jus­qu’à l’ap­pli­ca­tion, ou les blo­quer, aler­ter, consi­gner si elles sont jugées mal­veillantes.
+Un [WAF](https://fr.wikipedia.org/wiki/Web_application_firewall) exa­mine chaque requête HTTP pour protéger les applications web face à différents vecteurs d'attaques pour minimiser les infections. It can auto­ri­ser to tran­si­ter until the app­pli­tion, or block them, aler­ter, consi­gner if they are judged awkward.
 
-{{< fig "waf.fr.png" "Parcours d’une requête HTTP face à un WAF" >}}
+{{< fig "waf.en.png" "HTTP request path facing a WAF" >}}
 
-alwaysdata utilise le WAF ModSecurity et l'ensemble de règles libres [OWASP Modsecurity Core Rule Set](https://coreruleset.org/) (CRS).
+alwaysdata uses the WAF ModSecurity and the free set [OWASP Modsecurity Core Rule Set](https://coreruleset.org/) (CRS).
 
-## Paramétrer le pare-feu applicatif web
+## Browse web application firewall
 
-{{< fig "admin-panel_add-site-waf.fr.png" "" >}}
+{{< fig "admin-panel_add-site-waf.en.png" "" >}}
 
-### Profils disponibles
+### Available Profiles
 
-| Profil    | Description                                                                                                                            |
-| --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Aucun     | (par défaut)                                                                                                        |
-| Basique   | Respect strict du pro­to­cole HTTP                                                                                                     |
-|           | Détection de robots mal­veillants                                                                                                      |
-| Fort      | L’ensemble des règles du pro­fil basique                                                                                               |
-|           | Détection d’exécution de code à dis­tance (RCE)                                                                     |
-|           | Détection d’attaque type [Cross-Site Scripting (XSS)](https://fr.wikipedia.org/wiki/Cross-site_scripting)           |
-|           | Détection d’[injec­tion SQL](https://fr.wikipedia.org/wiki/Injection_SQL)                                                              |
-| Complet   | L’ensemble des règles du pro­fil fort                                                                                                  |
-|           | Détection d’attaques rela­tives au lan­gage PHP                                                                                        |
-|           | Détection d’attaque par inclu­sion de fichier local (LFI)                                                           |
-|           | Détection d’attaque par [inclu­sion de fichier dis­tant (RFI)](https://fr.wikipedia.org/wiki/Remote_File_Inclusion) |
-| WordPress | L’ensemble des règles du pro­fil com­plet                                                                                              |
-|           | Règles spé­ci­fiques à WordPress                                                                                                       |
-| Drupal    | L’ensemble des règles du pro­fil com­plet                                                                                              |
-|           | Règles spé­ci­fiques à Drupal                                                                                                          |
-| Nextcloud | L’ensemble des règles du pro­fil com­plet                                                                                              |
-|           | Règles spé­ci­fiques à Nextcloud                                                                                                       |
-| Dokuwiki  | L’ensemble des règles du pro­fil com­plet                                                                                              |
-|           | Règles spé­ci­fiques à Dokuwiki                                                                                                        |
+| Profile   | Description                                                                                                                      |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| None      | (default)                                                                                                     |
+| Basic     | HTTP strict adherence                                                                                                            |
+|           | Ambient robot detection                                                                                                          |
+| Strong    | Basic Profiling Set                                                                                                              |
+|           | Detection of execution code at dis­tance (RCE)                                                                |
+|           | Attack detection type [Cross-Site Scripting (XSS)](https://fr.wikipedia.org/wiki/Cross-site_scripting)        |
+|           | Detecting [SQL injection](https://fr.wikipedia.org/wiki/Injection_SQL)                                                           |
+| Full      | The Strong Profil's Entire                                                                                                       |
+|           | Detecting relaxed attacks at PHP launching                                                                                       |
+|           | Attacking detection by local file inclusion (LFI)                                                             |
+|           | Attack detection by [Including Disconnecting File (RFI)](https://fr.wikipedia.org/wiki/Remote_File_Inclusion) |
+| WordPress | Complete Profiles                                                                                                                |
+|           | WordPress Special Gles                                                                                                           |
+| Drupal    | Complete Profiles                                                                                                                |
+|           | Specific awards in Drupal                                                                                                        |
+| Nextcloud | Complete Profiles                                                                                                                |
+|           | Specific issues in Nextcloud                                                                                                     |
+| Dokuwiki  | Complete Profiles                                                                                                                |
+|           | Specific awards at Dokuwiki                                                                                                      |
 
 {{% notice note %}}
-L’ac­ti­va­tion d’un pro­fil de pro­tec­tion va se tra­duire par une légère aug­men­ta­tion de la latence lors du trai­te­ment d’une requête HTTP. Cette latence, de l’ordre de quelques mil­li­se­condes, aug­mente avec le degré de pro­tec­tion.
-{{% /notice %}}
+The action of a pro­tec­ment will be driven by an increase in latency during the processing of an HTTP request. This latency, in the order of a few mil­li­se­condes, augments with the degree of pro­tec­tion.
+{{%/notice %}}
 
-### Exclure des règles
+### Exclude from Records
 
-Selon votre cas d'utilisation, le **comportement du WAF peut être trop restrictif**. Il est aussi possible qu'il génère de **faux positifs** lors de son analyse. Si vous jugez que son comportement n'est pas approprié, vous avez la possibilité d'exclure certaines règles utilisées lors de l'analyse.
+Depending on your use case, the **behavior of the WAF may be too restrictive**. It is also possible that it generates **false positives** when parsed. If you feel that its behavior is not appropriate, you have the possibility to exclude some of the reactions used in the analysis.
 
-Seul le **numéro de la règle à exclure** doit être spécifié. Vous le retrouverez dans les logs Sites (`$HOME/admin/logs/sites`). Exemple :
+Only the **exclude** number must be specified. You can find it in the Sites logs (`$HOME/admin/logs/sites`). Example:
 
 ```
-[08/Jan/2019:11:09:19 +0100] [waf] - <IP attaquante> "GET /?param=%22><script>alert(1);</script> HTTP/1.1" - 941100 | XSS Attack Detected via libinjection' with value: "><script>alert(1);</script>
-[08/Jan/2019:11:09:19 +0100] [waf] - <IP attaquante> "GET /?param=%22><script>alert(1);</script> HTTP/1.1" - 941110 | XSS Filter - Category 1: Script Tag Vector' with value: <script>
-[08/Jan/2019:11:09:19 +0100] [waf] - <IP attaquante> "GET /?param=%22><script>alert(1);</script> HTTP/1.1" - 941160 | NoScript XSS InjectionChecker: HTML Injection' with value: <script>
+[08/Jan/2019:11:09:19 +0100] [waf] - <IP attaquante> "GET /?param=%22><script>alert(1);</script> HTTP/1. " - 941100 | XSS Attack Detected via libinjection' with value: "><script>alert(1);</script>
+[08/Jan/2019:11:09:19 +0100] [waf] - <IP attaquante> "GET /? aram=%22><script>alert(1);</script> HTTP/1. " - 941110 | XSS Filter - Category 1: Script Tag Vector' with value: <script>
+[08/Jan/2019:11:09:19 +0100] [waf] - <IP attaquante> "GET /? aram=%22><script>alert(1);</script> HTTP/1. " - 941160 | NoScript XSS InjectionChecker: HTML Injection' with value: <script>
 ```
 
-Ce serait donc `941100`, `941110` et `941160` qui pourraient être indiqués.
+So it would be `941100`, `941110` and `941160` that might be indicated.
 
 {{% notice warning %}}
-Il faut veiller à ajouter progressivement des règles car l'exclusion est applicable sur tout le site. En effet, même si ajouter un grand nombre de règles à exclure peut améliorer la navigation dans certains cas, la protection sera alors amoindrie dans tous les autres cas.
-{{% /notice %}}
+Please make sure to gradually add new ones as the exclusion is applicable throughout the site. Indeed, even if adding a large number of exclusions may improve navigation in some cases protection will then be diminished in all other cases.
+{{%/notice %}}
 
-### Exclure des chemins
+### Exclude from paths
 
-Ce type d'exclusion permet d'**éviter l'analyse de pages commençant par le chemin spécifié**. En saisissant `/foo/` par exemple, `www.mon-site.com/foo/` sera exclu de l'analyse tout comme les query strings : `www.mon-site.com/foo/?param=bar`. Pour exclure aussi `www.mon-site.com/foo/bar` et `www.mon-site.com/foo/script.php`, il faut rajouter un _wildcard_ : `/foo/*`. Enfin, si on veut substituer un caractère quelconque (notamment qui changerait régulièrement), `?` peut être utilisé.
+This type of exclusion allows you to **avoid parsing pages started by the specified path**. By entering `/foo/` for example, `www.my-site.com/foo/` will be excluded from parsing just like query strings: `www.my-site.com/foo/?param=bar`. To also exclude `www.my-site.com/foo/bar` and `www.my-site.com/foo/script.php`, add a _wildcard_ : `/foo/*`. Finally, if you want to substitute any character (especially that would change regularly), `?` can be used.
 
-Donc, pour écarter de l'analyse `www.mon-site.com/foo/barBaz/`, `foo` et `Baz` étant des _strings_ quelconques, le chemin à exclure serait : `/*/bar?/`.
+So, to drop the parse `www.my-site.com/foo/barBaz/`, `foo` and `Baz` having any _strings_ parses, the excluding path would be: `/*/bar?/`.
 
 {{% notice tip %}}
-Prenons le cas d'un site de type WordPress qui présente des logs similaires à ceux présentés précédemment. Si ces règles sont déclenchées lors de la navigation dans l'interface d'administration du blog, alors il est possible de les exclure de manière permanente.
-Cependant, le blog en lui-même ne sera plus protégé contre ces tentatives d'attaques. Dans ce cas, il est plus judicieux d'exclure le chemin (exemple : /wp-admin/\*) pour que toutes vos opérations sur l'interface d'administration ne soient plus concernées par l'analyse du WAF.
-{{% /notice %}}
+Let’s take the case of a WordPress site that has similar logs to previous ones. If these issues are triggered when navigating through the admin interface of the blog, then it is possible to exclude them permanently.
+However, the blog itself will no longer be protected from these attack attempts. In this case, it is better to exclude the path (example: /wp-admin/\*) so that all your actions on the administration interface are no longer affected by WAF's analysis.
+{{%/notice %}}
 
-Les _[query strings](https://en.wikipedia.org/wiki/Query_string)_ ne peuvent pas être utilisées dans ces exclusions.
+_[query strings](https://en.wikipedia.org/wiki/Query_string)_ cannot be used in these exclusions.
 
-### Exclure des IP
+### Exclude from IP
 
-Il peut être intéressant d'exclure des **IP sûres** (IP spécifiques ou plages d'IP) pour éviter à des outils ou des personnes d'être bloqués.
+It may be integering to exclude **extra IPs** (specific IP or IP ranges) to avoid blocked tools or people.
 
-Prenons l'exemple de [WPScan](https://wpscan.com/) : en l'activant sur un site WordPress certaines des requêtes qu'il effectue peuvent être bloquées. Exclure des règles ou des chemins ne serait pas efficace comme il observe de nombreuses URLs. La solution est donc d'exclure le serveur HTTP sur lequel est installé WPScan pour qu'il puisse fonctionner normalement.
+Let's take the example of [WPScan](https://wpscan.com/): by activating it on a WordPress site some of the requests it makes may be blocked. Excluding files or paths would not be effective as it observes many URLs. The solution is to exclude the HTTP server on which WPScan is installed so that it can function normally.
 
-> Icônes : The Noun Project
+> The Noun Project
