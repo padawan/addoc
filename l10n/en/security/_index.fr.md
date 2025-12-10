@@ -1,33 +1,33 @@
 +++
-url = "/fr/securite/"
-title = "Politiques de sécurité"
-linkTitle = "Sécurité"
+url = "/security/"
+title = "Security Policies"
+linkTitle = "Secured"
 weight = 50
 archetype = "chapter"
 pre = "<i class='fas fa-fw fa-shield-alt'></i> "
 tags = [ "" ]
 +++
 
-## Profil alwaysdata
+## Alwaysdata profile
 
-- [Authentification 2 facteurs](two-factor-authentication)
-- [Autorisation d'accès selon IP](ip-access-authorization)
+- [2-factor authentication](two-factor-authentication)
+- [Access Permission by IP](ip-access-authorization)
 
-## Services d'alwaysdata et sites web
+## Alwaysdata services and websites
 
 - [SSL/TLS](ssl-tls)
-- [Mode restreint](restricted-mode) : limitation des désagréments liés aux abus utilisateurs
-- Accès distant :
-  - [Accès SSH](remote-access/ssh)
-  - [Utiliser des clés SSH](remote-access/ssh/use-keys)
-  - [Authentification 2 facteurs SSH](remote-access/ssh/ssh-two-factor-authentication)
+- [Restricted Mode](restricted-mode): limit on user abuse
+- Remote access:
+  - [SSH access](remote-access/ssh)
+  - [Use SSH keys](remote-access/ssh/use-keys)
+  - [SSH 2-factor authentication](remote-access/ssh/ssh-two-factor-authentication)
 
-## Serveurs
+## Servers
 
-- [Mises à jour de sécurité](security/security-upgrades)
-- [Réseau](network) : gestion du réseau et protections contre les pirates informatiques
-- [Plages d'IP alwaysdata](ip-ranges)
-- [Plan de continuité d'activité](drp)
+- [Security Updates](security/security-upgrades)
+- [Réseau](network): network management and hacker protection
+- [alwaysdata IP ranges](ip-ranges)
+- [Business Continuity Plan](drp)
 - [VPN](./vpn)
 
 ---
