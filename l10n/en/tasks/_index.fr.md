@@ -1,71 +1,71 @@
 +++
-url = "/fr/taches-planifiees/"
-title = "Tâches planifiées"
+url = "/en/project-planning/"
+title = "Scheduled tasks"
 pre = "<i class='fas fa-fw fa-stopwatch'></i> "
 weight = 32
 layout = "man"
-tags = [ "tâches planifiées" ]
+tags = [ "scheduled tasks" ]
 +++
 
-Les Web apps ou ser­vices ont par­fois besoin d’exé­cu­ter des tâches pério­di­que­ment, exé­cu­ter des com­mandes ou ap­pe­ler des URLs, sans aucune inter­ac­tion uti­li­sa­teur. Pour ce faire, vous devez créer une tâche pla­ni­fiée.
+Web apps or services sometimes need to execute tasks in the process, to execute tasks or to execute common functions or URLs, without any useful interaction. To do this, you have to create a job placed.
 
-Notre pla­te­forme s’ap­puie sur [Debian](https://www.debian.org/) et sa [crontab](https://fr.wikipedia.org/wiki/Cron) mais permet de les gérer directement dans notre [interface d'administration](https://admin.alwaysdata.com) - onglet **Avancé > Tâches planifiées** - et de faciliter l'utilisation.
+Our layout is based on [Debian](https://www.debian.org/) and its [crontab](https://fr.wikipedia.org/wiki/Cron) but allows you to manage them directly in our [administration interface](https://admin.alwaysdata.com) - tab **Advanced > Planned Tasks** - and make it easier to use.
 
-Plusieurs types d’in­for­ma­tions sont à fournir :
+Several types of information are to be provided:
 
-- la (les) commande(s) que vous sou­hai­tez exé­cu­ter, ou les URLs que vous sou­hai­tez requê­ter. Des adresses email peuvent aussi être renseignées pour recevoir les rapports d'erreurs[^1] (séparées par un espace).
+- the order(s) you want to execute, or the URLs you want to request. Email addresses can also be provided to receive error reports[^1] (separated by a space).
 
-{{< fig "admin-panel_create-task_type.fr.png" "" >}}
+{{< fig "admin-panel_create-task_type.en.png" "" >}}
 
-- l'environnement SSH
+- SSH environment
 
-{{< fig "admin-panel_create-task_environment.fr.png" "" >}}
+{{< fig "admin-panel_create-task_environment.en.png" "" >}}
 
-- la pério­di­ci­té de votre tâche : vous pou­vez spé­ci­fiez une heure fixe, ou un inter­valle
+- the duration of your task: you can specify a fixed time, or an interval
 
-{{< fig "admin-panel_create-task_frequency.fr.png" "" >}}
+{{< fig "admin-panel_create-task_frequency.en.png" "" >}}
 
-- [Référence API](https://api.alwaysdata.com/v1/job/doc/)
+- [API Reference](https://api.alwaysdata.com/v1/job/doc/)
 
-## Utiliser les tâches planifiées
+## Use scheduled tasks
 
-- Si la tâche est programmée à une certaine fréquence, mais que l'exécution de la tâche précédente n'est pas terminée, l'actuelle sera ignorée ;
-- Les tâches sont démarrées dans la minute indiquée. Autrement dit, une tâche devant débuter tous les jours à 6h30, démarrera entre 6:30:00 et 6:30:59 ;
-- Un log est automatiquement créé et disponible dans le répertoire `$HOME/admin/logs/jobs/`. Il vous donne le démarrage et l'arrêt de la tâche.
-  - Un extrait de ces logs est présenté dans l'interface d'administration alwaysdata (**Logs** - 📄) ;
-  - les adresses email renseignées pour recevoir les rapports d'erreurs ne remplacent pas ces logs ;
-- Les processus en cours sont accessible via le menu **Avancé > Processus > Tâches planifiées** ;
-- Pour les tâches de type _Commande_, les versions de langages utilisées par défaut sont celles renseignées dans le menu **Environnement** de l'interface d'administration. Il est possible de choisir une autre version en utilisant les _Variables d'environnement_.
+- If the task is programmed at a certain frequency, but the execution of the previous task is not completed, the current will be ignored;
+- Tours are started in the minute indicated. In other words, a job to start daily at 6:30, will start between 6:30:00 and 6:30:59;
+- A log is automatically created and available in the `$HOME/admin/logs/jobs/` directory. It gives you the start and stop of the job.
+  - An excerpt of these logs is present in the alwaysdata admin interface (**Logs** - :page_facing_up));
+  - email addresses provided to receive error reports do not replace these logs;
+- Ongoing processes can be accessed via the **Advanced> Process > Scheduled Tasks**;
+- For _Command_ type tasks, the language versions used by default are those specified in the **Environment** menu of the admin interface. It is possible to choose another version using _Environment Variables_.
 
 {{% notice note %}}
-Si votre script a besoin d'autoriser certaines IP, autorisez ces [plages d'adresses IP](security/ip-ranges).
-{{% /notice %}}
+If your script needs to authorize certain IPs, allow these [IP address ranges](security/ip-ranges).
+{{%/notice %}}
 
-Utilisateurs du [Cloud Public](accounts/billing/public-cloud-prices) :
+[Public Cloud](accounts/billing/public-cloud-prices):
 
-- La consommation doit rester raisonnable. Si la tâche planifiée est un traitement lourd, il convient de diminuer la fréquence.
+- Consumption must remain reasonable. If the scheduled task is a heavy treatment, the frequency should be reduced.
 
-Utilisateurs du [Cloud Privé](accounts/billing/private-cloud-prices) :
+[Private Cloud](accounts/billing/private-cloud-prices):
 
-- Même si c'est contre-indiqué, l'accès à la commande `crontab -e` est aussi disponible. Les deux systèmes sont distincts.
+- Meme if this is contraindicated, access to the `crontab -e` command is also available. The two systems are distinct.
 
-## Problèmes fréquents
+## Frequent Issues
 
-- `source venv/bin/activate && python` est spécifique à [Bash](https://fr.wikipedia.org/wiki/Bourne-Again_shell) et ne peut fonctionner. À remplacer par `venv/bin/python` ;
-- les raccourcis en **@** - exemples _@hourly_ ou _@reboot_ - ne sont pas acceptés (syntaxe non-normalisée).
+- `source venv/bin/activate && python` is specific to [Bash](https://fr.wikipedia.org/wiki/Bourne-Again_shell) and cannot work. Replace with `venv/bin/python`;
+- shortcuts in **@** - examples _@hourly_ or _@reboot_ - are not accepted (non-normalized syntax).
 
-## Exemples
+## Examples
 
 ### WordPress
 
-Lancement, toutes les dix minutes, de l'outil [WordPress](https://developer.wordpress.org/cli/commands/cron/event/run/) pour exécuter leurs tâches planifiées :
+Launch the [WordPress]tool (https://developer.wordpress.org/cli/commands/cron/event/run/) every ten minutes to perform their scheduled tasks:
 
-Interface d'administration alwaysdata :
+Alwaysdata admin interface:
 
-- _valeur_ : `php $HOME/wordpress/htdocs/wp cron event run --due-now`
-- _fréquence_ : deuxième choix - Toutes les 10 minutes
+- _value_ : `php $HOME/wordpress/htdocs/wp cron event run --due-now`
+- _frequence_ : second choice - Every 10 minutes
 
-Syntaxe crontab équivalente :
+Compatible crontab syntax:
 
 ```
 */10 * * * * php $HOME/wordpress/htdocs/wp cron event run --due-now
@@ -73,17 +73,17 @@ Syntaxe crontab équivalente :
 
 ### tt-rss
 
-[Rafraîchissement d'un backend RSS](https://git.tt-rss.org/fox/tt-rss.wiki.git/tree/UpdatingFeeds.md#n58) avec TT-rss, tous les jours à 10:30 :
+[Refresh an RSS backend](https://git.tt-rss.org/fox/tt-rss.wiki.git/tree/UpdatingFeeds.md#n58) with TT-rss, every day at 1030:30:
 
-Interface d'administration alwaysdata :
+Alwaysdata admin interface:
 
-- _valeur_ : `php $HOME/tt-rss/update.php --feeds --quiet`
-- _fréquence_ : premier choix - Tous les jours à 10:30
+- _value_ : `php $HOME/tt-rss/update.php --feeds --quiet`
+- _frequence_ : first choice - Every day at 10:30
 
-Syntaxe crontab équivalente :
+Compatible crontab syntax:
 
 ```
 30 10 * * * php $HOME/tt-rss/update.php --feeds --quiet
 ```
 
-[^1]: Un rapport est envoyé lorsque le code de retour est différent de 0. Si le tâche n'est pas exécutée, aucun mail n'est envoyé.
+[^1]: A report is sent when the return code is different from 0. If the job is not executed, no mail is sent.
