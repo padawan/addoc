@@ -1,30 +1,30 @@
 +++
-url = "/fr/comptes/facturation/changer-doffre/"
-title = "Changer d'offre"
+url = "/accounts/billing/changer-doffre/"
+title = "Upgrade plan"
 layout = "man"
 hidden = true
-tags = [ "facturation" ]
+tags = [ "invoicing" ]
 +++
 
-{{< fig "images/list-accounts.fr.png" "Interface d'administration : liste de ses comptes" >}}
+{{< fig "images/list-accounts.png" "Admin interface: list of its accounts" >}}
 
-Vous pouvez changer de _[pack](accounts/billing/public-cloud-prices)_ et de _période d'engagement_. La facture pour le nouvel abonnement est éditée le lendemain et vous aurez alors 30 jours pour la payer.
+You can change from _[pack](accounts/billing/public-cloud-prices)_ and _commitment period_. The invoice for the new subscription is published the next day and you will have 30 days to pay it.
 
-Dans les cas suivant, il faudra contacter le [support](https://admin.alwaysdata.com/support/add/) :
+In the following cases, contact the [support](https://admin.alwaysdata.com/support/add/):
 
-- prendre un [Cloud Privé](accounts/billing/private-cloud-prices) (ou en changer sa configuration / la période d'engagement) ;
-- déplacer des comptes sur un Cloud Privé (et inversement) : les comptes sont des "boîtes noires" que l'équipe support peut facilement déplacer d'un serveur à un autre sans toucher son contenu ;
-- changer de période d'engagement d'un abonnement IP.
+- take [Private Cloud](accounts/billing/private-cloud-prices) (or change its configuration/commitment period);
+- move accounts to a Private Cloud (and vice versa): accounts are "black drinks" that the support team can easily move from one server to another without touching its content;
+- change commitment period of an IP subscription.
 
-## Remboursement au prorata
+## Prorated Refund
 
-Un remboursement au prorata est automatiquement effectué sur le _compte prépayé_ :
+A pro rata refund is automatically made to the _prepaid account_ :
 
-- lors du passage à une offre supérieure ou inférieure ;
-- lors de la migration de comptes vers des Cloud Privés.
+- when going to a higher or lesser offer;
+- when migrating accounts to Private Clouds.
 
-Ce remboursement pourra servir à payer les prochaines factures.
+This refund can be used for future invoices.
 
 {{% notice note %}}
-Aucun remboursement n'est effectué lors du passage vers le pack gratuit - contactez le [support](https://admin.alwaysdata.com/support/add/) pour qu'il analyse votre situation.
-{{% /notice %}}
+No refund is made when switching to the free pack - contact the [support](https://admin.alwaysdata.com/support/add/) to analyze your situation.
+{{%/notice %}}
