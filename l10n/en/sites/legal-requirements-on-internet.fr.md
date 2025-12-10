@@ -1,57 +1,57 @@
 +++
-url = "/fr/sites/obligations-legales-sur-internet/"
-title = "Les obligations légales sur Internet"
-linkTitle = "Obligations légales sur Internet"
+url = "/sites/legales-on-internet/"
+title = "Equal obligations on the Internet"
+linkTitle = "Equal obligations on the Internet"
 layout = "man"
 hidden = true
-tags = [ "légal", "site" ]
+tags = [ "equal", "site" ]
 +++
 
-En France, tout éditeur de site internet (physique ou moral), qu’il le soit à titre personnel ou professionnel, se doit de respecter un certain nombre d'obligations légales précises.
+In France, any website editor (physical or moral), whether personal or professional, must comply with a number of statutory requirements.
 
-## Mentions légales
+## Equals
 
-Les mentions légales doivent obligatoirement apparaître de façon claire sur un site web. Celles-ci protègent les internautes et leur permettent d'identifier et de contacter le ou les éditeurs de toute site internet afin de faire respecter leurs droits.
+The equal mentions must appear in a way that is clear on a website. They protect Internet users and allow them to identify and contact the editors of any website in order to enforce their rights.
 
-### Personne morale
+### Legal entity
 
-- sa raison sociale ;
-- l'adresse de son siège ;
-- un numéro de téléphone ;
-- le nom du directeur de la publication.
+- its business name;
+- its siege address;
+- a phone number;
+- the name of the publication manager.
 
-Les personnes **physiques** ne doivent fournir que les informations sur l'hébergeur. Ces informations sont généralement déjà accessibles via le système `whois`.
+**Physics** people should only provide information about the host. This information is usually available via the `whois` system.
 
-La [loi pour la confiance dans l'économie numérique de juin 2004](http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000005789847&dateTexte=20080724) (LCEN) prévoit de mettre à disposition des internautes une page facilement identifiable et accessible contenant ces informations légales.
+The [Law for Confidence in the Digital Economy of June 2004](http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000005789847&dateTexte=20080724) (LCEN) plans to provide users with an easily identifiable and accessible page containing this information.
 
-Les éditeurs sont tenus responsables de tout ce qui est accessible sur leur site (y compris les commentaires de tous types dont l'éditeur doit avoir obligation de contrôle et de modération). Ceux-ci doivent mettre en place un moyen (adresse email, formulaire de contact, etc.) pour les visiteurs de signaler un contenu choquant ou illicite.
+Publishers are held responsible for everything that is accessible on their site (including comments of all types that the publisher must have control and mode). These must set up a means (email address, contact form, etc. ) for visitors to report offensive or illegal content.
 
-### Hébergeur
+### Host
 
-- sa raison sociale : SARL alwaysdata
-- son adresse :  91 Rue du Faubourg Saint-Honoré, 75008 Paris
-- son numéro de téléphone : +33 1 84 16 23 49
+- its company name: SARL alwaysdata
+- its address: 91 Rue du Faubourg Saint-Honoreté, 75008 Paris
+- his phone number: +33 1 84 16 23 49
 
-Exemple pouvant être placé sur votre site :
+Example that could be placed on your site:
 
 {{% notice %}}
-Hébergeur : ce site est hébergé par la société à responsabilité limitée [alwaysdata](https://www.alwaysdata.com), ayant son siège social au 91 rue du Faubourg Saint-Honoré, 75008 Paris (tél. +33 1 84 16 23 49).
-{{% /notice %}}
+Host : this site is hosted by the company limited [alwaysdata](https://www.alwaysdata.com), having its social seat at 91 rue du Faubourg Saint-Honoré, 75008 Paris (tel. +33 1 84 16 23 49).
+{{%/notice %}}
 
-## Données personnelles
+## Personal data
 
-Si un site enregistre des données à caractère personnel (nom, date de naissance, adresse, numéro de sécurité sociale, etc.) sur ses membres, il doit en _informer les personnes concernées lors de leur inscription_ et doit préciser si celles-ci sont facultatives ou obligatoires, ainsi que la durée de conservation des informations. Ceci ne s'applique généralement pas aux données de connexion (adresse IP, heure de connexion, etc.) tant qu'elles ne sont utilisées que pour faire des statistiques et conservées pendant une durée raisonnable.
+If a site records personal data (name, date of birth, address, social security number, etc. on its members, it must _inform the people concerned when registering_ and must specify if these are optional or mandatory, as well as the hard retention of information. This does not normally apply to login data (IP address, time of connection, etc. as long as they are used only to make statistics and kept for a reasonable hardship.
 
-Le site doit permettre aux personnes de _modifier les informations_ les concernant (que ce soit via une interface dédiée ou simplement par email) et les informer de ce droit.
+The site must allow people to _modify their information_ (either via a dedicated interface or simply by email) and inform them of this right.
 
-## Déclaration à la CNIL
+## CNIL Declaration
 
-La déclaration à la CNIL ([Commission Nationale de l'Informatique et des Libertés](http://www.cnil.fr)) lorsqu'un site enregistre des informations personnelles sur des personnes n'est plus obligatoire depuis le [RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees). Selon votre projet, une [analyse d'impact sur la protection des données (PIA)](https://www.cnil.fr/fr/RGPD-analyse-impact-protection-des-donnees-pia) sera peut-être nécessaire.
+The declaration to the CNIL ([Commission Nationale de l'Informatique et des Libertés](http://www.cnil.fr)) when a site records personal information about people is no longer mandatory since the [RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees). Depending on your project, a [Data Protection Impact Analysis (ADI)](https://www.cnil.fr/fr/RGPD-analyse-impact-protection-des-donnees-pia) may be required.
 
-## Commerce en ligne (e-commerce)
+## E-commerce
 
-Une entreprise faisant du commerce en ligne (qu'il s'agisse de biens ou de services) doit indiquer, en plus des mentions légales habituelles, si les _prix affichés_ sont _hors-taxes_ ou _TTC_ et si les _frais de port_ sont compris.
+A business that does e-commerce (whether goods or services) must indicate, in addition to the standard mentions, if the _prices show_ are _taxes_ or _TTC_ and if the _shipping cost_ are included.
 
-Si celle-ci est soumise à la TVA, son numéro de _TVA intracommunautaire_ doit être renseigné de manière visible. De plus, c'est à l'entreprise de faire en sorte que le paiement en ligne soit sécurisé.
+If the VAT is subject to VAT, its _intra-Community VAT number_ must be shown in a visible manner. In addition, it is up to the company to ensure that the online payment is secured.
 
-Les sites de commerce en ligne doivent mettre à disposition des _conditions générales de vente (CGV)_ en plus des mentions légales à proprement parler pour faire apparaître un certain nombre d'informations propres à leur activité de site marchand : affichage des prix, délais de livraison, conditions de rétractation, respect de la [Loi Chatel](https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000017785995&dateTexte=) notamment.
+Online commerce sites must make available _General Sales Conditions (GVC)_ in addition to the equal terms and conditions to make a certain number of specific information available to their merchant site activity: price display. delivery times, delivery conditions, compliance with the [Chatel Law](https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000017785995&dateTexte=) in particular.
