@@ -1,65 +1,65 @@
 +++
-url = "/fr/guides/gitlab/"
-title = "Comment installer GitLab"
+url = "/guides/gitlab/"
+title = "How to Install GitLab"
 layout = "howto"
 hidden = true
-tags = [ "developpement" ]
+tags = [ "development" ]
 +++
 
-[GitLab](https://about.gitlab.com/) est une plateforme de développement logiciel avec wiki, suivi de bugs, revue de code, intégration et déploiement continus...
+[GitLab](https://about.gitlab.com/) is a software development platform with wiki, bug tracking, code review, integration and continuous deployment...
 
-Il est possible de l'installer sur le **[Cloud Privé - serveurs dédiés et Gold](accounts/billing/private-cloud-prices)**, voici les étapes à suivre.
+It is possible to install it on the **[Private Cloud - dedicated servers and Gold](accounts/billing/private-cloud-prices)**, here are the steps to follow.
 
-**Les SGBD [PostgreSQL](databases/postgresql) et [Redis](databases/redis) devront être installés sur le serveur.** Si ce n'est pas le cas, [contactez le support](https://admin.alwaysdata.com/support/add).
+\*\*RDBMS [PostgreSQL](databases/postgresql) and [Redis](databases/redis) will need to be installed on the server. \* If not, [contact support](https://admin.alwaysdata.com/support/add).
 
-L'installation doit être effectuée sur un **compte vide**. Nous considérons les informations suivantes pour notre exemple :
+The installation must be performed on a **blank account**. We will make the following information for our example:
 
-- Nom du compte : `foobar`
-- Version de Ruby : `2.7`
-- Version de Node.js : `14.17`
+- Account name: `foobar`
+- Ruby version: `2.7`
+- Node.js version: `14.17`
 
-GitLab a impérativement besoin de ces versions qui sont à définir dans le menu **Environnement**.
+GitLab impeded the need for these versions that are to be defined in the **Environment** menu.
 
-## Installation
+## Setup
 
-1. Créez la base de données PostgreSQL dans le menu **Bases de données > PostgreSQL** en activant les extensions `pg_trgm` et `btree_gist`.
+1. Create the PostgreSQL database in the **Databases > PostgreSQL** menu by enabling the `pg_trgm` and `btree_gist` extensions.
 
-2. Si vous utilisez une [limite de RAM](advanced/system-resources-alerts-and-limitations) inférieure à 10 Go, augmentez-la dans le menu **Avancé > Ressources**.
+2. If you are using an inferior [RAM limit](advanced/system-resources-alerts-and-limitations) at 10GB, increase it in the **Advanced> Resources** menu.
 
-3. Lancez les commandes suivantes en [SSH](remote-access/ssh) à la racine du compte :
+3. Run the following commands in [SSH](remote-access/ssh) at the root of the account:
 
 ```sh
 npm install --global yarn
 
-git clone https://gitlab.com/gitlab-org/gitaly.git -b 14-4-stable gitaly
+git clone https://gitlab.com/gitlab-org/gitaly. it -b 14-4-stable gitaly
 cd gitaly/
 mkdir ~/local
 make git GIT_PREFIX=~/local/
 export PATH=~/local/bin/:$PATH
 cd
-rm -fr ~/gitaly
+rm -en ~/gitaly
 
-git clone https://gitlab.com/gitlab-org/gitlab-foss.git -b 14-4-stable gitlab
+git clone https://gitlab. om/gitlab-org/gitlab-foss. it -b 14-4-stable gitlab
 cd gitlab/
 
 cp config/gitlab.yml.example config/gitlab.yml
-sed -i "s,/home/git/,/home/$(whoami)/,g" config/gitlab.yml
+sed -i "s,/home/git/,/home/$(whoami)/,g" config/gitlab. ml
 sed -i "s,# user: git,user: $(whoami)," config/gitlab.yml
 sed -i "s,bin_path: /usr/bin/git,bin_path: /home/$(whoami)/local/bin/git," config/gitlab.yml
 ```
 
 ---
 
-**Modification du fichier `config/gitlab.yml`**
+**Edit `config/gitlab.yml` file**
 
 ```sh
 nano config/gitlab.yml
 ```
 
-Dans la section _production > gitlab_ modifiez :
+In the _production > gitlab_ section edit:
 
-- la ligne `host: localhost` pour renseigner l'adresse voulue du site Gitlab. Cela peut par exemple être l'adresse du compte : `foobar.alwaysdata.net`.
-- le paragraphe `email` par les informations emails voulues. Par exemple :
+- the line `host: localhost` to provide the desired address of the GitLab site. This can for example be the account address: `foobar.alwaysdata.net`.
+- the `email` paragraph by the required email information. For example:
 
 ```yml
 email_from: foobar@alwaysdata.net
@@ -74,13 +74,13 @@ chmod 0600 config/secrets.yml
 mkdir -p public/uploads
 chmod 0700 public/uploads
 
-cp config/puma.rb.example config/puma.rb
+cp config/puma. b.example config/puma.rb
 sed -i "s,/home/git/,/home/$(whoami)/,g" config/puma.rb
 
-git config --global gc.auto 0
+git config --global gc. uto 0
 git config --global repack.writeBitmaps true
 git config --global receive.advertisePushOptions true
-git config --global core.fsyncObjectFiles true
+git config --global core. syncObjectFiles true
 
 cp config/resque.yml.example config/resque.yml
 
@@ -89,22 +89,22 @@ cp config/database.yml.postgresql config/database.yml
 
 ---
 
-**Modification du fichier `config/database.yml`**
+**Changing `config/database.yml` file**
 
 ```sh
 nano config/database.yml
 ```
 
-Remplacez les clés `database`, `username` , `host` et `password` et la première section (production) par celles de votre compte. Exemple :
+Replace the `database`, `username` , `host` and `password` keys and the first section (production) with your account. Example:
 
 ```yml
 database: foobar_gitlab
 username: foobar
-password: "son mot de passe"
+password: "his password"
 host: postgresql-foobar.alwaysdata.net
 ```
 
-La base de données est celle créée en début de ce guide.
+The database is the one created at the beginning of this guide.
 
 ---
 
@@ -142,26 +142,26 @@ yarn install --production --pure-lockfile
 bundle exec rake gitlab:assets:compile RAILS_ENV=production NODE_ENV=production
 ```
 
-C'est cette dernière commande qui nécessite une quantité de RAM importante. La quantité nécessaire varie en fonction du nombre de cores et il peut être nécessaire de l'augmenter si vous rencontrez des erreurs à cette étape.
+It is the latter command that requires a large amount of RAM. The amount required varies depending on the number of hores and it may be necessary to increase it if you encounter errors at this stage.
 
-## Création du service
+## Create service
 
-Créez un [service](services) avec les détails suivants :
+Create an [service](services) with the following details:
 
-- _Nom_ : GitLab
-- _Commande_ : `~/init restart -f`
+- _Name_: GitLab
+- _Command_: `~/init restart -f`
 
-## Création du site
+## Site creation
 
-Créez un [site](sites/add-a-site) avec les détails suivants :
+Create an [site](sites/add-a-site) with the following details:
 
-- _Nom_ : GitLab
-- _Type_ : Programme utilisateur
-- _Adresses_ : l'adresse renseignée dans le fichier config.yml - Dans notre exemple `foobar.alwaysdata.net`
-- _Commande_ : `true`
+- _Name_: GitLab
+- _Type_: User Program
+- _Addresses_: the address in config.yml - In our example `foobar.alwaysdata.net`
+- _Command_: `true`
 
-Ce site doit impérativement écouter sur le port `8100`, à vérifier dans le texte explicatif du champ _Commande_. C'est normalement le cas, puisque c'est le seul site.
+This site must not listen on port `8100`, check in the explanatory text of the field _Command_. This is normally the case, since it is the only site.
 
 {{% notice note %}}
-Le nom d'utilisateur du compte par défaut est _root_. Vous choisirez son mot de passe lors de la première connexion au site et pourrez changer son nom d'utilisateur par la suite.
-{{% /notice %}}
+Default account username is _root_. You will choose its password when you first log in to the site and will be able to change its username later.
+{{%/notice %}}
