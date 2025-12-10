@@ -1,94 +1,94 @@
 +++
-url = "/fr/avance/migrations/architecture-logicielle-2020/"
-title = "Architecture Logicielle 2020"
+url = "/forward/migrations/software-architecture-2020/"
+title = "Software Architecture 2020"
 layout = "man"
 hidden = true
 tags = [ "infrastructure", "migration" ]
 +++
 
-Cette migration consiste principalement en une mise à jour générale des logiciels disponibles sur nos serveurs. Elle implique un déplacement du compte sur de nouveaux serveurs - fonctionnant avec l'architecture 2020. **Tous** les serveurs (HTTP, SSH, bases de données, etc) sont susceptibles de changer.
+This migration consists mainly of a general update of the software available on our servers. It involves moving the account to new servers - running with the 2020 architecture. **All** servers (HTTP, SSH, databases, etc) are likely to change.
 
-## Pourquoi imposer une migration ?
+## Why should migration be imposed?
 
-Les migrations d'architecture ont pour principal objectif de mettre à jour nos serveurs vers une version plus récente de leur système d'exploitation (Debian). Il est important de procéder à ces mises à jour pour deux raisons :
+The main purpose of the architecture migration is to upgrade our servers to a newer version of their operating system (Debian). It is important to proceed to these updates for two reasons:
 
-- la sécurité. Les vieilles versions de logiciels ne sont pas supportées éternellement par leurs auteurs ou distributeurs. Lorsqu'un logiciel cesse d'être supporté, il continue à fonctionner, mais les nouvelles failles de sécurité ne sont alors plus corrigées. Continuer à utiliser ces vieilles versions ferait donc courir un risque grave pour la sécurité et la fiabilité de vos applications et données.
+- the security. Old software versions are not supported by their authors or distributors eternally. When a software stops supporting, it continues to work, but new security vulnerabilities are no longer fixed. Continuing to use these old versions would therefore pose a serious risk to the security and reliability of your applications and data.
 
-- pouvoir utiliser des versions récentes des logiciels. Plus un système d'exploitation est ancien, plus il risque d'avoir des difficultés à faire tourner les logiciels récents. Pour continuer à vous offrir les toutes dernières versions des logiciels que nous proposons (ou que vous pouvez installer vous-même dans votre compte), il est important d'être sur une version relativement récente du système d'exploitation.
+- to be able to use recent versions of software. The older an operating system is, the more difficult it is to run recent software. To continue offering you the latest versions of the software we offer (or that you can install yourself in your account), it is important to have a relatively recent version of the operating system.
 
-Ces migrations d'infrastructure sont effectuées approximativement tous les quatre ans. Cela correspond à la durée de vie d'une version de Debian (de [cinq ans](https://wiki.debian.org/LTS), mais il faut compter le temps incompressible de développement interne avant de basculer sur les nouvelles versions). Cela nous parait être un bon équilibre, évitant des migrations trop fréquentes, mais permettant de faire tourner la quasi-totalité des logiciels récents.
+These infrastructure migrations are carried out approximately every four years. This corresponds to the hard life of a Debian release (from [five years](https://wiki.debian.org/LTS), but it is necessary to count the incompressible internal development time before switching to new versions). This seems to us to be a good balance, avoiding excessive migrations, but allowing to run the virtual totality of the recent software.
 
 ---
 
-Ce document décrit les incompatibilités majeures introduites par cette migration. Nous nous efforçons d'être le plus complet possible, mais il est impossible d'être absolument exhaustif.
+This document describes the major incompatibilities introduced by this migration. We strive to be as complete as possible, but it is impossible to be absolutely exhaustive.
 
 ## Apache
 
-Apache _2.2_ n'est plus disponible. Les comptes qui utilisaient cette version basculeront automatiquement vers [Apache _2.4_](https://httpd.apache.org/docs/2.4/fr/).
+Apache _2.2_ is no longer available. Accounts that used this version will automatically switch to [Apache _2.4_](https://httpd.apache.org/docs/2.4/fr/).
 
-Les directives globales ajoutées par nos utilisateurs, soit dans **Web > Configuration**, soit dans la configuration d'un site de type **Apache personnalisé**, seront désormais insérées **après** les directives par défaut. Cela permet désormais à nos utilisateurs d'écraser ces directives par défaut.
+Global guidelines added by our users, in **Web > Configuration**, or in the configuration of a **custom Apache site**, will be sorted out **after** the default directives. This allows our users to overwrite these directives by default.
 
-## Bases de données
+## Databases
 
 ### MySQL
 
-MariaDB est mis à jour en [version 10.4](https://mariadb.com/kb/en/release-notes-mariadb-104-series/).
+MariaDB is updated to [version 10.4](https://mariadb.com/kb/en/release-notes-mariadb-104-series/).
 
 ### PostgreSQL
 
-PostgreSQL est mis à jour en [version 12](https://www.postgresql.org/docs/12/release-12.html).
+PostgreSQL is updated to [version 12](https://www.postgresql.org/docs/12/release-12.html).
 
 ### MongoDB
 
-MongoDB est mis à jour en [version 4.2](https://www.mongodb.com/docs/v5.3/release-notes/4.2/).
+MongoDB is updated to [version 4.2](https://www.mongodb.com/docs/v5.3/release-notes/4.2/).
 
-### CouchDB
+### LayDB
 
-CouchDB est mis à jour en [version 3.0](https://docs.couchdb.org/en/stable/whatsnew/3.0.html#version-3-0-0).
+CouchDB is updated to [version 3.0](https://docs.couchdb.org/en/stable/whatsnew/3.0.html#version-3-0-0).
 
-## Langages
+## Languages
 
-Pour déterminer la version courante de votre compte : connectez-vous via [SSH](remote-access/ssh) et lancez la commande `cat /etc/debian_version`.
+To determine the current version of your account: log in via [SSH](remote-access/ssh) and run `cat /etc/debian_version`.
 
 ### PHP
 
-| Versions disponibles sur v2020 - Debian Buster (10.X) | Versions disponibles sur v2017- Debian Jessie (8.X) |
-| ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `4.4.9`                                                                                  | `4.4.9`                                                                                |
-| `5.2.17`                                                                                 | `5.2.17`                                                                               |
-| `5.3.29`                                                                                 | `5.3.29`                                                                               |
-| `5.4.45`                                                                                 | `5.4.45`                                                                               |
-| `5.5.38`                                                                                 | `5.5.38`                                                                               |
-| `5.6.40`                                                                                 | `5.6.38` `5.6.37`                                                                      |
-| `7.0.33`                                                                                 | `7.0.31` `7.0.32`                                                                      |
-| `7.1.33`                                                                                 | `7.1.21` `7.1.23` `7.1.24` `7.1.26` `7.1.32`                                           |
-| `7.2.29` `7.2.31` `7.2.32` `7.2.33` `7.2.34`                                             | `7.2.9`  `7.2.11` `7.2.12` `7.2.14` `7.2.22`                                           |
-| `7.3.16` `7.3.18` `7.3.20` `7.3.22` `7.3.24` `7.3.26`                                    | `7.3.0`  `7.3.1`  `7.3.9`                                                              |
-| `7.4.4`  `7.4.6`  `7.4.8`  `7.4.10` `7.4.12` `7.4.14`                                    | `7.4.0`  `7.4.3`                                                                       |
-| `8.0.0`  `8.0.1`                                                                         | `-`                                                                                    |
+| Available versions on v2020 - Debian Buster (10.X) | Available releases on v2017- Debian Jessie (8.X) |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `4.4.9`                                                                               | `4.4.9`                                                                             |
+| `5.2.17`                                                                              | `5.2.17`                                                                            |
+| `5.3.29`                                                                              | `5.3.29`                                                                            |
+| `5.4.45`                                                                              | `5.4.45`                                                                            |
+| `5.5.38`                                                                              | `5.5.38`                                                                            |
+| `5.6.40`                                                                              | `5.6.38` `5.6.37`                                                                   |
+| `7.0.33`                                                                              | `7.0.31` `7.0.32`                                                                   |
+| `7.1.33`                                                                              | `7.1.21` `7.1.23` `7.1.24` `7.1.26` `7.1.32`                                        |
+| `7.2.29` `7.2.31` `7.2.32` `7.2.33` `7.2.34`                                          | `7.2.9`  `7.2.11` `7.2.12` `7.2.14` `7.2.22`                                        |
+| `7.3.16` `7.3.18` `7.3.20` `7.3.22` `7.3.24` `7.3.26`                                 | `7.3.0`  `7.3.1`  `7.3.9`                                                           |
+| `7.4.4`  `7.4.6`  `7.4.8`  `7.4.10` `7.4.12` `7.4.14`                                 | `7.4.0`  `7.4.3`                                                                    |
+| `8.0.0`  `8.0.1`                                                                      | `-`                                                                                 |
 
-- Les versions mineures supprimées sont automatiquement remplacées par la version mineure la plus proche (7.4.4 par exemple pour 7.4).
-- Les extensions `bcmath`, `calendar`, `exif`, `ftp`, `soap`, `xmlreader`, `xmlrpc` et `zip` sont désormais automatiquement chargées. Vous pouvez supprimer les directives de chargement explicites de vos _php.ini personnalisés_ si vous le souhaitez.
+- Minor deleted versions are automatically replaced by the closest minor version (7.4.4 for example 7.4).
+- The `bcmath`, `calendar`, `exif`, `ftp`, `soap`, `xmlreader`, `xmlrpc` and `zip` extensions are automatically loaded. You can remove explicit loading directives from your custom _php.ini_ if you wish.
 
 ### Python
 
-| Versions disponibles sur v2020 - Debian Buster (10.X) | Versions disponibles sur v2017- Debian Jessie (8.X) |
-| ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `2.4.6`                                                                                  | `2.4.6`                                                                                |
-| `2.5.6`                                                                                  | `2.5.6`                                                                                |
-| `2.6.9`                                                                                  | `2.6.9`                                                                                |
-| `2.7.17` `2.7.18`                                                                        | `2.7.15` `2.7.16` `2.7.18`                                                             |
-| `3.3.7`                                                                                  | `3.3.7`                                                                                |
-| `3.4.10`                                                                                 | `3.4.9`  `3.4.10`                                                                      |
-| `3.5.9`  `3.5.10`                                                                        | `3.5.6`  `3.5.9`                                                                       |
-| `3.6.10` `3.6.11` `3.6.12`                                                               | `3.6.7`  `3.6.8`  `3.6.10`                                                             |
-| `3.7.7`  `3.7.8`  `3.7.9`                                                                | `3.7.0`  `3.7.1`  `3.7.2`  `3.7.7`                                                     |
-| `3.8.2`  `3.8.3`  `3.8.4` `3.8.5` `3.8.6` `3.8.7`                                        | `3.8.0`  `3.8.3`                                                                       |
-| `3.9.0`  `3.9.1`                                                                         | `-`                                                                                    |
+| Available versions on v2020 - Debian Buster (10.X) | Available releases on v2017- Debian Jessie (8.X) |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `2.4.6`                                                                               | `2.4.6`                                                                             |
+| `2.5.6`                                                                               | `2.5.6`                                                                             |
+| `2.6.9`                                                                               | `2.6.9`                                                                             |
+| `2.7.17` `2.7.18`                                                                     | `2.7.15` `2.7.16` `2.7.18`                                                          |
+| `3.3.7`                                                                               | `3.3.7`                                                                             |
+| `3.4.10`                                                                              | `3.4.9`  `3.4.10`                                                                   |
+| `3.5.9`  `3.5.10`                                                                     | `3.5.6`  `3.5.9`                                                                    |
+| `3.6.10` `3.6.11` `3.6.12`                                                            | `3.6.7`  `3.6.8`  `3.6.10`                                                          |
+| `3.7.7`  `3.7.8`  `3.7.9`                                                             | `3.7.0`  `3.7.1`  `3.7.2`  `3.7.7`                                                  |
+| `3.8.2`  `3.8.3`  `3.8.4` `3.8.5` `3.8.6` `3.8.7`                                     | `3.8.0`  `3.8.3`                                                                    |
+| `3.9.0`  `3.9.1`                                                                      | `-`                                                                                 |
 
-- Les versions mineures supprimées sont automatiquement remplacées par la version mineure la plus proche (3.8.2 par exemple pour 3.8). Si vous aviez créé des `virtualenvs` avec ces versions, vous devrez les recréer.
+- Minor deleted versions are automatically replaced by the nearest minor version (3.8.2 for example for 3.8). If you had created `virtualenvs` with these versions, you will have to recreate them.
 
-Lors d'un changement de mineure, plutôt que de recréer l'environnement virtuel, vous pouvez utiliser la commande suivante :
+When changing mines, rather than recreating the virtual environment, you can use the following command:
 
 ```
 python -m venv --upgrade [myenv]/
@@ -96,142 +96,142 @@ python -m venv --upgrade [myenv]/
 
 ### Ruby
 
-| Versions disponibles sur v2020 - Debian Buster (10.X) | Versions disponibles sur v2017- Debian Jessie (8.X) |
-| ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `1.8.7-p374`                                                                             | `1.8.7-p374`                                                                           |
-| `1.9.3-p551`                                                                             | `1.9.2-p3201` `1.9.3-p551`                                                             |
-| `2.0.0-p648`                                                                             | `2.0.0-p648`                                                                           |
-| `2.1.10`                                                                                 | `2.1.10`                                                                               |
-| `2.2.10`                                                                                 | `2.2.10`                                                                               |
-| `2.3.8`                                                                                  | `2.3.8`                                                                                |
-| `2.4.9` `2.4.10`                                                                         | `2.4.5`                                                                                |
-| `2.5.7` `2.5.8`                                                                          | `2.5.3`      `2.5.5`                                                                   |
-| `2.6.5` `2.6.6`                                                                          | `2.6.0`      `2.6.2`                                                                   |
-| `2.7.0` `2.7.1` `2.7.2`                                                                  | `-`                                                                                    |
-| `3.0.0`                                                                                  |                                                                                        |
+| Available versions on v2020 - Debian Buster (10.X) | Available releases on v2017- Debian Jessie (8.X) |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `1.8.7-p374`                                                                          | `1.8.7-p374`                                                                        |
+| `1.9.3-p551`                                                                          | `1.9.2-p3201` `1.9.3-p551`                                                          |
+| `2.0.0-p648`                                                                          | `2.0.0-p648`                                                                        |
+| `2.1.10`                                                                              | `2.1.10`                                                                            |
+| `2.2.10`                                                                              | `2.2.10`                                                                            |
+| `2.3.8`                                                                               | `2.3.8`                                                                             |
+| `2.4.9` `2.4.10`                                                                      | `2.4.5`                                                                             |
+| `2.5.7` `2.5.8`                                                                       | `2.5.3`      `2.5.5`                                                                |
+| `2.6.5` `2.6.6`                                                                       | `2.6.0`      `2.6.2`                                                                |
+| `2.7.0` `2.7.1` `2.7.2`                                                               | `-`                                                                                 |
+| `3.0.0`                                                                               |                                                                                     |
 
-- Les versions mineures supprimées sont automatiquement remplacées par la version mineure la plus proche (2.6.5 par exemple pour 2.6).
+- Minor deleted versions are automatically replaced by the nearest minor version (2.6.5 for example 2.6).
 
 ### Node.js
 
-| Versions disponibles sur v2020 - Debian Buster (10.X) | Versions disponibles sur v2017- Debian Jessie (8.X) |
-| ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `6.17.1`                                                                                 | `6.14.4` `6.16.0`  `6.17.0`                                                            |
-| `8.17.0`                                                                                 | `8.11.4` `8.12.0`  `8.15.0`  `8.15.0`                                                  |
-| `9.11.2`                                                                                 | `9.11.1`                                                                               |
-| `10.19.0` `10.20.1` `10.23.1`                                                            | `10.9.0` `10.12.0` `10.13.0` `10.15.1` `10.15.3`                                       |
-| `11.15.0`                                                                                | `11.0.0` `11.1.0`  `11.8.0`  `11.12.0`                                                 |
-| `12.16.1` `12.16.3` `12.20.1`                                                            | `12.0.0` `12.14.0`                                                                     |
-| `13.11.0` `13.14.0`                                                                      | `-`                                                                                    |
-| `14.2.0`  `14.5.0` `14.11.0` `14.15.1` \`14.15.4         | `-`                                                                                    |
-| `15.0.0`  `15.2.1` `15.6.0`                                                              | `-`                                                                                    |
+| Available versions on v2020 - Debian Buster (10.X) | Available releases on v2017- Debian Jessie (8.X) |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `6.17.1`                                                                              | `6.14.4` `6.16.0`  `6.17.0`                                                         |
+| `8.17.0`                                                                              | `8.11.4` `8.12.0`  `8.15.0`  `8.15.0`                                               |
+| `9.11.2`                                                                              | `9.11.1`                                                                            |
+| `10.19.0` `10.20.1` `10.23.1`                                                         | `10.9.0` `10.12.0` `10.13.0` `10.15.1` `10.15.3`                                    |
+| `11.15.0`                                                                             | `11.0.0` `11.1.0`  `11.8.0`  `11.12.0`                                              |
+| `12.16.1` `12.16.3` `12.20.1`                                                         | `12.0.0` `12.14.0`                                                                  |
+| `13.11.0` `13.14.0`                                                                   | `-`                                                                                 |
+| `14.2.0`  `14.5.0` `14.11.0` `14.15.1` \`14.15.4      | `-`                                                                                 |
+| `15.0.0`  `15.2.1` `15.6.0`                                                           | `-`                                                                                 |
 
-- Les versions mineures supprimées sont automatiquement remplacées par la version mineure la plus proche (12.16.1 par exemple pour 12).
+- Minor deleted versions are automatically replaced by the nearest minor version (12.16.1 for example for 12).
 
 ### Elixir
 
-| Versions disponibles sur v2020 - Debian Buster (10.X) | Versions disponibles sur v2017- Debian Jessie (8.X) |
-| ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `1.11.1` `1.11.2` `1.11.3`                                                               | `-`                                                                                    |
-| `1.10.2` `1.10.3` `1.10.4`                                                               | `-`                                                                                    |
-| `1.9.4`                                                                                  | `-`                                                                                    |
-| `1.8.2`                                                                                  | `-`                                                                                    |
-| `1.7.4`                                                                                  | `1.7.3` `1.7.4`                                                                        |
-| `1.6.6`                                                                                  | `1.5.3` `1.6.6`                                                                        |
+| Available versions on v2020 - Debian Buster (10.X) | Available releases on v2017- Debian Jessie (8.X) |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `1.11.1` `1.11.2` `1.11.3`                                                            | `-`                                                                                 |
+| `1.10.2` `1.10.3` `1.10.4`                                                            | `-`                                                                                 |
+| `1.9.4`                                                                               | `-`                                                                                 |
+| `1.8.2`                                                                               | `-`                                                                                 |
+| `1.7.4`                                                                               | `1.7.3` `1.7.4`                                                                     |
+| `1.6.6`                                                                               | `1.5.3` `1.6.6`                                                                     |
 
-- Les versions mineures supprimées sont automatiquement remplacées par la version mineure la plus proche.
+- Minor deleted versions are automatically replaced by the nearest minor version.
 
 ### Java
 
-Java deviendra prochainement un langage majeur, administrable via l'interface d'administration.
+Java will soon become a major language that can be administered through the administration interface.
 
-- Les versions désormais disponibles sont `8.0.41`, `11.0.28` et `14.0.36`. Les versions 7, 9 et 10 sont supprimées.
+- Available versions are `8.0.41`, `11.0.28` and `14.0.36`. Version 7, 9 and 10 are deleted.
 
-- La version par défaut devient la `11`. C'est cette version qui sera exécutée lorsque vous utilisez le binaire `java`.
+- Default version becomes `11`. This version will be executed when using the `java` binary.
 
-- Jusqu'à présent, pour utiliser une version de Java précise, vous pouviez aller chercher le binaire dans `/usr/lib/jvm`. Ce n'est plus possible : désormais, vous pouvez forcer une version différente en définissant la variable d'environnement `JAVA_VERSION`. Par exemple, pour lancer la version 8 : `JAVA_VERSION=8 java`.
+- Until now, to use a specific version of Java, you could fetch the binary in `/usr/lib/jvm`. This is no longer possible: you can force a different version by defining the `JAVA_VERSION` environment variable. For example, to run version 8: `JAVA_VERSION=8 java`.
 
-## Divers
+## Misc
 
-- _TLS 1.0_ et _1.1_ sont maintenant **désactivés par défaut** sur le protocole HTTP, ces protocoles anciens présentant des failles de sécurité. Vous pouvez les réactiver en allant dans **Web > Configuration > SSL**, puis en choisissant la configuration **Ancien**.
+- _TLS 1.0_ and _1.1_ are now **disabled by default** on the HTTP protocol, as older protocols present security vulnerabilities. You can re-enable them by going to **Web > Configuration > SSL**, then choosing the **Old** configuration.
 
-- Le répertoire des fichiers temporaires **(TEMPDIR)** devient `~/admin/tmp` plutôt que `/tmp`. Les sessions PHP, par exemple, sont créées dans ce répertoire.
+- The directory of temporary **(TEMPDIR)** files becomes `~/admin/tmp` rather than `/tmp`. PHP sessions, for example, are created in this directory.
 
-- Pour les sites de type Node.js, Elixir et Programme utilisateur, l'IP interne (définie dans la variable d'environnement `IP`) sur laquelle votre application doit écouter changera et passera en **IPv6**. La nouvelle IP sera donnée dans le helptext de la commande du site web.
+- For Node type sites. s, Elixir and User Program, the internal IP (defined in the `IP` environment variable) on which your application should listen will change and switch to **IPv6**. The new IP will be given in the website command helptext.
 
-- Les variables d'environnement `ALWAYSDATA_HTTPD_PORT` et `ALWAYSDATA_HTTPD_IP` ne sont plus disponibles, vous devrez utiliser `PORT` et `IP`.
+- The `ALWAYSDATA_HTTPD_PORT` and `ALWAYSDATA_HTTPD_IP` environment variables are no longer available, you will need to use `PORT` and `IP`.
 
-- La variable d'environnement `PATH` contiendra désormais toujours les chemins locaux des différents langages, par exemple `~/.local/bin`, `~/npm-packages/bin`, etc., y compris en connexion SSH non-login ou non-interactif, et dans vos applications HTTP.
+- The `PATH` environment variable will always contain local paths for different languages, e.g. `~/. ocal/bin`, `~/npm-packages/bin`, etc., including SSH non-login or non-interactive connections, and in your HTTP applications.
 
-- L'utilisateur propriétaire de votre répertoire personnel `$HOME` (par exemple `/home/foobar`, si votre compte s'appelle _foobar_), auparavant identique à votre nom d'utilisateur (par exemple `foobar`), devient `root`. Le groupe propriétaire reste identique à votre nom d'utilisateur (ici, `foobar`), ce qui ne changera donc rien en pratique. Les permissions de votre répertoire personnel seront en conséquence réinitialisées à 0770.
+- The owner user of your `$HOME` personal directory (e.g. `/home/foobar`, if your account is called _foobar_), previously identical to your username (e.g. `foobar`), becomes `root`. The proprietary group remains the same as your username (here, `foobar`), so nothing will change in practice. The permissions of your personal directory will be reset to 0770.
 
-- Les binaires des langages sont désormais installés à la demande. Dans le cas où vous auriez besoin, par exemple, de `/usr/alwaysdata/python/2.7.18/lib/libpython2.7.so`, assurez-vous d'avoir lancé préalablement `python` en version 2.7.18 au moins une fois.
+- Language binaries are now installed on demand. In this case you would need, for example, `/usr/alwaysdata/python/2.7.18/lib/libpython2.7.so`, make sure that you run `python` in 2.7.18 at least once.
 
-### Mises à jour diverses
+### Various updates
 
-De très nombreux logiciels et bibliothèques seront mis à jour (nos serveurs passent sous Debian Buster, auparavant Debian Jessie). Parmi les mises à jour notables :
+A lot of software and bibliothetics will be updated (our servers run Debian Buster, previously Debian Jessie). Among notable updates:
 
-- Erlang 21.2 (auparavant 19.2)
-- GDAL 2.4 (auparavant 1.10)
-- git 2.20 (auparavant 2.19)
-- Go 1.11 (auparavant 1.7)
-- MapServer 7.4 (auparavant 7.0)
-- Mercurial 4.8 (auparavant 3.9)
-- PROJ 5.2 (auparavant 4.8)
-- QGIS 3.4 (auparavant QGIS 2.4)
+- Erlang 21.2 (formerly 19.2)
+- GDAL 2.4 (previously 1.10)
+- git 2.20 (previously 2.19)
+- GB 1.11 (previously 1.7)
+- MapServer 7.4 (previously 7.0)
+- Mercurial 4.8 (formerly 3.9)
+- PROJ 5.2 (previously 4.8)
+- QGIS 3.4 (formerly QGIS 2.4)
 
-### Environnement VPS/dédié
+### VPS/dedicated environment
 
-Les services suivants, lorsqu'ils sont installés, seront mis à jour :
+The following services, when installed, will be updated:
 
-- _RabbitMQ_, en version 3.7.8
-- _Redis_, en version 5.0
+- _RabbitMQ_, version 3.7.8
+- _Redis_, version 5.0
 
-Les montées de versions de _MySQL_ (pas MariaDB) et _ElasticSearch_ seront vues au cas par cas avec les utilisateurs.
+Version mounts of _MySQL_ (not MariaDB) and _ElasticSearch_ will be viewed on a case-by-case basis with users.
 
-Seules les versions des langages _explicitement utilisées_, soit dans la section **Web > Sites**, soit dans la section **Environnement**, seront désormais préinstallées sur le système. Par exemple, si ni la version par défaut de Python (définie dans **Environnement > Python**), ni aucun de vos sites (**Web > Sites**) n'utilise Python 2.4.6, alors cette version ne sera plus préinstallée. Elle sera toutefois automatiquement installée si vous créez un site avec cette version de Python, ou bien que vous changez la version de Python par défaut.
+Only versions of _explicitly used_ languages, either in the **Web > Sites** section, or in the **Environment** section, will be uninstalled on the system. For example, if not the default Python version (defined in **Environment > Python**), or none of your sites (**Web > Sites**) use Python 2. .6, then this version will no longer be preinstalled. However, it will be automatically installed if you create a site with this version of Python, or you change the version of Python to the default.
 
-## Préparation de la migration
+## Preparing for migration
 
-Un certain nombre d'actions peuvent être effectuées sur l'architecture 2017 - Debian Jessie (8.X) :
+A number of actions can be performed on the 2017 architecture - Debian Jessie (8.X):
 
-- passer sur _Apache 2.4_ dans l'onglet **Web > Configuration > Apache** ;
+- switch to _Apache 2.4_ in the **Web > Configuration > Apache** tab;
 
-- changer de [configuration TLS](security/ssl-tls/configure-tls) pour passer sur la configuration _Intermédiaire_ dans l'onglet **Web > Configuration > SSL** ;
+- change [TLS] (security/ssl-tls/configure-tls) to switch to _Intermitting_ configuration in the **Web > Configuration > SSL** tab;
 
-- remplacer dans vos applications les variables d'environnement `ALWAYSDATA_HTTPD_PORT` et `ALWAYSDATA_HTTPD_IP` par `PORT` et `IP` ;
+- replace in your applications the `ALWAYSDATA_HTTPD_PORT` and `ALWAYSDATA_HTTPD_IP` environment variables with `PORT` and `IP`;
 
-- changer les versions des langages pour passer sur les _dernières mineures_. Cela se passe dans le menu **Environnement** et/ou au niveau de vos sites dans **Web > Sites**. Vous pouvez, par exemple, passer sur PHP 7.3.9 en remplacement de PHP 7.3.0.
+- change language versions to switch to _last minors_. This happens in the **Environment** menu and/or at the level of your sites in **Web > Sites**. For example, you can switch to PHP 7.3.9 instead of PHP 7.3.0.
 
-Nous vous incitons vivement à faire ces changements en production, avant d'effectuer la migration.
+We strongly urge you to make these changes in production before you migrate.
 
-### Bases de données
+### Databases
 
-En parallèle de la migration Buster, nous mettons à disposition les migrations bases de données. Vous pouvez les [tester](advanced/migrations/perform-migration) via le bouton **Tester**. L'ensemble de vos bases et utilisateurs de bases de données sont copiés sur un serveur temporaire, faisant tourner les nouvelles versions.
+At the same time as the Buster migration, we provide basic data migrations. You can use the [tester](advanced/migrations/perform-migration) via the **Tester** button. All of your databases and database users are copied to a temporary server, running new versions.
 
-Les utilisateurs en serveurs mutualisés peuvent faire ces tests en parallèle de la migration Buster. La migration Buster fermera les autres migrations.
+Shared server users can do these tests at the same time as the Buster migration. Migration Buster will close other migrations.
 
-Pour les utilisateurs de serveurs VPS et dédiés, le test des migrations bases de données est lié à à la migration Buster. Le bouton **Tester** ne fera que la **copie** des bases de données sur le serveur de test. Concernant le déployement HTTP référez-vous au paragraphe [Préparation de la migration](advanced/migrations/2020-software-architecture#préparation-de-la-migration).
+For VPS and dedicated server users, the test of database migration is linked to the Buster migration. The **Tester** button will only **copy** the databases on the test server. Regarding HTTP deployment refer to paragraph [Preparing Migration](advanced/migrations/2020-software-architecture#préparation-de-la-migration).
 
-## Déroulement de la migration
+## Migration unfolding
 
-Lorsque vous cliquez sur le bouton **Migrer** le processus s'enclenche en général immédiatement, mais parfois quelques minutes plus tard en fonction du nombre d'utilisateurs qui migrent au même instant. La migration s'effectue en plusieurs étapes successives, **service par service**. Par exemple, vos fichiers seront migrés avant vos bases de données.
+When you click the **Migrate** button, the process snaps into effect immediately, but sometimes a few minutes later depending on the number of users that migrate at the same time. Migration takes place in multiple steps, **service per service**. For example, your files will be migrated before your databases.
 
-- La migration de vos fichiers, effectuée en premier, entrainera l'indisponibilité de vos sites web (qui afficheront une _erreur interne_), de vos tâches planifiées de vos accès distants (SSH, FTP, etc.). La coupure est toutefois de **courte durée** (quelques secondes en général, davantage si vous avez des dizaines de milliers de fichiers), car vos fichiers sont **pré-copiés** au préalable.
+- Migrating your files, done first, will cause your websites to unavailable (which will display an _internal error_), of your planned tasks of your remote access (SSH, FTP, etc. ). However, the cut is **short duration** (few seconds in handle, more if you have tens of thousands of files), because your files are **precopies** to preset.
 
-- Durant la migration des bases de données, la **connexion aux bases de données est coupée**. On compte en moyenne 1 minute d'indisponibilité par Go de données. Il peut être pertinent de mettre en place une _page de maintenance statique_ sur vos sites web pour éviter que ne s'affiche une erreur générique de connexion aux bases de données.
+- When migrating databases, the **connection to databases is switched off**. There is an average of 1 minute unavailability per GB of data. It may be appropriate to set up a _static maintenance page_ on your websites to avoid a general error connecting to databases.
 
-Il est possible de savoir si la migration est terminée via le menu des _[Tâches](https://admin.alwaysdata.com/task)_ (en haut à droite de votre interface d'administration).
+It is possible to know if the migration is finished via the _[Tâches]menu (https://admin.alwaysdata.com/task)_ (top right of your admin interface).
 
-## Conseils & problèmes courants
+## Common tips & issues
 
-- Les comptes changent de serveurs lors de la migration. Il peut y avoir un temps de propagations DNS et il est nécessaire de mettre à jour son fichier `known_hosts` pour la connexion SSH. Vous pouvez le faire via la commande (_[compte] à remplacer par le nom du compte_) :
+- Accounts change servers when migrating. There may be a time of DNS propagations and it is necessary to update its `known_hosts` file for SSH connection. You can do this via the command (_[compte] to replace with the account name_):
 
 ```sh
 $ ssh-keygen -R ssh-[compte].alwaysdata.net
 ```
 
 - Drupal
-  - [Précompression des fichiers CSS et JS](marketplace/drupal#précompression-des-fichiers-css) sur les versions inférieures à la **8.9**.
+  - [CSS and JS precompression](marketplace/drupal#précompression-des-fichiers-css) on the wrong versions of **8.9**.
 
-- Problèmes de failles de segmentation avec [psycopg2](https://github.com/psycopg/psycopg2/issues/543).
+- Segmentation vulnerabilities with [psycopg2](https://github.com/psycopg/psycopg2/issues/543).
