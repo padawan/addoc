@@ -1,90 +1,90 @@
 +++
-url = "/fr/langages/php/installer-une-extension/"
-title = "Comment installer une extension PHP"
+url = "/en/languages/php/installer-une-extension/"
+title = "How to install a PHP extension"
 hidden = true
 layout = "howto"
 tags = [ "php" ]
 +++
 
-`[compte]` et `[extension]` sont à remplacer par le nom de l'extension à installer et du compte sur lequel elle doit l'être.
+`[compte]` and `[extension]` are to be replaced by the name of the extension to install and the account on which it must be installed.
 
-## Gestion des extensions
+## Extension Management
 
-Une extension PHP se présente sous la forme d'un fichier ayant l'extension `.so`. Pour la charger vous devrez l'ajouter à votre `php.ini` (**Environnement > PHP** ou au niveau du site dans **Web > Sites**).
+A PHP extension is intended as a file with the `.so` extension. To load it you will need to add it to your `php.ini` (**Environment > PHP** or at the site level in **Web > Sites**).
 {{% notice warning %}}
-Certaines extensions se chargent avec la directive `zend_extension` plutôt que extension, c'est l'éditeur de l'extension qui vous indiquera lorsque cette directive doit être utilisée à la place.
+Some extensions load with `zend_extension` directive rather than extension, it is the extension editor that will tell you when this directive should be used instead.
 
-Les extensions dépendent de la version majeure de PHP. Autrement dit, un fichier `.so` compilé pour la version 5.5 de PHP ne fonctionnera pas avec la 5.6 : **elle devra être recompilée**.
-{{% /notice %}}
+The extensions depend on the major version of PHP. In other words, a `.so` file compiled for PHP 5.5 will not work with 5.6: **it will need to be recompiled**.
+{{%/notice %}}
 
-Les sections suivantes vous indiquent comment vous procurer de nouvelles extensions. Toutes les commandes sont à exécuter en [SSH](remote-access/ssh).
+The following sections show you how to get new extensions. All commands are executed in [SSH](remote-access/ssh).
 
-### Extensions incluses dans PHP
+### Extensions included in PHP
 
-PHP inclut de nombreuses extensions en standard, dont plusieurs d'entre elles sont déjà préchargées par défaut par alwaysdata. Pour voir la liste complète des extensions disponibles :
+PHP includes many standard extensions, many of which are already preloaded by default by alwaysdata. To see the full list of available extensions:
 
 ```sh
 $ ls $(php-config --extension-dir)
 ```
 
-Pour voir la liste des extensions déjà chargées sur votre compte :
+To see the list of already loaded extensions on your account:
 
 ```sh
 $ grep extension $HOME/admin/config/php/php.ini
 ```
 
-Pour charger une extension incluse dans PHP, vous n'aurez pas besoin de spécifier le répertoire complet, seul le nom du fichier suffit :
+To load an extension included in PHP, you will not need to specify the full directory, only the filename is enough:
 
 ```
 extension = [extension].so
 ```
 
-> Exemples : `imap`, `intl`.
+> Examples: `imap`, `intl`.
 
-### Depuis PECL
+### From PECL
 
-De nombreuses extensions sont installables via [PECL](https://pecl.php.net/). Pour installer une extension, nous vous suggérons d'utiliser notre script maison, `ad_install_pecl`. Il se charge de télécharger, configurer et compiler une extension :
+Many extensions can be installed via [PECL](https://pecl.php.net/). To install an extension, we suggest using our in-house script, `ad_install_pecl`. It will download, configure and compile an extension:
 
 ```sh
 $ ad_install_pecl [extension]
 ```
 
-La commande génère un nouveau fichier `.so` dans le répertoire courant. À la fin du script, il donne un chemin à ajouter au `php.ini`. Par exemple si c'est lancé à la racine du compte :
+The command manages a new `.so` file in the current directory. At the end of the script, it gives a path to add to `php.ini`. For example if this is run at the root of the account:
 
 ```ini
 extension = /home/[compte]/[extension].so
 ```
 
-où `/home/[compte]/[extension].so` est le chemin absolu vers votre extension.
+or `/home/[compte]/[extension].so` is the absolute path to your extension.
 
-Vous pouvez toutefois vous passer de notre script et utiliser les commandes usuelles (`phpize`, `make`) si vous préférez.
+However, you can do without our script and use the usual commands (`phpize`, `make`) if you prefer.
 
-> Exemple d'extensions PECL régulièrement demandées : `apcu`, `imagick`, `memcached`, `ssh2`, `yaml`.
+> Example of PECL extensions successfully requested: `apcu`, `imagick`, `memcached`, `ssh2`, `yaml`.
 
-### Depuis le site de l'éditeur
+### From Publisher Site
 
-Certaines extensions sont directement téléchargeables depuis le site de l'éditeur sous forme précompilée (fichier `.so`). Si l'éditeur vous propose le choix, vous devrez télécharger la version Linux 64 bits. Par exemple :
+Some extensions are directly downloadable from the publisher's website in precompiled form (`.so` file). If the editor offers you the choice, you will need to download the 64 bit Linux version. For example:
 
 - [ionCube](https://www.ioncube.com/loaders.php)
 - [SourceGuardian](https://www.sourceguardian.com/loaders.html)
 - [Zend Guard](http://www.zend.com/en/products/guard/downloads#Linux)
 
-Il faudra ensuite ajouter le chemin absolu au  `php.ini`. Par exemple si elle est téléchargé à la racine du compte :
+Then add the absolute path to the `php.ini`. For example if it is downloaded to the root of the account:
 
 ```ini
 extension = /home/[account]/[extension].so
 ```
 
-### Depuis des paquets de distribution
+### From distribution packages
 
-Certaines extensions sont complexes voire impossibles à compiler à la main. Il est possible de récupérer un `.so` depuis les paquets de distributions Linux, par exemple [Debian](https://www.debian.org/distrib/packages) :
+Some extensions are complex or impossible to compile by hand. It is possible to recover a `.so` from Linux distribution packages, e.g. [Debian](https://www.debian.org/distrib/packages):
 
 ```sh
 $ wget http://ftp.debian.org/debian/pool/main/m/mapserver/php5-mapscript_7.0.4-1~bpo8+1_amd64.deb
 $ dpkg-deb -x php5-mapscript_7.0.4-1~bpo8+1_amd64.deb .
 ```
 
-Il faudra ensuite ajouter le chemin absolu au  `php.ini`. Par exemple si elle est téléchargé à la racine du compte :
+Then add the absolute path to the `php.ini`. For example if it is downloaded to the root of the account:
 
 ```ini
 extension = /home/[account]/[extension].so
