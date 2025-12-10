@@ -1,17 +1,17 @@
 +++
-url = "/fr/marketplace/drupal/"
+url = "/marketplace/drupal/"
 title = "Drupal"
 layout = "man"
 hidden = true
 tags = [ "cms" ]
 +++
 
-## Problèmes courants
+## Common Issues
 
-### Précompression des fichiers CSS/JS
+### Prezipping CSS/JS files
 
-Si vous utilisez une version de Drupal inférieure à la **8.9** avec précompression des fichiers CSS et JS, vous devrez [appliquer ce patch](https://www.drupal.org/files/issues/2019-01-02/3023545-mod_brotli.patch) pour corriger [un bug relatif à la compression Brotli](https://www.drupal.org/project/drupal/issues/2960808).
+If you are using an inferior version of Drupal at \*\*8. \*\* with CSS and JS precompression, you will need to [apply this patch](https://www.drupal.org/files/issues/2019-01-02/3023545-mod_brotli.patch) to fix [a bug relative to Brotli compression](https://www.drupal.org/project/drupal/issues/2960808).
 
-## Autres informations
+## Other information
 
-Nous proposons un [profil spécifique](sites/waf#profils-disponibles) sur notre WAF.
+We offer a [specific profile](sites/waf#profils-disponibles) on our WAF.
